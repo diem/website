@@ -554,7 +554,7 @@ fbq.pendingConfigs=["global_config"];
                   return !0
                 }
                 // SERVEREXTRACT
-                a = "/docs/js/fbinferred.js"
+                a = "/js/fbinferred.js"
                 // a = d.CONFIG.CDN_BASE_URL + "signals/plugins/" + a + ".js?v=" + f.version;
                 if (!this._loadedPlugins[b]) {
                   this._lock.lockPlugin(b);
