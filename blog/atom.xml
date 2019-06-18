@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://developers.libra.org/docs/blog</id>
+    <title>Libra Blog</title>
+    <updated>2019-06-18T06:00:00Z</updated>
+    <generator>Feed for Node.js</generator>
+    <link rel="alternate" href="https://developers.libra.org/docs/blog"/>
+    <subtitle>The best place to stay up-to-date with the latest Libra news and events.</subtitle>
+    <logo>https://developers.libra.org/docs/img/libra-nav-logo.png</logo>
+    <entry>
+        <title type="html"><![CDATA[Libra: The Path Forward]]></title>
+        <id>https://developers.libra.org/docs/blog/2019/06/18/the-path-forward.html</id>
+        <link href="https://developers.libra.org/docs/blog/2019/06/18/the-path-forward.html">
+        </link>
+        <updated>2019-06-18T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<p>Today we are announcing the <strong>Libra testnet</strong>, a live demonstration of an early prototype of the technology behind <a href="https://libra.org/">Libra</a> — a simple global currency and financial infrastructure that can empower billions of people.</p> <p><strong>Libra Core</strong> is the open-source implementa...</p>]]></summary>
+        <author>
+            <name>Libra Engineering Team</name>
+        </author>
+    </entry>
+</feed>

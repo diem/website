@@ -1,0 +1,279 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Getting Started With Move · Libra</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Move is a new programming language developed to provide a safe and programmable foundation for the Libra Blockchain. An account in the Libra Blockchain is a container for an arbitrary number of Move resources and Move modules. Every transaction submitted to the Libra Blockchain uses a transaction script written in Move to encode its logic. The transaction script can call procedures declared by a module to update the global state of the blockchain.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Getting Started With Move · Libra"/><meta property="og:type" content="website"/><meta property="og:url" content="https://developers.libra.org/docs/"/><meta property="og:description" content="&lt;p&gt;Move is a new programming language developed to provide a safe and programmable foundation for the Libra Blockchain. An account in the Libra Blockchain is a container for an arbitrary number of Move resources and Move modules. Every transaction submitted to the Libra Blockchain uses a transaction script written in Move to encode its logic. The transaction script can call procedures declared by a module to update the global state of the blockchain.&lt;/p&gt;
+"/><meta property="og:image" content="https://developers.libra.org/docs/img/libra.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://developers.libra.org/docs/img/libra.png"/><link rel="shortcut icon" href="/docs/img/libra.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://developers.libra.org/docs/blog/atom.xml" title="Libra Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://developers.libra.org/docs/blog/feed.xml" title="Libra Blog RSS Feed"/><link rel="stylesheet" href="/docs/css/code_block_buttons.css"/><link rel="stylesheet" href="/docs/css/fonts/NBInternationalProEditionWeb/stylesheet.css"/><link rel="stylesheet" href="/docs/katex-dist/katex.min.css"/><script type="text/javascript" src="/docs/js/buttons.js"></script><script type="text/javascript" src="/docs/js/code_block_buttons.js"></script><script type="text/javascript" src="/docs/js/cookie_banner.js"></script><script type="text/javascript" src="/docs/js/disable_adblock.js"></script><script type="text/javascript" src="/docs/js/segment.analytics.min.js"></script><script type="text/javascript" src="/docs/js/segment.js"></script><script type="text/javascript" src="/docs/js/clipboardjs.2.0.0.min.js"></script><script type="text/javascript" src="/docs/js/docsearch.min.js"></script><script type="text/javascript" src="/docs/js/search.js"></script><script src="/docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/docs/css/main.css"/><script src="/docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/"><img class="logo" src="/docs/img/libra-nav-logo.png" alt="Libra"/><h2 class="headerTitleWithLogo">Libra</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/docs/welcome-to-libra" target="_self">Documentation</a></li><li class=""><a href="https://community.libra.org" target="_self">Community</a></li><li class=""><a href="/docs/blog/" target="_self">Blog</a></li><li class=""><a href="https://libra.org" target="_self">libra.org</a></li><li class=""><a href="https://github.com/libra/libra" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Try Libra Core</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Learn About Libra</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/welcome-to-libra">Welcome</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/libra-protocol">Libra Protocol: Key Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/life-of-a-transaction">Life of a Transaction</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Technical Papers</h4><ul><li class="navListItem"><a class="navItem" href="/docs/docs/the-libra-blockchain-paper">The Libra Blockchain</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/move-paper">Move: A Language With Programmable Resources</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/state-machine-replication-paper">State Machine Replication in the Libra Blockchain</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Try Libra Core</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/my-first-transaction">My First Transaction</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/docs/move-overview">Getting Started With Move</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Community</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/libra-open-source-paper">Libra Open Source</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/community/contributing">Contribution Guide</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/community/coding-guidelines">Coding Guidelines</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/policies/security">Reporting Vulnerabilities</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Libra Codebase</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/libra-core-overview">Libra Core Overview</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">READMEs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/docs/crates/admission-control">Admission Control</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/bytecode-verifier">Bytecode Verifier</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/consensus">Consensus</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/crypto">Crypto</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/execution">Execution</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/mempool">Mempool</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/ir-to-bytecode">Move IR Compiler</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/move-language">Move Language</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/network">Network</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/storage">Storage</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/vm">Virtual Machine</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Reference</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/reference/libra-cli">Libra CLI</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/reference/glossary">Glossary</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/libra/website/edit/master/docs/move-overview.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Getting Started With Move</h1></header><article><div><span><p>Move is a new programming language developed to provide a safe and programmable foundation for the Libra Blockchain. An account in the Libra Blockchain is a container for an arbitrary number of Move resources and Move modules. Every transaction submitted to the Libra Blockchain uses a transaction script written in Move to encode its logic. The transaction script can call procedures declared by a module to update the global state of the blockchain.</p>
+<p>In the first part of this guide, we will provide a high-level introduction to the key features of the Move language:</p>
+<ol>
+<li><a href="#move-transaction-scripts-enable-programmable-transactions">Move Transaction Scripts Enable Programmable Transactions</a></li>
+<li><a href="#move-modules-allow-composable-smart-contracts">Move Modules Allow Composable Smart Contracts</a></li>
+<li><a href="#move-has-first-class-resources">Move Has First Class Resources</a></li>
+</ol>
+<p>For the curious reader, the <a href="/docs/docs/move-paper">Move technical paper</a> contains much more detail about the language.</p>
+<p>In the second part of this guide, we will “look under the hood” and show you how to write your own Move programs in the <a href="#move-intermediate-representation">Move intermediate representation</a>. Custom Move programs are not supported in the initial testnet release, but these features are available for you to try out locally.</p>
+<h2><a class="anchor" aria-hidden="true" id="key-features-of-move"></a><a href="#key-features-of-move" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Key Features of Move</h2>
+<h3><a class="anchor" aria-hidden="true" id="move-transaction-scripts-enable-programmable-transactions"></a><a href="#move-transaction-scripts-enable-programmable-transactions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Move Transaction Scripts Enable Programmable Transactions</h3>
+<ul>
+<li>Each Libra transaction includes a <strong>Move transaction script</strong> that encodes the logic a validator should perform on the client's behalf (for example, to move Libra from Alice's account to Bob's account).</li>
+<li>The transaction script interacts with <a href="#move-has-first-class-resources">Move resources</a> published in the global storage of the Libra Blockchain by calling the procedures of one or more <a href="#move-modules-allow-composable-smart-contracts">Move modules</a>.</li>
+<li>A transaction script is not stored in the global state, and it cannot be invoked by other transaction scripts. It is a single-use program.</li>
+<li>We present several examples of transaction scripts in <a href="#writing-transaction-scripts">Writing Transaction Scripts</a>.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="move-modules-allow-composable-smart-contracts"></a><a href="#move-modules-allow-composable-smart-contracts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Move Modules Allow Composable Smart Contracts</h3>
+<p>Move modules define the rules for updating the global state of the Libra Blockchain. Modules fill the same niche as smart contracts in other blockchain systems. Modules declare <a href="#move-has-first-class-resources">resource</a> types that can be published under user accounts. Each account in the Libra Blockchain is a container for an arbitrary number of resources and modules.</p>
+<ul>
+<li>A module declares both struct types (including resources, which are a special kind of struct) and procedures.</li>
+<li>The procedures of a Move module define the rules for creating, accessing, and destroying the types it declares.</li>
+<li>Modules are reusable. A struct type declared in one module can use struct types declared in another module, and a procedure declared in one module can invoke public procedures declared in another module. A module can invoke procedures declared in other Move modules. Transaction scripts can invoke any public procedure of a published module.</li>
+<li>Eventually, Libra users will be able to publish modules under their own accounts.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="move-has-first-class-resources"></a><a href="#move-has-first-class-resources" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Move Has First Class Resources</h3>
+<ul>
+<li>The key feature of Move is the ability to define custom resource types. Resource types are used to encode safe digital assets with rich programmability.</li>
+<li>Resources are ordinary values in the language. They can be stored as data structures, passed as arguments to procedures, returned from procedures, and so on.</li>
+<li>The Move type system provides special safety guarantees for resources. Move resources can never be duplicated, reused, or discarded. A resource type can only be created or destroyed by the module that defines the type. These guarantees are enforced statically by the <a href="/docs/docs/reference/glossary#move-virtual-machine-mvm">Move virtual machine</a> via bytecode verification. The Move virtual machine will refuse to run code that has not passed through the bytecode verifier.</li>
+<li>The Libra currency is implemented as a resource type named <code>LibraCoin.T</code>. <code>LibraCoin.T</code> has no special status in the language; every Move resource enjoys the same protections.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="move-under-the-hood"></a><a href="#move-under-the-hood" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Move: Under the Hood</h2>
+<h3><a class="anchor" aria-hidden="true" id="move-intermediate-representation"></a><a href="#move-intermediate-representation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Move Intermediate Representation</h3>
+<p>This section describes how to write <a href="#writing-transaction-scripts">transaction scripts</a> and <a href="#writing-modules">modules</a> in the Move intermediate representation (IR). We caution the reader that the IR is an early (and unstable) precursor to a forthcoming Move source language (see <a href="#future-developer-experience">Future Developer Experience</a> for more details). Move IR is a thin syntactic layer over Move bytecode that is used to test the bytecode verifier and virtual machine, and it is not particularly developer-friendly. It is high level enough to write human-readable code, yet low level enough to compile directly to Move bytecode. Nevertheless, we are excited about the Move language and hope that developers will give the IR a try, despite the rough edges.</p>
+<p>We will proceed by presenting snippets of heavily-commented Move IR. We encourage readers to follow along with the examples by compiling, running, and modifying them locally. The README files under <code>libra/language/README.md</code> and <code>libra/language/ir_to_bytecode/README.md</code> explain how to do this.</p>
+<h3><a class="anchor" aria-hidden="true" id="writing-transaction-scripts"></a><a href="#writing-transaction-scripts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing Transaction Scripts</h3>
+<p>As we explained in <a href="#move-transaction-scripts-enable-programmable-transactions">Move Transaction Scripts Enable Programmable Transactions</a>, users write transaction scripts to request updates to the global storage of the Libra Blockchain. There are two important building blocks that will appear in almost any transaction script: the <code>LibraAccount.T</code> and <code>LibraCoin.T</code> resource types. <code>LibraAccount</code> is the name of the module, and <code>T</code> is the name of a resource declared by that module. This is a common naming convention in Move; the “main” type declared by a module is typically named <code>T</code>.</p>
+<p>When we say that a user &quot;has an account at address <code>0xff</code> on the Libra Blockchain&quot;, what we mean is that the address <code>0xff</code> holds an instance of the <code>LibraAccount.T</code> resource. Every nonempty address has a <code>LibraAccount.T</code> resource. This resource stores account data, such as the sequence number, authentication key, and balance. Any part of the Libra system that wants to interact with an account must do so by reading data from the <code>LibraAccount.T</code> resource or invoking procedures of the <code>LibraAccount</code> module.</p>
+<p>The account balance is a resource of type <code>LibraCoin.T</code>. As we explained in <a href="#move-has-first-class-resources">Move Has First Class Resources</a>, this is the type of a Libra coin. This type is a &quot;first-class citizen&quot; in the language just like any other Move resource. Resources of type <code>LibraCoin.T</code> can be stored in program variables, passed between procedures, and so on.</p>
+<p>We encourage the interested reader to examine the Move IR definitions of these two key resources in the <code>LibraAccount</code> and <code>LibraCoin</code> modules under the <code>libra/language/stdlib/modules/</code> directory.</p>
+<p>Now let us see how a programmer can interact with these modules and resources in a transaction script.</p>
+<pre><code class="hljs css language-move"><span class="hljs-comment">// Simple peer-peer payment example.</span>
+
+<span class="hljs-comment">// Use LibraAccount module published on the blockchain at account address</span>
+<span class="hljs-comment">// 0x0...0 (with 64 zeroes). 0x0 is shorthand that the IR pads out to</span>
+<span class="hljs-comment">// 256 bits (64 digits) by adding leading zeroes.</span>
+<span class="hljs-keyword">import</span> <span class="hljs-number">0x0</span>.<span class="hljs-type">LibraAccount</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-number">0x0</span>.<span class="hljs-type">LibraCoin</span>;
+main(payee: <span class="hljs-built_in">address</span>, amount: <span class="hljs-built_in">u64</span>) {
+  <span class="hljs-comment">// The bytecode (and consequently, the IR) has typed locals.  The scope of</span>
+  <span class="hljs-comment">// each local is the entire procedure. All local variable declarations must</span>
+  <span class="hljs-comment">// be at the beginning of the procedure. Declaration and initialization of</span>
+  <span class="hljs-comment">// variables are separate operations, but the bytecode verifier will prevent</span>
+  <span class="hljs-comment">// any attempt to use an uninitialized variable.</span>
+  <span class="hljs-keyword">let</span> coin: <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span>;
+  <span class="hljs-comment">// The R# part of the type above is one of two *kind annotation* R# and V#</span>
+  <span class="hljs-comment">// (shorthand for "Resource" and "unrestricted Value"). These annotations</span>
+  <span class="hljs-comment">// must match the kind of the type declaration (e.g., does the LibraCoin</span>
+  <span class="hljs-comment">// module declare `resource T` or `struct T`?).</span>
+
+  <span class="hljs-comment">// Acquire a LibraCoin.T resource with value `amount` from the sender's</span>
+  <span class="hljs-comment">// account.  This will fail if the sender's balance is less than `amount`.</span>
+  coin = <span class="hljs-type">LibraAccount</span>.withdraw_from_sender(<span class="hljs-keyword">move</span>(amount));
+  <span class="hljs-comment">// Move the LibraCoin.T resource into the account of `payee`. If there is no</span>
+  <span class="hljs-comment">// account at the address `payee`, this step will fail</span>
+  <span class="hljs-type">LibraAccount</span>.deposit(<span class="hljs-keyword">move</span>(payee), <span class="hljs-keyword">move</span>(coin));
+
+  <span class="hljs-comment">// Every procedure must end in a `return`. The IR compiler is very literal:</span>
+  <span class="hljs-comment">// it directly translates the source it is given. It will not do fancy</span>
+  <span class="hljs-comment">// things like inserting missing `return`s.</span>
+  <span class="hljs-keyword">return</span>;
+}
+</code></pre>
+<p>This transaction script has an unfortunate problem — it will fail if there is no account under the address <code>payee</code>. We will fix this problem by modifying the script to create an account for the <code>payee</code> if one does not already exist.</p>
+<pre><code class="hljs css language-move"><span class="hljs-comment">// A small variant of the peer-peer payment example that creates a fresh</span>
+<span class="hljs-comment">// account if one does not already exist.</span>
+
+<span class="hljs-keyword">import</span> <span class="hljs-number">0x0</span>.<span class="hljs-type">LibraAccount</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-number">0x0</span>.<span class="hljs-type">LibraCoin</span>;
+main(payee: <span class="hljs-built_in">address</span>, amount: <span class="hljs-built_in">u64</span>) {
+  <span class="hljs-keyword">let</span> coin: <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span>;
+  <span class="hljs-keyword">let</span> account_exists: <span class="hljs-built_in">bool</span>;
+
+  <span class="hljs-comment">// Acquire a LibraCoin.T resource with value `amount` from the sender's</span>
+  <span class="hljs-comment">// account.  This will fail if the sender's balance is less than `amount`.</span>
+  coin = <span class="hljs-type">LibraAccount</span>.withdraw_from_sender(<span class="hljs-keyword">move</span>(amount));
+
+  account_exists = <span class="hljs-type">LibraAccount</span>.exists(<span class="hljs-keyword">copy</span>(payee));
+
+  <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">move</span>(account_exists)) {
+    <span class="hljs-comment">// Creates a fresh account at the address `payee` by publishing a</span>
+    <span class="hljs-comment">// LibraAccount.T resource under this address. If theres is already a</span>
+    <span class="hljs-comment">// LibraAccount.T resource under the address, this will fail.</span>
+    <span class="hljs-built_in">create_account</span>(<span class="hljs-keyword">copy</span>(payee));
+  }
+
+  <span class="hljs-type">LibraAccount</span>.deposit(<span class="hljs-keyword">move</span>(payee), <span class="hljs-keyword">move</span>(coin));
+  <span class="hljs-keyword">return</span>;
+}
+</code></pre>
+<p>Let us look at a more complex example. In this example, we will use a transaction script to pay multiple recipients instead of just one.</p>
+<pre><code class="hljs css language-move"><span class="hljs-comment">// Multiple payee example. This is written in a slightly verbose way to</span>
+<span class="hljs-comment">// emphasize the ability to split a `LibraCoin.T` resource. The more concise</span>
+<span class="hljs-comment">// way would be to use multiple calls to `LibraAccount.withdraw_from_sender`.</span>
+
+<span class="hljs-keyword">import</span> <span class="hljs-number">0x0</span>.<span class="hljs-type">LibraAccount</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-number">0x0</span>.<span class="hljs-type">LibraCoin</span>;
+main(payee1: <span class="hljs-built_in">address</span>, amount1: <span class="hljs-built_in">u64</span>, payee2: <span class="hljs-built_in">address</span>, amount2: <span class="hljs-built_in">u64</span>) {
+  <span class="hljs-keyword">let</span> coin1: <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span>;
+  <span class="hljs-keyword">let</span> coin2: <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span>;
+  <span class="hljs-keyword">let</span> total: <span class="hljs-built_in">u64</span>;
+
+  total = <span class="hljs-keyword">move</span>(amount1) + <span class="hljs-keyword">copy</span>(amount2);
+  coin1 = <span class="hljs-type">LibraAccount</span>.withdraw_from_sender(<span class="hljs-keyword">move</span>(total));
+  <span class="hljs-comment">// This mutates `coin1`, which now has value `amount1`.</span>
+  <span class="hljs-comment">// `coin2` has value `amount2`.</span>
+  coin2 = <span class="hljs-type">LibraCoin</span>.withdraw(&amp;<span class="hljs-keyword">mut</span> coin1, <span class="hljs-keyword">move</span>(amount2));
+
+  <span class="hljs-comment">// Perform the payments</span>
+  <span class="hljs-type">LibraAccount</span>.deposit(<span class="hljs-keyword">move</span>(payee1), <span class="hljs-keyword">move</span>(coin1));
+  <span class="hljs-type">LibraAccount</span>.deposit(<span class="hljs-keyword">move</span>(payee2), <span class="hljs-keyword">move</span>(coin2));
+  <span class="hljs-keyword">return</span>;
+}
+</code></pre>
+<p>This concludes our &quot;tour&quot; of transaction scripts. For more examples, including the transaction scripts supported in the initial testnet, refer to <code>libra/language/stdlib/transaction_scripts</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="writing-modules"></a><a href="#writing-modules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing Modules</h3>
+<p>We will now turn our attention to writing our own Move modules instead of just reusing the existing <code>LibraAccount</code> and <code>LibraCoin</code> modules. Consider this situation:
+Bob is going to create an account at address <em>a</em> at some point in the future. Alice wants to &quot;earmark&quot; some funds for Bob so that he can pull them into his account once it is created. But she also wants to be able to reclaim the funds for herself if Bob never creates the account.</p>
+<p>To solve this problem for Alice, we will write a module <code>EarmarkedLibraCoin</code> which:</p>
+<ul>
+<li>Declares a new resource type <code>EarmarkedLibraCoin.T</code> that wraps a Libra coin and recipient address.</li>
+<li>Allows Alice to create such a type and publish it under her account (the <code>create</code> procedure).</li>
+<li>Allows Bob to claim the resource (the <code>claim_for_recipient</code> procedure).</li>
+<li>Allows anyone with an <code>EarmarkedLibraCoin.T</code> to destroy it and acquire the underlying coin (the <code>unwrap</code> procedure).</li>
+</ul>
+<pre><code class="hljs css language-move"><span class="hljs-comment">// A module for earmarking a coin for a specific recipient</span>
+<span class="hljs-keyword">module</span> <span class="hljs-type">EarmarkedLibraCoin</span> {
+  <span class="hljs-keyword">import</span> <span class="hljs-number">0x0</span>.<span class="hljs-type">LibraCoin</span>;
+
+  <span class="hljs-comment">// A wrapper containing a Libra coin and the address of the recipient the</span>
+  <span class="hljs-comment">// coin is earmarked for.</span>
+  <span class="hljs-struct"><span class="hljs-keyword">resource</span> T {</span>
+    coin: <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span>,
+    recipient: <span class="hljs-built_in">address</span>
+  }
+
+  <span class="hljs-comment">// Create a new earmarked coin with the given `recipient`.</span>
+  <span class="hljs-comment">// Publish the coin under the transaction sender's account address.</span>
+  <span class="hljs-keyword">public</span> create(coin: <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span>, recipient: <span class="hljs-built_in">address</span>) {
+    <span class="hljs-keyword">let</span> t: <span class="hljs-type">R#Self</span>.<span class="hljs-type">T</span>;
+
+    <span class="hljs-comment">// Construct or "pack" a new resource of type T. Only procedures of the</span>
+    <span class="hljs-comment">// `EarmarkedCoin` module can create an `EarmarkedCoin.T`.</span>
+    t = <span class="hljs-type">T</span> {
+      coin: <span class="hljs-keyword">move</span>(coin),
+      recipient: <span class="hljs-keyword">move</span>(recipient),
+    };
+
+    <span class="hljs-comment">// Publish the earmarked coin under the transaction sender's account</span>
+    <span class="hljs-comment">// address. Each account can contain at most one resource of a given type; </span>
+    <span class="hljs-comment">// this call will fail if the sender already has a resource of this type.</span>
+    <span class="hljs-built_in">move_to_sender</span>&lt;<span class="hljs-type">T</span>&gt;(<span class="hljs-keyword">move</span>(t));
+    <span class="hljs-keyword">return</span>;
+  }
+
+  <span class="hljs-comment">// Allow the transaction sender to claim a coin that was earmarked for her.</span>
+  <span class="hljs-keyword">public</span> claim_for_recipient(earmarked_coin_address: <span class="hljs-built_in">address</span>): <span class="hljs-type">R#Self</span>.<span class="hljs-type">T</span> {
+    <span class="hljs-keyword">let</span> t: <span class="hljs-type">R#Self</span>.<span class="hljs-type">T</span>;
+    <span class="hljs-keyword">let</span> t_ref: &amp;<span class="hljs-type">R#Self</span>.<span class="hljs-type">T</span>;
+    <span class="hljs-keyword">let</span> sender: <span class="hljs-built_in">address</span>;
+
+    <span class="hljs-comment">// Remove the earmarked coin resource published under `earmarked_coin_address`.</span>
+    <span class="hljs-comment">// If there is resource of type T published under the address, this will fail.</span>
+    t = <span class="hljs-built_in">move_from</span>&lt;<span class="hljs-type">T</span>&gt;(<span class="hljs-keyword">move</span>(earmarked_coin_address));
+
+    t_ref = &amp;t;
+    <span class="hljs-comment">// This is a builtin that returns the address of the transaction sender.</span>
+    sender = <span class="hljs-built_in">get_txn_sender</span>();
+    <span class="hljs-comment">// Ensure that the transaction sender is the recipient. If this assertion</span>
+    <span class="hljs-comment">// fails, the transaction will fail and none of its effects (e.g.,</span>
+    <span class="hljs-comment">// removing the earmarked coin) will be committed.  99 is an error code</span>
+    <span class="hljs-comment">// that will be emitted in the transaction output if the assertion fails.</span>
+    <span class="hljs-built_in">assert</span>(*(&amp;<span class="hljs-keyword">move</span>(t_ref).recipient) == <span class="hljs-keyword">move</span>(sender), <span class="hljs-number">99</span>);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">move</span>(t);
+  }
+
+  <span class="hljs-comment">// Allow the creator of the earmarked coin to reclaim it.</span>
+  <span class="hljs-keyword">public</span> claim_for_creator(): <span class="hljs-type">R#Self</span>.<span class="hljs-type">T</span> {
+    <span class="hljs-keyword">let</span> t: <span class="hljs-type">R#Self</span>.<span class="hljs-type">T</span>;
+    <span class="hljs-keyword">let</span> coin: <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span>;
+    <span class="hljs-keyword">let</span> recipient: <span class="hljs-built_in">address</span>;
+    <span class="hljs-keyword">let</span> sender: <span class="hljs-built_in">address</span>;
+
+    sender = <span class="hljs-built_in">get_txn_sender</span>();
+    <span class="hljs-comment">// This will fail if no resource of type T under the sender's address.</span>
+    t = <span class="hljs-built_in">move_from</span>&lt;<span class="hljs-type">T</span>&gt;(<span class="hljs-keyword">move</span>(sender));
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">move</span>(t);
+  }
+
+  <span class="hljs-comment">// Extract the Libra coin from its wrapper and return it to the caller.</span>
+  <span class="hljs-keyword">public</span> unwrap(t: <span class="hljs-type">R#Self</span>.<span class="hljs-type">T</span>): <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span> {
+    <span class="hljs-keyword">let</span> coin: <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span>;
+    <span class="hljs-keyword">let</span> recipient: <span class="hljs-built_in">address</span>;
+
+    <span class="hljs-comment">// This "unpacks" a resource type by destroying the outer resource, but</span>
+    <span class="hljs-comment">// returning its contents. Only the module that declares a resource type</span>
+    <span class="hljs-comment">// can unpack it.</span>
+    <span class="hljs-type">T</span> { coin, recipient } = <span class="hljs-keyword">move</span>(t);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">move</span>(coin);
+  }
+
+}
+</code></pre>
+<p>Alice can create an earmarked coin for Bob by creating a transaction script that invokes <code>create</code> on Bob's address <em>a</em> and a <code>LibraCoin.T</code> that she owns. Once <em>a</em> has been created, Bob can claim the coin by sending a transaction from <em>a</em>. This invokes <code>claim_for_recipient</code>, passes the result to <code>unwrap</code>, and stores the returned <code>LibraCoin</code> wherever he wishes. If Bob takes too long to create an account under <em>a</em> and Alice wants to reclaim her funds, she can do so by using <code>claim_for_creator</code> followed by <code>unwrap</code>.</p>
+<p>The observant reader may have noticed that the code in this module is agnostic to the internal structure of <code>LibraCoin.T</code>. It could just as easily be written using generic programming (e.g., <code>resource T&lt;AnyResource: R&gt; { coin: AnyResource, ... }</code>). We are currently working on adding support for exactly this sort of parametric polymorphism to Move.</p>
+<h3><a class="anchor" aria-hidden="true" id="future-developer-experience"></a><a href="#future-developer-experience" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Future Developer Experience</h3>
+<p>In the near future, the IR will stabilize, and compiling and verifying programs will become more user-friendly. Additionally, location information from the IR source will be tracked and passed to the verifier to make error messages easier to debug. However, the IR will continue to remain a tool for testing Move bytecode. It is meant to be a semantically transparent representation of the underlying bytecode. To allow effective tests, the IR compiler must produce bad code that will be rejected by the bytecode verifier or fail at runtime in the compiler. A user-friendly source language would make different choices; it should refuse to compile code that will fail at a subsequent step in the pipeline.</p>
+<p>In the future, we will have a higher-level Move source language. This source language will be designed to express common Move idioms and programming patterns safely and easily. Since Move bytecode is a new language and the Libra Blockchain is a new programming environment, our understanding of the idioms and patterns we should support is still evolving. The source language is in the early stages of development, and we do not have a timetable for its release yet.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/my-first-transaction"><span class="arrow-prev">← </span><span>My First Transaction</span></a><a class="docs-next button" href="/docs/docs/libra-open-source-paper"><span>Libra Open Source</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#key-features-of-move">Key Features of Move</a><ul class="toc-headings"><li><a href="#move-transaction-scripts-enable-programmable-transactions">Move Transaction Scripts Enable Programmable Transactions</a></li><li><a href="#move-modules-allow-composable-smart-contracts">Move Modules Allow Composable Smart Contracts</a></li><li><a href="#move-has-first-class-resources">Move Has First Class Resources</a></li></ul></li><li><a href="#move-under-the-hood">Move: Under the Hood</a><ul class="toc-headings"><li><a href="#move-intermediate-representation">Move Intermediate Representation</a></li><li><a href="#writing-transaction-scripts">Writing Transaction Scripts</a></li><li><a href="#writing-modules">Writing Modules</a></li><li><a href="#future-developer-experience">Future Developer Experience</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/libra-logomark-white.png" alt="Libra"/></a><div class="footerSection"><h5>Learn About Libra</h5><a href="/docs/docs/welcome-to-libra">Welcome to Libra</a><a href="/docs/docs/libra-protocol">Libra Protocol</a><a href="/docs/docs/the-libra-blockchain-paper">Libra Blockchain</a><a href="/docs/docs/life-of-a-transaction">Life of a Transaction</a><p></p><h5>Try Libra Core </h5><a href="/docs/docs/my-first-transaction">My First Transaction</a><a href="/docs/docs/move-overview">Getting Started With Move</a></div><div class="footerSection"><h5>Policies</h5><a href="/docs/docs/policies/privacy-policy">Privacy Policy</a><a href="/docs/docs/policies/terms-of-use">Terms of Use</a><a href="/docs/docs/policies/cookies-policy">Cookies Policy</a><a href="/docs/docs/policies/code-of-conduct">Code of Conduct</a></div><div class="footerSection"><h5>Social</h5><div class="social"><a class="github-button" href="https://github.com/libra/libra" data-count-href="https://github.com/libra/libra/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star Libra on GitHub">libra</a></div><div class="social"><a href="https://twitter.com/libradev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @libradev</a><script async="" src="/docs//js/twitter-widgets.js" charSet="utf-8"></script></div></div></section><section class="copyright"> © Libra Association</section><aside id="cookie-banner"><div class="close" id="cookie-banner-close"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="17" x2="17" y2="1" stroke="#fff" stroke-width="2"></line><line x1="1" y1="1" x2="17" y2="17" stroke="#fff" stroke-width="2"></line></svg></div><div class="wrapper"><p>To help us provide relevant content, analyze our traffic, and provide a variety of features, we use cookies. By clicking on or navigating the site, you agree to allow us to collect information on and off the Libra Website through cookies. To learn more, view our Cookie Policy:</p><div class="buttonWrapper"><a class="button" href="docs/policies/cookies-policy" target="_blank">Cookies Policy</a></div></div></aside></footer></div></body></html>

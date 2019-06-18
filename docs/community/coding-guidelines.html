@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Coding Guidelines · Libra</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;This document describes the coding guidelines for the Libra Core Rust codebase.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Coding Guidelines · Libra"/><meta property="og:type" content="website"/><meta property="og:url" content="https://developers.libra.org/docs/"/><meta property="og:description" content="&lt;p&gt;This document describes the coding guidelines for the Libra Core Rust codebase.&lt;/p&gt;
+"/><meta property="og:image" content="https://developers.libra.org/docs/img/libra.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://developers.libra.org/docs/img/libra.png"/><link rel="shortcut icon" href="/docs/img/libra.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://developers.libra.org/docs/blog/atom.xml" title="Libra Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://developers.libra.org/docs/blog/feed.xml" title="Libra Blog RSS Feed"/><link rel="stylesheet" href="/docs/css/code_block_buttons.css"/><link rel="stylesheet" href="/docs/css/fonts/NBInternationalProEditionWeb/stylesheet.css"/><link rel="stylesheet" href="/docs/katex-dist/katex.min.css"/><script type="text/javascript" src="/docs/js/buttons.js"></script><script type="text/javascript" src="/docs/js/code_block_buttons.js"></script><script type="text/javascript" src="/docs/js/cookie_banner.js"></script><script type="text/javascript" src="/docs/js/disable_adblock.js"></script><script type="text/javascript" src="/docs/js/segment.analytics.min.js"></script><script type="text/javascript" src="/docs/js/segment.js"></script><script type="text/javascript" src="/docs/js/clipboardjs.2.0.0.min.js"></script><script type="text/javascript" src="/docs/js/docsearch.min.js"></script><script type="text/javascript" src="/docs/js/search.js"></script><script src="/docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/docs/css/main.css"/><script src="/docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/"><img class="logo" src="/docs/img/libra-nav-logo.png" alt="Libra"/><h2 class="headerTitleWithLogo">Libra</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/docs/welcome-to-libra" target="_self">Documentation</a></li><li class=""><a href="https://community.libra.org" target="_self">Community</a></li><li class=""><a href="/docs/blog/" target="_self">Blog</a></li><li class=""><a href="https://libra.org" target="_self">libra.org</a></li><li class=""><a href="https://github.com/libra/libra" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Community</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Learn About Libra</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/welcome-to-libra">Welcome</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/libra-protocol">Libra Protocol: Key Concepts</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/life-of-a-transaction">Life of a Transaction</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Technical Papers</h4><ul><li class="navListItem"><a class="navItem" href="/docs/docs/the-libra-blockchain-paper">The Libra Blockchain</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/move-paper">Move: A Language With Programmable Resources</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/state-machine-replication-paper">State Machine Replication in the Libra Blockchain</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Try Libra Core</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/my-first-transaction">My First Transaction</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/move-overview">Getting Started With Move</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Community</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/libra-open-source-paper">Libra Open Source</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/community/contributing">Contribution Guide</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/docs/community/coding-guidelines">Coding Guidelines</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/policies/security">Reporting Vulnerabilities</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Libra Codebase</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/libra-core-overview">Libra Core Overview</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">READMEs</h4><ul><li class="navListItem"><a class="navItem" href="/docs/docs/crates/admission-control">Admission Control</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/bytecode-verifier">Bytecode Verifier</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/consensus">Consensus</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/crypto">Crypto</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/execution">Execution</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/mempool">Mempool</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/ir-to-bytecode">Move IR Compiler</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/move-language">Move Language</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/network">Network</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/storage">Storage</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/crates/vm">Virtual Machine</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Reference</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/reference/libra-cli">Libra CLI</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/reference/glossary">Glossary</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/libra/website/edit/master/docs/community/coding-guidelines.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Coding Guidelines</h1></header><article><div><span><p>This document describes the coding guidelines for the Libra Core Rust codebase.</p>
+<h2><a class="anchor" aria-hidden="true" id="code-formatting"></a><a href="#code-formatting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code Formatting</h2>
+<p>All code formatting is enforced with <a href="https://github.com/rust-lang/rustfmt">rustfmt</a> using a project specific configuration.  Here is a sample command to run <code>rustfmt</code> and adhere to the project conventions:</p>
+<pre><code class="hljs">libra$ cargo fmt
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="code-analysis"></a><a href="#code-analysis" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code Analysis</h2>
+<p><a href="https://github.com/rust-lang/rust-clippy">Clippy</a> is used to catch common mistakes and is run as a part of continuous integration. Before submitting your code for review, you can run clippy with our configuration:</p>
+<pre><code class="hljs">libra$ ./scripts/clippy.sh
+</code></pre>
+<p>In general, we follow the recommendations from <a href="https://rust-lang-nursery.github.io/api-guidelines/about.html">rust-lang-nursery</a>. The remainder of this guide provides detailed guidelines on specific topics, to achieve uniformity of the codebase.</p>
+<h2><a class="anchor" aria-hidden="true" id="code-documentation"></a><a href="#code-documentation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code Documentation</h2>
+<p>Any public fields, functions, and methods should be documented with <a href="https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html#making-useful-documentation-comments">Rustdoc</a>. Follow the conventions described below for modules, structs, enums, and functions. The content on the <em>[single line]</em> shown in the following example is used as a preview in the generated rust documentation. Refer to the 'Structs' and 'Enums' sections in the <a href="https://doc.rust-lang.org/std/collections/index.html">collections</a> Rustdoc, for examples.</p>
+<pre><code class="hljs css language-rust"><span class="hljs-comment">/// [Single line] One line summary description</span>
+<span class="hljs-comment">///</span>
+<span class="hljs-comment">/// [Longer description] Multiple lines, inline code </span>
+<span class="hljs-comment">/// examples, invariants, purpose, usage, etc. </span>
+[Attributes] If attributes exist, add after Rustdoc
+</code></pre>
+<p>Here is an example:</p>
+<pre><code class="hljs css language-rust"><span class="hljs-comment">/// Represents (x, y) of a 2-dimensional grid</span>
+<span class="hljs-comment">///</span>
+<span class="hljs-comment">/// A line is defined by 2 instances.</span>
+<span class="hljs-comment">/// A plane is defined by 3 instances.</span>
+<span class="hljs-meta">#[repr(C)]</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Point</span></span> {
+    x: <span class="hljs-built_in">i32</span>,
+    y: <span class="hljs-built_in">i32</span>,
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="constants-and-fields"></a><a href="#constants-and-fields" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Constants and Fields</h3>
+<p>Describe the purpose and definition of the constants and fields in the code.</p>
+<h3><a class="anchor" aria-hidden="true" id="functions-and-methods"></a><a href="#functions-and-methods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Functions and Methods</h3>
+<p>Document the following for each function:</p>
+<ul>
+<li>The action the method performs — “This method <em>adds</em> a new transaction to the mempool.” Use <em>active voice</em> and <em>present tense</em> (i.e., adds/creates/checks/updates/deletes).</li>
+<li>Describe how and why to use this method.</li>
+<li>Any condition that must be met <em>before</em> calling the method.</li>
+<li>State conditions under which the method will <code>panic!()</code> or returns an <code>Error</code></li>
+<li>Provide a brief description of return values.</li>
+<li>Clearly state any special behavior that is not obvious in the code itself.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="readmemd-for-top-level-directories-and-other-major-components"></a><a href="#readmemd-for-top-level-directories-and-other-major-components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>README.md for Top-Level Directories and Other Major Components</h3>
+<p>Each major component of the system needs to have a <code>README.md</code> file. Major components are:</p>
+<ul>
+<li>Top-level directories (e.g., <code>libra/network</code>, <code>libra/language</code>).</li>
+<li>The most important crates in the system (e.g., <code>vm_runtime</code>).</li>
+</ul>
+<p>Thd README.md should contain:</p>
+<ul>
+<li>The conceptual documentation of the component.</li>
+<li>A link to external API documentation for the component.</li>
+</ul>
+<p>You can refer to this sample README <code>libra/network/README.md</code> which describes the network crate.</p>
+<p>Here is a template for a README.md:</p>
+<pre><code class="hljs css language-markdown"><span class="hljs-section"># Component Name</span>
+
+[Summary line: Start with one sentence about this component.]
+
+<span class="hljs-section">## Overview</span>
+<span class="hljs-bullet">
+* </span>Describe the purpose of this component and how the code in this directory works.
+<span class="hljs-bullet">* </span>Describe the interaction of code in this directory with other components.
+<span class="hljs-bullet">* </span>Describe the security model and assumptions about the crates in this directory. 
+
+<span class="hljs-section">## Implementation Details</span>
+<span class="hljs-bullet">
+* </span>Describe how the component is modeled. For example, why is the code organized the way it is?
+<span class="hljs-bullet">* </span>Other relevant implementation details.
+
+<span class="hljs-section">## API Documentation</span>
+
+For the external API of this crate refer to the API documentation.
+
+For a top-level directory, link to the most important APIs within. 
+
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="code-suggestions"></a><a href="#code-suggestions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code Suggestions</h2>
+<p>In the following sections we have suggested some best practices for a uniform codebase. We will investigate and identify the practices that can be enforced using Clippy. This information will evolve and improve over time.</p>
+<h3><a class="anchor" aria-hidden="true" id="attributes"></a><a href="#attributes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Attributes</h3>
+<p>Use appropriate attributes for handling dead code:</p>
+<pre><code class="hljs css language-rust"><span class="hljs-comment">// For code that is intended for production usage in the future</span>
+<span class="hljs-meta">#[allow(dead_code)]</span>
+<span class="hljs-comment">// For code that is only intended for testing and </span>
+<span class="hljs-comment">// has no intended production use</span>
+<span class="hljs-meta">#[cfg(test)]</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="avoid-deref-polymorphism"></a><a href="#avoid-deref-polymorphism" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Avoid Deref Polymorphism</h3>
+<p>Don't abuse the Deref trait to emulate inheritance between structs, and reuse methods. For more information, read <a href="https://github.com/rust-unofficial/patterns/blob/master/anti_patterns/deref.md">here</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="comments"></a><a href="#comments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Comments</h3>
+<p>We recommend that you use  <code>//</code> and <code>///</code> comments rather than block comments <code>/* ... */</code> for uniformity and easier grepping.</p>
+<h3><a class="anchor" aria-hidden="true" id="cloning"></a><a href="#cloning" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cloning</h3>
+<p>If <code>x</code> is reference counted, prefer <a href="https://doc.rust-lang.org/std/sync/struct.Arc.html"><code>Arc::clone(x)</code></a> over <code>x.clone().</code>Arc::clone(x) explicitly indicates that we are cloning <code>x</code>. This avoids confusion about whether we are performing an expensive clone of a <code>struct</code>, <code>enum,</code> or other type, or just a cheap reference copy.</p>
+<p>Also, if you are passing around <a href="https://doc.rust-lang.org/std/sync/struct.Arc.html"><code>Arc&lt;T&gt;</code></a> types, consider using a newtype wrapper:</p>
+<pre><code class="hljs css language-rust"><span class="hljs-meta">#[derive(Clone, Debug)]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Foo</span></span>(Arc&lt;FooInner&gt;);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="concurrent-types"></a><a href="#concurrent-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Concurrent Types</h3>
+<p>Concurrent types such as <a href="https://docs.rs/crate/chashmap"><code>CHashMap</code></a>, <a href="https://doc.rust-lang.org/std/sync/atomic/struct.AtomicUsize.html"><code>AtomicUsize</code></a>, etc. have an immutable borrow on self, i.e. <code>fn foo_mut(&amp;self,...),</code> to support concurrent access on interior mutating methods. Good practices (such as those in the examples mentioned) avoid exposing synchronization primitives externally (e.g. <code>Mutex</code>, <code>RwLock</code>) and document the method semantics and invariants clearly.</p>
+<p><strong>When to use channels versus concurrent types?</strong></p>
+<p>Here are some high-level suggestions:</p>
+<ul>
+<li><p>Channels are for ownership transfer, decoupling of types, and coarse grained messages. They fit well for transferring ownership of data, distributing units of work, and communicating async results. Furthermore, they help break circular dependencies (e.g. <code>struct Foo</code> contains an <code>Arc&lt;Bar&gt;</code> and <code>struct Bar</code> contains an <code>Arc&lt;Foo&gt;</code> that leads to complex initialization).</p></li>
+<li><p>Concurrent types (such as <a href="https://docs.rs/crate/chashmap"><code>CHashMap</code></a> or structs that have interior mutability building on <a href="https://doc.rust-lang.org/std/sync/struct.Mutex.html"><code>Mutex</code></a>, <a href="https://doc.rust-lang.org/std/sync/struct.RwLock.html"><code>RwLock</code></a>, etc.) are better suited for caches and states.</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="error-handling"></a><a href="#error-handling" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Error Handling</h3>
+<p>Error handling suggestions follow the <a href="https://doc.rust-lang.org/book/ch09-00-error-handling.html">Rust book guidance</a>. Rust groups errors into two major categories: recoverable and unrecoverable errors. Recoverable errors should be handled with <a href="https://doc.rust-lang.org/std/result/">Result</a>.  For our suggestions on unrecoverable errors, see below:</p>
+<p><strong>Panic</strong></p>
+<ul>
+<li><code>panic!()</code> - Runtime panic! should only be used when the resulting state cannot be processed going forward. It should not be used for any recoverable errors.</li>
+<li><code>unwrap()</code> - Unwrap should only be used for mutexes (e.g. <code>lock().unwrap()</code>) and test code. For all other use cases, prefer <code>expect()</code>. The only exception is if the error message is custom-generated, in this case use <code>.unwrap_or_else(|| panic!(&quot;error: {}&quot;, foo))</code></li>
+<li><code>expect()</code> - Expect should be invoked when a system invariant is expected to be preserved. expect() is preferred over unwrap() and it should have a detailed error message on failure in most cases.</li>
+<li><code>assert!()</code> - This macro is kept in both debug/release and should be used to protect invariants of the system as necessary</li>
+<li><code>unreachable!()</code> - This macro will panic on code that should not be reached (violating an invariant), and it can be used where appropriate.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="generics"></a><a href="#generics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Generics</h3>
+<p>Generics allow dynamic behavior (similar to <a href="https://doc.rust-lang.org/book/ch10-02-traits.html"><code>trait</code></a> methods) with static dispatch. As the number of generic type parameters increase, the difficulty of using the type/method also increases (e.g. you have to consider the combination of trait bounds required for this type, duplicate trait bounds on related types, etc.). To avoid this complexity, we generally try to avoid using a large number of generic type parameters. We have found that converting code with a large number of generic objects to trait objects with dynamic dispatch often simplifies our code.</p>
+<h3><a class="anchor" aria-hidden="true" id="getters-and-setters"></a><a href="#getters-and-setters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getters and Setters</h3>
+<p>Exclude test code and set field visibility to private as much as possible. Private fields allow constructors to enforce internal invariants. Implement getters for data that consumers may need, but avoid setters unless mutable state is necessary.</p>
+<p>Public fields are most appropriate for <a href="https://doc.rust-lang.org/book/ch05-00-structs.html"><code>struct</code></a> types in the C spirit: compound, passive data structures without internal invariants.  Naming suggestions follow the guidance <a href="https://rust-lang-nursery.github.io/api-guidelines/naming.html#getter-names-follow-rust-convention-c-getter">here</a> as shown below.</p>
+<pre><code class="hljs css language-rust"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Foo</span></span> {
+    size: <span class="hljs-built_in">usize</span>,
+    key_to_value: HashMap&lt;<span class="hljs-built_in">u32</span>, <span class="hljs-built_in">u32</span>&gt;
+}
+
+<span class="hljs-keyword">impl</span> Foo {
+    <span class="hljs-comment">/// Return a copy when inexpensive</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">size</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; <span class="hljs-built_in">usize</span> {
+        <span class="hljs-keyword">self</span>.size
+    }
+
+    <span class="hljs-comment">/// Borrow for expensive copies</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">key_to_value</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; &amp;HashMap&lt;<span class="hljs-built_in">u32</span>, <span class="hljs-built_in">u32</span>&gt; {
+        &amp;<span class="hljs-keyword">self</span>.key_to_value
+    }
+
+    <span class="hljs-comment">/// Setter follows set_xxx pattern</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">set_foo</span></span>(&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>, size: <span class="hljs-built_in">usize</span>){
+        <span class="hljs-keyword">self</span>.size = size;
+    }
+
+    <span class="hljs-comment">/// For a more complex getter, using get_XXX is acceptable </span>
+    <span class="hljs-comment">/// (similar to HashMap) with well-defined and </span>
+    <span class="hljs-comment">/// commented semantics</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">get_value</span></span>(&amp;<span class="hljs-keyword">self</span>, key: <span class="hljs-built_in">u32</span>) -&gt; <span class="hljs-built_in">Option</span>&lt;&amp;<span class="hljs-built_in">u32</span>&gt; {
+        <span class="hljs-keyword">self</span>.key_to_value.get(&amp;key)
+    }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="logging"></a><a href="#logging" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging</h3>
+<p>We currently use <a href="https://docs.rs/slog/">slog</a> for logging.</p>
+<ul>
+<li><a href="https://docs.rs/slog/2.4.1/slog/macro.error.html">error!</a> - Error-level messages have the highest urgency in <a href="https://docs.rs/slog/">slog</a>. They are used for unexpected errors (e.g. exceeded the maximum number of retries to complete an RPC or inability to store data to local storage).</li>
+<li><a href="https://docs.rs/slog/2.4.1/slog/macro.warn.html">warn!</a> - Warn-level messages help notify admins about automatically handled issues (e.g. retrying a failed network connection or receiving the same message multiple times, etc.).</li>
+<li><a href="https://docs.rs/slog/2.4.1/slog/macro.info.html">info!</a> - Info-level messages are well suited for &quot;one time&quot; events (such as logging state on one-time startup and shutdown) or periodic events that are not frequently occurring - e.g. changing the validator set every day.</li>
+<li><a href="https://docs.rs/slog/2.4.1/slog/macro.debug.html">debug!</a> - Debug-level messages are frequently occurring (i.e. potentially &gt; 1 message per second) and are not typically expected to be enabled in production.</li>
+<li><a href="https://docs.rs/slog/2.4.1/slog/macro.trace.html">trace!</a> - Trace-level logging is typically only used for function entry/exit.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="testing"></a><a href="#testing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Testing</h3>
+<h4><a class="anchor" aria-hidden="true" id="unit-tests"></a><a href="#unit-tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unit tests</h4>
+<p>Ideally, all code will be unit tested. Unit test files should exist in the same directory as <code>mod.rs,</code> and their file names should end in <code>_test.rs</code>. A module to be tested should have the test modules annotated with <code>#[cfg(test)]</code>. For example, if in a crate there is a db module, the expected directory structure is as follows:</p>
+<pre><code class="hljs css language-plaintext">src/db                        -&gt; directory of db module
+src/db/mod.rs                 -&gt; code of db module
+src/db/read_test.rs           -&gt; db test 1
+src/db/write_test.rs          -&gt; db test 2
+src/db/access/mod.rs          -&gt; directory of access submodule
+src/db/access/access_test.rs  -&gt; test of access submodule
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="property-based-tests"></a><a href="#property-based-tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Property-based tests</h4>
+<p>Libra contains <a href="https://blog.jessitron.com/2013/04/25/property-based-testing-what-is-it/">property-based tests</a> written in Rust using the <a href="https://github.com/AltSysrq/proptest"><code>proptest</code> framework</a>. Property-based tests generate random test cases and assert that invariants, also called <em>properties</em>, hold about the code under test.</p>
+<p>Some examples of properties tested in Libra Core:</p>
+<ul>
+<li>Every serializer and deserializer pair is tested for correctness, with random inputs to the serializer. A pair of functions that are inverse of each other can be tested this way.</li>
+<li>The results of executing common transactions through the VM are tested using randomly generated scenarios, and a simplified model as an <em>oracle</em>.</li>
+</ul>
+<p>A tutorial for <code>proptest</code> can be found in the <a href="https://altsysrq.github.io/proptest-book/proptest/getting-started.html"><code>proptest</code> book</a>. For further information on property testing refer to:</p>
+<ul>
+<li><a href="https://hypothesis.works/articles/what-is-property-based-testing/">What is Property Based Testing?</a> (includes a comparison with fuzzing)</li>
+<li><a href="https://fsharpforfunandprofit.com/posts/property-based-testing/">An introduction to property-based testing</a></li>
+<li><a href="https://fsharpforfunandprofit.com/posts/property-based-testing-2/">Choosing properties for property-based testing</a></li>
+</ul>
+<p><strong>Fuzzing</strong></p>
+<p>Libra contains harnesses for fuzzing crash-prone code like deserializers, which use <a href="https://llvm.org/docs/LibFuzzer.html"><code>libFuzzer</code></a> through <a href="https://rust-fuzz.github.io/book/cargo-fuzz.html"><code>cargo fuzz</code></a>. For more, see the <code>testsuite/libra_fuzzer</code> directory.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/community/contributing"><span class="arrow-prev">← </span><span>Contribution Guide</span></a><a class="docs-next button" href="/docs/docs/policies/security"><span>Reporting Vulnerabilities</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#code-formatting">Code Formatting</a></li><li><a href="#code-analysis">Code Analysis</a></li><li><a href="#code-documentation">Code Documentation</a><ul class="toc-headings"><li><a href="#constants-and-fields">Constants and Fields</a></li><li><a href="#functions-and-methods">Functions and Methods</a></li><li><a href="#readmemd-for-top-level-directories-and-other-major-components">README.md for Top-Level Directories and Other Major Components</a></li></ul></li><li><a href="#code-suggestions">Code Suggestions</a><ul class="toc-headings"><li><a href="#attributes">Attributes</a></li><li><a href="#avoid-deref-polymorphism">Avoid Deref Polymorphism</a></li><li><a href="#comments">Comments</a></li><li><a href="#cloning">Cloning</a></li><li><a href="#concurrent-types">Concurrent Types</a></li><li><a href="#error-handling">Error Handling</a></li><li><a href="#generics">Generics</a></li><li><a href="#getters-and-setters">Getters and Setters</a></li><li><a href="#logging">Logging</a></li><li><a href="#testing">Testing</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/libra-logomark-white.png" alt="Libra"/></a><div class="footerSection"><h5>Learn About Libra</h5><a href="/docs/docs/welcome-to-libra">Welcome to Libra</a><a href="/docs/docs/libra-protocol">Libra Protocol</a><a href="/docs/docs/the-libra-blockchain-paper">Libra Blockchain</a><a href="/docs/docs/life-of-a-transaction">Life of a Transaction</a><p></p><h5>Try Libra Core </h5><a href="/docs/docs/my-first-transaction">My First Transaction</a><a href="/docs/docs/move-overview">Getting Started With Move</a></div><div class="footerSection"><h5>Policies</h5><a href="/docs/docs/policies/privacy-policy">Privacy Policy</a><a href="/docs/docs/policies/terms-of-use">Terms of Use</a><a href="/docs/docs/policies/cookies-policy">Cookies Policy</a><a href="/docs/docs/policies/code-of-conduct">Code of Conduct</a></div><div class="footerSection"><h5>Social</h5><div class="social"><a class="github-button" href="https://github.com/libra/libra" data-count-href="https://github.com/libra/libra/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star Libra on GitHub">libra</a></div><div class="social"><a href="https://twitter.com/libradev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @libradev</a><script async="" src="/docs//js/twitter-widgets.js" charSet="utf-8"></script></div></div></section><section class="copyright"> © Libra Association</section><aside id="cookie-banner"><div class="close" id="cookie-banner-close"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="17" x2="17" y2="1" stroke="#fff" stroke-width="2"></line><line x1="1" y1="1" x2="17" y2="17" stroke="#fff" stroke-width="2"></line></svg></div><div class="wrapper"><p>To help us provide relevant content, analyze our traffic, and provide a variety of features, we use cookies. By clicking on or navigating the site, you agree to allow us to collect information on and off the Libra Website through cookies. To learn more, view our Cookie Policy:</p><div class="buttonWrapper"><a class="button" href="docs/policies/cookies-policy" target="_blank">Cookies Policy</a></div></div></aside></footer></div></body></html>

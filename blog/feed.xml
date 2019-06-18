@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Libra Blog</title>
+        <link>https://developers.libra.org/docs/blog</link>
+        <description>The best place to stay up-to-date with the latest Libra news and events.</description>
+        <lastBuildDate>Tue, 18 Jun 2019 06:00:00 GMT</lastBuildDate>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <generator>Feed for Node.js</generator>
+        <image>
+            <title>Libra Blog</title>
+            <url>https://developers.libra.org/docs/img/libra-nav-logo.png</url>
+            <link>https://developers.libra.org/docs/blog</link>
+        </image>
+        <item>
+            <title><![CDATA[Libra: The Path Forward]]></title>
+            <link>https://developers.libra.org/docs/blog/2019/06/18/the-path-forward.html</link>
+            <guid>https://developers.libra.org/docs/blog/2019/06/18/the-path-forward.html</guid>
+            <pubDate>Tue, 18 Jun 2019 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Today we are announcing the <strong>Libra testnet</strong>, a live demonstration of an early prototype of the technology behind <a href="https://libra.org/">Libra</a> — a simple global currency and financial infrastructure that can empower billions of people.</p> <p><strong>Libra Core</strong> is the open-source implementa...</p>]]></description>
+        </item>
+    </channel>
+</rss>
