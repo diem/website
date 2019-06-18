@@ -20,8 +20,6 @@ Read our [Contrbuting guide](https://developers.libra.org/docs/community/contrib
 
 ## Getting Started
 
-
-
 ### Learn About Libra
 * [Welcome](https://developers.libra.org/docs/welcome-to-libra)
 * [Libra Protocol: Key Concepts](https://developers.libra.org/docs/libra-protocol)
