@@ -491,7 +491,7 @@ Latest account state is:
 
 ## Run a Local Validator Node
 
-To start a validator node locally on your computer and create your own local blockchain network (not connected to the Libra testnet), change to the root directory of the Libra Core repository, and run `libra_swarm` as shown below:
+To start a validator node locally on your computer and create your own local blockchain network (not connected to the Libra testnet), ensure that you have run the build script as described in [Setup Libra Core](#setup-libra-core), change to the root directory of the Libra Core repository, and run `libra_swarm` as shown below:
 
 ```bash
 $ cd ~/libra
