@@ -1,0 +1,284 @@
+/*
+ * Copyright (c) The Libra Core Contributors
+ * SPDX-License-Identifier: CC-BY-4.0
+ */
+
+html body {
+  font-family: 'Helvetica', sans-serif;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+small.figure {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 10pt;
+  margin: 0 auto;
+}
+
+body { padding: 0px !important; }
+nav {
+  border: 0px !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.fixedHeaderContainer {
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.fixedHeaderContainer header .headerTitleWithLogo {
+  display: none;
+}
+
+.navigationSlider .slidingNav ul {
+  background: #fff;
+}
+
+.navigationSlider .slidingNav ul li a {
+  color: #39298C;
+  background-color: #fff;
+  transition: all 0.2s;
+}
+
+.navigationSlider .slidingNav ul li a:hover,
+.navigationSlider .slidingNav ul li a:focus {
+  color: #39298C;
+  background-color: inherit;
+  text-decoration: underline;
+}
+
+.navigationSlider .slidingNav ul li.siteNavItemActive > a,
+.navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+  color: #39298C;
+  background-color: inherit;
+  text-decoration: underline;
+}
+
+.homeContainer,
+.formHero {
+  background-color: #1E4855;
+  background-image: url('../img/hero.jpg');
+  background-size: cover;
+  padding: 4rem 0;
+}
+
+.splashLogo {
+  display: block;
+  margin: 0 auto;
+  height: 100px;
+  width: 275px;
+}
+
+.projectTitle {
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.homeContainer .projectTitle > small {
+  line-height: 1.3em;
+}
+
+.landingPage {
+  padding: 0px;
+}
+
+div.productShowcaseSection {
+  color: #24292e;
+}
+
+.productShowcaseSection > h2 {
+  color: #000;
+  font-size: 2rem;
+  font-weight: 360;
+  margin: 0px;
+  padding: 0px;
+}
+
+.productShowcaseSection h4 {
+  font-size: 1.5rem;
+  color: #39298C !important;
+  padding-top: 0em;
+  margin-top: 0em;
+}
+
+.productShowcaseSection p {
+  font-weight: 360;
+}
+
+.productShowcaseSection div.container {
+  padding: 0px 0px;
+}
+
+.productShowcaseSection div.blockImage {
+  height: 80px;
+}
+
+.productShowcaseSection li {
+  padding: 10px 0;
+}
+
+.productShowcaseSection pre {
+  margin: 10px 0;
+  background: #F3F4FB;
+  border: 1px solid #E1E4E7;
+  border-radius: 5px;
+}
+
+.productShowcaseSection code {
+  background: #F3F4FB;
+  padding: 1em;
+}
+
+.container .wrapper .alignCenter h2 {
+  color: #222222;
+}
+
+div#quickstart {
+  background: #fff;
+}
+
+div#quickstart ol {
+  margin-bottom: 0px;
+}
+
+.nav-footer {
+  background-color: #15112C;
+}
+
+.nav-footer .sitemap a {
+  color: #efefef;
+}
+
+.nav-footer .sitemap a:hover {
+  color: #19CDA6;
+}
+
+a,
+p a {
+  color: #39298C;
+  transition: all 0.2s;
+}
+
+a:hover,
+p a:hover {
+  color: #19CDA6;
+}
+
+sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+/* Style docs */
+.toc .toggleNav .navGroup .navGroupCategoryTitle {
+  color: #222222;
+}
+
+.toc .toggleNav .navGroup .navGroupSubcategoryTitle {
+  color: #24292e;
+}
+
+.onPageNav a {
+  color: #24292e;
+}
+
+.toc .toggleNav ul li a {
+  color: #24292e;
+}
+
+.toc .toggleNav ul li a:hover {
+  color: #39298C;
+}
+
+.toc .toggleNav .navGroup .navListItemActive a {
+  color: #39298C;
+}
+
+.docsNavContainer .toc .navBreadcrumb {
+  background-color: #E1E4E7;
+}
+
+.mainContainer {
+  padding-top: 3rem;
+}
+
+.mainContainer .wrapper .post .postHeaderTitle {
+  color: #222222;
+  font-size: 1.8rem;
+}
+
+.mainContainer .wrapper .post h1,
+.mainContainer .wrapper .post h2,
+.mainContainer .wrapper .post h3 {
+  color: #222222;
+}
+
+.mainContainer .wrapper .post {
+  color: #24292e;
+}
+
+.mainContainer .wrapper .post strong {
+  color: #222222;
+}
+
+.wrapper {
+  max-width: 1400px;
+}
+
+h2, h3:not(.impl):not(.method):not(.type):not(.tymethod), h4:not(.method):not(.type):not(.tymethod):not(.associatedconstant) {
+  border-bottom: 0px !important;
+}
+
+article p img.download {
+  margin: 0;
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (min-width: 1024px) {
+  .navigationSlider .slidingNav ul li a {
+    padding: 0.5em 1em;
+    font-weight: normal;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}
+
+
+blockquote {
+  /* FIG slate color */
+  background-color: #F8FAFB;
+  border-left: 8px solid #A8BBC3;
+  padding: 15px 30px 15px 15px;
+  color: #24292e;
+}
+
+blockquote.block_note {
+  /* FIG lemon color */
+  background-color: #FFFBF0;
+  border-left: 8px solid #F5C33B;
+  padding: 15px 30px 15px 15px;
+  color:#24292e;
+}
+
+.nav-home img {
+  width:57px;
+  height:57px;
+  /* override max width so logo isn't squashed */
+  max-width:none;
+}
