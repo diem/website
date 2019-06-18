@@ -207,7 +207,7 @@ fbq.pendingConfigs=["global_config"];
 
           function z(a, b, c) {
             // SERVEREXTRACT
-            h.loadJSFile("/docs/js/fbconfig.js") }
+            h.loadJSFile("/js/fbconfig.js") }
             j = function() {
             function e(a, b) { var g = this;
               l(this, e);

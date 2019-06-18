@@ -5,7 +5,7 @@
 
 const React = require('react');
 
-const DisableAdblock = require(`${process.cwd()}/core/ContactForm/disable-adblock.js`);
+const EnableJavaScript = require(`${process.cwd()}/core/ContactForm/enable-javascript.js`);
 const FieldSet = require(`${process.cwd()}/core/ContactForm/fieldset.js`);
 const FormHeader = require(`${process.cwd()}/core/ContactForm/form-header.js`);
 
@@ -58,7 +58,7 @@ const FormContainer = (props) => {
 
   return (
     <div className="mainContainer formPage">
-      <DisableAdblock baseUrl={baseUrl} />
+      <EnableJavaScript baseUrl={baseUrl} />
       <FormHeader title={title} subtitle={subtitle} />
       <div className="wrapper">
         <img {...getImageProps('formIcon', 'form-icon.svg')} />

@@ -37,7 +37,7 @@ function SocialFooter(props) {
         </a>
         <script
           async
-          src={`${baseUrl}/js/twitter-widgets.js`}
+          src={`${baseUrl}js/twitter-widgets.js`}
           charSet={"utf-8"}
         />
       </div>

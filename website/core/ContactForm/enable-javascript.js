@@ -6,14 +6,14 @@
 const React = require('react');
 
 
-const DisableAdblock = ({ baseUrl }) => {
+const EnableJavaScript = ({ baseUrl }) => {
   return (
     <div id="disable-ad-block" className="modal">
       <div className="disable-adblock">
         <div className="inner">
           <img src={`${baseUrl}img/ab-icon@2x.svg`} alt="Adblock icon" />
-          <h2>Please disable your ad blocker!</h2>
-          <p>We get it... but it's necessary to submit the form and get in on all the juicy details.</p>
+          <h2>Please enable JavaScript!</h2>
+          <p>We use JavaScript to validate that you submitted a correct email address and URL.</p>
           <div className="buttonWrapper">
             <a id="disable-adblock-refresh" className="button secondary" href="#">
               Refresh
@@ -25,4 +25,4 @@ const DisableAdblock = ({ baseUrl }) => {
   );
 };
 
-module.exports = DisableAdblock;
+module.exports = EnableJavaScript;
