@@ -25,8 +25,8 @@ jobs:
             git config --global user.email "libra-doc-bot@users.noreply.github.com"
             git config --global user.name "Libra Website Deployment Script"
             echo "machine github.com login libra-doc-bot password $PUBLISH_WEBSITE_TOKEN" > ~/.netrc
-            cd website && yarn install && GIT_USER=libra-doc-bot yarn build
-            # cd website && yarn install && GIT_USER=libra-doc-bot yarn run publish-gh-pages
+            # cd website && yarn install && GIT_USER=libra-doc-bot yarn build
+            cd website && yarn install && GIT_USER=libra-doc-bot yarn run publish-gh-pages
 
 workflows:
   version: 2
