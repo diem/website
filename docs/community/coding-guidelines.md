@@ -72,7 +72,7 @@ Each major component of the system needs to have a `README.md` file. Major compo
 * Top-level directories (e.g., `libra/network`, `libra/language`).
 * The most important crates in the system (e.g., `vm_runtime`).
 
-Thd README.md should contain:
+The README.md should contain:
 
  * The conceptual documentation of the component.
  * A link to external API documentation for the component.
