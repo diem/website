@@ -207,7 +207,7 @@ fbq.pendingConfigs=["global_config"];
 
           function z(a, b, c) {
             // SERVEREXTRACT
-            h.loadJSFile("/docs/js/fbconfig.js") }
+            h.loadJSFile("/js/fbconfig.js") }
             j = function() {
             function e(a, b) { var g = this;
               l(this, e);
@@ -554,7 +554,7 @@ fbq.pendingConfigs=["global_config"];
                   return !0
                 }
                 // SERVEREXTRACT
-                a = "/docs/js/fbinferred.js"
+                a = "/js/fbinferred.js"
                 // a = d.CONFIG.CDN_BASE_URL + "signals/plugins/" + a + ".js?v=" + f.version;
                 if (!this._loadedPlugins[b]) {
                   this._lock.lockPlugin(b);
