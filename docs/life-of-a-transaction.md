@@ -42,6 +42,11 @@ In this section, we will describe the lifecycle of transaction T~5~, from being 
 
 Where relevant, and following a numbered step in the lifecycle, we have provided a link to the corresponding inter-component interactions of the validator node. After you are familiar with all the steps in the lifecycle of the transaction, you may want to refer to the information on the corresponding inter-component interactions for each step.
 
+<blockquote class="block_note">
+
+**Note:** The arrows in the following graphics originate on the component initiating an interaction/action and terminate on the component on which the action is being performed. The arrows _do not represent_ data or information read, written, or returned.
+</blockquote>
+
 ![Figure 1.1 Lifecycle of a Transaction](assets/illustrations/validator-sequence.svg)
 <small class="figure">Figure 1.1 Lifecycle of a Transaction</small>
 
@@ -71,7 +76,7 @@ Where relevant, and following a numbered step in the lifecycle, we have provided
 
 **9** &mdash; The execution component manages the execution of transactions in the virtual machine (VM). Note that this execution happens speculatively before the transactions in the block have been agreed upon. (Execution → VM [EX.2](#execution-vm-ex2), [VM.3](#execution-vm-vm3))
 
-**10** &mdash; After executing the transactions in the block, the execution component appends the transactions in the block (including T~5~) to the [Merkle accumulator](#merkle-accumulators) (of the ledger history). This is an in-memory/temporary version of the Merkle accumulator. The (proposed/speculative) result of executing these transactions is returned to the consensus component. (Consensus → Execution [CO.3](#consensus-execution-consensus-other-validators-co3), [EX.1](#consensus-execution-ex1))
+**10** &mdash; After executing the transactions in the block, the execution component appends the transactions in the block (including T~5~) to the [Merkle accumulator](#merkle-accumulators) (of the ledger history). This is an in-memory/temporary version of the Merkle accumulator. The (proposed/speculative) result of executing these transactions is returned to the consensus component. (Consensus → Execution [CO.3](#consensus-execution-consensus-other-validators-co3), [EX.1](#consensus-execution-ex1)). The arrow from "consensus" to "execution" indicates that the request to execute transactions was made by the consensus component. (For consistent use of arrows across this document, we are not using arrows to represent data exchanged).
 
 **11** &mdash; V~1~ (the consensus leader) attempts to reach consensus on the block's execution result with other validators participating in the consensus. (Consensus → Other Validators [CO.3](#consensus-execution-consensus-other-validators-co3))
 
@@ -100,11 +105,6 @@ For our narrative, we will assume that a client submits a  transaction T~N~ to a
 * [Storage](#storage)
 
 At the end of each section, we provide the link to the corresponding "README" of [Libra Core](libra-core-overview.md).
-
-<blockquote class="block_note">
-
-**Note:** The arrows in the following graphics originate on the component initiating an interaction/action and terminate on the component on which the action is being performed. The arrows _do not represent_ data or information exchanged (read, written, or returned)
-</blockquote>
 
 ## Admission Control (AC)
 
