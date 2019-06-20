@@ -44,7 +44,7 @@ Where relevant, and following a numbered step in the lifecycle, we have provided
 
 <blockquote class="block_note">
 
-**Note:** The arrows in the following graphics originate on the component initiating an interaction/action and terminate on the component on which the action is being performed. The arrows _do not represent_ data or information read, written, or returned.
+**Note:** The arrows in all the graphics in this document originate on the component initiating an interaction/action and terminate on the component on which the action is being performed. The arrows **do not represent** data or information read, written, or returned.
 </blockquote>
 
 ![Figure 1.1 Lifecycle of a Transaction](assets/illustrations/validator-sequence.svg)
