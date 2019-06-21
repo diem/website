@@ -185,7 +185,7 @@ then there is a guarantee that T_N will never be included in the blockchain.
 
 * **HotStuff** is a recent proposal for a [BFT](#byzantine-fault-tolerance-bft) consensus protocol. 
 * LibraBFT, Libra's consensus algorithm, is based on HotStuff.
-* It simplifies reasoning about safety and addresses some performance limitations of previous consensus protocols.
+* It simplifies the reasoning about safety, and it addresses some performance limitations of previous consensus protocols.
 
 ## L
 
