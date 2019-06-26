@@ -26,6 +26,7 @@ const siteConfig = {
   headerIcon: 'img/libra-nav-logo.png',
   footerIcon: 'img/libra-logomark-white.png',
   favicon: 'img/libra.ico',
+  cname: 'developers.libra.org',
 
   // used for publishing and more
   organizationName: 'libra',
