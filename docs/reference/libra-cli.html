@@ -91,7 +91,7 @@
 <p>If you enter only the major command, it will show the help information for that command. Major commands can be any one of the following:</p>
 <hr>
 <h4><a class="anchor" aria-hidden="true" id="account-a-mdash-account-related-operations-subcommands-include"></a><a href="#account-a-mdash-account-related-operations-subcommands-include" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>account | a</code> —  Account related operations. Subcommands include:</h4>
-<p><code>create | c</code> —  Create a random account with private/public key pair. Account information will be held in memory only. The created account will not be saved to chain.</p>
+<p><code>create | c</code> —  Create a random account with private/public key pair. Account information will be held in memory only. The created account will not be saved to the chain.</p>
 <pre><code class="hljs">   Usage:
     create|c
 </code></pre>
@@ -118,13 +118,13 @@
       receiver_account_ref_id | receiver_account_address - The receiver account to mint the coins to.
             If the receiver account does not exist, it will be created first.
             Either receiver_account_address or receiver_account_ref_id (an internal index of
-            the account in the CLI client) can be used to specify receiver account (identical to
+            the account in the CLI client) can be used to specify receiver account (as in
             other commands). If gas is being charged, the account that sent this mint transaction
             (currently preloaded genesis account) pays for the gas.
       number_of_coins - The number of coins to be minted to the receiver account.
 </code></pre>
 <hr>
-<h4><a class="anchor" aria-hidden="true" id="transfer-transferb-t-tb-mdash-transfer-coins-from-account-to-another-suffix-b-is-for-blocking"></a><a href="#transfer-transferb-t-tb-mdash-transfer-coins-from-account-to-another-suffix-b-is-for-blocking" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>transfer | transferb | t | tb</code> — Transfer coins from account to another. Suffix 'b' is for blocking.</h4>
+<h4><a class="anchor" aria-hidden="true" id="transfer-transferb-t-tb-mdash-transfer-coins-from-one-account-to-another-suffix-b-is-for-blocking"></a><a href="#transfer-transferb-t-tb-mdash-transfer-coins-from-one-account-to-another-suffix-b-is-for-blocking" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>transfer | transferb | t | tb</code> — Transfer coins from one account to another. Suffix 'b' is for blocking.</h4>
 <pre><code class="hljs">Usage:
     transfer|transferb|t|tb &lt;sender_account_address&gt;|&lt;sender_account_ref_id&gt; &lt;receiver_account_address&gt;|&lt;receiver_account_ref_id&gt; &lt;number_of_coins&gt; [gas_unit_price (default=0)] [max_gas_amount (default 10000)]
 Arguments:
