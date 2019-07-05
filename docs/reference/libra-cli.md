@@ -56,7 +56,7 @@ If you enter only the major command, it will show the help information for that 
 
  #### `account | a` &mdash;  Account related operations. Subcommands include:
 
-  `create | c` &mdash;  Create a random account with private/public key pair. Account information will be held in memory only. The created account will not be saved to chain.
+  `create | c` &mdash;  Create a random account with private/public key pair. Account information will be held in memory only. The created account will not be saved to the chain.
 
        Usage:
         create|c
@@ -89,14 +89,14 @@ If you enter only the major command, it will show the help information for that 
           receiver_account_ref_id | receiver_account_address - The receiver account to mint the coins to.
                 If the receiver account does not exist, it will be created first.
                 Either receiver_account_address or receiver_account_ref_id (an internal index of
-                the account in the CLI client) can be used to specify receiver account (identical to
+                the account in the CLI client) can be used to specify receiver account (as in
                 other commands). If gas is being charged, the account that sent this mint transaction
                 (currently preloaded genesis account) pays for the gas.
           number_of_coins - The number of coins to be minted to the receiver account.
 
 ---
 
-#### `transfer | transferb | t | tb` &mdash; Transfer coins from account to another. Suffix 'b' is for blocking.
+#### `transfer | transferb | t | tb` &mdash; Transfer coins from one account to another. Suffix 'b' is for blocking.
 
     Usage:
         transfer|transferb|t|tb <sender_account_address>|<sender_account_ref_id> <receiver_account_address>|<receiver_account_ref_id> <number_of_coins> [gas_unit_price (default=0)] [max_gas_amount (default 10000)]
