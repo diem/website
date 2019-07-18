@@ -209,7 +209,7 @@ Bob is going to create an account at address <em>a</em> at some point in the fut
     <span class="hljs-keyword">let</span> t: <span class="hljs-type">R#Self</span>.<span class="hljs-type">T</span>;
 
     <span class="hljs-comment">// Construct or "pack" a new resource of type T. Only procedures of the</span>
-    <span class="hljs-comment">// `EarmarkedCoin` module can create an `EarmarkedCoin.T`.</span>
+    <span class="hljs-comment">// `EarmarkedLibraCoin` module can create an `EarmarkedLibraCoin.T`.</span>
     t = <span class="hljs-type">T</span> {
       coin: <span class="hljs-keyword">move</span>(coin),
       recipient: <span class="hljs-keyword">move</span>(recipient),
@@ -229,7 +229,7 @@ Bob is going to create an account at address <em>a</em> at some point in the fut
     <span class="hljs-keyword">let</span> sender: <span class="hljs-built_in">address</span>;
 
     <span class="hljs-comment">// Remove the earmarked coin resource published under `earmarked_coin_address`.</span>
-    <span class="hljs-comment">// If there is resource of type T published under the address, this will fail.</span>
+    <span class="hljs-comment">// If there is no resource of type T published under the address, this will fail.</span>
     t = <span class="hljs-built_in">move_from</span>&lt;<span class="hljs-type">T</span>&gt;(<span class="hljs-keyword">move</span>(earmarked_coin_address));
 
     t_ref = &amp;t;
@@ -247,8 +247,6 @@ Bob is going to create an account at address <em>a</em> at some point in the fut
   <span class="hljs-comment">// Allow the creator of the earmarked coin to reclaim it.</span>
   <span class="hljs-keyword">public</span> claim_for_creator(): <span class="hljs-type">R#Self</span>.<span class="hljs-type">T</span> {
     <span class="hljs-keyword">let</span> t: <span class="hljs-type">R#Self</span>.<span class="hljs-type">T</span>;
-    <span class="hljs-keyword">let</span> coin: <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span>;
-    <span class="hljs-keyword">let</span> recipient: <span class="hljs-built_in">address</span>;
     <span class="hljs-keyword">let</span> sender: <span class="hljs-built_in">address</span>;
 
     sender = <span class="hljs-built_in">get_txn_sender</span>();

@@ -62,9 +62,9 @@ of the system. Starting from genesis state S<sub>0</sub>, each transaction
 T<sub>i</sub> updates previous state S<sub>i-1</sub> to S<sub>i</sub>. Each
 S<sub>i</sub> is a mapping from accounts (represented by 32-byte addresses) to
 some data associated with each account.</p>
-<p>The execution component takes the totally ordered transactions, computes the
-output for each transaction via the Move virtual machine, applies the output on
-the previous state, and generates the new state. The execution system cooperates
+<p>The execution component takes the ordered transactions, computes the output
+for each transaction via the Move virtual machine, applies the output on the
+previous state, and generates the new state. The execution system cooperates
 with the consensus algorithm — HotStuff, a leader-based algorithm — to
 help it agree on a proposed set of transactions and their execution. Such a
 group of transactions is a block. Unlike in other blockchain systems, blocks
@@ -96,7 +96,7 @@ chain (for example, extending block <code>F</code> with the block <code>G</code>
 chain with a new block, the block should include the correct execution
 results of the transactions in the block as if all its ancestors have been
 committed in the same order. However, all the uncommitted blocks and their
-execution results are held in some temporary location and not visible to
+execution results are held in some temporary location and are not visible to
 external clients.</li>
 <li>Committing a block. As consensus collects more and more votes on blocks, it
 decides to commit a block and all its ancestors according to some specific
@@ -107,20 +107,21 @@ all the conflicting blocks at the same time.</li>
 and <code>commit_block</code> - to support the above operations.</p>
 <h2><a class="anchor" aria-hidden="true" id="implementation-details"></a><a href="#implementation-details" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementation Details</h2>
 <p>The state at each version is represented as a sparse Merkle tree in storage.
-When a transaction modifies an account, the account and the siblings from tree
-root to the account is loaded into memory. For example, if we execute a
-transaction T<sub>i</sub> on top of committed state and it modified account <code>A</code>,
-we will end up having the following tree:</p>
+When a transaction modifies an account, the account and the siblings from the
+root of the Merkle tree to the account are loaded into memory. For example, if
+we execute a transaction T<sub>i</sub> on top of the committed state and the
+transaction modified account <code>A</code>, we will end up having the following tree:</p>
 <pre><code class="hljs">             S_i
             /   \
            o     y
           / \
          x   A
 </code></pre>
-<p>where <code>A</code> has the new state of the account, and <code>y</code> and <code>x</code> are the siblings on
-the path from the root to <code>A</code> in the tree.  If the next transaction T<sub>i+1</sub>
-modified another account <code>B</code> that lives in the subtree at <code>y</code>, a new tree will
-be constructed, and the structure will look like the following:</p>
+<p>In the tree shown above, <code>A</code> has the new state of the account, and <code>y</code> and <code>x</code>
+are the siblings on the path from the root of the tree to <code>A</code>. If the next
+transaction T<sub>i+1</sub> modified another account <code>B</code> that lives in the
+subtree at <code>y</code>, a new tree will be constructed, and the structure will look
+like the following:</p>
 <pre><code class="hljs">                S_i        S_{i+1}
                /   \      /       \
               /     y   /          \
@@ -134,7 +135,7 @@ be constructed, and the structure will look like the following:</p>
 the output of uncommitted transactions. For example, if we want to execute
 another transaction T<sub>i+1</sub><sup>'</sup>, we can use the tree
 S<sub>i</sub>. If we look for account A, we can find its new value in the tree.
-Otherwise, we know the account does not exist in the tree, and we can fall back to
+Otherwise, we know the account does not exist in the tree, and we can fall back on
 storage. As another example, if we want to execute transaction T<sub>i+2</sub>,
 we can use the tree S<sub>i+1</sub> that has updated values for both account <code>A</code>
 and <code>B</code>.</p>
