@@ -155,6 +155,11 @@ div#quickstart ol {
   color: #19CDA6;
 }
 
+.nav-footer h5 {
+  padding-top: 5px;
+  font-size: 13pt;
+}
+
 a,
 p a {
   color: #39298C;

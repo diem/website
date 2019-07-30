@@ -95,6 +95,10 @@ class Footer extends React.Component {
             <a href={this.docUrl('policies/terms-of-use')}>Terms of Use</a>
             <a href={this.docUrl('policies/cookies-policy')}>Cookies Policy</a>
             <a href={this.docUrl('policies/code-of-conduct')}>Code of Conduct</a>
+            <p />
+            <h5>Community</h5>
+            <a href="https://community.libra.org/">Developer Forum</a>
+            <a href="https://developers.libra.org/newsletter_form">Newsletter</a>
           </div>
           <SocialFooter config={this.props.config} />
         </section>
