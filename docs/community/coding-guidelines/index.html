@@ -74,14 +74,14 @@
 [Attributes] If attributes exist, add after Rustdoc
 </code></pre>
 <p>Example below:</p>
-<pre><code class="hljs">/// Represents (x, y) of a 2-dimensional grid
-///
-/// A line is defined by 2 instances.
-/// A plane is defined by 3 instances.
-#[repr(C)]
-struct Point {
-    x: i32,
-    y: i32,
+<pre><code class="hljs css language-rust"><span class="hljs-comment">/// Represents (x, y) of a 2-dimensional grid</span>
+<span class="hljs-comment">///</span>
+<span class="hljs-comment">/// A line is defined by 2 instances.</span>
+<span class="hljs-comment">/// A plane is defined by 3 instances.</span>
+<span class="hljs-meta">#[repr(C)]</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Point</span></span> {
+    x: <span class="hljs-built_in">i32</span>,
+    y: <span class="hljs-built_in">i32</span>,
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="constants-and-fields"></a><a href="#constants-and-fields" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Constants and fields</h3>
@@ -110,37 +110,37 @@ struct Point {
 <li>A link to the master contributing guide for the project.</li>
 </ul>
 <p>A template for readmes:</p>
-<pre><code class="hljs"># Component Name
+<pre><code class="hljs css language-markdown"><span class="hljs-section"># Component Name</span>
 
 [Summary line: Start with one sentence about this component.]
 
-## Overview
-
-* Describe the purpose of this component and how the code in
+<span class="hljs-section">## Overview</span>
+<span class="hljs-bullet">
+* </span>Describe the purpose of this component and how the code in
 this directory works.
-* Describe the interaction of the code in this directory with
+<span class="hljs-bullet">* </span>Describe the interaction of the code in this directory with
 the other components.
-* Describe the security model and assumptions about the crates
+<span class="hljs-bullet">* </span>Describe the security model and assumptions about the crates
 in this directory. Examples of how to describe the security
 assumptions will be added in the future.
 
-## Implementation Details
-
-* Describe how the component is modeled. For example, why is the
+<span class="hljs-section">## Implementation Details</span>
+<span class="hljs-bullet">
+* </span>Describe how the component is modeled. For example, why is the
   code organized the way it is?
-* Other relevant implementation details.
+<span class="hljs-bullet">* </span>Other relevant implementation details.
 
-## API Documentation
+<span class="hljs-section">## API Documentation</span>
 
 For the external API of this crate refer to [Link to rustdoc API].
 
 [For a top-level directory, link to the most important APIs within.]
 
-## Contributing
+<span class="hljs-section">## Contributing</span>
 
 Refer to the Libra Project contributing guide [LINK].
 
-## License
+<span class="hljs-section">## License</span>
 
 Refer to the Libra Project License [LINK].
 </code></pre>
@@ -162,8 +162,8 @@ Refer to the Libra Project License [LINK].
 <h3><a class="anchor" aria-hidden="true" id="cloning"></a><a href="#cloning" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cloning</h3>
 <p>If <code>x</code> is reference counted, prefer <a href="https://doc.rust-lang.org/std/sync/struct.Arc.html"><code>Arc::clone(x)</code></a> over <code>x.clone()</code>. <a href="https://doc.rust-lang.org/std/sync/struct.Arc.html"><code>Arc::clone(x)</code></a> explicitly indicates that we are cloning <code>x</code>. This avoids confusion about whether we are performing an expensive clone of a <code>struct</code>, <code>enum</code>, other types, or just a cheap reference copy.</p>
 <p>Also, if you are passing around <a href="https://doc.rust-lang.org/std/sync/struct.Arc.html"><code>Arc&lt;T&gt;</code></a> types, consider using a newtype wrapper:</p>
-<pre><code class="hljs">#[derive(Clone, Debug)]
-pub struct Foo(Arc&lt;FooInner&gt;);
+<pre><code class="hljs css language-rust"><span class="hljs-meta">#[derive(Clone, Debug)]</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Foo</span></span>(Arc&lt;FooInner&gt;);
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="concurrent-types"></a><a href="#concurrent-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Concurrent types</h3>
 <p>Concurrent types such as <a href="https://docs.rs/crate/chashmap"><code>CHashMap</code></a>, <a href="https://doc.rust-lang.org/std/sync/atomic/struct.AtomicUsize.html"><code>AtomicUsize</code></a>, etc. have an immutable borrow on self i.e. <code>fn foo_mut(&amp;self,...)</code> in order to support concurrent access on interior mutating methods. Good practices (such as those in the examples mentioned) avoid exposing synchronization primitives externally (e.g. <code>Mutex</code>, <code>RwLock</code>) and document the method semantics and invariants clearly.</p>
@@ -188,32 +188,32 @@ pub struct Foo(Arc&lt;FooInner&gt;);
 <h3><a class="anchor" aria-hidden="true" id="getters-setters"></a><a href="#getters-setters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getters/setters</h3>
 <p>Excluding test code, set field visibility to private as much as possible. Private fields allow constructors to enforce internal invariants. Implement getters for data that consumers may need, but avoid setters unless mutable state is necessary.</p>
 <p>Public fields are most appropriate for <a href="https://doc.rust-lang.org/book/ch05-00-structs.html"><code>struct</code></a> types in the C spirit: compound, passive data structures without internal invariants.  Naming suggestions follow the guidance <a href="https://rust-lang-nursery.github.io/api-guidelines/naming.html#getter-names-follow-rust-convention-c-getter">here</a> as shown below.</p>
-<pre><code class="hljs">struct Foo {
-    size: usize,
-    key_to_value: HashMap&lt;u32, u32&gt;
+<pre><code class="hljs css language-rust"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Foo</span></span> {
+    size: <span class="hljs-built_in">usize</span>,
+    key_to_value: HashMap&lt;<span class="hljs-built_in">u32</span>, <span class="hljs-built_in">u32</span>&gt;
 }
 
-impl Foo {
-    /// Return a copy when inexpensive
-    fn size(&amp;self) -&gt; usize {
-        self.size
+<span class="hljs-keyword">impl</span> Foo {
+    <span class="hljs-comment">/// Return a copy when inexpensive</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">size</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; <span class="hljs-built_in">usize</span> {
+        <span class="hljs-keyword">self</span>.size
     }
 
-    /// Borrow for expensive copies
-    fn key_to_value(&amp;self) -&gt; &amp;HashMap&lt;u32, u32&gt; {
-        &amp;self.key_to_value
+    <span class="hljs-comment">/// Borrow for expensive copies</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">key_to_value</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; &amp;HashMap&lt;<span class="hljs-built_in">u32</span>, <span class="hljs-built_in">u32</span>&gt; {
+        &amp;<span class="hljs-keyword">self</span>.key_to_value
     }
 
-    /// Setter follows set_xxx pattern
-    fn set_foo(&amp;mut self, size: usize){
-        self.size = size;
+    <span class="hljs-comment">/// Setter follows set_xxx pattern</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">set_foo</span></span>(&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>, size: <span class="hljs-built_in">usize</span>){
+        <span class="hljs-keyword">self</span>.size = size;
     }
 
-    /// For a more complex getter, using get_XXX is acceptable
-    /// (similar to HashMap) with well-defined and
-    /// commented semantics
-    fn get_value(&amp;self, key: u32) -&gt; Option&lt;&amp;u32&gt; {
-        self.key_to_value.get(&amp;key)
+    <span class="hljs-comment">/// For a more complex getter, using get_XXX is acceptable</span>
+    <span class="hljs-comment">/// (similar to HashMap) with well-defined and</span>
+    <span class="hljs-comment">/// commented semantics</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">get_value</span></span>(&amp;<span class="hljs-keyword">self</span>, key: <span class="hljs-built_in">u32</span>) -&gt; <span class="hljs-built_in">Option</span>&lt;&amp;<span class="hljs-built_in">u32</span>&gt; {
+        <span class="hljs-keyword">self</span>.key_to_value.get(&amp;key)
     }
 }
 </code></pre>
@@ -286,7 +286,7 @@ testing = ["foo_crate/testing"]
 <p><em>A final note on integration tests</em>: All tests that use conditional test-only elements in another crate need to activate the &quot;testing&quot; feature through the <code>[features]</code> section in their <code>Cargo.toml</code>. <a href="https://doc.rust-lang.org/rust-by-example/testing/integration_testing.html">Integration tests</a> can neither rely on the <code>test</code> flag nor do they have a proper <code>Cargo.toml</code> for feature activation. In the Libra codebase, we therefore recommend that <em>integration tests which depend on test-only code in their tested crate</em> be extracted to their own crate. You can look at <code>language/vm/serializer_tests</code> for an example of such an extracted integration test.</p>
 <p><em>Fuzzing</em></p>
 <p>Libra contains harnesses for fuzzing crash-prone code like deserializers, using <a href="https://llvm.org/docs/LibFuzzer.html"><code>libFuzzer</code></a> through <a href="https://rust-fuzz.github.io/book/cargo-fuzz.html"><code>cargo fuzz</code></a>. For more examples, see the <code>testsuite/libra_fuzzer</code> directory.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/community/contributing"><span class="arrow-prev">← </span><span>Contribution Guide</span></a><a class="docs-next button" href="/docs/policies/security"><span>Reporting Vulnerabilities</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#code-formatting">Code formatting</a></li><li><a href="#code-analysis">Code analysis</a></li><li><a href="#code-documentation">Code documentation</a><ul class="toc-headings"><li><a href="#constants-and-fields">Constants and fields</a></li><li><a href="#functions-and-methods">Functions and methods</a></li><li><a href="#readmemd-for-top-level-directories-and-other-major-components">README.md for top-level directories and other major components</a></li></ul></li><li><a href="#code-suggestions">Code suggestions</a><ul class="toc-headings"><li><a href="#attributes">Attributes</a></li><li><a href="#avoid-deref-polymorphism">Avoid Deref polymorphism</a></li><li><a href="#comments">Comments</a></li><li><a href="#cloning">Cloning</a></li><li><a href="#concurrent-types">Concurrent types</a></li><li><a href="#error-handling">Error handling</a></li><li><a href="#generics">Generics</a></li><li><a href="#getters-setters">Getters/setters</a></li><li><a href="#logging">Logging</a></li><li><a href="#testing">Testing</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/libra-logomark-white.png" alt="Libra"/></a><div class="footerSection"><h5>Learn About Libra</h5><a href="/docs/welcome-to-libra">Welcome to Libra</a><a href="/docs/libra-protocol">Libra Protocol</a><a href="/docs/the-libra-blockchain-paper">Libra Blockchain</a><a href="/docs/life-of-a-transaction">Life of a Transaction</a><p></p><h5>Try Libra Core </h5><a href="/docs/my-first-transaction">My First Transaction</a><a href="/docs/move-overview">Getting Started With Move</a></div><div class="footerSection"><h5>Policies</h5><a href="/docs/policies/privacy-policy">Privacy Policy</a><a href="/docs/policies/terms-of-use">Terms of Use</a><a href="/docs/policies/cookies-policy">Cookies Policy</a><a href="/docs/policies/code-of-conduct">Code of Conduct</a></div><div class="footerSection"><h5>Social</h5><div class="social"><a class="github-button" href="https://github.com/libra/libra" data-count-href="https://github.com/libra/libra/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star Libra on GitHub">libra</a></div><div class="social"><a href="https://twitter.com/libradev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @libradev</a><script async="" src="/js/twitter-widgets.js" charSet="utf-8"></script></div></div></section><section class="copyright"> © Libra Association</section><aside id="cookie-banner"><div class="close" id="cookie-banner-close"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="17" x2="17" y2="1" stroke="#fff" stroke-width="2"></line><line x1="1" y1="1" x2="17" y2="17" stroke="#fff" stroke-width="2"></line></svg></div><div class="wrapper"><p>To help us provide relevant content, analyze our traffic, and provide a variety of features, we use cookies. By clicking on or navigating the site, you agree to allow us to collect information on and off the Libra Website through cookies. To learn more, view our Cookie Policy:</p><div class="buttonWrapper"><a class="button" href="/docs/policies/cookies-policy" target="_blank">Cookies Policy</a></div></div></aside></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/community/contributing"><span class="arrow-prev">← </span><span>Contribution Guide</span></a><a class="docs-next button" href="/docs/policies/security"><span>Reporting Vulnerabilities</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#code-formatting">Code formatting</a></li><li><a href="#code-analysis">Code analysis</a></li><li><a href="#code-documentation">Code documentation</a><ul class="toc-headings"><li><a href="#constants-and-fields">Constants and fields</a></li><li><a href="#functions-and-methods">Functions and methods</a></li><li><a href="#readmemd-for-top-level-directories-and-other-major-components">README.md for top-level directories and other major components</a></li></ul></li><li><a href="#code-suggestions">Code suggestions</a><ul class="toc-headings"><li><a href="#attributes">Attributes</a></li><li><a href="#avoid-deref-polymorphism">Avoid Deref polymorphism</a></li><li><a href="#comments">Comments</a></li><li><a href="#cloning">Cloning</a></li><li><a href="#concurrent-types">Concurrent types</a></li><li><a href="#error-handling">Error handling</a></li><li><a href="#generics">Generics</a></li><li><a href="#getters-setters">Getters/setters</a></li><li><a href="#logging">Logging</a></li><li><a href="#testing">Testing</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/libra-logomark-white.png" alt="Libra"/></a><div class="footerSection"><h5>Learn About Libra</h5><a href="/docs/welcome-to-libra">Welcome to Libra</a><a href="/docs/libra-protocol">Libra Protocol</a><a href="/docs/the-libra-blockchain-paper">Libra Blockchain</a><a href="/docs/life-of-a-transaction">Life of a Transaction</a><p></p><h5>Try Libra Core </h5><a href="/docs/my-first-transaction">My First Transaction</a><a href="/docs/move-overview">Getting Started With Move</a></div><div class="footerSection"><h5>Policies</h5><a href="/docs/policies/privacy-policy">Privacy Policy</a><a href="/docs/policies/terms-of-use">Terms of Use</a><a href="/docs/policies/cookies-policy">Cookies Policy</a><a href="/docs/policies/code-of-conduct">Code of Conduct</a><p></p><h5>Community</h5><a href="https://community.libra.org/">Developer Forum</a><a href="https://developers.libra.org/newsletter_form">Newsletter</a></div><div class="footerSection"><h5>Social</h5><div class="social"><a class="github-button" href="https://github.com/libra/libra" data-count-href="https://github.com/libra/libra/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star Libra on GitHub">libra</a></div><div class="social"><a href="https://twitter.com/libradev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @libradev</a><script async="" src="/js/twitter-widgets.js" charSet="utf-8"></script></div></div></section><section class="copyright"> © Libra Association</section><aside id="cookie-banner"><div class="close" id="cookie-banner-close"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="17" x2="17" y2="1" stroke="#fff" stroke-width="2"></line><line x1="1" y1="1" x2="17" y2="17" stroke="#fff" stroke-width="2"></line></svg></div><div class="wrapper"><p>To help us provide relevant content, analyze our traffic, and provide a variety of features, we use cookies. By clicking on or navigating the site, you agree to allow us to collect information on and off the Libra Website through cookies. To learn more, view our Cookie Policy:</p><div class="buttonWrapper"><a class="button" href="/docs/policies/cookies-policy" target="_blank">Cookies Policy</a></div></div></aside></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
