@@ -61,13 +61,13 @@
 <p>At the heart of the Libra protocol are two fundamental concepts — transactions and states. At any point in time, the blockchain has a “state.” The state (or ledger state) represents the current snapshot of data on the chain. Executing a transaction changes the state of the blockchain.</p>
 <p><img src="/docs/assets/illustrations/transactions.svg" alt="Figure 1.1 A transaction changes state.">
 <small class="figure">Figure 1.1 Transactions change state.</small></p>
-<p>Figure 1.1 represents the change of state of the Libra Blockchain that occurs when a transaction is executed. For example, at state S<sub>N-1</sub>, Alice has a balance of 110 Libra, and Bob has a balance of 52 Libra. When a transaction is applied to the blockchain, it generates a new state. To transition from S<sub>N-1</sub> to S<sub>N</sub>, transaction T<sub>N</sub> is applied against the state S<sub>N-1</sub>. This causes Alice’s balance to be reduced by 10 Libra and Bob’s balance to be increased by 10 Libra. The new state S<sub>N</sub> now shows these updated balances. In figure 1.1:</p>
+<p>Figure 1.1 represents the change of state of the Libra Blockchain that occurs when a transaction is executed. For example, at state S<sub>N-1</sub>, Alice has a balance of 110 LBR, and Bob has a balance of 52 LBR. When a transaction is applied to the blockchain, it generates a new state. To transition from S<sub>N-1</sub> to S<sub>N</sub>, transaction T<sub>N</sub> is applied against the state S<sub>N-1</sub>. This causes Alice’s balance to be reduced by 10 LBR and Bob’s balance to be increased by 10 LBR. The new state S<sub>N</sub> now shows these updated balances. In figure 1.1:</p>
 <ul>
 <li><strong>A</strong> and <strong>B</strong> represent Alice’s and Bob’s accounts in the blockchain.</li>
 <li><strong>S<sub>N-1</sub></strong> represents the (N-1)<sup>th</sup> state of the blockchain.</li>
 <li><strong>T<sub>N</sub></strong> is the n-th transaction executed on the blockchain.
 <ul>
-<li>In this example, T<sub>N</sub> is - “send 10 Libra from person A’s account to person B’s account.”</li>
+<li>In this example, T<sub>N</sub> is - “send 10 LBR from person A’s account to person B’s account.”</li>
 </ul></li>
 <li><strong>F</strong> is a deterministic function. F always returns the same final state for a specific initial state and a specific transaction. If the current state of the blockchain is S<sub>N-1</sub>, and transaction T<sub>N</sub> is executed on state S<sub>N-1</sub>, the new state of the blockchain is always S<sub>N</sub>.</li>
 <li><strong>S<sub>N</sub></strong> is the n-th state of the blockchain. S<sub>N</sub> is an outcome of applying F to S<sub>N-1</sub> and T<sub>N</sub>.</li>
