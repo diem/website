@@ -241,7 +241,6 @@ then there is a guarantee that T_N will never be included in the blockchain.
 ### Libra Reserve
 
 * **Libra reserve** is the total monetary holdings that back Libra.
-* To be a validator node for the Libra Association, it is a requirement to invest in the reserve.
 
 ### LibraAccount.T
 
