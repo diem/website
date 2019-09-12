@@ -4,7 +4,7 @@
         <title>Libra Blog</title>
         <link>https://developers.libra.org/blog</link>
         <description>The best place to stay up-to-date with the latest Libra news and events.</description>
-        <lastBuildDate>Wed, 14 Aug 2019 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 12 Sep 2019 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -12,6 +12,13 @@
             <url>https://developers.libra.org/img/libra-nav-logo.png</url>
             <link>https://developers.libra.org/blog</link>
         </image>
+        <item>
+            <title><![CDATA[Libra Developer Spotlight]]></title>
+            <link>https://developers.libra.org/blog/2019/09/12/libra-developer-spotlight.html</link>
+            <guid>https://developers.libra.org/blog/2019/09/12/libra-developer-spotlight.html</guid>
+            <pubDate>Thu, 12 Sep 2019 06:00:00 GMT</pubDate>
+            <description><![CDATA[ <p>We’re so excited to see so many leading developers from around the globe innovating and working on the Libra testnet. We wanted to share a few examples that caught our eye!</p> <h3><a class="anchor" aria-hidden="true" id="transactions"></a><a href="#transactions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>Transactions</h3> <p><a href="https://twitter.com/mikekelly85/status/1141491588180447233">Mike Kelly</a>, Founder of fintech app <a href="https://paywithcurl.com">PayWithCurl</a>, <a href="https://twitter.com/mikekelly85/status/1141491022163324929">in this Twitter...</a></p>]]></description>
+        </item>
         <item>
             <title><![CDATA[Libra Bug Bounty Open to All]]></title>
             <link>https://developers.libra.org/blog/2019/08/14/libra-bug-bounty.html</link>
