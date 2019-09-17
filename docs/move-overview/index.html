@@ -109,12 +109,8 @@ main(payee: <span class="hljs-built_in">address</span>, amount: <span class="hlj
   <span class="hljs-comment">// be at the beginning of the procedure. Declaration and initialization of</span>
   <span class="hljs-comment">// variables are separate operations, but the bytecode verifier will prevent</span>
   <span class="hljs-comment">// any attempt to use an uninitialized variable.</span>
-  <span class="hljs-keyword">let</span> coin: <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span>;
-  <span class="hljs-comment">// The R# part of the type above is one of two *kind annotation* R# and V#</span>
-  <span class="hljs-comment">// (shorthand for "Resource" and "unrestricted Value"). These annotations</span>
-  <span class="hljs-comment">// must match the kind of the type declaration (e.g., does the LibraCoin</span>
-  <span class="hljs-comment">// module declare `resource T` or `struct T`?).</span>
-
+  <span class="hljs-keyword">let</span> coin: <span class="hljs-type">LibraCoin</span>.<span class="hljs-type">T</span>;
+  
   <span class="hljs-comment">// Acquire a LibraCoin.T resource with value `amount` from the sender's</span>
   <span class="hljs-comment">// account.  This will fail if the sender's balance is less than `amount`.</span>
   coin = <span class="hljs-type">LibraAccount</span>.withdraw_from_sender(<span class="hljs-keyword">move</span>(amount));
@@ -135,7 +131,7 @@ main(payee: <span class="hljs-built_in">address</span>, amount: <span class="hlj
 <span class="hljs-keyword">import</span> <span class="hljs-number">0x0</span>.<span class="hljs-type">LibraAccount</span>;
 <span class="hljs-keyword">import</span> <span class="hljs-number">0x0</span>.<span class="hljs-type">LibraCoin</span>;
 main(payee: <span class="hljs-built_in">address</span>, amount: <span class="hljs-built_in">u64</span>) {
-  <span class="hljs-keyword">let</span> coin: <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span>;
+  <span class="hljs-keyword">let</span> coin: <span class="hljs-type">LibraCoin</span>.<span class="hljs-type">T</span>;
   <span class="hljs-keyword">let</span> account_exists: <span class="hljs-built_in">bool</span>;
 
   <span class="hljs-comment">// Acquire a LibraCoin.T resource with value `amount` from the sender's</span>
@@ -163,8 +159,8 @@ main(payee: <span class="hljs-built_in">address</span>, amount: <span class="hlj
 <span class="hljs-keyword">import</span> <span class="hljs-number">0x0</span>.<span class="hljs-type">LibraAccount</span>;
 <span class="hljs-keyword">import</span> <span class="hljs-number">0x0</span>.<span class="hljs-type">LibraCoin</span>;
 main(payee1: <span class="hljs-built_in">address</span>, amount1: <span class="hljs-built_in">u64</span>, payee2: <span class="hljs-built_in">address</span>, amount2: <span class="hljs-built_in">u64</span>) {
-  <span class="hljs-keyword">let</span> coin1: <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span>;
-  <span class="hljs-keyword">let</span> coin2: <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span>;
+  <span class="hljs-keyword">let</span> coin1: <span class="hljs-type">LibraCoin</span>.<span class="hljs-type">T</span>;
+  <span class="hljs-keyword">let</span> coin2: <span class="hljs-type">LibraCoin</span>.<span class="hljs-type">T</span>;
   <span class="hljs-keyword">let</span> total: <span class="hljs-built_in">u64</span>;
 
   total = <span class="hljs-keyword">move</span>(amount1) + <span class="hljs-keyword">copy</span>(amount2);
@@ -197,14 +193,14 @@ Bob is going to create an account at address <em>a</em> at some point in the fut
   <span class="hljs-comment">// A wrapper containing a Libra coin and the address of the recipient the</span>
   <span class="hljs-comment">// coin is earmarked for.</span>
   <span class="hljs-struct"><span class="hljs-keyword">resource</span> T {</span>
-    coin: <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span>,
+    coin: <span class="hljs-type">LibraCoin</span>.<span class="hljs-type">T</span>,
     recipient: <span class="hljs-built_in">address</span>
   }
 
   <span class="hljs-comment">// Create a new earmarked coin with the given `recipient`.</span>
   <span class="hljs-comment">// Publish the coin under the transaction sender's account address.</span>
-  <span class="hljs-keyword">public</span> create(coin: <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span>, recipient: <span class="hljs-built_in">address</span>) {
-    <span class="hljs-keyword">let</span> t: <span class="hljs-type">R#Self</span>.<span class="hljs-type">T</span>;
+  <span class="hljs-keyword">public</span> create(coin: <span class="hljs-type">LibraCoin</span>.<span class="hljs-type">T</span>, recipient: <span class="hljs-built_in">address</span>) {
+    <span class="hljs-keyword">let</span> t: <span class="hljs-type">Self</span>.<span class="hljs-type">T</span>;
 
     <span class="hljs-comment">// Construct or "pack" a new resource of type T. Only procedures of the</span>
     <span class="hljs-comment">// `EarmarkedLibraCoin` module can create an `EarmarkedLibraCoin.T`.</span>
@@ -214,16 +210,16 @@ Bob is going to create an account at address <em>a</em> at some point in the fut
     };
 
     <span class="hljs-comment">// Publish the earmarked coin under the transaction sender's account</span>
-    <span class="hljs-comment">// address. Each account can contain at most one resource of a given type; </span>
+    <span class="hljs-comment">// address. Each account can contain at most one resource of a given type;</span>
     <span class="hljs-comment">// this call will fail if the sender already has a resource of this type.</span>
     <span class="hljs-built_in">move_to_sender</span>&lt;<span class="hljs-type">T</span>&gt;(<span class="hljs-keyword">move</span>(t));
     <span class="hljs-keyword">return</span>;
   }
 
   <span class="hljs-comment">// Allow the transaction sender to claim a coin that was earmarked for her.</span>
-  <span class="hljs-keyword">public</span> claim_for_recipient(earmarked_coin_address: <span class="hljs-built_in">address</span>): <span class="hljs-type">R#Self</span>.<span class="hljs-type">T</span> {
-    <span class="hljs-keyword">let</span> t: <span class="hljs-type">R#Self</span>.<span class="hljs-type">T</span>;
-    <span class="hljs-keyword">let</span> t_ref: &amp;<span class="hljs-type">R#Self</span>.<span class="hljs-type">T</span>;
+  <span class="hljs-keyword">public</span> claim_for_recipient(earmarked_coin_address: <span class="hljs-built_in">address</span>): <span class="hljs-type">Self</span>.<span class="hljs-type">T</span> acquires <span class="hljs-type">T</span> {
+    <span class="hljs-keyword">let</span> t: <span class="hljs-type">Self</span>.<span class="hljs-type">T</span>;
+    <span class="hljs-keyword">let</span> t_ref: &amp;<span class="hljs-type">Self</span>.<span class="hljs-type">T</span>;
     <span class="hljs-keyword">let</span> sender: <span class="hljs-built_in">address</span>;
 
     <span class="hljs-comment">// Remove the earmarked coin resource published under `earmarked_coin_address`.</span>
@@ -243,8 +239,8 @@ Bob is going to create an account at address <em>a</em> at some point in the fut
   }
 
   <span class="hljs-comment">// Allow the creator of the earmarked coin to reclaim it.</span>
-  <span class="hljs-keyword">public</span> claim_for_creator(): <span class="hljs-type">R#Self</span>.<span class="hljs-type">T</span> {
-    <span class="hljs-keyword">let</span> t: <span class="hljs-type">R#Self</span>.<span class="hljs-type">T</span>;
+  <span class="hljs-keyword">public</span> claim_for_creator(): <span class="hljs-type">Self</span>.<span class="hljs-type">T</span> acquires <span class="hljs-type">T</span> {
+    <span class="hljs-keyword">let</span> t: <span class="hljs-type">Self</span>.<span class="hljs-type">T</span>;
     <span class="hljs-keyword">let</span> sender: <span class="hljs-built_in">address</span>;
 
     sender = <span class="hljs-built_in">get_txn_sender</span>();
@@ -254,8 +250,8 @@ Bob is going to create an account at address <em>a</em> at some point in the fut
   }
 
   <span class="hljs-comment">// Extract the Libra coin from its wrapper and return it to the caller.</span>
-  <span class="hljs-keyword">public</span> unwrap(t: <span class="hljs-type">R#Self</span>.<span class="hljs-type">T</span>): <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span> {
-    <span class="hljs-keyword">let</span> coin: <span class="hljs-type">R#LibraCoin</span>.<span class="hljs-type">T</span>;
+  <span class="hljs-keyword">public</span> unwrap(t: <span class="hljs-type">Self</span>.<span class="hljs-type">T</span>): <span class="hljs-type">LibraCoin</span>.<span class="hljs-type">T</span> {
+    <span class="hljs-keyword">let</span> coin: <span class="hljs-type">LibraCoin</span>.<span class="hljs-type">T</span>;
     <span class="hljs-keyword">let</span> recipient: <span class="hljs-built_in">address</span>;
 
     <span class="hljs-comment">// This "unpacks" a resource type by destroying the outer resource, but</span>
