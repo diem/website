@@ -15,7 +15,7 @@
         <updated>2019-09-26T06:00:00Z</updated>
         <summary type="html"><![CDATA[ <p>We are happy to announce a new release of the <a href="https://developers.libra.org/docs/state-machine-replication-paper">LibraBFT technical report</a>.</p> <p>The LibraBFT protocol operates at the heart of the Libra blockchain to guarantee secure state machine replication. The new version of the protocol, LibraBFTv2, includes several...</p>]]></summary>
         <author>
-            <name>Mathieu Baudet, Libra Association</name>
+            <name>Mathieu Baudet, Calibra</name>
         </author>
     </entry>
     <entry>
