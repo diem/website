@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Improving the LibraBFT protocol · Libra</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;script&gt;"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Improving the LibraBFT protocol · Libra"/><meta property="og:type" content="website"/><meta property="og:url" content="https://developers.libra.org/blog/2019/09/26/libra-bft-protocol"/><meta property="og:description" content="&lt;script&gt;"/><meta property="og:image" content="https://developers.libra.org/img/libra.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://developers.libra.org/img/libra.png"/><link rel="shortcut icon" href="/img/libra.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://developers.libra.org/blog/atom.xml" title="Libra Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://developers.libra.org/blog/feed.xml" title="Libra Blog RSS Feed"/><script type="text/javascript" src="/js/buttons.js"></script><script type="text/javascript" src="/js/code_block_buttons.js"></script><script type="text/javascript" src="/js/cookie_banner.js"></script><script type="text/javascript" src="/js/disable_adblock.js"></script><script type="text/javascript" src="/js/segment.analytics.min.js"></script><script type="text/javascript" src="/js/segment.js"></script><script type="text/javascript" src="/js/clipboardjs.2.0.0.min.js"></script><script type="text/javascript" src="/js/forms.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/libra-nav-logo.png" alt="Libra"/><h2 class="headerTitleWithLogo">Libra</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/welcome-to-libra" target="_self">Documentation</a></li><li class=""><a href="https://community.libra.org" target="_self">Community</a></li><li class="siteNavGroupActive"><a href="/blog/" target="_self">Blog</a></li><li class=""><a href="https://libra.org" target="_self">libra.org</a></li><li class=""><a href="https://github.com/libra/libra" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Recent Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Recent Posts</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/blog/2019/09/26/libra-bft-protocol">Improving the LibraBFT protocol</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/09/12/libra-developer-spotlight">Libra Developer Spotlight</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/08/14/libra-bug-bounty">Libra Bug Bounty Open to All</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/06/18/the-path-forward">Libra: The Path Forward</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2019/09/26/libra-bft-protocol">Improving the LibraBFT protocol</a></h1><p class="post-meta">September 26, 2019</p><div class="authorBlock"><p class="post-authorName"><a target="_blank" rel="noreferrer noopener">Mathieu Baudet, Libra Association</a></p></div></header><div><span><script>
+    let items = document.getElementsByClassName("post-meta");   
+    for (var i = items.length - 1; i >= 0; i--) {
+        if (items[i].innerHTML = '<p class="post-meta">August 14, 2019</p>') items[i].innerHTML = '<p class="post-meta">September 26, 2019</p>';
+    }
+</script>
+<p>We are happy to announce a new release of the <a href="https://developers.libra.org/docs/state-machine-replication-paper">LibraBFT technical report</a>.</p>
+<p>The LibraBFT protocol operates at the heart of the Libra blockchain to guarantee secure state machine replication. The new version of the protocol, LibraBFTv2, includes several optimizations that were designed to reduce networking and improve commit latency of the Libra blockchain.</p>
+<p>Together with this release, we are happy to make available the code of the Rust simulator used as a reference in the LibraBFT report. This code can be found in the <a href="https://github.com/calibra/research">github repository</a> of the research team of Calibra.</p>
+<h3><a class="anchor" aria-hidden="true" id="reducing-network-complexity-in-practice"></a><a href="#reducing-network-complexity-in-practice" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reducing network complexity in practice</h3>
+<p>LibraBFT is a refinement of the HotStuff protocol that makes explicit the mechanisms used to achieve round synchronization between nodes. Informally, a round is a period of time where a specific leader is trusted to drive progress  &mdash;  typically by proposing a block (B), gathering votes (V), and broadcasting a quorum certificate (C) (see picture below). Round synchronization aims at making nodes eventually execute the same round with sufficiently long overlap so that the leader of this round can succeed.</p>
+<p><img src="https://libra.org/wp-content/uploads/2019/09/libraBFT2.png" alt=""></p>
+<p>In the optimistic case (aka &quot;happy path&quot;), <em>LibraBFTv2 reduces the
+overhead of round synchronization to a single message per node per
+round</em> (see green arrows in the picture).</p>
+<p>The initial &quot;v1&quot; version of LibraBFT relied on probabilistic gossip to ensure uniform propagation of quorum certificates (C). This uniform propagation was needed to achieve round synchronization and guarantee liveness in presence of malicious leaders. While probabilistic gossip is a popular technique suitable to many applications, it typically requires a non-linear number of messages and causes increased latency due to the intermediate hops. From an engineering point of view, the network overhead and the probabilistic nature of gossiping may also complicate debugging.</p>
+<p>In contrast, LibraBFTv2 achieves round synchronization in a different way, without using probabilistic gossip. First, the new protocol introduces a new type of failsafe mechanisms that regularly pull missing data in case no progress is made. Second, LibraBFTv2 simplifies the constraints on block proposals. The new constraints ensure that an honest leader can always propose a block and force round synchronization soon after the first honest node enters her round.</p>
+<p>The proof of liveness of LibraBFTv2 shows that the new protocol still performs in a satisfying way under Byzantine (worst-case) scenarios, while the number of messages is now linear in the best case.</p>
+<h3><a class="anchor" aria-hidden="true" id="whats-next"></a><a href="#whats-next" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What's next</h3>
+<p>We expect new releases of the LibraBFT report to continue in the future as the research and the engineering teams of Calibra keep improving the theoretical analysis and the implementation of the LibraBFT protocol.</p>
+<p>Stay tuned!</p>
+</span></div></div><div class="blogSocialSection"></div></div><div class="blog-recent"><a class="button" href="/blog">Recent Posts</a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/libra-logomark-white.png" alt="Libra"/></a><div class="footerSection"><h5>Learn About Libra</h5><a href="/docs/welcome-to-libra">Welcome to Libra</a><a href="/docs/libra-protocol">Libra Protocol</a><a href="/docs/the-libra-blockchain-paper">Libra Blockchain</a><a href="/docs/life-of-a-transaction">Life of a Transaction</a><p></p><h5>Try Libra Core </h5><a href="/docs/my-first-transaction">My First Transaction</a><a href="/docs/move-overview">Getting Started With Move</a></div><div class="footerSection"><h5>Policies</h5><a href="/docs/policies/privacy-policy">Privacy Policy</a><a href="/docs/policies/terms-of-use">Terms of Use</a><a href="/docs/policies/cookies-policy">Cookies Policy</a><a href="/docs/policies/code-of-conduct">Code of Conduct</a><p></p><h5>Community</h5><a href="https://community.libra.org/">Developer Forum</a><a href="https://developers.libra.org/newsletter_form">Newsletter</a></div><div class="footerSection"><h5>Social</h5><div class="social"><a class="github-button" href="https://github.com/libra/libra" data-count-href="https://github.com/libra/libra/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star Libra on GitHub">libra</a></div><div class="social"><a href="https://twitter.com/libradev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @libradev</a><script async="" src="/js/twitter-widgets.js" charSet="utf-8"></script></div></div></section><section class="copyright"> © Libra Association</section><aside id="cookie-banner"><div class="close" id="cookie-banner-close"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="17" x2="17" y2="1" stroke="#fff" stroke-width="2"></line><line x1="1" y1="1" x2="17" y2="17" stroke="#fff" stroke-width="2"></line></svg></div><div class="wrapper"><p>To help us provide relevant content, analyze our traffic, and provide a variety of features, we use cookies. By clicking on or navigating the site, you agree to allow us to collect information on and off the Libra Website through cookies. To learn more, view our Cookie Policy:</p><div class="buttonWrapper"><a class="button" href="/docs/policies/cookies-policy" target="_blank">Cookies Policy</a></div></div></aside></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '0d48ee629d39ddc4916eeef7755a0c4c',
+                indexName: 'libra',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>

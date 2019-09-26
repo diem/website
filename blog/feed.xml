@@ -4,7 +4,7 @@
         <title>Libra Blog</title>
         <link>https://developers.libra.org/blog</link>
         <description>The best place to stay up-to-date with the latest Libra news and events.</description>
-        <lastBuildDate>Thu, 12 Sep 2019 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 26 Sep 2019 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -12,6 +12,13 @@
             <url>https://developers.libra.org/img/libra-nav-logo.png</url>
             <link>https://developers.libra.org/blog</link>
         </image>
+        <item>
+            <title><![CDATA[Improving the LibraBFT protocol]]></title>
+            <link>https://developers.libra.org/blog/2019/09/26/libra-bft-protocol.html</link>
+            <guid>https://developers.libra.org/blog/2019/09/26/libra-bft-protocol.html</guid>
+            <pubDate>Thu, 26 Sep 2019 06:00:00 GMT</pubDate>
+            <description><![CDATA[ <p>We are happy to announce a new release of the <a href="https://developers.libra.org/docs/state-machine-replication-paper">LibraBFT technical report</a>.</p> <p>The LibraBFT protocol operates at the heart of the Libra blockchain to guarantee secure state machine replication. The new version of the protocol, LibraBFTv2, includes several...</p>]]></description>
+        </item>
         <item>
             <title><![CDATA[Libra Developer Spotlight]]></title>
             <link>https://developers.libra.org/blog/2019/09/12/libra-developer-spotlight.html</link>
