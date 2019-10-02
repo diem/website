@@ -2,11 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://developers.libra.org/blog</id>
     <title>Libra Blog</title>
-    <updated>2019-09-26T06:00:00Z</updated>
+    <updated>2019-10-02T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="https://developers.libra.org/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Libra news and events.</subtitle>
     <logo>https://developers.libra.org/img/libra-nav-logo.png</logo>
+    <entry>
+        <title type="html"><![CDATA[September Libra Developer Update - Roadmap #1]]></title>
+        <id>https://developers.libra.org/blog/2019/10/02/libra-developer-update.html</id>
+        <link href="https://developers.libra.org/blog/2019/10/02/libra-developer-update.html">
+        </link>
+        <updated>2019-10-02T06:00:00Z</updated>
+        <summary type="html"><![CDATA[ <p>Since the official Libra project announcement in June, response from the developer community has been thrilling to watch. Developers have released several blockchain explorers (libranaut, <a href="https://libraview.org">libraview</a>, <a href="https://librabrowser.io">librabrowser</a>, and <a href="https://libexplorer.com">libexplorer</a>) and integrated Libr...</p>]]></summary>
+        <author>
+            <name>Libra Association</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Improving the LibraBFT protocol]]></title>
         <id>https://developers.libra.org/blog/2019/09/26/libra-bft-protocol.html</id>
