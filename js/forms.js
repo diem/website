@@ -12,8 +12,20 @@
   var nonVcFields = [
     'enterpriseUserBase',
     'enterpriseCustomerBase',
-    'enterpriseMarketCap',
   ];
+
+  var b2bFields = [
+    'enterpriseCustomerBase',
+  ]
+
+  var b2cFields = [
+    'enterpriseUserBase',
+  ]
+
+  var nonVcFieldsRequired = [
+    'enterpriseMarketCap',
+    'enterpriseType'
+  ]
 
   function showFields(fields, required) {
     for (var i = 0, fieldId; fieldId = fields[i]; i++) {
@@ -54,6 +66,7 @@
     } else {
       hideFields(enterpriseFields);
       hideFields(nonVcFields);
+      hideFields(nonVcFieldsRequired);
       hideFields(vcFields);
     }
   }
@@ -62,9 +75,20 @@
     if (val === 'VCIForg') {
       showFields(vcFields, true);
       hideFields(nonVcFields);
+      hideFields(nonVcFieldsRequired);
     } else {
       hideFields(vcFields);
-      showFields(nonVcFields, true);
+      showFields(nonVcFieldsRequired, true);
+    }
+  }
+
+  function handleEnterpriseTypeChange(val) {
+    if (val === 'B2B') {
+      showFields(b2bFields, true);
+      hideFields(b2cFields);
+    } else {
+      showFields(b2cFields, true);
+      hideFields(b2bFields);
     }
   }
 
@@ -89,6 +113,13 @@
         handleEnterpriseChange(enterpriseInput.value);
       });
     }
+
+    var enterpriseTypeInput = document.getElementById('enterpriseType');
+    if (enterpriseTypeInput) {
+      enterpriseTypeInput.addEventListener('change', function(event) {
+        handleEnterpriseTypeChange(enterpriseTypeInput.value);
+      });
+    }  
   });
 
 }();
