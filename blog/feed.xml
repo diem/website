@@ -4,7 +4,7 @@
         <title>Libra Blog</title>
         <link>https://developers.libra.org/blog</link>
         <description>The best place to stay up-to-date with the latest Libra news and events.</description>
-        <lastBuildDate>Tue, 22 Oct 2019 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 29 Oct 2019 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -12,6 +12,13 @@
             <url>https://developers.libra.org/img/libra-nav-logo.png</url>
             <link>https://developers.libra.org/blog</link>
         </image>
+        <item>
+            <title><![CDATA[A Guide To Running Libra Validators]]></title>
+            <link>https://developers.libra.org/blog/2019/10/29/a-guide-to-running-libra-validators.html</link>
+            <guid>https://developers.libra.org/blog/2019/10/29/a-guide-to-running-libra-validators.html</guid>
+            <pubDate>Tue, 29 Oct 2019 06:00:00 GMT</pubDate>
+            <description><![CDATA[ <p>As a member of the Libra Association, Bison Trails has gained in-depth experience running the first non-Calibra validator node on the Libra testnet network. In this post we detail our learnings from that exercise and offer our recommendations for ot...</p>]]></description>
+        </item>
         <item>
             <title><![CDATA[Simplifying Libra Transaction Payloads: Deprecation of the "Program" Type]]></title>
             <link>https://developers.libra.org/blog/2019/10/22/simplifying-payloads.html</link>

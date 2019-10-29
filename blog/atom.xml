@@ -2,11 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://developers.libra.org/blog</id>
     <title>Libra Blog</title>
-    <updated>2019-10-22T06:00:00Z</updated>
+    <updated>2019-10-29T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="https://developers.libra.org/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Libra news and events.</subtitle>
     <logo>https://developers.libra.org/img/libra-nav-logo.png</logo>
+    <entry>
+        <title type="html"><![CDATA[A Guide To Running Libra Validators]]></title>
+        <id>https://developers.libra.org/blog/2019/10/29/a-guide-to-running-libra-validators.html</id>
+        <link href="https://developers.libra.org/blog/2019/10/29/a-guide-to-running-libra-validators.html">
+        </link>
+        <updated>2019-10-29T06:00:00Z</updated>
+        <summary type="html"><![CDATA[ <p>As a member of the Libra Association, Bison Trails has gained in-depth experience running the first non-Calibra validator node on the Libra testnet network. In this post we detail our learnings from that exercise and offer our recommendations for ot...</p>]]></summary>
+        <author>
+            <name>Bison Trails</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Simplifying Libra Transaction Payloads: Deprecation of the "Program" Type]]></title>
         <id>https://developers.libra.org/blog/2019/10/22/simplifying-payloads.html</id>
