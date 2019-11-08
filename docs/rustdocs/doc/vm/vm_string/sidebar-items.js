@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["VMStr","A borrowed string in Move code."],["VMString","An owned string in a Move transaction."]]});

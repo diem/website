@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Directive","A directive specifies a pattern in the output. Directives are extracted from comments starting with \"//\"."]],"fn":[["check","Verifies the directives against the given evaluation result."],["run_filecheck","Check the output using filecheck checker."]]});

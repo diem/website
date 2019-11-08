@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["SpawnError","Returned by [`BoundedExecutor::try_spawn`] if it is at capacity."]],"struct":[["BoundedExecutor",""]]});

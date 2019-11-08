@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["instruction_summary","Return the `Summary` for a bytecode instruction, `instruction`"]],"struct":[["Summary","The `Summary` of a bytecode instruction contains a list of `Precondition`s and a list of `Effect`s."]]});

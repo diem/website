@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["db_with_mock_genesis","This creates an empty db at input `dir` and initializes it with mock genesis info."]],"struct":[["GENESIS_INFO","Tuple containing information about the mock genesis state."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["RandomInhabitor","A wrapper around state that is used to generate random valid inhabitants for types."]]});

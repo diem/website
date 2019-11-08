@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["struct_def","Loaded representation for Move struct definition."],["types","Loaded representation for runtime types."]]});

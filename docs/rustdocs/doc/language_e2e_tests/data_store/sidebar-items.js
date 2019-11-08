@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["FakeDataStore","An in-memory implementation of [`StateView`] and [`RemoteCache`] for the VM."],["GENESIS_WRITE_SET","The write set encoded in the genesis transaction."],["TESTNET_GENESIS",""]]});

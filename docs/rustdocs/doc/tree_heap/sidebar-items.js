@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["bytecode_function_generator","This module generates the Boogie version of bytecode instructions in the format of Boogie procedures."],["translator","This module translates the bytecode of a module to Boogie code."]]});

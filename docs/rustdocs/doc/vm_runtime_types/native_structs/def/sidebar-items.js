@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["NativeStructTag",""],["NativeStructValue",""]],"struct":[["NativeStructType",""]]});

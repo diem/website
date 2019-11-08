@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["EpochRetrievalRequest","Request to get a ValidatorChangeEventWithProof from current_epoch to target_epoch"]]});

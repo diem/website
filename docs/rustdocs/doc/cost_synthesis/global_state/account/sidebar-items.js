@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Account","Details about an account."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["transaction","'Native' functions that are actually bytecode isntructions Fake module around transaction meta data"]]});

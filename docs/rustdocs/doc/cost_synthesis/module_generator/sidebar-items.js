@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ModuleBuilder","A wrapper around a `CompiledModule` containing information needed for generation."],["ModuleGenerator","A wrapper around a `ModuleBuilder` for building module universes."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["new","Create a new Libra Channel and returns the two ends of the channel."]],"struct":[["Receiver","The receiving end of the libra_channel."],["Sender","The sending end of the libra_channel."]]});

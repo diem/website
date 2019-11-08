@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["FunctionDef","Resolved form of a function definition"],["FunctionRef","Resolved form of a function handle"]],"trait":[["FunctionReference","Trait that defines the internal representation of a move function."]]});

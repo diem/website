@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["start_storage_service","Starts storage service according to config."]],"mod":[["mocks","This module provides mocks of the storage components for tests."]],"struct":[["StorageService","The implementation of the storage GRPC service."]]});

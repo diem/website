@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["EVENT_KEY_LENGTH","Size of an event key."]],"struct":[["EventHandle","A Rust representation of an Event Handle Resource."],["EventKey","A struct that represents a globally unique id for an Event stream that a user can listen to."]]});

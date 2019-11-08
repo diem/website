@@ -1,0 +1,13 @@
+(function() {var implementors = {};
+implementors["libra_canonical_serialization"] = [{text:"impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/std/error/trait.Error.html\" title=\"trait std::error::Error\">Error</a> for <a class=\"enum\" href=\"libra_canonical_serialization/enum.Error.html\" title=\"enum libra_canonical_serialization::Error\">Error</a>",synthetic:false,types:["libra_canonical_serialization::error::Error"]},];
+implementors["libra_types"] = [{text:"impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/std/error/trait.Error.html\" title=\"trait std::error::Error\">Error</a> for <a class=\"struct\" href=\"libra_types/vm_error/struct.VMStatus.html\" title=\"struct libra_types::vm_error::VMStatus\">VMStatus</a>",synthetic:false,types:["libra_types::vm_error::VMStatus"]},];
+implementors["libra_wallet"] = [{text:"impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/std/error/trait.Error.html\" title=\"trait std::error::Error\">Error</a> for <a class=\"enum\" href=\"libra_wallet/error/enum.WalletError.html\" title=\"enum libra_wallet::error::WalletError\">WalletError</a>",synthetic:false,types:["libra_wallet::error::WalletError"]},];
+implementors["move_lang"] = [{text:"impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/std/error/trait.Error.html\" title=\"trait std::error::Error\">Error</a> for <a class=\"struct\" href=\"move_lang/test_utils/struct.StringError.html\" title=\"struct move_lang::test_utils::StringError\">StringError</a>",synthetic:false,types:["move_lang::test_utils::StringError"]},];
+implementors["netcore"] = [{text:"impl&lt;E&gt; <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/std/error/trait.Error.html\" title=\"trait std::error::Error\">Error</a> for <a class=\"enum\" href=\"netcore/transport/timeout/enum.TimeoutTransportError.html\" title=\"enum netcore::transport::timeout::TimeoutTransportError\">TimeoutTransportError</a>&lt;E&gt; <span class=\"where fmt-newline\">where<br>&nbsp;&nbsp;&nbsp;&nbsp;E: <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/std/error/trait.Error.html\" title=\"trait std::error::Error\">Error</a> + 'static,&nbsp;</span>",synthetic:false,types:["netcore::transport::timeout::TimeoutTransportError"]},];
+
+            if (window.register_implementors) {
+                window.register_implementors(implementors);
+            } else {
+                window.pending_implementors = implementors;
+            }
+        })()
