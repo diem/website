@@ -61,7 +61,7 @@
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="code-analysis"></a><a href="#code-analysis" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code analysis</h2>
 <p><a href="https://github.com/rust-lang/rust-clippy">Clippy</a> is used to catch common mistakes and is run as a part of continuous integration.  Before submitting your code for review, you can run clippy with our configuration:</p>
-<pre><code class="hljs">libra$ ./scripts/clippy.sh
+<pre><code class="hljs">libra$ cargo xclippy
 </code></pre>
 <p>In general, we follow the recommendations from <a href="https://rust-lang-nursery.github.io/api-guidelines/about.html">rust-lang-nursery</a>.  The remainder of this guide provides detailed guidelines on specific topics in order to achieve uniformity of the codebase.</p>
 <h2><a class="anchor" aria-hidden="true" id="code-documentation"></a><a href="#code-documentation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code documentation</h2>
@@ -100,7 +100,7 @@
 <p>Each major component of Libra Core needs to have a <code>README.md</code> file. Major components are:</p>
 <ul>
 <li>top-level directories (e.g. <code>libra/network</code>, <code>libra/language</code>)</li>
-<li>the most important crates in the system (e.g. <code>vm_runtime</code>)</li>
+<li>the most important crates in the system (e.g. <code>vm-runtime</code>)</li>
 </ul>
 <p>This file should contain:</p>
 <ul>
@@ -145,6 +145,15 @@ Refer to the Libra Project contributing guide [LINK].
 Refer to the Libra Project License [LINK].
 </code></pre>
 <p>A good example of README.md is <code>libra/network/README.md</code> that describes the networking crate.</p>
+<h2><a class="anchor" aria-hidden="true" id="binary-argument-and-crate-naming"></a><a href="#binary-argument-and-crate-naming" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Binary, Argument, and Crate Naming</h2>
+<p>Most tools that we use everyday (rustc, cargo, git, rg, etc.) use dashes <code>-</code> as
+a separator for binary names and arguments and the <a href="https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html">GNU software
+manual</a>
+dictates that long options should &quot;consist of <code>--</code> followed by a name made of
+alphanumeric characters and dashes&quot;. As such dashes <code>-</code> should be used as
+separators in both binary names and command line arguments.</p>
+<p>In addition, it is generally accepted by many in the Rust community that dashes
+<code>-</code> should be used as separators in crate names, i.e. <code>x25519-dalek</code>.</p>
 <h2><a class="anchor" aria-hidden="true" id="code-suggestions"></a><a href="#code-suggestions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code suggestions</h2>
 <p>In the following sections, we have suggested some best practices for a uniform codebase. We will investigate and identify the practices that can be enforced using Clippy. This information will evolve and improve over time.</p>
 <h3><a class="anchor" aria-hidden="true" id="attributes"></a><a href="#attributes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Attributes</h3>
@@ -184,9 +193,9 @@ Refer to the Libra Project License [LINK].
 <li><code>unreachable!()</code> - This macro will panic on code that should not be reached (violating an invariant) and can be used where appropriate.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="generics"></a><a href="#generics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Generics</h3>
-<p>Generics allow dynamic behavior (similar to <a href="https://doc.rust-lang.org/book/ch10-02-traits.html"><code>trait</code></a> methods) with static dispatch.  As the number of generic type parameters increase, the difficulty of using the type/method also increases (e.g. consider the combination of trait bounds required for this type, duplicate trait bounds on related types, etc.).  In order to avoid this complexity, we generally try to avoid using a large number of generic type parameters.  We have found that converting code with a large number of generic objects to trait objects with dynamic dispatch often simplifies our code.</p>
+<p>Generics allow dynamic behavior (similar to <a href="https://doc.rust-lang.org/book/ch10-02-traits.html"><code>trait</code></a> methods) with static dispatch.  As the number of generic type parameters increases, the difficulty of using the type/method also increases (e.g. consider the combination of trait bounds required for this type, duplicate trait bounds on related types, etc.).  In order to avoid this complexity, we generally try to avoid using a large number of generic type parameters.  We have found that converting code with a large number of generic objects to trait objects with dynamic dispatch often simplifies our code.</p>
 <h3><a class="anchor" aria-hidden="true" id="getters-setters"></a><a href="#getters-setters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getters/setters</h3>
-<p>Excluding test code, set field visibility to private as much as possible. Private fields allow constructors to enforce internal invariants. Implement getters for data that consumers may need, but avoid setters unless mutable state is necessary.</p>
+<p>Excluding test code, set field visibility to private as much as possible. Private fields allow constructors to enforce internal invariants. Implement getters for data that consumers may need, but avoid setters unless a mutable state is necessary.</p>
 <p>Public fields are most appropriate for <a href="https://doc.rust-lang.org/book/ch05-00-structs.html"><code>struct</code></a> types in the C spirit: compound, passive data structures without internal invariants.  Naming suggestions follow the guidance <a href="https://rust-lang-nursery.github.io/api-guidelines/naming.html#getter-names-follow-rust-convention-c-getter">here</a> as shown below.</p>
 <pre><code class="hljs css language-rust"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Foo</span></span> {
     size: <span class="hljs-built_in">usize</span>,
@@ -222,7 +231,7 @@ Refer to the Libra Project License [LINK].
 <ul>
 <li><a href="https://docs.rs/slog/2.4.1/slog/macro.error.html">error!</a> - Error-level messages have the highest urgency in <a href="https://docs.rs/slog/">slog</a>.  An unexpected error has occurred (e.g. exceeded the maximum number of retries to complete an RPC or inability to store data to local storage).</li>
 <li><a href="https://docs.rs/slog/2.4.1/slog/macro.warn.html">warn!</a> - Warn-level messages help notify admins about automatically handled issues (e.g. retrying a failed network connection or receiving the same message multiple times, etc.).</li>
-<li><a href="https://docs.rs/slog/2.4.1/slog/macro.info.html">info!</a> - Info-level messages are well suited for &quot;one time&quot; events (such as logging state on one-time startup and shutdown) or periodic events that are not frequently occurring - e.g. changing the validator set every day.</li>
+<li><a href="https://docs.rs/slog/2.4.1/slog/macro.info.html">info!</a> - Info-level messages are well suited for &quot;one-time&quot; events (such as logging state on one-time startup and shutdown) or periodic events that are not frequently occurring - e.g. changing the validator set every day.</li>
 <li><a href="https://docs.rs/slog/2.4.1/slog/macro.debug.html">debug!</a> - Debug-level messages can occur frequently (i.e. potentially &gt; 1 message per second) and are not typically expected to be enabled in production.</li>
 <li><a href="https://docs.rs/slog/2.4.1/slog/macro.trace.html">trace!</a> - Trace-level logging is typically only used for function entry/exit.</li>
 </ul>
@@ -241,7 +250,7 @@ src/db/access/access_test.rs  -&gt; test of access submodule
 <p>Some examples of properties tested in Libra:</p>
 <ul>
 <li>Every serializer and deserializer pair is tested for correctness with random inputs to the serializer. Any pair of functions that are inverses of each other can be tested this way.</li>
-<li>The results of executing common transactions through the VM are tested using randomly generated scenarios and verified with an <em>oracle</em>.</li>
+<li>The results of executing common transactions through the VM are tested using randomly generated scenarios and verified with an <em>Oracle</em>.</li>
 </ul>
 <p>A tutorial for <code>proptest</code> can be found in the <a href="https://altsysrq.github.io/proptest-book/proptest/getting-started.html"><code>proptest</code> book</a>.</p>
 <p>References:</p>
@@ -251,26 +260,33 @@ src/db/access/access_test.rs  -&gt; test of access submodule
 <li><a href="https://fsharpforfunandprofit.com/posts/property-based-testing-2/">Choosing properties for property-based testing</a></li>
 </ul>
 <p><em>Conditional compilation of tests</em></p>
-<p>Libra <a href="https://doc.rust-lang.org/stable/reference/conditional-compilation.html">conditionally compiles</a> code that is <em>only relevant for tests, but does not consist of tests</em> (unitary or otherwise). Examples of this include proptest strategies, implementations and derivations of specific traits (e.g. the occasional <code>Clone</code>), helper functions, etc. Since Cargo is <a href="https://github.com/rust-lang/cargo/issues/2911">currently not equipped for activating features in benchmarks</a>, we rely on two conditions to perform this conditional compilation:</p>
+<p>Libra <a href="https://doc.rust-lang.org/stable/reference/conditional-compilation.html">conditionally
+compiles</a>
+code that is <em>only relevant for tests, but does not consist of tests</em> (unitary
+or otherwise). Examples of this include proptest strategies, implementations
+and derivations of specific traits (e.g. the occasional <code>Clone</code>), helper
+functions, etc. Since Cargo is <a href="https://github.com/rust-lang/cargo/issues/2911">currently not equipped for automatically activating features
+in tests/benchmarks</a>, we rely on two
+conditions to perform this conditional compilation:</p>
 <ul>
-<li>the test flag, which is activated by dependent test code in the same crate as the conditional test-only code.</li>
-<li>the &quot;testing&quot; custom feature, activated by dependent test code in another crate as the conditional test-only code (as below).</li>
+<li>the test flag, which is activated by dependent test code in the same crate
+as the conditional test-only code.</li>
+<li>the &quot;fuzzing&quot; custom feature, which is used to enable fuzzing and testing
+related code in downstream crates. Note that this must be passed explicitly to
+<code>cargo test</code> and <code>cargo bench</code>. Never use this in <code>[dependencies]</code> or
+<code>[dev-dependencies]</code> unless the crate is only for testing, otherwise Cargo's
+feature unification may pollute production code with the extra testing/fuzzing code.</li>
 </ul>
 <p>As a consequence, it is recommended that you set up your test-only code in the following fashion. For the sake of example, we'll consider you are defining a test-only helper function <code>foo</code> in <code>foo_crate</code>:</p>
 <ol>
 <li>Define the &quot;testing&quot; flag in <code>foo_crate/Cargo.toml</code> and make it non-default:
 <pre><code class="hljs">[features]
 default = []
-testing = []
+fuzzing = []
 </code></pre></li>
-<li>Annotate your test-only helper <code>foo</code> with both the <code>test</code> flag (for in-crate callers) and the <code>&quot;testing&quot;</code> custom feature (for out-of-crate callers):
-<pre><code class="hljs">#[cfg(any(test, feature = "testing"))]
+<li>Annotate your test-only helper <code>foo</code> with both the <code>test</code> flag (for in-crate callers) and the <code>&quot;fuzzing&quot;</code> custom feature (for out-of-crate callers):
+<pre><code class="hljs">#[cfg(any(test, feature = "fuzzing"))]
 fn foo() { ... }
-</code></pre></li>
-<li>Add a dev-dependency activating the &quot;testing&quot; feature to crates that import this test-only member:
-<pre><code class="hljs">[dev-dependencies.foo_crate]
-path = { "&lt;same as the one in [dependencies]&gt;"}
-features = ["testing"]
 </code></pre></li>
 <li>(optional) Use <code>cfg_attr</code> to make test-only trait derivations conditional:
 <pre><code class="hljs">#[cfg_attr(any(test, feature = "testing"), derive(FooTrait))]
@@ -282,12 +298,22 @@ struct Foo { ... }
 default = []
 testing = ["foo_crate/testing"]
 </code></pre></li>
+<li>Update <code>x/src/test_unit.rs</code> to run the unit tests passing in the
+features if needed.</li>
 </ol>
-<p><em>A final note on integration tests</em>: All tests that use conditional test-only elements in another crate need to activate the &quot;testing&quot; feature through the <code>[features]</code> section in their <code>Cargo.toml</code>. <a href="https://doc.rust-lang.org/rust-by-example/testing/integration_testing.html">Integration tests</a> can neither rely on the <code>test</code> flag nor do they have a proper <code>Cargo.toml</code> for feature activation. In the Libra codebase, we therefore recommend that <em>integration tests which depend on test-only code in their tested crate</em> be extracted to their own crate. You can look at <code>language/vm/serializer_tests</code> for an example of such an extracted integration test.</p>
-<p><em>Note for developers</em>: The reason we use a feature re-export (in the <code>[features]</code> section of the <code>Cargo.toml</code> is that a profile is not enough to activate the <code>&quot;testing&quot;</code> feature flag. See <a href="https://github.com/rust-lang/cargo/issues/2911">cargo-issue #291</a> for details).</p>
+<p><em>A final note on integration tests</em>: All tests that use conditional test-only
+elements in another crate need to activate the &quot;fuzzing&quot; feature through the
+<code>[features]</code> section in their <code>Cargo.toml</code>. <a href="https://doc.rust-lang.org/rust-by-example/testing/integration_testing.html">Integration
+tests</a>
+can neither rely on the <code>test</code> flag nor do they have a proper <code>Cargo.toml</code> for
+feature activation. In the Libra codebase, we therefore recommend that
+<em>integration tests which depend on test-only code in their tested crate</em> be
+extracted to their own crate. You can look at <code>language/vm/serializer_tests</code>
+for an example of such an extracted integration test.</p>
+<p><em>Note for developers</em>: The reason we use a feature re-export (in the <code>[features]</code> section of the <code>Cargo.toml</code> is that a profile is not enough to activate the <code>&quot;fuzzing&quot;</code> feature flag. See <a href="https://github.com/rust-lang/cargo/issues/2911">cargo-issue #291</a> for details).</p>
 <p><em>Fuzzing</em></p>
 <p>Libra contains harnesses for fuzzing crash-prone code like deserializers, using <a href="https://llvm.org/docs/LibFuzzer.html"><code>libFuzzer</code></a> through <a href="https://rust-fuzz.github.io/book/cargo-fuzz.html"><code>cargo fuzz</code></a>. For more examples, see the <code>testsuite/libra_fuzzer</code> directory.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/community/contributing"><span class="arrow-prev">← </span><span>Contribution Guide</span></a><a class="docs-next button" href="/docs/policies/security"><span>Reporting Vulnerabilities</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#code-formatting">Code formatting</a></li><li><a href="#code-analysis">Code analysis</a></li><li><a href="#code-documentation">Code documentation</a><ul class="toc-headings"><li><a href="#constants-and-fields">Constants and fields</a></li><li><a href="#functions-and-methods">Functions and methods</a></li><li><a href="#readmemd-for-top-level-directories-and-other-major-components">README.md for top-level directories and other major components</a></li></ul></li><li><a href="#code-suggestions">Code suggestions</a><ul class="toc-headings"><li><a href="#attributes">Attributes</a></li><li><a href="#avoid-deref-polymorphism">Avoid Deref polymorphism</a></li><li><a href="#comments">Comments</a></li><li><a href="#cloning">Cloning</a></li><li><a href="#concurrent-types">Concurrent types</a></li><li><a href="#error-handling">Error handling</a></li><li><a href="#generics">Generics</a></li><li><a href="#getters-setters">Getters/setters</a></li><li><a href="#logging">Logging</a></li><li><a href="#testing">Testing</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/libra-logomark-white.png" alt="Libra"/></a><div class="footerSection"><h5>Learn About Libra</h5><a href="/docs/welcome-to-libra">Welcome to Libra</a><a href="/docs/libra-protocol">Libra Protocol</a><a href="/docs/the-libra-blockchain-paper">Libra Blockchain</a><a href="/docs/life-of-a-transaction">Life of a Transaction</a><p></p><h5>Try Libra Core </h5><a href="/docs/my-first-transaction">My First Transaction</a><a href="/docs/move-overview">Getting Started With Move</a></div><div class="footerSection"><h5>Policies</h5><a href="/docs/policies/privacy-policy">Privacy Policy</a><a href="/docs/policies/terms-of-use">Terms of Use</a><a href="/docs/policies/cookies-policy">Cookies Policy</a><a href="/docs/policies/code-of-conduct">Code of Conduct</a><p></p><h5>Community</h5><a href="https://community.libra.org/">Developer Forum</a><a href="https://developers.libra.org/newsletter_form">Newsletter</a></div><div class="footerSection"><h5>Social</h5><div class="social"><a class="github-button" href="https://github.com/libra/libra" data-count-href="https://github.com/libra/libra/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star Libra on GitHub">libra</a></div><div class="social"><a href="https://twitter.com/libradev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @libradev</a><script async="" src="/js/twitter-widgets.js" charSet="utf-8"></script></div></div></section><section class="copyright"> © Libra Association</section><aside id="cookie-banner"><div class="close" id="cookie-banner-close"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="17" x2="17" y2="1" stroke="#fff" stroke-width="2"></line><line x1="1" y1="1" x2="17" y2="17" stroke="#fff" stroke-width="2"></line></svg></div><div class="wrapper"><p>To help us provide relevant content, analyze our traffic, and provide a variety of features, we use cookies. By clicking on or navigating the site, you agree to allow us to collect information on and off the Libra Website through cookies. To learn more, view our Cookie Policy:</p><div class="buttonWrapper"><a class="button" href="/docs/policies/cookies-policy" target="_blank">Cookies Policy</a></div></div></aside></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/community/contributing"><span class="arrow-prev">← </span><span>Contribution Guide</span></a><a class="docs-next button" href="/docs/policies/security"><span>Reporting Vulnerabilities</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#code-formatting">Code formatting</a></li><li><a href="#code-analysis">Code analysis</a></li><li><a href="#code-documentation">Code documentation</a><ul class="toc-headings"><li><a href="#constants-and-fields">Constants and fields</a></li><li><a href="#functions-and-methods">Functions and methods</a></li><li><a href="#readmemd-for-top-level-directories-and-other-major-components">README.md for top-level directories and other major components</a></li></ul></li><li><a href="#binary-argument-and-crate-naming">Binary, Argument, and Crate Naming</a></li><li><a href="#code-suggestions">Code suggestions</a><ul class="toc-headings"><li><a href="#attributes">Attributes</a></li><li><a href="#avoid-deref-polymorphism">Avoid Deref polymorphism</a></li><li><a href="#comments">Comments</a></li><li><a href="#cloning">Cloning</a></li><li><a href="#concurrent-types">Concurrent types</a></li><li><a href="#error-handling">Error handling</a></li><li><a href="#generics">Generics</a></li><li><a href="#getters-setters">Getters/setters</a></li><li><a href="#logging">Logging</a></li><li><a href="#testing">Testing</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/libra-logomark-white.png" alt="Libra"/></a><div class="footerSection"><h5>Learn About Libra</h5><a href="/docs/welcome-to-libra">Welcome to Libra</a><a href="/docs/libra-protocol">Libra Protocol</a><a href="/docs/the-libra-blockchain-paper">Libra Blockchain</a><a href="/docs/life-of-a-transaction">Life of a Transaction</a><p></p><h5>Try Libra Core </h5><a href="/docs/my-first-transaction">My First Transaction</a><a href="/docs/move-overview">Getting Started With Move</a></div><div class="footerSection"><h5>Policies</h5><a href="/docs/policies/privacy-policy">Privacy Policy</a><a href="/docs/policies/terms-of-use">Terms of Use</a><a href="/docs/policies/cookies-policy">Cookies Policy</a><a href="/docs/policies/code-of-conduct">Code of Conduct</a><p></p><h5>Community</h5><a href="https://community.libra.org/">Developer Forum</a><a href="https://developers.libra.org/newsletter_form">Newsletter</a></div><div class="footerSection"><h5>Social</h5><div class="social"><a class="github-button" href="https://github.com/libra/libra" data-count-href="https://github.com/libra/libra/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star Libra on GitHub">libra</a></div><div class="social"><a href="https://twitter.com/libradev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @libradev</a><script async="" src="/js/twitter-widgets.js" charSet="utf-8"></script></div></div></section><section class="copyright"> © Libra Association</section><aside id="cookie-banner"><div class="close" id="cookie-banner-close"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="17" x2="17" y2="1" stroke="#fff" stroke-width="2"></line><line x1="1" y1="1" x2="17" y2="17" stroke="#fff" stroke-width="2"></line></svg></div><div class="wrapper"><p>To help us provide relevant content, analyze our traffic, and provide a variety of features, we use cookies. By clicking on or navigating the site, you agree to allow us to collect information on and off the Libra Website through cookies. To learn more, view our Cookie Policy:</p><div class="buttonWrapper"><a class="button" href="/docs/policies/cookies-policy" target="_blank">Cookies Policy</a></div></div></aside></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
