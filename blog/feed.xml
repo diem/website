@@ -4,7 +4,7 @@
         <title>Libra Blog</title>
         <link>https://developers.libra.org/blog</link>
         <description>The best place to stay up-to-date with the latest Libra news and events.</description>
-        <lastBuildDate>Tue, 29 Oct 2019 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 09 Nov 2019 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -12,6 +12,13 @@
             <url>https://developers.libra.org/img/libra-nav-logo.png</url>
             <link>https://developers.libra.org/blog</link>
         </image>
+        <item>
+            <title><![CDATA[The Libra Consensus Protocol: Today and Next Steps]]></title>
+            <link>https://developers.libra.org/blog/2019/11/09/libra-consensus-protocol.html</link>
+            <guid>https://developers.libra.org/blog/2019/11/09/libra-consensus-protocol.html</guid>
+            <pubDate>Sat, 09 Nov 2019 06:00:00 GMT</pubDate>
+            <description><![CDATA[ <p>The Libra blockchain development team is excited to share version 3 of the <a href="/docs/state-machine-replication-paper/">Libra consensus whitepaper</a> with the community. This whitepaper features two important advances:</p> <ul> <li><p>It moves the whitepaper close to the released open-source codebase. Moving on...</p></li></ul>]]></description>
+        </item>
         <item>
             <title><![CDATA[A Guide To Running Libra Validators]]></title>
             <link>https://developers.libra.org/blog/2019/10/29/a-guide-to-running-libra-validators.html</link>
