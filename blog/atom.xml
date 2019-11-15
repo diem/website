@@ -2,11 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://developers.libra.org/blog</id>
     <title>Libra Blog</title>
-    <updated>2019-11-09T06:00:00Z</updated>
+    <updated>2019-11-15T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="https://developers.libra.org/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Libra news and events.</subtitle>
     <logo>https://developers.libra.org/img/libra-nav-logo.png</logo>
+    <entry>
+        <title type="html"><![CDATA[5 months and growing strong: the Libra project]]></title>
+        <id>https://developers.libra.org/blog/2019/11/15/5-months-and-growing-strong.html</id>
+        <link href="https://developers.libra.org/blog/2019/11/15/5-months-and-growing-strong.html">
+        </link>
+        <updated>2019-11-15T06:00:00Z</updated>
+        <summary type="html"><![CDATA[ <p>It's been just five months since we announced the Libra project on June 18, 2019, and nearly a month since the Libra Association charter was signed by its members in Geneva. We've been working at breakneck speed to build the global community of deve...</p>]]></summary>
+        <author>
+            <name>Michael Engle, Libra Association</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[The Libra Consensus Protocol: Today and Next Steps]]></title>
         <id>https://developers.libra.org/blog/2019/11/09/libra-consensus-protocol.html</id>

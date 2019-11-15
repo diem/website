@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>5 months and growing strong: the Libra project · Libra</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;script&gt;"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="5 months and growing strong: the Libra project · Libra"/><meta property="og:type" content="website"/><meta property="og:url" content="https://developers.libra.org/blog/2019/11/15/5-months-and-growing-strong"/><meta property="og:description" content="&lt;script&gt;"/><meta property="og:image" content="https://developers.libra.org/img/libra.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://developers.libra.org/img/libra.png"/><link rel="shortcut icon" href="/img/libra.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://developers.libra.org/blog/atom.xml" title="Libra Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://developers.libra.org/blog/feed.xml" title="Libra Blog RSS Feed"/><script type="text/javascript" src="/js/buttons.js"></script><script type="text/javascript" src="/js/code_block_buttons.js"></script><script type="text/javascript" src="/js/cookie_banner.js"></script><script type="text/javascript" src="/js/disable_adblock.js"></script><script type="text/javascript" src="/js/segment.analytics.min.js"></script><script type="text/javascript" src="/js/segment.js"></script><script type="text/javascript" src="/js/clipboardjs.2.0.0.min.js"></script><script type="text/javascript" src="/js/forms.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/libra-nav-logo.png" alt="Libra"/><h2 class="headerTitleWithLogo">Libra</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/welcome-to-libra" target="_self">Documentation</a></li><li class=""><a href="https://community.libra.org" target="_self">Community</a></li><li class="siteNavGroupActive"><a href="/blog/" target="_self">Blog</a></li><li class=""><a href="https://libra.org" target="_self">libra.org</a></li><li class=""><a href="https://github.com/libra/libra" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Recent Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Recent Posts</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/blog/2019/11/15/5-months-and-growing-strong">5 months and growing strong: the Libra project</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/11/09/libra-consensus-protocol">The Libra Consensus Protocol: Today and Next Steps</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/10/29/a-guide-to-running-libra-validators">A Guide To Running Libra Validators</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/10/22/simplifying-payloads">Simplifying Libra Transaction Payloads: Deprecation of the &quot;Program&quot; Type</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/10/02/libra-developer-update">September Libra Developer Update - Roadmap #1</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2019/11/15/5-months-and-growing-strong">5 months and growing strong: the Libra project</a></h1><p class="post-meta">November 15, 2019</p><div class="authorBlock"><p class="post-authorName"><a target="_blank" rel="noreferrer noopener">Michael Engle, Libra Association</a></p></div></header><div><span><script>
+    let items = document.getElementsByClassName("post-meta");   
+    for (var i = items.length - 1; i >= 0; i--) {
+        console.log(items[i], items[i].innerText);
+        if (items[i].innerHTML = '<p class="post-meta">November 15, 2019</p>') items[i].innerHTML = '<p class="post-meta">November 15, 2019</p>';
+    }
+</script>
+<p>It's been just five months since we announced the Libra project on June 18, 2019, and nearly a month since the Libra Association charter was signed by its members in Geneva. We've been working at breakneck speed to build the global community of developers and the technical infrastructure needed to support it. Here are a few highlights of what we've been working on:</p>
+<ul>
+<li>Inviting community participation in shaping how we get to mainnet by making a detailed technical roadmap available to all.</li>
+<li>Encouraging developers to test Libra network functionality by launching and continuously improving testnet, which has logged more than 51,000 transactions since we reset the testnet on 9/17.</li>
+<li>Simplifying how developers work with the Libra project team, so they can focus more on building their projects, by integrating our online developer community, GitHub project, CLA process, and more.</li>
+<li>Teaching developers of all backgrounds and skill levels how to work with the Libra network by consistently publishing documentation and technical blogs.</li>
+<li>Incentivizing developers to help us find and fix bugs faster by launching a Bug Bounty program.</li>
+</ul>
+<p>Our community of developers has responded enthusiastically, logging an amazing 34 projects in just seven weeks since launch of the testnet:</p>
+<ul>
+<li>10 wallets</li>
+<li>11 blockchain explorers</li>
+<li>2 IDEs</li>
+<li>1 API</li>
+<li>11 clients</li>
+</ul>
+<p>We want to say a very big thank you to all the developers in the community for all the hard work. We're thrilled to be part of such a passionate community!</p>
+<h2><a class="anchor" aria-hidden="true" id="building-involvement-in-libra-core"></a><a href="#building-involvement-in-libra-core" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Building involvement in Libra Core</h2>
+<p>The success of the Libra project lies with the extended community that supports it. To help us build on our existing foundation by getting even more people involved, we recently held a Libra Core Summit with Libra Association technical team members. It was our first step towards a collaborative development plan for Libra Core and Move. In the future, we intend to continue to host events for all developers to discuss issues, challenges, and opportunities in the Libra ecosystem.</p>
+<p>In addition to an expanded overview of the backstory, economics, and vision for the Libra project, topics covered include:</p>
+<ul>
+<li>An overview of Libra Core and its roadmap</li>
+<li>How to run a Libra node</li>
+<li>How to build a Libra wallet</li>
+<li>How to scale the Libra network</li>
+<li>Libra wallet interoperability</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="expanding-testnet"></a><a href="#expanding-testnet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Expanding testnet</h2>
+<p>Until we launch mainnet, the best and fastest way we have to demonstrate Libra network functionality and provide early access to developers around the world is through our testnet. Testnet makes it easier and faster to test, troubleshoot, diagnose, and resolve software edge cases. One measure of our success in this phase is the number of nodes that are live on the testnet. Currently, testnet has:</p>
+<ul>
+<li>Deployed nodes: 7</li>
+<li>In-process nodes: 6</li>
+<li>In-process nodes without a technical team: 8</li>
+</ul>
+<p>For those organizations without a technical team to implement a node, the Libra Association is working on a strategy to support deployment in 2020, when the Libra Core feature set is complete.</p>
+<p>The Libra Association intends to deploy 100 nodes on the mainnet, representing a mix of on-premises and cloud-hosted infrastructure. All the work we are doing now on testnet supports this goal of greater resiliency on the network through a wider diversity of infrastructure.</p>
+<h2><a class="anchor" aria-hidden="true" id="deepening-the-developer-experience"></a><a href="#deepening-the-developer-experience" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deepening the developer experience</h2>
+<p>As a Libra developer, we know that you commit significant time and resources to your work. We want to give you tools that will support you in making the most of your time and technical investments. Our work here includes:</p>
+<ul>
+<li>Providing guides, documentation, and content for blockchain, smart contract, and wallet/client developers</li>
+<li>Providing structured discussions and support</li>
+<li>Advocating for transparency and access</li>
+<li>Scaling outreach through tooling, events, programs, and bounties</li>
+<li>Supporting engineering efforts of the Technical Steering Committee and Roadmap process.</li>
+</ul>
+<p>Now, we want to make it easier and faster to submit code and documentation to the Libra project. On November 26, we're launching a new, streamlined process for completing Contributor License Agreements (CLAs). As with many open-source projects, you must complete and sign a CLA before you can submit code to the Libra project on GitHub.</p>
+<p>Our new process streamlines how CLAs are submitted, reviewed, and verified, whether for individuals or for contributors working on behalf of a corporation or business.</p>
+<p>You can start the process from GitHub. Choose which type of CLA best fits your situation (individual or corporate) and follow the directions to fill out the appropriate form.</p>
+<p>PRs submitted are not guaranteed to be accepted in a timely fashion. If you have an ambitious feature that you wish to add to Libra Core and which does not fit into the existing Roadmap, reach out through engineering channels or to the Libra Association and start a discussion. Code review and code acceptance is managed by project maintainers. Review the <a href="https://developers.libra.org/docs/community/contributing">Contribution Guide</a> and <a href="https://developers.libra.org/docs/community/coding-guidelines">Coding Guidelines</a> prior to submitting your changes.</p>
+<h2><a class="anchor" aria-hidden="true" id="expanding-the-technical-roadmap-and-technical-governance"></a><a href="#expanding-the-technical-roadmap-and-technical-governance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Expanding the technical Roadmap and technical governance</h2>
+<p>You can check the technical progress we're making toward the Libra Core mainnet launch on our <a href="https://github.com/orgs/libra/projects/1">Roadmap</a>. Completed work includes:</p>
+<ul>
+<li>Libra Canonical Serialization (LCS)</li>
+<li>MVP for full nodes</li>
+<li>MVP for vectors in Move</li>
+<li>Events</li>
+</ul>
+<p>We have a lot of work still to do, and we need a passionate, dedicated community to help us all get to mainnet launch. To help us get there and make the best use of all the knowledge in our community, we plan to launch a Technical Steering Committee (TSC) in the coming months.</p>
+<p>The TSC will oversee and coordinate the technical design and development of the Libra network on behalf of the Libra Association members. Libra Association members will decide together how the TSC will operate, including how its members will be determined, the full scope of its responsibilities, and how the extended community can support specific initiatives.</p>
+<h2><a class="anchor" aria-hidden="true" id="what-opportunities-interest-you-as-a-libra-developer"></a><a href="#what-opportunities-interest-you-as-a-libra-developer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What opportunities interest you as a Libra developer?</h2>
+<p>As a Libra developer, you're an incredibly important contributor to the Libra project. We're excited to be on this journey with you, and with everyone in our extended developer community, and we look forward to our continued progress toward mainnet launch.</p>
+<p>We invite you to dive in deeper, wherever you see the best opportunity to help us all move forward faster:</p>
+<ul>
+<li><a href="https://github.com/libra/libra">Contribute code</a></li>
+<li>Share your questions and answers in the <a href="https://community.libra.org/">Libra developer community page</a></li>
+<li>Read the <a href="https://developers.libra.org/docs/welcome-to-libra">Libra documentation</a> and <a href="https://developers.libra.org/blog/">blog</a></li>
+<li><a href="https://community.libra.org/c/Please-follow-this-category-for-projects-made-on-the-Libra-testnet">Share your projects</a></li>
+<li><a href="https://twitter.com/libradev">Follow us on Twitter</a> to stay up with the latest</li>
+</ul>
+</span></div></div><div class="blogSocialSection"></div></div><div class="blog-recent"><a class="button" href="/blog">Recent Posts</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#building-involvement-in-libra-core">Building involvement in Libra Core</a></li><li><a href="#expanding-testnet">Expanding testnet</a></li><li><a href="#deepening-the-developer-experience">Deepening the developer experience</a></li><li><a href="#expanding-the-technical-roadmap-and-technical-governance">Expanding the technical Roadmap and technical governance</a></li><li><a href="#what-opportunities-interest-you-as-a-libra-developer">What opportunities interest you as a Libra developer?</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/libra-logomark-white.png" alt="Libra"/></a><div class="footerSection"><h5>Learn About Libra</h5><a href="/docs/welcome-to-libra">Welcome to Libra</a><a href="/docs/libra-protocol">Libra Protocol</a><a href="/docs/the-libra-blockchain-paper">Libra Blockchain</a><a href="/docs/life-of-a-transaction">Life of a Transaction</a><p></p><h5>Try Libra Core </h5><a href="/docs/my-first-transaction">My First Transaction</a><a href="/docs/move-overview">Getting Started With Move</a></div><div class="footerSection"><h5>Policies</h5><a href="/docs/policies/privacy-policy">Privacy Policy</a><a href="/docs/policies/terms-of-use">Terms of Use</a><a href="/docs/policies/cookies-policy">Cookies Policy</a><a href="/docs/policies/code-of-conduct">Code of Conduct</a><p></p><h5>Community</h5><a href="https://community.libra.org/">Developer Forum</a><a href="https://developers.libra.org/newsletter_form">Newsletter</a></div><div class="footerSection"><h5>Social</h5><div class="social"><a class="github-button" href="https://github.com/libra/libra" data-count-href="https://github.com/libra/libra/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star Libra on GitHub">libra</a></div><div class="social"><a href="https://twitter.com/libradev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @libradev</a><script async="" src="/js/twitter-widgets.js" charSet="utf-8"></script></div></div></section><section class="copyright"> © Libra Association</section><aside id="cookie-banner"><div class="close" id="cookie-banner-close"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="17" x2="17" y2="1" stroke="#fff" stroke-width="2"></line><line x1="1" y1="1" x2="17" y2="17" stroke="#fff" stroke-width="2"></line></svg></div><div class="wrapper"><p>To help us provide relevant content, analyze our traffic, and provide a variety of features, we use cookies. By clicking on or navigating the site, you agree to allow us to collect information on and off the Libra Website through cookies. To learn more, view our Cookie Policy:</p><div class="buttonWrapper"><a class="button" href="/docs/policies/cookies-policy" target="_blank">Cookies Policy</a></div></div></aside></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '0d48ee629d39ddc4916eeef7755a0c4c',
+                indexName: 'libra',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>
