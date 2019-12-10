@@ -4,7 +4,7 @@
         <title>Libra Blog</title>
         <link>https://developers.libra.org/blog</link>
         <description>The best place to stay up-to-date with the latest Libra news and events.</description>
-        <lastBuildDate>Fri, 15 Nov 2019 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 10 Dec 2019 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -12,6 +12,13 @@
             <url>https://developers.libra.org/img/libra-nav-logo.png</url>
             <link>https://developers.libra.org/blog</link>
         </image>
+        <item>
+            <title><![CDATA[How to contribute code to the Libra project: about the CLA process]]></title>
+            <link>https://developers.libra.org/blog/2019/12/10/about-the-cla-process.html</link>
+            <guid>https://developers.libra.org/blog/2019/12/10/about-the-cla-process.html</guid>
+            <pubDate>Tue, 10 Dec 2019 06:00:00 GMT</pubDate>
+            <description><![CDATA[ <p>Built on open source software, the Libra network relies on a vibrant community of developers to enhance and continue growing the system. Any consumer, developer, or business can use the Libra network, build products on top of it, and add value throu...</p>]]></description>
+        </item>
         <item>
             <title><![CDATA[Five months and growing strong: the Libra project]]></title>
             <link>https://developers.libra.org/blog/2019/11/15/5-months-and-growing-strong.html</link>

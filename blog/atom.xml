@@ -2,11 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://developers.libra.org/blog</id>
     <title>Libra Blog</title>
-    <updated>2019-11-15T06:00:00Z</updated>
+    <updated>2019-12-10T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="https://developers.libra.org/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Libra news and events.</subtitle>
     <logo>https://developers.libra.org/img/libra-nav-logo.png</logo>
+    <entry>
+        <title type="html"><![CDATA[How to contribute code to the Libra project: about the CLA process]]></title>
+        <id>https://developers.libra.org/blog/2019/12/10/about-the-cla-process.html</id>
+        <link href="https://developers.libra.org/blog/2019/12/10/about-the-cla-process.html">
+        </link>
+        <updated>2019-12-10T06:00:00Z</updated>
+        <summary type="html"><![CDATA[ <p>Built on open source software, the Libra network relies on a vibrant community of developers to enhance and continue growing the system. Any consumer, developer, or business can use the Libra network, build products on top of it, and add value throu...</p>]]></summary>
+        <author>
+            <name>Eric Nakagawa, Calibra</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Five months and growing strong: the Libra project]]></title>
         <id>https://developers.libra.org/blog/2019/11/15/5-months-and-growing-strong.html</id>
