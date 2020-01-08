@@ -4,7 +4,7 @@
         <title>Libra Blog</title>
         <link>https://developers.libra.org/blog</link>
         <description>The best place to stay up-to-date with the latest Libra news and events.</description>
-        <lastBuildDate>Tue, 17 Dec 2019 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 08 Jan 2020 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -12,6 +12,13 @@
             <url>https://developers.libra.org/img/libra-nav-logo.png</url>
             <link>https://developers.libra.org/blog</link>
         </image>
+        <item>
+            <title><![CDATA[How gas works on the Libra blockchain]]></title>
+            <link>https://developers.libra.org/blog/2020/01/08/how-gas-works-on-libra-blockchain.html</link>
+            <guid>https://developers.libra.org/blog/2020/01/08/how-gas-works-on-libra-blockchain.html</guid>
+            <pubDate>Wed, 08 Jan 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[ <p><strong>Note</strong> : The Libra Core software and the Move language are still under development; the information and the terminology used in this document are subject to change.</p> <p>This post starts a series on gas on the Libra blockchain. The goal of this series is t...</p>]]></description>
+        </item>
         <item>
             <title><![CDATA[Libra Core Roadmap #2]]></title>
             <link>https://developers.libra.org/blog/2019/12/17/libra-core-roadmap-2.html</link>
