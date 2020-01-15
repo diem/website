@@ -2,11 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://developers.libra.org/blog</id>
     <title>Libra Blog</title>
-    <updated>2020-01-08T06:00:00Z</updated>
+    <updated>2020-01-14T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="https://developers.libra.org/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Libra news and events.</subtitle>
     <logo>https://developers.libra.org/img/libra-nav-logo.png</logo>
+    <entry>
+        <title type="html"><![CDATA[Reconfiguration support is live on testnet]]></title>
+        <id>https://developers.libra.org/blog/2020/01/14/reconfiguration-is-live-on-testnet.html</id>
+        <link href="https://developers.libra.org/blog/2020/01/14/reconfiguration-is-live-on-testnet.html">
+        </link>
+        <updated>2020-01-14T06:00:00Z</updated>
+        <summary type="html"><![CDATA[ <p>We're happy to announce that Libra protocol now provides initial support for reconfiguration, which is the ability to change any configuration parameter on the blockchain without restarting any validators and while preserving Libra Byzantine Fault T...</p>]]></summary>
+        <author>
+            <name>Libra Engineering Team</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[How gas works on the Libra blockchain]]></title>
         <id>https://developers.libra.org/blog/2020/01/08/how-gas-works-on-libra-blockchain.html</id>
