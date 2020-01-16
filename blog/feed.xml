@@ -4,7 +4,7 @@
         <title>Libra Blog</title>
         <link>https://developers.libra.org/blog</link>
         <description>The best place to stay up-to-date with the latest Libra news and events.</description>
-        <lastBuildDate>Tue, 14 Jan 2020 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 16 Jan 2020 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -12,6 +12,13 @@
             <url>https://developers.libra.org/img/libra-nav-logo.png</url>
             <link>https://developers.libra.org/blog</link>
         </image>
+        <item>
+            <title><![CDATA[Steering committee now governs Libra technical development]]></title>
+            <link>https://developers.libra.org/blog/2020/01/16/steering-committee-now-governs-libra-technical-development.html</link>
+            <guid>https://developers.libra.org/blog/2020/01/16/steering-committee-now-governs-libra-technical-development.html</guid>
+            <pubDate>Thu, 16 Jan 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[ <p>On December 16, 2019, the council of the Libra Association voted to establish a Technical Steering Committee (TSC) for the Libra project and elected five members that each contribute a unique perspective and bring valuable domain expertise to the pr...</p>]]></description>
+        </item>
         <item>
             <title><![CDATA[Reconfiguration support is live on testnet]]></title>
             <link>https://developers.libra.org/blog/2020/01/14/reconfiguration-is-live-on-testnet.html</link>

@@ -2,11 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://developers.libra.org/blog</id>
     <title>Libra Blog</title>
-    <updated>2020-01-14T06:00:00Z</updated>
+    <updated>2020-01-16T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="https://developers.libra.org/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Libra news and events.</subtitle>
     <logo>https://developers.libra.org/img/libra-nav-logo.png</logo>
+    <entry>
+        <title type="html"><![CDATA[Steering committee now governs Libra technical development]]></title>
+        <id>https://developers.libra.org/blog/2020/01/16/steering-committee-now-governs-libra-technical-development.html</id>
+        <link href="https://developers.libra.org/blog/2020/01/16/steering-committee-now-governs-libra-technical-development.html">
+        </link>
+        <updated>2020-01-16T06:00:00Z</updated>
+        <summary type="html"><![CDATA[ <p>On December 16, 2019, the council of the Libra Association voted to establish a Technical Steering Committee (TSC) for the Libra project and elected five members that each contribute a unique perspective and bring valuable domain expertise to the pr...</p>]]></summary>
+        <author>
+            <name>Michael Engle, Libra Association</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Reconfiguration support is live on testnet]]></title>
         <id>https://developers.libra.org/blog/2020/01/14/reconfiguration-is-live-on-testnet.html</id>
