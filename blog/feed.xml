@@ -4,7 +4,7 @@
         <title>Libra Blog</title>
         <link>https://developers.libra.org/blog</link>
         <description>The best place to stay up-to-date with the latest Libra news and events.</description>
-        <lastBuildDate>Thu, 16 Jan 2020 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 23 Jan 2020 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -12,6 +12,13 @@
             <url>https://developers.libra.org/img/libra-nav-logo.png</url>
             <link>https://developers.libra.org/blog</link>
         </image>
+        <item>
+            <title><![CDATA[Full node basics: an introduction to full nodes in the Libra network]]></title>
+            <link>https://developers.libra.org/blog/2020/01/23/full-node-basics.html</link>
+            <guid>https://developers.libra.org/blog/2020/01/23/full-node-basics.html</guid>
+            <pubDate>Thu, 23 Jan 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[ <p><em><strong>Note:</strong> Libra Core software is still under development; the information and the terminology used in this document are subject to change.</em></p> <p>This is the first post in a series on full nodes in the Libra network. Our goal for this post is to introduce the ...</p>]]></description>
+        </item>
         <item>
             <title><![CDATA[Steering committee now governs Libra technical development]]></title>
             <link>https://developers.libra.org/blog/2020/01/16/steering-committee-now-governs-libra-technical-development.html</link>

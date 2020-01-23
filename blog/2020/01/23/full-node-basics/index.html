@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Full node basics: an introduction to full nodes in the Libra network · Libra</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;script&gt;"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Full node basics: an introduction to full nodes in the Libra network · Libra"/><meta property="og:type" content="website"/><meta property="og:url" content="https://developers.libra.org/blog/2020/01/23/full-node-basics"/><meta property="og:description" content="&lt;script&gt;"/><meta property="og:image" content="https://developers.libra.org/img/libra.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://developers.libra.org/img/libra.png"/><link rel="shortcut icon" href="/img/libra.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://developers.libra.org/blog/atom.xml" title="Libra Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://developers.libra.org/blog/feed.xml" title="Libra Blog RSS Feed"/><script type="text/javascript" src="/js/buttons.js"></script><script type="text/javascript" src="/js/code_block_buttons.js"></script><script type="text/javascript" src="/js/cookie_banner.js"></script><script type="text/javascript" src="/js/disable_adblock.js"></script><script type="text/javascript" src="/js/segment.analytics.min.js"></script><script type="text/javascript" src="/js/segment.js"></script><script type="text/javascript" src="/js/clipboardjs.2.0.0.min.js"></script><script type="text/javascript" src="/js/forms.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/libra-nav-logo.png" alt="Libra"/><h2 class="headerTitleWithLogo">Libra</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/welcome-to-libra" target="_self">Documentation</a></li><li class=""><a href="https://community.libra.org" target="_self">Community</a></li><li class="siteNavGroupActive"><a href="/blog/" target="_self">Blog</a></li><li class=""><a href="https://libra.org" target="_self">libra.org</a></li><li class=""><a href="https://github.com/libra/libra" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>All Blog Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">All Blog Posts</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/blog/2020/01/23/full-node-basics">Full node basics: an introduction to full nodes in the Libra network</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/16/steering-committee-now-governs-libra-technical-development">Steering committee now governs Libra technical development</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/14/reconfiguration-is-live-on-testnet">Reconfiguration support is live on testnet</a></li><li class="navListItem"><a class="navItem" href="/blog/2020/01/08/how-gas-works-on-libra-blockchain">How gas works on the Libra blockchain</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/17/libra-core-roadmap-2">Libra Core Roadmap #2</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/12/10/about-the-cla-process">How to contribute code to the Libra project: about the CLA process</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/11/15/5-months-and-growing-strong">Five months and growing strong: the Libra project</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/11/09/libra-consensus-protocol">The Libra Consensus Protocol: Today and Next Steps</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/10/29/a-guide-to-running-libra-validators">A Guide To Running Libra Validators</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/10/22/simplifying-payloads">Simplifying Libra Transaction Payloads: Deprecation of the &quot;Program&quot; Type</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/10/02/libra-developer-update">September Libra Developer Update - Roadmap #1</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/09/26/libra-bft-protocol">Improving the LibraBFT protocol</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/09/12/libra-developer-spotlight">Libra Developer Spotlight</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/08/14/libra-bug-bounty">Libra Bug Bounty Open to All</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/06/18/the-path-forward">Libra: The Path Forward</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2020/01/23/full-node-basics">Full node basics: an introduction to full nodes in the Libra network</a></h1><p class="post-meta">January 23, 2020</p><div class="authorBlock"><p class="post-authorName"><a target="_blank" rel="noreferrer noopener">Libra Engineering Team</a></p></div></header><div><span><script>
+    let items = document.getElementsByClassName("post-meta");   
+    for (var i = items.length - 1; i >= 0; i--) {
+        if (items[i].innerHTML = '<p class="post-meta">January 23, 2020</p>') items[i].innerHTML = '<p class="post-meta">January 23, 2020</p>';
+    }
+</script>
+<p><em><strong>Note:</strong> Libra Core software is still under development; the information and the terminology used in this document are subject to change.</em></p>
+<p>This is the first post in a series on full nodes in the Libra network. Our goal for this post is to introduce the basic concepts associated with full nodes and talk about the motivation behind full nodes. A Libra node is a peer entity that participates in the Libra network and tracks the state of the Libra Blockchain. Libra clients (e.g., wallet applications) interact with the Libra Blockchain via Libra nodes. There are two types of nodes in the Libra network: full nodes and validator nodes. The Libra protocol can be configured to run either as a validator node or as a full node.</p>
+<p>The functionality of being a validator and being a full node are related. For example, before joining the set of validators, a new validator will often run as a full node in order to synchronize to the blockchain. An entity that was formerly a validator, but has exited the validator set, might continue operation as a full node.</p>
+<h2><a class="anchor" aria-hidden="true" id="why-are-full-nodes-important"></a><a href="#why-are-full-nodes-important" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Why are full nodes important?</h2>
+<ul>
+<li>Full nodes (&quot;FNs&quot;) enable external validation of blockchain correctness. FNs revalidate and replay all the transactions committed by validators when they synchronize to the current state of the blockchain. This allows full nodes to ensure that transactions have been executed according to the rules of the protocol.</li>
+<li>FNs make it easier to scale read traffic. They serve read queries from clients.</li>
+<li>FNs enable greater insight into the blockchain for third-party blockchain applications such as explorers, wallets, exchanges, and so on. If an entity (e.g., an exchange or a wallet) runs a full node, that entity can:
+<ul>
+<li>Get a consistent view of the Libra network</li>
+<li>Avoid rate limitations on read traffic</li>
+<li>Run custom analytics on historical data</li>
+<li>Get notifications about particular on-chain events</li>
+</ul></li>
+<li>FNs protect validators from Distributed Denial of Service (DDoS) attacks.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="who-runs-libra-full-nodes"></a><a href="#who-runs-libra-full-nodes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Who runs Libra full nodes?</h2>
+<p>It's important to understand that all full nodes have the same functionality and store the same data, irrespective of who runs them. The accuracy of the data stored by full nodes is authenticated by validators. So, who might run full nodes?</p>
+<ul>
+<li>A wallet or exchange might run a full node to handle traffic from its own internal services, avoiding the need to rely on an external service.</li>
+<li>A validator might run a full node to scale the operations of that validator.</li>
+<li>An entity might also decide to run a full node as a public service to:
+<ul>
+<li>Provide a scalable public read/write infrastructure</li>
+<li>Provide a public history of the blockchain and safeguard the blockchain against forks and invalid protocol changes</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="when-would-a-libra-client-interact-with-a-full-node"></a><a href="#when-would-a-libra-client-interact-with-a-full-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>When would a Libra client interact with a full node?</h2>
+<p>Libra clients (e.g., wallet applications) use full nodes to access information from the Libra Blockchain. If a Libra validator operates a set of full nodes, a Libra client interacts with those full nodes instead of directly interacting with the validator itself.</p>
+<ul>
+<li>A full node can answer all read queries from clients without interacting with validators.</li>
+<li>A full node proxies write requests (e.g., transaction submissions) from clients to the validator associated with the full node.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="whats-the-difference-between-validator-nodes-and-full-nodes"></a><a href="#whats-the-difference-between-validator-nodes-and-full-nodes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What's the difference between validator nodes and full nodes?</h2>
+<table>
+<thead>
+<tr><th><strong>Validator nodes</strong></th><th><strong>Full nodes</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>Are run by members of the validator set (i.e., Libra Association Members)</td><td>Are run by anybody</td></tr>
+<tr><td>Validate transactions as part of the consensus process that is part of the operation of the Libra Blockchain</td><td>Validate transactions as a part of synchronizing to the Libra Blockchain from validators</td></tr>
+<tr><td>Are focused on writes — they accept transactions from clients and insert them into the Libra Blockchain</td><td>Are focused on reads — they can handle queries from clients and provide scale for the validators</td></tr>
+<tr><td>Provide signatures that authenticate the state of the Libra Blockchain</td><td>Rely on validator signatures to prove the correctness of their results to clients</td></tr>
+<tr><td>Are only required to have knowledge of the current state of the blockchain</td><td>Maintain historical information about the state of the blockchain</td></tr>
+</tbody>
+</table>
+<p><em><strong>Note</strong>: A read query is a request to fetch the current state of the blockchain (e.g., account balance, last transactions, etc.). A write request is the submission of a new transaction.</em></p>
+<h2><a class="anchor" aria-hidden="true" id="does-a-full-node-stay-synchronized-with-the-blockchain"></a><a href="#does-a-full-node-stay-synchronized-with-the-blockchain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Does a full node stay synchronized with the blockchain?</h2>
+<p>A full node synchronizes to the latest state of the blockchain when:</p>
+<ul>
+<li>It comes online for the first time (bootstrap)</li>
+<li>It restarts</li>
+<li>It comes online after being offline for some time</li>
+<li>After a network partition heals</li>
+</ul>
+<p>During normal FN workload, FNs synchronize with their upstream nodes continuously using the <code>StateSynchronizer</code> protocol.</p>
+<h2><a class="anchor" aria-hidden="true" id="whats-next"></a><a href="#whats-next" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What's next?</h2>
+<p>In a future post in this series, we'll talk about running full nodes on the Libra network.</p>
+</span></div></div><div class="blogSocialSection"></div></div><div class="blog-recent"><a class="button" href="/blog">Recent Posts</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#why-are-full-nodes-important">Why are full nodes important?</a></li><li><a href="#who-runs-libra-full-nodes">Who runs Libra full nodes?</a></li><li><a href="#when-would-a-libra-client-interact-with-a-full-node">When would a Libra client interact with a full node?</a></li><li><a href="#whats-the-difference-between-validator-nodes-and-full-nodes">What's the difference between validator nodes and full nodes?</a></li><li><a href="#does-a-full-node-stay-synchronized-with-the-blockchain">Does a full node stay synchronized with the blockchain?</a></li><li><a href="#whats-next">What's next?</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/libra-logomark-white.png" alt="Libra"/></a><div class="footerSection"><h5>Learn About Libra</h5><a href="/docs/welcome-to-libra">Welcome to Libra</a><a href="/docs/libra-protocol">Libra Protocol</a><a href="/docs/the-libra-blockchain-paper">Libra Blockchain</a><a href="/docs/life-of-a-transaction">Life of a Transaction</a><p></p><h5>Try Libra Core </h5><a href="/docs/my-first-transaction">My First Transaction</a><a href="/docs/move-overview">Getting Started With Move</a></div><div class="footerSection"><h5>Policies</h5><a href="/docs/policies/privacy-policy">Privacy Policy</a><a href="/docs/policies/terms-of-use">Terms of Use</a><a href="/docs/policies/cookies-policy">Cookies Policy</a><a href="/docs/policies/code-of-conduct">Code of Conduct</a><p></p><h5>Community</h5><a href="https://community.libra.org/">Developer Forum</a><a href="https://developers.libra.org/newsletter_form">Newsletter</a></div><div class="footerSection"><h5>Social</h5><div class="social"><a class="github-button" href="https://github.com/libra/libra" data-count-href="https://github.com/libra/libra/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star Libra on GitHub">libra</a></div><div class="social"><a href="https://twitter.com/libradev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @libradev</a><script async="" src="/js/twitter-widgets.js" charSet="utf-8"></script></div></div></section><section class="copyright"> © Libra Association</section><aside id="cookie-banner"><div class="close" id="cookie-banner-close"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="17" x2="17" y2="1" stroke="#fff" stroke-width="2"></line><line x1="1" y1="1" x2="17" y2="17" stroke="#fff" stroke-width="2"></line></svg></div><div class="wrapper"><p>To help us provide relevant content, analyze our traffic, and provide a variety of features, we use cookies. By clicking on or navigating the site, you agree to allow us to collect information on and off the Libra Website through cookies. To learn more, view our Cookie Policy:</p><div class="buttonWrapper"><a class="button" href="/docs/policies/cookies-policy" target="_blank">Cookies Policy</a></div></div></aside></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '0d48ee629d39ddc4916eeef7755a0c4c',
+                indexName: 'libra',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>
