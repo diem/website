@@ -5,11 +5,11 @@
         <link>https://developers.libra.org/blog</link>
         <description>The best place to stay up-to-date with the latest Libra news and events.</description>
         <lastBuildDate>Fri, 06 Mar 2020 06:00:00 GMT</lastBuildDate>
-        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
-        <generator>Feed for Node.js</generator>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
         <image>
             <title>Libra Blog</title>
-            <url>https://developers.libra.org/img/libra-nav-logo.png</url>
+            <url>https://developers.libra.org/img/libra-nav-logo.svg</url>
             <link>https://developers.libra.org/blog</link>
         </image>
         <item>

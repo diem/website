@@ -2,196 +2,213 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://developers.libra.org/blog</id>
     <title>Libra Blog</title>
-    <updated>2020-03-06T06:00:00Z</updated>
-    <generator>Feed for Node.js</generator>
+    <updated>2020-03-06T06:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://developers.libra.org/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Libra news and events.</subtitle>
-    <logo>https://developers.libra.org/img/libra-nav-logo.png</logo>
+    <logo>https://developers.libra.org/img/libra-nav-logo.svg</logo>
     <entry>
         <title type="html"><![CDATA[How to use the end-to-end tests framework in Move]]></title>
         <id>https://developers.libra.org/blog/2020/03/06/how-to-use-the-end-to-end-tests-framework-in-move.html</id>
-        <link href="https://developers.libra.org/blog/2020/03/06/how-to-use-the-end-to-end-tests-framework-in-move.html">
-        </link>
-        <updated>2020-03-06T06:00:00Z</updated>
+        <link href="https://developers.libra.org/blog/2020/03/06/how-to-use-the-end-to-end-tests-framework-in-move.html"/>
+        <updated>2020-03-06T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[ <p><strong>Note</strong>: The Move language is under development; the information and the terminology used in this document are subject to change.</p> <h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>Overview</h2> <p>The framework we use to test the Move language is end-to-end (e2e) tests. The goal of e2e tests is to emulate the...</p>]]></summary>
         <author>
             <name>Libra Engineering Team</name>
+            <email/>
+            <uri/>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Libra Core Roadmap #3]]></title>
         <id>https://developers.libra.org/blog/2020/02/28/libra-core-roadmap-3.html</id>
-        <link href="https://developers.libra.org/blog/2020/02/28/libra-core-roadmap-3.html">
-        </link>
-        <updated>2020-02-28T06:00:00Z</updated>
+        <link href="https://developers.libra.org/blog/2020/02/28/libra-core-roadmap-3.html"/>
+        <updated>2020-02-28T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[ <h2><a class="anchor" aria-hidden="true" id="roadmap-2-retrospective"></a><a href="#roadmap-2-retrospective" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>Roadmap #2 retrospective</h2> <h3><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>Overview</h3> <p>In <a href="https://developers.libra.org/blog/2019/12/17/libra-core-roadmap-2">Roadmap #2</a>, we made solid progress on improvements to Move. We iterated on the design of the Move source language and cleaned up key parts of the VM. Further improvements, including additional VM cleanup, design ...</p>]]></summary>
         <author>
             <name>Libra Engineering Team</name>
+            <email/>
+            <uri/>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Full node basics: an introduction to full nodes in the Libra network]]></title>
         <id>https://developers.libra.org/blog/2020/01/23/full-node-basics.html</id>
-        <link href="https://developers.libra.org/blog/2020/01/23/full-node-basics.html">
-        </link>
-        <updated>2020-01-23T06:00:00Z</updated>
+        <link href="https://developers.libra.org/blog/2020/01/23/full-node-basics.html"/>
+        <updated>2020-01-23T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[ <p><em><strong>Note:</strong> Libra Core software is still under development; the information and the terminology used in this document are subject to change.</em></p> <p>This is the first post in a series on full nodes in the Libra network. Our goal for this post is to introduce the ...</p>]]></summary>
         <author>
             <name>Libra Engineering Team</name>
+            <email/>
+            <uri/>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Steering committee now governs Libra technical development]]></title>
         <id>https://developers.libra.org/blog/2020/01/16/steering-committee-now-governs-libra-technical-development.html</id>
-        <link href="https://developers.libra.org/blog/2020/01/16/steering-committee-now-governs-libra-technical-development.html">
-        </link>
-        <updated>2020-01-16T06:00:00Z</updated>
+        <link href="https://developers.libra.org/blog/2020/01/16/steering-committee-now-governs-libra-technical-development.html"/>
+        <updated>2020-01-16T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[ <p>On December 16, 2019, the council of the Libra Association voted to establish a Technical Steering Committee (TSC) for the Libra project and elected five members that each contribute a unique perspective and bring valuable domain expertise to the pr...</p>]]></summary>
         <author>
             <name>Michael Engle, Libra Association</name>
+            <email/>
+            <uri/>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Reconfiguration support is live on testnet]]></title>
         <id>https://developers.libra.org/blog/2020/01/14/reconfiguration-is-live-on-testnet.html</id>
-        <link href="https://developers.libra.org/blog/2020/01/14/reconfiguration-is-live-on-testnet.html">
-        </link>
-        <updated>2020-01-14T06:00:00Z</updated>
+        <link href="https://developers.libra.org/blog/2020/01/14/reconfiguration-is-live-on-testnet.html"/>
+        <updated>2020-01-14T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[ <p>We're happy to announce that Libra protocol now provides initial support for reconfiguration, which is the ability to change any configuration parameter on the blockchain without restarting any validators and while preserving Libra Byzantine Fault T...</p>]]></summary>
         <author>
             <name>Libra Engineering Team</name>
+            <email/>
+            <uri/>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[How gas works on the Libra blockchain]]></title>
         <id>https://developers.libra.org/blog/2020/01/08/how-gas-works-on-libra-blockchain.html</id>
-        <link href="https://developers.libra.org/blog/2020/01/08/how-gas-works-on-libra-blockchain.html">
-        </link>
-        <updated>2020-01-08T06:00:00Z</updated>
+        <link href="https://developers.libra.org/blog/2020/01/08/how-gas-works-on-libra-blockchain.html"/>
+        <updated>2020-01-08T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[ <p><strong>Note</strong> : The Libra Core software and the Move language are still under development; the information and the terminology used in this document are subject to change.</p> <p>This post starts a series on gas on the Libra blockchain. The goal of this series is t...</p>]]></summary>
         <author>
             <name>Libra Engineering Team</name>
+            <email/>
+            <uri/>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Libra Core Roadmap #2]]></title>
         <id>https://developers.libra.org/blog/2019/12/17/libra-core-roadmap-2.html</id>
-        <link href="https://developers.libra.org/blog/2019/12/17/libra-core-roadmap-2.html">
-        </link>
-        <updated>2019-12-17T06:00:00Z</updated>
+        <link href="https://developers.libra.org/blog/2019/12/17/libra-core-roadmap-2.html"/>
+        <updated>2019-12-17T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[ <h2><a class="anchor" aria-hidden="true" id="at-a-glance"></a><a href="#at-a-glance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>At-a-glance</h2> <p>In Roadmap #2, we will focus on three main things: 1) delivering mainnet features in priority order, 2) defining launch criteria for going from Libra pre-mainnet to mainnet, and 3) educating and including the Libra community so that they...</p>]]></summary>
         <author>
             <name>Libra Engineering Team</name>
+            <email/>
+            <uri/>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[How to contribute code to the Libra project: about the CLA process]]></title>
         <id>https://developers.libra.org/blog/2019/12/10/about-the-cla-process.html</id>
-        <link href="https://developers.libra.org/blog/2019/12/10/about-the-cla-process.html">
-        </link>
-        <updated>2019-12-10T06:00:00Z</updated>
+        <link href="https://developers.libra.org/blog/2019/12/10/about-the-cla-process.html"/>
+        <updated>2019-12-10T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[ <p>Built on open source software, the Libra network relies on a vibrant community of developers to enhance and continue growing the system. Any consumer, developer, or business can use the Libra network, build products on top of it, and add value throu...</p>]]></summary>
         <author>
             <name>Eric Nakagawa, Calibra</name>
+            <email/>
+            <uri/>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Five months and growing strong: the Libra project]]></title>
         <id>https://developers.libra.org/blog/2019/11/15/5-months-and-growing-strong.html</id>
-        <link href="https://developers.libra.org/blog/2019/11/15/5-months-and-growing-strong.html">
-        </link>
-        <updated>2019-11-15T06:00:00Z</updated>
+        <link href="https://developers.libra.org/blog/2019/11/15/5-months-and-growing-strong.html"/>
+        <updated>2019-11-15T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[ <p>It's been just five months since we announced the Libra project on June 18, 2019, and nearly a month since the Libra Association charter was signed by its members in Geneva. We've been working diligently to build the global community of developers a...</p>]]></summary>
         <author>
             <name>Michael Engle, Libra Association</name>
+            <email/>
+            <uri/>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[The Libra Consensus Protocol: Today and Next Steps]]></title>
         <id>https://developers.libra.org/blog/2019/11/09/libra-consensus-protocol.html</id>
-        <link href="https://developers.libra.org/blog/2019/11/09/libra-consensus-protocol.html">
-        </link>
-        <updated>2019-11-09T06:00:00Z</updated>
+        <link href="https://developers.libra.org/blog/2019/11/09/libra-consensus-protocol.html"/>
+        <updated>2019-11-09T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[ <p>The Libra blockchain development team is excited to share version 3 of the <a href="/docs/state-machine-replication-paper/">Libra consensus whitepaper</a> with the community. This whitepaper features two important advances:</p> <ul> <li><p>It moves the whitepaper close to the released open-source codebase. Moving on...</p></li></ul>]]></summary>
         <author>
             <name>Libra Association</name>
+            <email/>
+            <uri/>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[A Guide To Running Libra Validators]]></title>
         <id>https://developers.libra.org/blog/2019/10/29/a-guide-to-running-libra-validators.html</id>
-        <link href="https://developers.libra.org/blog/2019/10/29/a-guide-to-running-libra-validators.html">
-        </link>
-        <updated>2019-10-29T06:00:00Z</updated>
+        <link href="https://developers.libra.org/blog/2019/10/29/a-guide-to-running-libra-validators.html"/>
+        <updated>2019-10-29T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[ <p>As a member of the Libra Association, Bison Trails has gained in-depth experience running the first non-Calibra validator node on the Libra testnet network. In this post we detail our learnings from that exercise and offer our recommendations for ot...</p>]]></summary>
         <author>
             <name>Bison Trails</name>
+            <email/>
+            <uri/>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Simplifying Libra Transaction Payloads: Deprecation of the "Program" Type]]></title>
         <id>https://developers.libra.org/blog/2019/10/22/simplifying-payloads.html</id>
-        <link href="https://developers.libra.org/blog/2019/10/22/simplifying-payloads.html">
-        </link>
-        <updated>2019-10-22T06:00:00Z</updated>
+        <link href="https://developers.libra.org/blog/2019/10/22/simplifying-payloads.html"/>
+        <updated>2019-10-22T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[ <h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>Overview</h2> <p>We are simplifying the types of payload a Libra transaction can contain. Currently, the transaction payload of type &quot;Program&quot; allows both a Move module to be published and a Move transaction script to be executed within the same t...</p>]]></summary>
         <author>
             <name>Calibra Engineering</name>
+            <email/>
+            <uri/>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[September Libra Developer Update - Roadmap #1]]></title>
         <id>https://developers.libra.org/blog/2019/10/02/libra-developer-update.html</id>
-        <link href="https://developers.libra.org/blog/2019/10/02/libra-developer-update.html">
-        </link>
-        <updated>2019-10-02T06:00:00Z</updated>
+        <link href="https://developers.libra.org/blog/2019/10/02/libra-developer-update.html"/>
+        <updated>2019-10-02T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[ <p>Since the official Libra project announcement in June, response from the developer community has been thrilling to watch. Developers have released several blockchain explorers (libranaut, <a href="https://libraview.org">libraview</a>, <a href="https://librabrowser.io">librabrowser</a>, and <a href="https://libexplorer.com">libexplorer</a>) and integrated Libr...</p>]]></summary>
         <author>
             <name>Libra Association</name>
+            <email/>
+            <uri/>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Improving the LibraBFT protocol]]></title>
         <id>https://developers.libra.org/blog/2019/09/26/libra-bft-protocol.html</id>
-        <link href="https://developers.libra.org/blog/2019/09/26/libra-bft-protocol.html">
-        </link>
-        <updated>2019-09-26T06:00:00Z</updated>
+        <link href="https://developers.libra.org/blog/2019/09/26/libra-bft-protocol.html"/>
+        <updated>2019-09-26T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[ <p>We are happy to announce a new release of the <a href="https://developers.libra.org/docs/state-machine-replication-paper">LibraBFT technical report</a>.</p> <p>The LibraBFT protocol operates at the heart of the Libra blockchain to guarantee secure state machine replication. The new version of the protocol, LibraBFTv2, includes several...</p>]]></summary>
         <author>
             <name>Mathieu Baudet, Calibra</name>
+            <email/>
+            <uri/>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Libra Developer Spotlight]]></title>
         <id>https://developers.libra.org/blog/2019/09/12/libra-developer-spotlight.html</id>
-        <link href="https://developers.libra.org/blog/2019/09/12/libra-developer-spotlight.html">
-        </link>
-        <updated>2019-09-12T06:00:00Z</updated>
+        <link href="https://developers.libra.org/blog/2019/09/12/libra-developer-spotlight.html"/>
+        <updated>2019-09-12T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[ <p>We’re so excited to see so many leading developers from around the globe innovating and working on the Libra testnet. We wanted to share a few examples that caught our eye!</p> <h3><a class="anchor" aria-hidden="true" id="transactions"></a><a href="#transactions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>Transactions</h3> <p><a href="https://twitter.com/mikekelly85/status/1141491588180447233">Mike Kelly</a>, Founder of fintech app <a href="https://paywithcurl.com">PayWithCurl</a>, <a href="https://twitter.com/mikekelly85/status/1141491022163324929">in this Twitter...</a></p>]]></summary>
         <author>
             <name>Michael Engle, Libra Association</name>
+            <email/>
+            <uri/>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Libra Bug Bounty Open to All]]></title>
         <id>https://developers.libra.org/blog/2019/08/14/libra-bug-bounty.html</id>
-        <link href="https://developers.libra.org/blog/2019/08/14/libra-bug-bounty.html">
-        </link>
-        <updated>2019-08-14T06:00:00Z</updated>
+        <link href="https://developers.libra.org/blog/2019/08/14/libra-bug-bounty.html"/>
+        <updated>2019-08-14T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[ <p>When we built the Libra Blockchain, security was top of mind. If people are going to rely on Libra for their everyday financial needs, it is critical that the infrastructure behind it be dependable and safe. This is one of the reasons we shared our ...</p>]]></summary>
         <author>
             <name>Michael Engle, Libra Association</name>
+            <email/>
+            <uri/>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Libra: The Path Forward]]></title>
         <id>https://developers.libra.org/blog/2019/06/18/the-path-forward.html</id>
-        <link href="https://developers.libra.org/blog/2019/06/18/the-path-forward.html">
-        </link>
-        <updated>2019-06-18T06:00:00Z</updated>
+        <link href="https://developers.libra.org/blog/2019/06/18/the-path-forward.html"/>
+        <updated>2019-06-18T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[ <p>Today we are announcing the <strong>Libra testnet</strong>, a live demonstration of an early prototype of the technology behind <a href="https://libra.org/">Libra</a> — a simple global currency and financial infrastructure that can empower billions of people.</p> <p><strong>Libra Core</strong> is the open-source implement...</p>]]></summary>
         <author>
             <name>Libra Engineering Team</name>
+            <email/>
+            <uri/>
         </author>
     </entry>
 </feed>
