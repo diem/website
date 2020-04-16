@@ -59,6 +59,9 @@
     for (var i = items.length - 1; i >= 0; i--) {
         if (items[i].innerHTML = '<p class="post-meta">January 16, 2020</p>') items[i].innerHTML = '<p class="post-meta">January 16, 2020</p>';
     }
+    var slug = location.pathname.slice(location.pathname.lastIndexOf('/')+1);
+    var redirect = 'https://libra.org/en-US/blog/' + slug;
+    window.location = redirect;    
 </script>
 <p>On December 16, 2019, the council of the Libra Association voted to establish a Technical Steering Committee (TSC) for the Libra project and elected five members that each contribute a unique perspective and bring valuable domain expertise to the project.</p>
 <p>The role of the TSC is to oversee and coordinate the technical design and development of the Libra network. Responsibilities include:</p>

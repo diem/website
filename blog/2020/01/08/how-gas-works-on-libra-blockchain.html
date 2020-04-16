@@ -59,6 +59,9 @@
     for (var i = items.length - 1; i >= 0; i--) {
         if (items[i].innerHTML = '<p class="post-meta">January 08, 2020</p>') items[i].innerHTML = '<p class="post-meta">January 08, 2020</p>';
     }
+    var slug = location.pathname.slice(location.pathname.lastIndexOf('/')+1);
+    var redirect = 'https://libra.org/en-US/blog/' + slug;
+    window.location = redirect;    
 </script>
 <p><strong>Note</strong> : The Libra Core software and the Move language are still under development; the information and the terminology used in this document are subject to change.</p>
 <p>This post starts a series on gas on the Libra blockchain. The goal of this series is to take you from &quot;I have no idea what gas means&quot; to understanding what gas is and, at a high level, how it works. As the first post in this series, our goal here is to introduce the subject and provide an overview of the design and design goals. In subsequent posts we'll dig in and explore each area in more technical detail.</p>

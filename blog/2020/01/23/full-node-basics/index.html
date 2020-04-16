@@ -59,6 +59,9 @@
     for (var i = items.length - 1; i >= 0; i--) {
         if (items[i].innerHTML = '<p class="post-meta">January 23, 2020</p>') items[i].innerHTML = '<p class="post-meta">January 23, 2020</p>';
     }
+    var slug = location.pathname.slice(location.pathname.lastIndexOf('/')+1);
+    var redirect = 'https://libra.org/en-US/blog/' + slug;
+    window.location = redirect;    
 </script>
 <p><em><strong>Note:</strong> Libra Core software is still under development; the information and the terminology used in this document are subject to change.</em></p>
 <p>This is the first post in a series on full nodes in the Libra network. Our goal for this post is to introduce the basic concepts associated with full nodes and talk about the motivation behind full nodes. A Libra node is a peer entity that participates in the Libra network and tracks the state of the Libra Blockchain. Libra clients (e.g., wallet applications) interact with the Libra Blockchain via Libra nodes. There are two types of nodes in the Libra network: full nodes and validator nodes. The Libra protocol can be configured to run either as a validator node or as a full node.</p>
