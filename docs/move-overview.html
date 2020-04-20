@@ -101,9 +101,9 @@
 <span class="hljs-comment">// Use LibraAccount module published on the blockchain at account address</span>
 <span class="hljs-comment">// 0x0...0. 0x0 is shorthand that the language pads out to</span>
 <span class="hljs-comment">//16 bytes by adding leading zeroes.</span>
-use <span class="hljs-number">0x0</span>.<span class="hljs-type">LBR</span>;
-use <span class="hljs-number">0x0</span>.<span class="hljs-type">Libra</span>;
-use <span class="hljs-number">0x0</span>.<span class="hljs-type">LibraAccount</span>;
+use <span class="hljs-number">0x0</span>::<span class="hljs-type">LBR</span>;
+use <span class="hljs-number">0x0</span>::<span class="hljs-type">Libra</span>;
+use <span class="hljs-number">0x0</span>::<span class="hljs-type">LibraAccount</span>;
 fun main(payee: <span class="hljs-built_in">address</span>, amount: <span class="hljs-built_in">u64</span>) {
   <span class="hljs-comment">// Acquire a Libra::T&lt;LBR::T&gt; resource with value `amount` from the sender's</span>
   <span class="hljs-comment">// account.  This will fail if the sender's balance is less than `amount`.</span>
@@ -120,9 +120,9 @@ fun main(payee: <span class="hljs-built_in">address</span>, amount: <span class=
 <span class="hljs-comment">// emphasize the ability to split a `Libra::T&lt;LBR::T&gt;` resource. The more concise</span>
 <span class="hljs-comment">// way would be to use multiple calls to `LibraAccount::withdraw_from_sender`.</span>
 
-use <span class="hljs-number">0x0</span>.<span class="hljs-type">LBR</span>;
-use <span class="hljs-number">0x0</span>.<span class="hljs-type">Libra</span>;
-use <span class="hljs-number">0x0</span>.<span class="hljs-type">LibraAccount</span>;
+use <span class="hljs-number">0x0</span>::<span class="hljs-type">LBR</span>;
+use <span class="hljs-number">0x0</span>::<span class="hljs-type">Libra</span>;
+use <span class="hljs-number">0x0</span>::<span class="hljs-type">LibraAccount</span>;
 fun main(payee1: <span class="hljs-built_in">address</span>, amount1: <span class="hljs-built_in">u64</span>, payee2: <span class="hljs-built_in">address</span>, amount2: <span class="hljs-built_in">u64</span>) {
   <span class="hljs-keyword">let</span> total = amount1 + amount2;
   <span class="hljs-keyword">let</span> coin1 = <span class="hljs-type">LibraAccount</span>::withdraw_from_sender&lt;<span class="hljs-type">LBR</span>::<span class="hljs-type">T</span>&gt;(total);

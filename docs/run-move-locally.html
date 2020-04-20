@@ -60,17 +60,6 @@
 <p>This tutorial guides you through publishing a Move module and executing a Move transaction script on a local blockchain. To perform operations that are not natively supported by the existing Move transaction scripts, you can create and publish Move modules and write scripts to use these modules. For basic information on Move, refer to <a href="/docs/move-overview">Getting Started with Move</a>. For deeper technical understanding of Move, refer to the <a href="/docs/move-paper">technical paper</a>. For guidance on running a local network of nodes, refer to <a href="/docs/run-local-network">Run a Local Network</a>. The Libra CLI client provides the <code>dev</code> command to compile, publish, and execute Move programs locally. Refer to the <a href="reference/libra-cli#dev-d-mdash-operations-related-to-move-transaction-scripts-and-modules">CLI Guide - dev command</a> for command usage. To see the list of subcommands,  enter <code>dev</code> on the CLI.</p>
 <p>To create, compile, and publish Move modules to an account on the local blockchain, follow the instructions in <a href="#compile-and-publish-move-modules">compile and publish Move modules</a>. To compile and execute a Move transaction script, follow the instructions in <a href="#compile-and-execute-transaction-scripts">compile and execute transaction scripts</a>.</p>
 <h2><a class="anchor" aria-hidden="true" id="compile-and-publish-move-modules"></a><a href="#compile-and-publish-move-modules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compile and Publish Move Modules</h2>
-<h3><a class="anchor" aria-hidden="true" id="create-move-module"></a><a href="#create-move-module" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create Move Module</h3>
-<p>Let’s start with an extremely simple module called <code>MyModule</code>. This module has a single procedure called <code>id</code>, which is an identity function for coins. It takes a <code>LibraCoin.T</code> resource as input and hands it back to the calling program. The Move Intermediate Representation (IR) code for this module is provided below, save it in a file named <code>my_module.mvir.</code></p>
-<pre><code class="hljs">module MyModule {
-  import 0x0.LibraCoin;
-
-  // The identity function for coins: takes a LibraCoin.T as input and hands it back
-  public id(c: LibraCoin.T): LibraCoin.T {
-    return move(c);
-  }
-}
-</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="start-a-local-network-of-validator-nodes"></a><a href="#start-a-local-network-of-validator-nodes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Start a Local Network of Validator Nodes</h3>
 <p>To run a local network with one validator node and create a local blockchain, change to the <code>libra</code> directory and run <code>libra-swarm</code>, as shown below:</p>
 <pre><code class="hljs">$ cd libra
@@ -108,11 +97,11 @@ libra%
 </code></pre>
 <p>For detailed instructions on working with a local cluster of validator nodes, refer to <a href="/docs/run-local-network">Run a Local Network</a>.</p>
 <h3><a class="anchor" aria-hidden="true" id="create-an-account"></a><a href="#create-an-account" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create an Account</h3>
-<p>Each Move module and resource type is hosted by a specific account address. For example, <code>LibraCoin</code> module is hosted by the account at address <code>0x0</code>. To import the <code>LibraCoin</code> module in other modules or transaction scripts, you would use <code>import 0x0.LibraCoin</code>.</p>
-<p>To host <code>MyModule</code>, create an account:</p>
+<p>Each Move module and resource type is hosted by a specific account address. For example, the <code>Libra</code> module is hosted by the account at address <code>0x0</code>. To import the <code>Libra</code> module in other modules or transaction scripts, your Move code would specify <code>use 0x0::Libra</code>.</p>
+<p>Before publishing a Move module, you first need to create an account to host it:</p>
 <pre><code class="hljs">libra% account create
 &gt;&gt; Creating/retrieving next account from wallet
-Created/retrieved account #0 address 810abcc08dbed34ea15d7eb261b8001da6a62d72acdbf87714dd243a175f9b62
+Created/retrieved account #0 address 717da70a461fef6307990847590ad7af
 
 </code></pre>
 <p>In the above output, 0 is the index of the account you just created, and the hex string is the address of that account. The index is just a convenient way to refer to this account locally, and it's also called <code>ref_id</code>. For more information on account creation, refer to <a href="/docs/my-first-transaction">My First Transaction</a>.</p>
@@ -126,86 +115,97 @@ Finished minting!
 <pre><code class="hljs">libra% query balance 0
 Balance is: 76.000000
 </code></pre>
+<h3><a class="anchor" aria-hidden="true" id="create-move-module"></a><a href="#create-move-module" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create Move Module</h3>
+<p>Let’s start with an extremely simple module called <code>MyModule</code>. This module has a single procedure called <code>id</code>, which is an identity function for coins. It takes a <code>Libra::T&lt;LBR::T&gt;</code> resource as input and hands it back to the calling program. The Move code for this module is provided below. Change the address in the first line to be the address of the account you just created and then save it in a file named <code>my_module.move.</code> (Be sure to keep the &quot;0x&quot; prefix on the account address.)</p>
+<pre><code class="hljs">address 0x717da70a461fef6307990847590ad7af:
+
+module MyModule {
+  use 0x0::Libra;
+  use 0x0::LBR;
+
+  // The identity function: takes a Libra::T&lt;LBR::T&gt; as input and hands it back
+  public fun id(c: Libra::T&lt;LBR::T&gt;): Libra::T&lt;LBR::T&gt; {
+    c
+  }
+}
+</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="compile-move-module"></a><a href="#compile-move-module" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compile Move Module</h3>
-<p>To compile <code>my_module.mvir</code>, use the <a href="reference/libra-cli#dev-d-mdash-operations-related-to-move-transaction-scripts-and-modules">dev compile</a> command.</p>
-<pre><code class="hljs">libra% dev compile 0 &lt;path to my_module.mvir&gt; module
+<p>To compile <code>my_module.move</code>, use the <a href="reference/libra-cli#dev-d-mdash-operations-related-to-move-transaction-scripts-and-modules">dev compile</a> command.</p>
+<pre><code class="hljs">libra% dev compile 0 &lt;path to my_module.move&gt; &lt;path to language/stdlib/modules&gt;
 </code></pre>
 <ul>
 <li>0 — Index/ref_id of the account that the module will be published under.</li>
-<li><code>module</code> — Indicates that you are compiling a Move module. If you were compiling a transaction script, you would use <code>script</code> instead.</li>
+<li>Arguments listed after the source file name specify dependencies, and since this module depends on the Move standard library, you need to specify the path to that directory.</li>
 </ul>
-<p>Move IR gets fed into the IR compiler in a <code>.mvir</code> file and the compiler outputs the corresponding bytecode file. When you are ready to publish this module into an account on the blockchain,  use this bytecode file and not the <code>.mvir</code> file.</p>
-<p>After the module is successfully compiled, you'll see the following message in the output, it contains the path to the bytecode file produced by compiling <code>my_module.mvir</code>.</p>
-<pre><code class="hljs">Successfully compiled a program at /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/.tmpigAZCx
+<p>The Move code gets fed into the compiler in a <code>.move</code> file and the compiler outputs the corresponding bytecode file. When you are ready to publish this module into an account on the blockchain,  use this bytecode file and not the <code>.move</code> file.</p>
+<p>After the module is successfully compiled, you'll see the following message in the output, it contains the path to the bytecode file produced by compiling <code>my_module.move</code>.</p>
+<pre><code class="hljs">Successfully compiled a program at /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/b8639bd9fe2403874bbfde5643486bde/transaction_0_module_MyModule.mv
 </code></pre>
-<p>If you would like to save the bytecode file in a specific path, instead of a temporary path, you can specify it as an argument to the <a href="reference/libra-cli#dev-d-mdash-operations-related-to-move-transaction-scripts-and-modules">dev compile</a> command.</p>
 <h3><a class="anchor" aria-hidden="true" id="publish-compiled-module"></a><a href="#publish-compiled-module" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Publish Compiled Module</h3>
 <p>To publish the module bytecode on your local blockchain, run the <a href="reference/libra-cli#dev-d-mdash-operations-related-to-move-transaction-scripts-and-modules">dev publish</a> command and use the path to the compiled module bytecode file as shown below:</p>
-<pre><code class="hljs">libra% dev publish 0 /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/.tmpigAZCx
+<pre><code class="hljs">libra% dev publish 0 /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/b8639bd9fe2403874bbfde5643486bde/transaction_0_module_MyModule.mv
 
 waiting .....transaction is stored!
 no events emitted.
 Successfully published module
 </code></pre>
-<p>Upon successful execution of the <code>dev publish</code> command, the bytecode for <code>MyModule</code> is published under the sender’s account. To use the procedures and types declared in <code>MyModule</code>, other transaction scripts and modules can import it using <code>import &lt;sender_address&gt;.MyModule</code>.</p>
+<p>Upon successful execution of the <code>dev publish</code> command, the bytecode for <code>MyModule</code> is published under the sender’s account. To use the procedures and types declared in <code>MyModule</code>, other transaction scripts and modules can import it with <code>use &lt;sender_address&gt;::MyModule</code>.</p>
 <p>Subsequent modules published under <code>&lt;sender_address&gt;</code> must not be named <code>MyModule</code>. Each account may hold at most one module with a given name. Attempting to publish a second module named <code>MyModule</code> under <code>&lt;sender_address&gt;</code> will result in a failed transaction.</p>
 <h2><a class="anchor" aria-hidden="true" id="compile-and-execute-transaction-scripts"></a><a href="#compile-and-execute-transaction-scripts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compile and Execute Transaction Scripts</h2>
 <h3><a class="anchor" aria-hidden="true" id="create-transaction-script"></a><a href="#create-transaction-script" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create Transaction Script</h3>
 <blockquote class="block_note">
 <p><strong>Note</strong>: You'll find samples of transaction scripts in the <a href="https://github.com/libra/libra/tree/master/language/stdlib/transaction_scripts">libra/language/stdlib/transaction_scripts</a> directory.</p>
 </blockquote>
-<p>Now let’s write the following script to use <code>MyModule</code> and save it as <code>custom_script.mvir</code>:</p>
-<pre><code class="hljs">import 0x0.LibraAccount;
-import 0x0.LibraCoin;
-import {{sender}}.MyModule;
+<p>Now let’s write the following script to use <code>MyModule</code> and save it as <code>custom_script.move</code>:</p>
+<pre><code class="hljs">use 0x0::LibraAccount;
+use 0x0::LBR;
+use 0x0::Transaction;
+use 0x717da70a461fef6307990847590ad7af::MyModule;
 
-main(amount: u64) {
-  let coin: LibraCoin.T;
-  coin = LibraAccount.withdraw_from_sender(move(amount));
-  //calls the id procedure defined in our custom module
-  LibraAccount.deposit(get_txn_sender(), MyModule.id(move(coin)));
-  return;
+fun main(amount: u64) {
+  let coin = LibraAccount::withdraw_from_sender&lt;LBR::T&gt;(amount);
+  // Calls the id procedure defined in our custom module
+  LibraAccount::deposit&lt;LBR::T&gt;(Transaction::sender(), MyModule::id(coin));
 }
 </code></pre>
-<p>In this script, <code>{{sender}}</code>will be automatically replaced with sender account address when the script is executed. Alternatively, you could write an import with a fully qualified address:</p>
-<pre><code class="hljs"> import 0x810abcc08dbed34ea15d7eb261b8001da6a62d72acdbf87714dd243a175f9b62.MyModule;
-</code></pre>
+<p>Be sure to change the account address for MyModule to match the account that you created.</p>
 <h3><a class="anchor" aria-hidden="true" id="compile-transaction-script"></a><a href="#compile-transaction-script" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compile Transaction Script</h3>
 <p>To compile your transaction script, use the <a href="reference/libra-cli#dev-d-mdash-operations-related-to-move-transaction-scripts-and-modules">dev compile</a> command.</p>
-<pre><code class="hljs">libra% dev compile 0 &lt;path_to_custom_script.mvir&gt; script
+<pre><code class="hljs">libra% dev compile 0 &lt;path to custom_script.move&gt; &lt;path to my_module.move&gt; &lt;path to language/stdlib/modules&gt;
 </code></pre>
-<p><code>custom_script.mvir</code> is in Move IR, and upon successful compilation of <code>custom_script.mvir</code> the compiler will  output the corresponding bytecode file. You'll use this bytecode file (not the <code>.mvir</code> file) when you execute this script. After the script is successfully compiled, you'll see the path to the bytecode file in your output:</p>
-<pre><code class="hljs">Successfully compiled a program at /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/.tmpDZhL21
+<p><code>custom_script.move</code> is the Move source file, and upon successful compilation of <code>custom_script.move</code> the compiler will output the corresponding bytecode file. You'll use this bytecode file (not the <code>.move</code> file) when you execute this script. After the script is successfully compiled, you'll see the path to the bytecode file in your output:</p>
+<pre><code class="hljs">Successfully compiled a program at /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/5fa11d0acf5d53e8d257ab31534b2017/transaction_0_script.mv
 </code></pre>
-<p>If you would like to save the bytecode file at a specific path, and not at a temporary path, you can specify it as an argument to the <a href="reference/libra-cli#dev-d-mdash-operations-related-to-move-transaction-scripts-and-modules">dev compile</a> command.</p>
 <h3><a class="anchor" aria-hidden="true" id="execute-transaction-script"></a><a href="#execute-transaction-script" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Execute Transaction Script</h3>
 <p>To execute your script, use the <a href="reference/libra-cli#dev-d-mdash-operations-related-to-move-transaction-scripts-and-modules">dev execute</a> command on the bytecode output from <a href="#compile-transaction-script">Compile Transaction Script</a> step above.</p>
 <blockquote class="block_note">
 <p><strong>Note:</strong> The exact set of arguments passed to the <code>dev execute</code> command will depend on the parameters a particular script expects.</p>
 </blockquote>
-<pre><code class="hljs">libra% dev execute 0 /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/.tmpDZhL21 10
+<pre><code class="hljs">libra% dev execute 0 /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/5fa11d0acf5d53e8d257ab31534b2017/transaction_0_script.mv 10
 waiting .....transaction is stored!
 Successfully finished execution
 </code></pre>
 <ul>
 <li><code>0</code> — Index/ref_id of the sender account. For this example, it is the same account which compiled and published the module.</li>
-<li><code>/var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/.tmpDZhL21</code> — Path to the compiled_script for this example.</li>
+<li><code>/var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/5fa11d0acf5d53e8d257ab31534b2017/transaction_0_script.mv</code> — Path to the compiled_script for this example.</li>
 <li><code>10</code> — Amount of microlibra. This amount must be less than or equal to the amount in the sender’s account.</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="troubleshooting"></a><a href="#troubleshooting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Troubleshooting</h2>
 <h3><a class="anchor" aria-hidden="true" id="compile-move-program"></a><a href="#compile-move-program" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compile Move Program</h3>
-<p>If the client cannot locate your Move program (module or script), you'll see this error:</p>
-<pre><code class="hljs">libra% dev compile 0 ~/my-tscripts/custom_script.mvir script
+<p>If the client cannot locate your Move source file, you'll see this error:</p>
+<pre><code class="hljs">libra% dev compile 0 ~/my-tscripts/custom_script.move script
 &gt;&gt; Compiling program
-No such file or directory (os error 2)
+error: No such file or directory '~/my-tscripts/custom_script.move'
+compilation failed
 </code></pre>
+<p>This may happen because the client does not currently perform tilde expansion,
+so you need to list the path to your home directory instead.</p>
 <p>If you see the following error, refer to the usage of the <a href="reference/libra-cli#dev-d-mdash-operations-related-to-move-transaction-scripts-and-modules">dev compile</a> command, specify all the required arguments and try compiling again.</p>
 <pre><code class="hljs">Invalid number of arguments for compilation
 </code></pre>
-<p>For syntax related compilation errors, refer to <a href="https://github.com/libra/libra/blob/master/language/compiler/ir_to_bytecode/syntax/src/lib.rs">Move IR syntax</a>.</p>
 <h3><a class="anchor" aria-hidden="true" id="publish-compiled-module-1"></a><a href="#publish-compiled-module-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Publish Compiled Module</h3>
 <p>If you compile a module using one account (e.g., <code>dev compile</code> 0 ...) and try to publish it to a different account (e.g., <code>dev publish</code> 1 ...), you'll see the following error:</p>
-<pre><code class="hljs">libra% dev publish 1 /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/.tmpigAZCx
+<pre><code class="hljs">libra% dev publish 1 /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/b8639bd9fe2403874bbfde5643486bde/transaction_0_module_MyModule.mv
 
 Transaction failed with vm status: Validation(SendingAccountDoesNotExist("sender address: 21cd9d131bce6050218281f737186861e9dcb7b7804485742e1be8fd564137f9"))
 
@@ -221,11 +221,11 @@ No such file or directory (os error 2)
 <p>Republishing/updating an existing module under the same sender account address does not have any effect on the blockchain. It’s a failed transaction, but it deducts gas from the sender account and increments the sequence number of the sender account by one. It’s possible to publish the same module at a different sender account address, provided the module was compiled using that account address.</p>
 <h3><a class="anchor" aria-hidden="true" id="execute-transaction-script-1"></a><a href="#execute-transaction-script-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Execute Transaction Script</h3>
 <p>If the sender account index is invalid, you'll see this error:</p>
-<pre><code class="hljs">libra% dev execute 2 /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/.tmpDZhL21 10
+<pre><code class="hljs">libra% dev execute 2 /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/5fa11d0acf5d53e8d257ab31534b2017/transaction_0_script.mv 10
 Unable to find account by account reference id: 2, to see all existing accounts, run: 'account list'
 </code></pre>
 <p>The following error indicates that either the arguments to the transaction script are missing or one or more of the arguments are of the wrong type.</p>
-<pre><code class="hljs">libra% dev execute 0 /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/.tmpDZhL21
+<pre><code class="hljs">libra% dev execute 0 /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/5fa11d0acf5d53e8d257ab31534b2017/transaction_0_script.mv
 Transaction failed with vm status: Verification([Script(TypeMismatch("Actual Type Mismatch"))])
 
 </code></pre>
@@ -244,7 +244,7 @@ Transaction failed with vm status: Verification([Script(TypeMismatch("Actual Typ
 <li><a href="/docs/reference/libra-cli">CLI Guide</a> — Lists the commands of the Libra CLI client.</li>
 <li><a href="/docs/my-first-transaction">My First Transaction</a> — Guides you through executing your very first transaction on the Libra Blockchain using the Libra CLI client.</li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/run-local-network"><span class="arrow-prev">← </span><span>Run a Local Network</span></a><a class="docs-next button" href="/docs/libra-open-source-paper"><span>Libra Open Source</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#compile-and-publish-move-modules">Compile and Publish Move Modules</a><ul class="toc-headings"><li><a href="#create-move-module">Create Move Module</a></li><li><a href="#start-a-local-network-of-validator-nodes">Start a Local Network of Validator Nodes</a></li><li><a href="#create-an-account">Create an Account</a></li><li><a href="#compile-move-module">Compile Move Module</a></li><li><a href="#publish-compiled-module">Publish Compiled Module</a></li></ul></li><li><a href="#compile-and-execute-transaction-scripts">Compile and Execute Transaction Scripts</a><ul class="toc-headings"><li><a href="#create-transaction-script">Create Transaction Script</a></li><li><a href="#compile-transaction-script">Compile Transaction Script</a></li><li><a href="#execute-transaction-script">Execute Transaction Script</a></li></ul></li><li><a href="#troubleshooting">Troubleshooting</a><ul class="toc-headings"><li><a href="#compile-move-program">Compile Move Program</a></li><li><a href="#publish-compiled-module-1">Publish Compiled Module</a></li><li><a href="#execute-transaction-script-1">Execute Transaction Script</a></li></ul></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/libra-logomark-white.png" alt="Libra"/></a><div class="footerSection"><h5>Learn About Libra</h5><a href="/docs/welcome-to-libra">Welcome to Libra</a><a href="/docs/libra-protocol">Libra Protocol</a><a href="/docs/the-libra-blockchain-paper">Libra Blockchain</a><a href="/docs/life-of-a-transaction">Life of a Transaction</a><p></p><h5>Try Libra Core </h5><a href="/docs/my-first-transaction">My First Transaction</a><a href="/docs/move-overview">Getting Started With Move</a></div><div class="footerSection"><h5>Policies</h5><a href="/docs/policies/privacy-policy">Privacy Policy</a><a href="/docs/policies/terms-of-use">Terms of Use</a><a href="/docs/policies/cookies-policy">Cookies Policy</a><a href="/docs/policies/code-of-conduct">Code of Conduct</a><p></p><h5>Community</h5><a href="https://community.libra.org/">Developer Forum</a><a href="https://developers.libra.org/newsletter_form">Newsletter</a></div><div class="footerSection"><h5>Social</h5><div class="social"><a class="github-button" href="https://github.com/libra/libra" data-count-href="https://github.com/libra/libra/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star Libra on GitHub">libra</a></div><div class="social"><a href="https://twitter.com/libradev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @libradev</a><script async="" src="/js/twitter-widgets.js" charSet="utf-8"></script></div></div></section><section class="copyright"> © Libra Association</section><aside id="cookie-banner"><div class="close" id="cookie-banner-close"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="17" x2="17" y2="1" stroke="#fff" stroke-width="2"></line><line x1="1" y1="1" x2="17" y2="17" stroke="#fff" stroke-width="2"></line></svg></div><div class="wrapper"><p>To help us provide relevant content, analyze our traffic, and provide a variety of features, we use cookies. By clicking on or navigating the site, you agree to allow us to collect information on and off the Libra Website through cookies. To learn more, view our Cookie Policy:</p><div class="buttonWrapper"><a class="button" href="/docs/policies/cookies-policy" target="_blank">Cookies Policy</a></div></div></aside></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/run-local-network"><span class="arrow-prev">← </span><span>Run a Local Network</span></a><a class="docs-next button" href="/docs/libra-open-source-paper"><span>Libra Open Source</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#compile-and-publish-move-modules">Compile and Publish Move Modules</a><ul class="toc-headings"><li><a href="#start-a-local-network-of-validator-nodes">Start a Local Network of Validator Nodes</a></li><li><a href="#create-an-account">Create an Account</a></li><li><a href="#create-move-module">Create Move Module</a></li><li><a href="#compile-move-module">Compile Move Module</a></li><li><a href="#publish-compiled-module">Publish Compiled Module</a></li></ul></li><li><a href="#compile-and-execute-transaction-scripts">Compile and Execute Transaction Scripts</a><ul class="toc-headings"><li><a href="#create-transaction-script">Create Transaction Script</a></li><li><a href="#compile-transaction-script">Compile Transaction Script</a></li><li><a href="#execute-transaction-script">Execute Transaction Script</a></li></ul></li><li><a href="#troubleshooting">Troubleshooting</a><ul class="toc-headings"><li><a href="#compile-move-program">Compile Move Program</a></li><li><a href="#publish-compiled-module-1">Publish Compiled Module</a></li><li><a href="#execute-transaction-script-1">Execute Transaction Script</a></li></ul></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/libra-logomark-white.png" alt="Libra"/></a><div class="footerSection"><h5>Learn About Libra</h5><a href="/docs/welcome-to-libra">Welcome to Libra</a><a href="/docs/libra-protocol">Libra Protocol</a><a href="/docs/the-libra-blockchain-paper">Libra Blockchain</a><a href="/docs/life-of-a-transaction">Life of a Transaction</a><p></p><h5>Try Libra Core </h5><a href="/docs/my-first-transaction">My First Transaction</a><a href="/docs/move-overview">Getting Started With Move</a></div><div class="footerSection"><h5>Policies</h5><a href="/docs/policies/privacy-policy">Privacy Policy</a><a href="/docs/policies/terms-of-use">Terms of Use</a><a href="/docs/policies/cookies-policy">Cookies Policy</a><a href="/docs/policies/code-of-conduct">Code of Conduct</a><p></p><h5>Community</h5><a href="https://community.libra.org/">Developer Forum</a><a href="https://developers.libra.org/newsletter_form">Newsletter</a></div><div class="footerSection"><h5>Social</h5><div class="social"><a class="github-button" href="https://github.com/libra/libra" data-count-href="https://github.com/libra/libra/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star Libra on GitHub">libra</a></div><div class="social"><a href="https://twitter.com/libradev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @libradev</a><script async="" src="/js/twitter-widgets.js" charSet="utf-8"></script></div></div></section><section class="copyright"> © Libra Association</section><aside id="cookie-banner"><div class="close" id="cookie-banner-close"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="17" x2="17" y2="1" stroke="#fff" stroke-width="2"></line><line x1="1" y1="1" x2="17" y2="17" stroke="#fff" stroke-width="2"></line></svg></div><div class="wrapper"><p>To help us provide relevant content, analyze our traffic, and provide a variety of features, we use cookies. By clicking on or navigating the site, you agree to allow us to collect information on and off the Libra Website through cookies. To learn more, view our Cookie Policy:</p><div class="buttonWrapper"><a class="button" href="/docs/policies/cookies-policy" target="_blank">Cookies Policy</a></div></div></aside></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
