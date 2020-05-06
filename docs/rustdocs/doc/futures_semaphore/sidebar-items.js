@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["Permit","A permit acquired from a semaphore, allowing access to a shared resource. Dropping a `Permit` will release it back to the semaphore."],["Semaphore","A futures-aware semaphore."]]});

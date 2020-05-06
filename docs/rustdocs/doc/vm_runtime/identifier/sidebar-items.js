@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["create_access_path","Get the AccessPath to a resource stored under `address` with type name `tag`"],["resource_storage_key","Get the StructTag for a StructDefinition defined in a published module."]]});

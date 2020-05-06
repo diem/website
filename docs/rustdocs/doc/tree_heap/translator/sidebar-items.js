@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["format_type",""],["format_value_cons",""],["get_field_info_from_def_index",""],["struct_name_from_handle_index",""]],"struct":[["BoogieTranslator",""],["ModuleTranslator",""]]});

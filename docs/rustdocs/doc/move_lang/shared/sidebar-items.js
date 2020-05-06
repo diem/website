@@ -1,1 +1,0 @@
-initSidebarItems({"constant":[["ADDRESS_LENGTH",""]],"fn":[["format_comma",""],["format_delim",""],["sp","Function used to have nearly tuple-like syntax for creating a Spanned"]],"mod":[["fake_natives",""],["unique_map",""]],"struct":[["Address",""],["Counter",""],["Loc",""],["Spanned",""]],"trait":[["Identifier",""],["TName",""]],"type":[["Name",""]]});

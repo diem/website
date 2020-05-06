@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["resolve_native_struct","Looks up the expected native struct definition from the module id (address and module) and function name where it was expected to be declared"]],"struct":[["NativeStruct","Struct representing the expected definition for a native struct"]]});

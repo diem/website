@@ -1,9 +1,0 @@
-(function() {var implementors = {};
-implementors["vm_runtime_types"] = [{text:"impl&lt;'de, '_&gt; <a class=\"trait\" href=\"https://docs.rs/serde/1.0.101/serde/de/trait.DeserializeSeed.html\" title=\"trait serde::de::DeserializeSeed\">DeserializeSeed</a>&lt;'de&gt; for &amp;'_ <a class=\"enum\" href=\"vm_runtime_types/loaded_data/struct_def/enum.StructDef.html\" title=\"enum vm_runtime_types::loaded_data::struct_def::StructDef\">StructDef</a>",synthetic:false,types:["vm_runtime_types::loaded_data::struct_def::StructDef"]},{text:"impl&lt;'de, '_&gt; <a class=\"trait\" href=\"https://docs.rs/serde/1.0.101/serde/de/trait.DeserializeSeed.html\" title=\"trait serde::de::DeserializeSeed\">DeserializeSeed</a>&lt;'de&gt; for &amp;'_ <a class=\"enum\" href=\"vm_runtime_types/loaded_data/types/enum.Type.html\" title=\"enum vm_runtime_types::loaded_data::types::Type\">Type</a>",synthetic:false,types:["vm_runtime_types::loaded_data::types::Type"]},{text:"impl&lt;'de, '_&gt; <a class=\"trait\" href=\"https://docs.rs/serde/1.0.101/serde/de/trait.DeserializeSeed.html\" title=\"trait serde::de::DeserializeSeed\">DeserializeSeed</a>&lt;'de&gt; for &amp;'_ <a class=\"struct\" href=\"vm_runtime_types/native_structs/def/struct.NativeStructType.html\" title=\"struct vm_runtime_types::native_structs::def::NativeStructType\">NativeStructType</a>",synthetic:false,types:["vm_runtime_types::native_structs::def::NativeStructType"]},];
-
-            if (window.register_implementors) {
-                window.register_implementors(implementors);
-            } else {
-                window.pending_implementors = implementors;
-            }
-        })()

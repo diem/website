@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["BlockRetrievalStatus",""]],"struct":[["BlockRetrievalRequest","RPC to get a chain of block of the given length starting from the given block id."],["BlockRetrievalResponse","Carries the returned blocks and the retrieval status."]]});

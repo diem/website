@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["ErrorKind","Defines all errors in this crate."]],"struct":[["Error","The `Error` type, which can contain any failure."]],"type":[["Result","The common result type used in this crate."]]});

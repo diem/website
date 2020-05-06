@@ -1,1 +1,0 @@
-initSidebarItems({"mod":[["module_adapter","Fetches code data from the blockchain."],["module_cache","Cache for modules published on chain."],["script_cache","Cache for commonly executed scripts"]]});

@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["HealthStatus",""],["LibraSwarmDir","A wrapper that unifies PathBuf and TempPath."],["SwarmLaunchFailure",""]],"struct":[["LibraNode",""],["LibraSwarm","Struct holding instances and information of Libra Swarm"]]});

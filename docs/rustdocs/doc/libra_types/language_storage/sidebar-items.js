@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["TypeTag",""]],"struct":[["ModuleId","Represents the initial key into global storage where we first index by the address, and then the struct tag"],["ResourceKey","Represents the intitial key into global storage where we first index by the address, and then the struct tag"],["StructTag",""]]});

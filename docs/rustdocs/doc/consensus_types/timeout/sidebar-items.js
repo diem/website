@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["Timeout","This structure contains all the information necessary to construct a signature on the equivalent of a timeout message"]]});

@@ -1,1 +1,0 @@
-initSidebarItems({"mod":[["account",""],["inhabitor","Random valid type inhabitant generation."]]});

@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["MockStorageReadClient","This is a mock of the storage read client used in tests."]]});

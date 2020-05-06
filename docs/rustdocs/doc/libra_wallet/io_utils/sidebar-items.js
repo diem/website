@@ -1,1 +1,0 @@
-initSidebarItems({"constant":[["DELIMITER","Delimiter used to ser/deserialize account data."]],"fn":[["recover","Recover wallet from the path specified."],["write_recovery","Write wallet seed to file."]]});

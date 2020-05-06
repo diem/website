@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["build_transactions",""],["split_input","Parses the input string into three parts: a global config, directives and transactions."],["substitute_addresses","Substitutes the placeholders (account names in double curly brackets) with addresses."]],"struct":[["RawTransactionInput",""]]});

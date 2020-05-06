@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["InMemoryAccumulator","The Accumulator implementation."]]});

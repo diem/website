@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["StacklessFunction",""],["StacklessModuleGenerator",""],["StacklessProgram",""],["StacklessProgramGenerator",""]]});

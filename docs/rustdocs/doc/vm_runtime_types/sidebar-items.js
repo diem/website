@@ -1,1 +1,0 @@
-initSidebarItems({"macro":[["pop_arg",""]],"mod":[["loaded_data","Loaded definition of code data used in runtime."],["native_functions",""],["native_structs",""],["type_context",""],["value",""]]});

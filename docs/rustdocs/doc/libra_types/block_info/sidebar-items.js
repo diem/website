@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["BlockInfo","This structure contains all the information needed for tracking a block without having access to the block or its execution output state. It assumes that the block is the last block executed within the ledger."]],"type":[["Round","The round of a block is a consensus-internal counter, which starts with 0 and increases monotonically."]]});

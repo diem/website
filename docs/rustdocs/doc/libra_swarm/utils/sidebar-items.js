@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["build_dir",""],["get_bin",""],["workspace_root",""]]});

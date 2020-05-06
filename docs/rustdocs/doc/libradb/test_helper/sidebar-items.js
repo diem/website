@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["arb_blocks_to_commit","This returns a `proptest` `Strategy` that yields an arbitrary number of arbitrary batches of transactions to commit."]]});

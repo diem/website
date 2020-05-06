@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["BorrowGraph","A borrow graph is represented as a map from a source nonce to the set of all edges coming out of it."],["Edge","A labeled edge in borrow graph"]],"type":[["Label","The label on an edge"]]});

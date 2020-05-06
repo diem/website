@@ -1,1 +1,0 @@
-initSidebarItems({"constant":[["DESTROY_NON_EMPTY_VEC",""],["INDEX_OUT_OF_BOUNDS",""],["POP_EMPTY_VEC",""]],"struct":[["NativeVector",""]]});

@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["NetworkDelay",""],["PacketLoss",""],["Reboot",""],["RemoveNetworkEffects",""],["StopContainer",""]],"trait":[["Action",""],["Effect",""]]});

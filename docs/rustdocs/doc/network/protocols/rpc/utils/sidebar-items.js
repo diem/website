@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["unary_rpc","Send a unary rpc request to remote peer `recipient`. Handles serialization and deserialization of the message types, assuming that the request and response both have the same message type."]]});

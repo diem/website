@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["gen_genesis_transaction",""],["gen_genesis_transaction_bytes",""],["get_test_config","Returns the config as well as the genesis keyapir"],["get_test_config_with_validators","Returns the validator keys, consensus peers, config, and the genesis keyapir"]]});

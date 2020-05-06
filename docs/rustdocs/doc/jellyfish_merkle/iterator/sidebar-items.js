@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["JellyfishMerkleIterator","The `JellyfishMerkleIterator` implementation."]]});

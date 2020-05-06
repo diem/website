@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["BlockMetadata","Struct that will be persisted on chain to store the information of the current block."]]});

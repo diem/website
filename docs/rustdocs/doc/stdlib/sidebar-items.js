@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["build_stdlib","Builds and returns a copy of the standard library with this address as the self address."],["stdlib_modules","Returns a reference to the standard library, compiled with the default address."],["stdlib_source_map","Returns a reference to the source maps for the standard library."]],"mod":[["stdlib",""],["transaction_scripts",""]]});

@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["create_storage_read_client","Create a storage read client based on the config"],["make_consensus_provider","Helper function to create a ConsensusProvider based on configuration"]],"trait":[["ConsensusProvider","Public interface to a consensus protocol."]]});

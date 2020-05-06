@@ -1,1 +1,0 @@
-initSidebarItems({"constant":[["TEST_SEED","A deterministic seed for PRNGs related to keys"]],"struct":[["KeyPair","A keypair consisting of a private and public key"]]});

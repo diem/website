@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["compile_module","Compile a module."],["compile_program","Compile a transaction program."],["compile_script","Compile a transaction script."]]});

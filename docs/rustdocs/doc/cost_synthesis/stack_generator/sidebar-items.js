@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["RandomStackGenerator","A wrapper around the instruction being synthesized. Holds the internal state that is used to generate random valid stack states."],["StackState","Specifies the data to be applied to the execution stack for the next valid stack state."]]});

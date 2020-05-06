@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["Slip0010Error","An error type for SLIP-0010 key derivation issues."]],"struct":[["ExtendedPrivKey","Extended private key that includes additional child_path and chain-code."],["Slip0010","SLIP-0010 structure."]]});

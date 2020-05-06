@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["Author",""],["CommitInfo",""],["GitCommitInfo",""],["GitHub",""]]});

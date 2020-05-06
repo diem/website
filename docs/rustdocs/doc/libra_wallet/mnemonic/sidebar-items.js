@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["Mnemonic","Mnemonic seed for deterministic key derivation based on BIP39. The mnemonic must encode entropy in a multiple of 32 bits. With more entropy, security is improved but the number of words increases."]]});

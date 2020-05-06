@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["Mode","Re-export `Mode` from the yamux crate"]],"struct":[["Close",""],["Listener",""],["Yamux",""]],"type":[["StreamHandle","The substream type produced by the `Yamux` multiplexer"]]});

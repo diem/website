@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["create_faucet_key_file",""],["load_faucet_key_or_create_default","Returns the generated or loaded keypair, the path to the file where this keypair is saved, and a reference to the temp directory that was possibly created (a handle so that it doesn't go out of scope)"],["load_key_from_file","Tries to load a keypair from the path given as argument"]]});

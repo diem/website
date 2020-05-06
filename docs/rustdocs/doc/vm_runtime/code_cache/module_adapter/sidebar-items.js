@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["FakeFetcher","A wrapper for a state with a list of pre-compiled modules."],["ModuleFetcherImpl","A wrapper around State Store database for fetching code data stored on chain."],["NullFetcher","A wrapper for an empty state with no code data stored."]],"trait":[["ModuleFetcher","Trait that describes how the VM expects code data to be stored."]]});
