@@ -1,0 +1,15 @@
+{
+  "permalink": "/blog/2020/05/12/index",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/blog/blog/index.md",
+  "source": "@site/blog/index.md",
+  "description": "export const BlogRedirect = () => {",
+  "date": "2020-05-12T15:25:25.000Z",
+  "tags": [],
+  "title": "Libra Blog",
+  "readingTime": 0.13,
+  "truncated": false,
+  "nextItem": {
+    "title": "How to use the end-to-end tests framework in Move",
+    "permalink": "/blog/2020/03/06/how-to-use-the-end-to-end-tests-framework-in-move"
+  }
+}

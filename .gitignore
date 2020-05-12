@@ -9,12 +9,11 @@
 # Unit test / coverage reports
 
 # Docusaurus
-website/build/
-website/i18n/
-website/node_modules/
+build/
+node_modules/
 
 # libra/libra is cloned from github and used to extract crate READMEs and Coding Guidelibnes
 libra
 docs/crates/*
 docs/community/coding-guidelines.md
-website/static/docs/rustdocs/
+static/docs/rustdocs/

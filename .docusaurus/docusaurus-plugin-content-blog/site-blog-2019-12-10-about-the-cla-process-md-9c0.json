@@ -1,0 +1,19 @@
+{
+  "permalink": "/blog/2019/12/10/about-the-cla-process",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/blog/blog/2019-12-10-about-the-cla-process.md",
+  "source": "@site/blog/2019-12-10-about-the-cla-process.md",
+  "description": "export const BlogRedirect = () => {",
+  "date": "2019-12-10T00:00:00.000Z",
+  "tags": [],
+  "title": "How to contribute code to the Libra project: about the CLA process",
+  "readingTime": 0.105,
+  "truncated": false,
+  "prevItem": {
+    "title": "Libra Core Roadmap",
+    "permalink": "/blog/2019/12/17/libra-core-roadmap-2"
+  },
+  "nextItem": {
+    "title": "Five months and growing strong: the Libra project",
+    "permalink": "/blog/2019/11/15/5-months-and-growing-strong"
+  }
+}

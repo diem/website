@@ -1,0 +1,8 @@
+{
+  "id": "policies/code-of-conduct",
+  "title": "Contributor Covenant Code of Conduct",
+  "description": "## Our Pledge",
+  "source": "@site/docs/policies/code-of-conduct.md",
+  "permalink": "/docs/policies/code-of-conduct",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/policies/code-of-conduct.md"
+}

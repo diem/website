@@ -1,0 +1,19 @@
+{
+  "permalink": "/blog/2020/01/16/steering-committee-now-governs-libra-technical-development",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/blog/blog/2020-01-16-steering-committee-now-governs-libra-technical-development.md",
+  "source": "@site/blog/2020-01-16-steering-committee-now-governs-libra-technical-development.md",
+  "description": "export const BlogRedirect = () => {",
+  "date": "2020-01-16T00:00:00.000Z",
+  "tags": [],
+  "title": "Steering committee now governs Libra technical development",
+  "readingTime": 0.105,
+  "truncated": false,
+  "prevItem": {
+    "title": "Full node basics: an introduction to full nodes in the Libra network",
+    "permalink": "/blog/2020/01/23/full-node-basics"
+  },
+  "nextItem": {
+    "title": "Reconfiguration support is live on testnet",
+    "permalink": "/blog/2020/01/14/reconfiguration-is-live-on-testnet"
+  }
+}

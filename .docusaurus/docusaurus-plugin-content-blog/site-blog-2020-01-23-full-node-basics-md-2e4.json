@@ -1,0 +1,19 @@
+{
+  "permalink": "/blog/2020/01/23/full-node-basics",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/blog/blog/2020-01-23-full-node-basics.md",
+  "source": "@site/blog/2020-01-23-full-node-basics.md",
+  "description": "export const BlogRedirect = () => {",
+  "date": "2020-01-23T00:00:00.000Z",
+  "tags": [],
+  "title": "Full node basics: an introduction to full nodes in the Libra network",
+  "readingTime": 0.105,
+  "truncated": false,
+  "prevItem": {
+    "title": "Libra Core Roadmap",
+    "permalink": "/blog/2020/02/28/libra-core-roadmap-3"
+  },
+  "nextItem": {
+    "title": "Steering committee now governs Libra technical development",
+    "permalink": "/blog/2020/01/16/steering-committee-now-governs-libra-technical-development"
+  }
+}

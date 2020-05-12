@@ -1,0 +1,19 @@
+{
+  "permalink": "/blog/2020/01/14/reconfiguration-is-live-on-testnet",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/blog/blog/2020-01-14-reconfiguration-is-live-on-testnet.md",
+  "source": "@site/blog/2020-01-14-reconfiguration-is-live-on-testnet.md",
+  "description": "export const BlogRedirect = () => {",
+  "date": "2020-01-14T00:00:00.000Z",
+  "tags": [],
+  "title": "Reconfiguration support is live on testnet",
+  "readingTime": 0.105,
+  "truncated": false,
+  "prevItem": {
+    "title": "Steering committee now governs Libra technical development",
+    "permalink": "/blog/2020/01/16/steering-committee-now-governs-libra-technical-development"
+  },
+  "nextItem": {
+    "title": "How gas works on the Libra blockchain",
+    "permalink": "/blog/2020/01/08/how-gas-works-on-libra-blockchain"
+  }
+}

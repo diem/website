@@ -1,0 +1,19 @@
+{
+  "permalink": "/blog/2019/11/09/libra-consensus-protocol",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/blog/blog/2019-11-09-libra-consensus-protocol.md",
+  "source": "@site/blog/2019-11-09-libra-consensus-protocol.md",
+  "description": "export const BlogRedirect = () => {",
+  "date": "2019-11-09T00:00:00.000Z",
+  "tags": [],
+  "title": "The Libra Consensus Protocol: Today and Next Steps",
+  "readingTime": 0.105,
+  "truncated": false,
+  "prevItem": {
+    "title": "Five months and growing strong: the Libra project",
+    "permalink": "/blog/2019/11/15/5-months-and-growing-strong"
+  },
+  "nextItem": {
+    "title": "A Guide To Running Libra Validators",
+    "permalink": "/blog/2019/10/29/a-guide-to-running-libra-validators"
+  }
+}

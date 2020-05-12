@@ -1,0 +1,8 @@
+{
+  "id": "my-first-transaction",
+  "title": "My First Transaction",
+  "description": "This document will guide you through executing your first transaction on the Libra Blockchain. Before you follow the steps to execute your first transaction, we recommend that you read the following documents to familiarize yourself with the key aspects of the Libra ecosystem and the Libra protocol:",
+  "source": "@site/docs/my-first-transaction.md",
+  "permalink": "/docs/my-first-transaction",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/my-first-transaction.md"
+}

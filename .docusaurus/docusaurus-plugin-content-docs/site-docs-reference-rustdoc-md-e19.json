@@ -1,0 +1,8 @@
+{
+  "id": "reference/rustdoc",
+  "title": "Public Documentation",
+  "description": "* [Admission Control](${baseUrl}rustdoc/admission_control/)",
+  "source": "@site/docs/reference/rustdoc.md",
+  "permalink": "/docs/reference/rustdoc",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/reference/rustdoc.md"
+}

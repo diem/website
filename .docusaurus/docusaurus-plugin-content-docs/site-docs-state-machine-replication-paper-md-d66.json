@@ -1,0 +1,8 @@
+{
+  "id": "state-machine-replication-paper",
+  "title": "State Machine Replication in the Libra Blockchain",
+  "description": "_**Note to readers:** This report has been modified to incorporate updates to the Libra payment system as found in the White Paper v2.0._",
+  "source": "@site/docs/state-machine-replication-paper.md",
+  "permalink": "/docs/state-machine-replication-paper",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/state-machine-replication-paper.md"
+}

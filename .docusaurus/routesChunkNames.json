@@ -1,0 +1,307 @@
+{
+  "/": {
+    "component": "component---site-src-pages-index-jsc-4-f-f99"
+  },
+  "/blog": {
+    "component": "component---theme-blog-list-pagea-6-a-7ba",
+    "items": [
+      {
+        "content": "content---blogefb-90d"
+      },
+      {
+        "content": "content---blog-76-c-f06"
+      },
+      {
+        "content": "content---bloga-72-612"
+      },
+      {
+        "content": "content---blog-018-4cb"
+      },
+      {
+        "content": "content---blog-90-d-ff4"
+      },
+      {
+        "content": "content---blog-69-a-7a5"
+      },
+      {
+        "content": "content---blog-76-c-f06"
+      },
+      {
+        "content": "content---blog-667-2a2"
+      },
+      {
+        "content": "content---blog-4-fa-fb0"
+      },
+      {
+        "content": "content---blog-page-2-cbb-3a4"
+      }
+    ],
+    "metadata": "metadata---blogbbb-5f9"
+  },
+  "/blog/2019/06/18/the-path-forward": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "content": "content---blog-2019-06-18-the-path-forwarda-0-c-eb6"
+  },
+  "/blog/2019/08/14/libra-bug-bounty": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "content": "content---blog-2019-08-14-libra-bug-bounty-8-e-2-433"
+  },
+  "/blog/2019/09/12/libra-developer-spotlight": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "content": "content---blog-2019-09-12-libra-developer-spotlightd-8-c-9c6"
+  },
+  "/blog/2019/09/26/libra-bft-protocol": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "content": "content---blog-2019-09-26-libra-bft-protocolc-4-e-a43"
+  },
+  "/blog/2019/10/02/libra-developer-update": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "content": "content---blog-2019-10-02-libra-developer-update-925-a51"
+  },
+  "/blog/2019/10/22/simplifying-payloads": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "content": "content---blog-2019-10-22-simplifying-payloadsa-46-824"
+  },
+  "/blog/2019/10/29/a-guide-to-running-libra-validators": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "content": "content---blog-2019-10-29-a-guide-to-running-libra-validators-4-f-5-a38"
+  },
+  "/blog/2019/11/09/libra-consensus-protocol": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "content": "content---blog-2019-11-09-libra-consensus-protocolaf-3-299"
+  },
+  "/blog/2019/11/15/5-months-and-growing-strong": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "content": "content---blog-2019-11-15-5-months-and-growing-strong-829-377"
+  },
+  "/blog/2019/12/10/about-the-cla-process": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "content": "content---blog-2019-12-10-about-the-cla-process-9-c-0-ad6"
+  },
+  "/blog/2019/12/17/libra-core-roadmap-2": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "content": "content---blog-2019-12-17-libra-core-roadmap-22-e-4-13c"
+  },
+  "/blog/2020/01/08/how-gas-works-on-libra-blockchain": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "content": "content---blog-2020-01-08-how-gas-works-on-libra-blockchaine-49-b2e"
+  },
+  "/blog/2020/01/14/reconfiguration-is-live-on-testnet": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "content": "content---blog-2020-01-14-reconfiguration-is-live-on-testnetc-86-f6c"
+  },
+  "/blog/2020/01/16/steering-committee-now-governs-libra-technical-development": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "content": "content---blog-2020-01-16-steering-committee-now-governs-libra-technical-development-8-ed-df2"
+  },
+  "/blog/2020/01/23/full-node-basics": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "content": "content---blog-2020-01-23-full-node-basics-2-e-4-e0e"
+  },
+  "/blog/2020/02/28/libra-core-roadmap-3": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "content": "content---blog-2020-02-28-libra-core-roadmap-3-e-67-495"
+  },
+  "/blog/2020/03/06/how-to-use-the-end-to-end-tests-framework-in-move": {
+    "component": "component---theme-blog-post-pageccc-cab",
+    "content": "content---blog-2020-03-06-how-to-use-the-end-to-end-tests-framework-in-moved-49-11a"
+  },
+  "/blog/page/2": {
+    "component": "component---theme-blog-list-pagea-6-a-7ba",
+    "items": [
+      {
+        "content": "content---blog-page-24-c-3-533"
+      },
+      {
+        "content": "content---blog-page-2384-72b"
+      },
+      {
+        "content": "content---blog-page-235-a-367"
+      },
+      {
+        "content": "content---blog-page-2395-0b0"
+      },
+      {
+        "content": "content---blog-page-2660-cb3"
+      },
+      {
+        "content": "content---blog-page-28-c-4-c29"
+      },
+      {
+        "content": "content---blog-page-2952-2d8"
+      }
+    ],
+    "metadata": "metadata---blog-page-2306-6e4"
+  },
+  "/form-thanks": {
+    "component": "component---site-src-pages-form-thanks-jsda-1-25a"
+  },
+  "/help": {
+    "component": "component---site-src-pages-help-js-7-e-3-222"
+  },
+  "/newsletter_form": {
+    "component": "component---site-src-pages-newsletter-form-jse-74-923"
+  },
+  "/papers": {
+    "component": "component---site-src-pages-papers-js-573-8e6"
+  },
+  "/partner_form": {
+    "component": "component---site-src-pages-partner-form-js-1-ca-4cc"
+  },
+  "/docs/:route": {
+    "component": "component---theme-doc-page-1-be-9be",
+    "docsMetadata": "docsMetadata---docs-route-20-a-f24"
+  },
+  "/docs/README": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-readme-233-f53"
+  },
+  "/docs/community/coding-guidelines": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-community-coding-guidelines-169-a4c"
+  },
+  "/docs/community/contributing": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-community-contributing-61-c-6c6"
+  },
+  "/docs/crates/admission-control": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-crates-admission-control-828-f2e"
+  },
+  "/docs/crates/bytecode-verifier": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-crates-bytecode-verifier-1-d-8-376"
+  },
+  "/docs/crates/consensus": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-crates-consensus-437-ab2"
+  },
+  "/docs/crates/crypto": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-crates-crypto-3-c-1-732"
+  },
+  "/docs/crates/execution": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-crates-execution-0-d-9-241"
+  },
+  "/docs/crates/ir-to-bytecode": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-crates-ir-to-bytecodea-41-b4b"
+  },
+  "/docs/crates/mempool": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-crates-mempoolc-32-08f"
+  },
+  "/docs/crates/move-language": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-crates-move-language-2-fc-992"
+  },
+  "/docs/crates/network": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-crates-network-579-c56"
+  },
+  "/docs/crates/storage": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-crates-storageca-9-8b1"
+  },
+  "/docs/crates/vm": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-crates-vm-8-d-5-541"
+  },
+  "/docs/doc1": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-doc-1-b-2-f-e80"
+  },
+  "/docs/doc2": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-doc-2-df-3-eaa"
+  },
+  "/docs/doc3": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-doc-3616-40c"
+  },
+  "/docs/libra-core-overview": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-libra-core-overviewad-7-6f4"
+  },
+  "/docs/libra-open-source-paper": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-libra-open-source-paperba-0-4f9"
+  },
+  "/docs/libra-protocol": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-libra-protocol-5-f-5-ca2"
+  },
+  "/docs/life-of-a-transaction": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-life-of-a-transactioncf-5-603"
+  },
+  "/docs/mdx": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-mdxce-3-7d1"
+  },
+  "/docs/move-overview": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-move-overview-837-16e"
+  },
+  "/docs/move-paper": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-move-paper-95-d-48c"
+  },
+  "/docs/my-first-transaction": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-my-first-transaction-900-53a"
+  },
+  "/docs/policies/code-of-conduct": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-policies-code-of-conduct-35-e-3d7"
+  },
+  "/docs/policies/cookies-policy": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-policies-cookies-policy-17-d-22e"
+  },
+  "/docs/policies/privacy-policy": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-policies-privacy-policy-83-b-725"
+  },
+  "/docs/policies/security": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-policies-securitybbf-76b"
+  },
+  "/docs/policies/terms-of-use": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-policies-terms-of-usec-0-e-765"
+  },
+  "/docs/reference/glossary": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-reference-glossary-846-d57"
+  },
+  "/docs/reference/libra-cli": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-reference-libra-cliccf-4f0"
+  },
+  "/docs/reference/rustdoc": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-reference-rustdoce-19-7a8"
+  },
+  "/docs/run-local-network": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-run-local-network-149-0cf"
+  },
+  "/docs/run-move-locally": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-run-move-locally-8-d-2-dfb"
+  },
+  "/docs/state-machine-replication-paper": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-state-machine-replication-paperd-66-71b"
+  },
+  "/docs/the-libra-blockchain-paper": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-the-libra-blockchain-paper-852-173"
+  },
+  "/docs/welcome-to-libra": {
+    "component": "component---theme-doc-item-178-a40",
+    "content": "content---docs-welcome-to-librafc-7-a61"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "permalink": "/blog/2020/03/06/how-to-use-the-end-to-end-tests-framework-in-move",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/blog/blog/2020-03-06-how-to-use-the-end-to-end-tests-framework-in-move.md",
+  "source": "@site/blog/2020-03-06-how-to-use-the-end-to-end-tests-framework-in-move.md",
+  "description": "export const BlogRedirect = () => {",
+  "date": "2020-03-06T00:00:00.000Z",
+  "tags": [],
+  "title": "How to use the end-to-end tests framework in Move",
+  "readingTime": 0.105,
+  "truncated": false,
+  "nextItem": {
+    "title": "Libra Core Roadmap",
+    "permalink": "/blog/2020/02/28/libra-core-roadmap-3"
+  }
+}

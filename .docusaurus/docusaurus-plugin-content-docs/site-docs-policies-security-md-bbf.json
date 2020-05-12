@@ -1,0 +1,8 @@
+{
+  "id": "policies/security",
+  "title": "Reporting Vulnerabilities",
+  "description": "This document outlines security procedures and general policies for the Libra project.",
+  "source": "@site/docs/policies/security.md",
+  "permalink": "/docs/policies/security",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/policies/security.md"
+}

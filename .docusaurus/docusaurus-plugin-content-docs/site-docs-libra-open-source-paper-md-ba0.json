@@ -1,0 +1,8 @@
+{
+  "id": "libra-open-source-paper",
+  "title": "Libra Open Source",
+  "description": "The [Libra Blockchain](https://developers.libra.org/docs/the-libra-blockchain-paper) is powered by open-source software. The first implementation of the Libra protocol — the technology behind the blockchain — is Libra Core, which is an [open-source project](https://github.com/libra/libra) managed by the [Libra Association](https://libra.org/en-us/association-council-principles) using development practices established by the open-source community. Developing the technology behind the Libra Blockchain in this way ensures that the blockchain is accessible to everyone and that technology decisions are fair and transparent.",
+  "source": "@site/docs/libra-open-source-paper.md",
+  "permalink": "/docs/libra-open-source-paper",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/libra-open-source-paper.md"
+}

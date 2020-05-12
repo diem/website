@@ -3,8 +3,6 @@ id: state-machine-replication-paper
 title: State Machine Replication in the Libra Blockchain
 ---
 
-<!-- hide the table of contents --><style>.toc-headings {display: none !important; visibility: hidden !important;}</style>
-
 _**Note to readers:** This report has been modified to incorporate updates to the Libra payment system as found in the White Paper v2.0._
 
 ## Abstract
@@ -17,6 +15,6 @@ LibraBFT can reconfigure itself, by embedding configuration-change commands in t
 
 ### Downloads
 
-[![State Machine Replication in the Libra Blockchain PDF Download](assets/illustrations/state-machine-pdf.png){: .download}](assets/papers/libra-consensus-state-machine-replication-in-the-libra-blockchain/2020-04-09.pdf)
+[![State Machine Replication in the Libra Blockchain PDF Download](static/img/docs/state-machine-pdf.png){: .download}](assets/papers/libra-consensus-state-machine-replication-in-the-libra-blockchain/2020-04-09.pdf)
 
 <a href="/papers">Previous versions</a>

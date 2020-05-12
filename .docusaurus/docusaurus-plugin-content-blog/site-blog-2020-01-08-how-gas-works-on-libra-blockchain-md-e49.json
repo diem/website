@@ -1,0 +1,19 @@
+{
+  "permalink": "/blog/2020/01/08/how-gas-works-on-libra-blockchain",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/blog/blog/2020-01-08-how-gas-works-on-libra-blockchain.md",
+  "source": "@site/blog/2020-01-08-how-gas-works-on-libra-blockchain.md",
+  "description": "export const BlogRedirect = () => {",
+  "date": "2020-01-08T00:00:00.000Z",
+  "tags": [],
+  "title": "How gas works on the Libra blockchain",
+  "readingTime": 0.105,
+  "truncated": false,
+  "prevItem": {
+    "title": "Reconfiguration support is live on testnet",
+    "permalink": "/blog/2020/01/14/reconfiguration-is-live-on-testnet"
+  },
+  "nextItem": {
+    "title": "Libra Core Roadmap",
+    "permalink": "/blog/2019/12/17/libra-core-roadmap-2"
+  }
+}

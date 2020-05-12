@@ -1,0 +1,19 @@
+{
+  "permalink": "/blog/2019/12/17/libra-core-roadmap-2",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/blog/blog/2019-12-17-libra-core-roadmap-2.md",
+  "source": "@site/blog/2019-12-17-libra-core-roadmap-2.md",
+  "description": "export const BlogRedirect = () => {",
+  "date": "2019-12-17T00:00:00.000Z",
+  "tags": [],
+  "title": "Libra Core Roadmap",
+  "readingTime": 0.13,
+  "truncated": false,
+  "prevItem": {
+    "title": "How gas works on the Libra blockchain",
+    "permalink": "/blog/2020/01/08/how-gas-works-on-libra-blockchain"
+  },
+  "nextItem": {
+    "title": "How to contribute code to the Libra project: about the CLA process",
+    "permalink": "/blog/2019/12/10/about-the-cla-process"
+  }
+}

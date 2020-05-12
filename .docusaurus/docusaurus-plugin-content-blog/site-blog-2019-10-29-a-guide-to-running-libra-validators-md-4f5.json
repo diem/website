@@ -1,0 +1,19 @@
+{
+  "permalink": "/blog/2019/10/29/a-guide-to-running-libra-validators",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/blog/blog/2019-10-29-a-guide-to-running-libra-validators.md",
+  "source": "@site/blog/2019-10-29-a-guide-to-running-libra-validators.md",
+  "description": "export const BlogRedirect = () => {",
+  "date": "2019-10-29T00:00:00.000Z",
+  "tags": [],
+  "title": "A Guide To Running Libra Validators",
+  "readingTime": 0.105,
+  "truncated": false,
+  "prevItem": {
+    "title": "The Libra Consensus Protocol: Today and Next Steps",
+    "permalink": "/blog/2019/11/09/libra-consensus-protocol"
+  },
+  "nextItem": {
+    "title": "Simplifying Libra Transaction Payloads: Deprecation of the \"Program\" Type",
+    "permalink": "/blog/2019/10/22/simplifying-payloads"
+  }
+}

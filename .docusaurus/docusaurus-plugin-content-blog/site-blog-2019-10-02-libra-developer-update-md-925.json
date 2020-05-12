@@ -1,0 +1,19 @@
+{
+  "permalink": "/blog/2019/10/02/libra-developer-update",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/blog/blog/2019-10-02-libra-developer-update.md",
+  "source": "@site/blog/2019-10-02-libra-developer-update.md",
+  "description": "export const BlogRedirect = () => {",
+  "date": "2019-10-02T00:00:00.000Z",
+  "tags": [],
+  "title": "September Libra Developer Update - Roadmap",
+  "readingTime": 0.105,
+  "truncated": false,
+  "prevItem": {
+    "title": "Simplifying Libra Transaction Payloads: Deprecation of the \"Program\" Type",
+    "permalink": "/blog/2019/10/22/simplifying-payloads"
+  },
+  "nextItem": {
+    "title": "Improving the LibraBFT protocol",
+    "permalink": "/blog/2019/09/26/libra-bft-protocol"
+  }
+}

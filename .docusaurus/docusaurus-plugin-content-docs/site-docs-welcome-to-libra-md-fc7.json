@@ -1,0 +1,8 @@
+{
+  "id": "welcome-to-libra",
+  "title": "Welcome",
+  "description": "Welcome to the Libra developer site! The Libra Association’s mission is to enable a simple global payment system and financial infrastructure that empowers billions of people.",
+  "source": "@site/docs/welcome-to-libra.md",
+  "permalink": "/docs/welcome-to-libra",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/welcome-to-libra.md"
+}
