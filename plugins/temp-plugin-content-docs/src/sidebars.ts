@@ -43,7 +43,7 @@ function normalizeCategoryShorthand(
  */
 function assertItem(item: Object, keys: string[]): void {
   const unknownKeys = Object.keys(item).filter(
-    (key) => !keys.includes(key) && key !== 'type',
+    (key) => !keys.includes(key) && key !== 'type' && key !== 'extra',
   );
 
   if (unknownKeys.length) {

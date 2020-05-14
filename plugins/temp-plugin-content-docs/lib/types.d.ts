@@ -25,16 +25,19 @@ export interface PluginOptions extends MetadataOptions, PathOptions {
 export declare type SidebarItemDoc = {
     type: 'doc' | 'ref';
     id: string;
+    extra?: object;
 };
 export interface SidebarItemLink {
     type: 'link';
     href: string;
     label: string;
+    extra?: object;
 }
 export interface SidebarItemCategory {
     type: 'category';
     label: string;
     items: SidebarItem[];
+    extra?: object;
 }
 export interface SidebarItemCategoryRaw {
     type: 'category';
@@ -85,6 +88,7 @@ export interface MetadataRaw extends LastUpdateData {
     sidebar_label?: string;
     editUrl?: string;
     version?: string;
+    extra?: object;
 }
 export interface Paginator {
     title: string;

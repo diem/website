@@ -179,6 +179,7 @@ function pluginContentDocs(context, opts) {
                     type: 'link',
                     label: linkMetadata.sidebar_label || linkMetadata.title,
                     href: linkMetadata.permalink,
+                    extra: item.extra,
                 };
             };
             const normalizeItem = (item) => {

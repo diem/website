@@ -29,7 +29,7 @@ function normalizeCategoryShorthand(sidebar) {
  * Check that item contains only allowed keys.
  */
 function assertItem(item, keys) {
-    const unknownKeys = Object.keys(item).filter((key) => !keys.includes(key) && key !== 'type');
+    const unknownKeys = Object.keys(item).filter((key) => !keys.includes(key) && key !== 'type' && key !== 'extra');
     if (unknownKeys.length) {
         throw new Error(`Unknown sidebar item keys: ${unknownKeys}. Item: ${JSON.stringify(item)}`);
     }
