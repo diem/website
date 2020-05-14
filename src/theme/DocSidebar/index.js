@@ -1,24 +1,26 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 import React, {useState, useCallback} from 'react';
 import classnames from 'classnames';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
 import useLogo from '@theme/hooks/useLogo';
 import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 
 import styles from './styles.module.css';
 
 const MOBILE_TOGGLE_SIZE = 24;
 
-function DocSidebarItem({item, onItemClick, collapsible, ...props}) {
-  const {items, href, label, type} = item;
+const getClasses = (classNames = []) =>
+  classNames.map(c =>
+    typeof c === 'object' && c.global
+      ? c.name
+      : styles[c]
+  );
+
+function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, isRoot = false}) {
+  const {extra = {}, items, href, label, type} = item;
+  const {classNames, icon, theme: itemTheme = theme} = extra;
   const [collapsed, setCollapsed] = useState(item.collapsed);
   const [prevCollapsedProp, setPreviousCollapsedProp] = useState(null);
 
@@ -46,16 +48,23 @@ function DocSidebarItem({item, onItemClick, collapsible, ...props}) {
             })}
             key={label}>
             <a
-              className={classnames('menu__link', {
-                'menu__link--sublist': collapsible,
-                'menu__link--active': collapsible && !item.collapsed,
-              })}
-              href="#!"
+              className={classnames(
+                "menu__link", 
+                styles[itemTheme],
+                ...getClasses(classNames),
+                {
+                  'menu__link--sublist': collapsible,
+                  'menu__link--active': collapsible && !item.collapsed,
+                },
+              )}
               onClick={collapsible ? handleItemClick : undefined}
               {...props}>
               {label}
             </a>
-            <ul className="menu__list">
+            {icon &&
+              <img className={styles.icon} src={useBaseUrl(icon)} />
+            }
+            <ul className={classnames("menu__list", styles[itemTheme])}>
               {items.map((childItem) => (
                 <DocSidebarItem
                   tabIndex={collapsed ? '-1' : '0'}
@@ -63,6 +72,7 @@ function DocSidebarItem({item, onItemClick, collapsible, ...props}) {
                   item={childItem}
                   onItemClick={onItemClick}
                   collapsible={collapsible}
+                  theme={itemTheme}
                 />
               ))}
             </ul>
@@ -73,7 +83,14 @@ function DocSidebarItem({item, onItemClick, collapsible, ...props}) {
     case 'link':
     default:
       return (
-        <li className="menu__list-item" key={label}>
+        <li 
+          className={classnames(
+            "menu__list-item", 
+            styles[itemTheme],
+            ...getClasses(classNames),
+          )} 
+          key={label}
+        >
           <Link
             className="menu__link"
             to={href}
@@ -89,6 +106,9 @@ function DocSidebarItem({item, onItemClick, collapsible, ...props}) {
                   rel: 'noreferrer noopener',
                 })}
             {...props}>
+            {icon &&
+              <img className={styles.icon} src={useBaseUrl(icon)} />
+            }
             {label}
           </Link>
         </li>
