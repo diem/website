@@ -1,8 +1,0 @@
-{
-  "id": "crates/crypto",
-  "title": "Crypto",
-  "description": "The contents of this file are copied from `libra/libra`. Make your edits there.",
-  "source": "@site/docs/crates/crypto.md",
-  "permalink": "/docs/crates/crypto",
-  "editUrl": "https://github.com/libra/libra/edit/master/crypto/legacy_crypto/README.md"
-}

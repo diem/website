@@ -1,8 +1,0 @@
-{
-  "id": "crates/bytecode-verifier",
-  "title": "Bytecode Verifier",
-  "description": "The contents of this file are copied from `libra/libra`. Make your edits there.",
-  "source": "@site/docs/crates/bytecode-verifier.md",
-  "permalink": "/docs/crates/bytecode-verifier",
-  "editUrl": "https://github.com/libra/libra/edit/master/language/bytecode_verifier/README.md"
-}

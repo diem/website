@@ -1,8 +1,0 @@
-{
-  "id": "libra-core-overview",
-  "title": "Libra Core Overview",
-  "description": "Libra Core is the official name for the open-source implementation of the Libra protocol published by the Libra Association.",
-  "source": "@site/docs/libra-core-overview.md",
-  "permalink": "/docs/libra-core-overview",
-  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/libra-core-overview.md"
-}

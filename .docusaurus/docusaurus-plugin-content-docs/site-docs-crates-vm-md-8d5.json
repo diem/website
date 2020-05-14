@@ -1,8 +1,0 @@
-{
-  "id": "crates/vm",
-  "title": "Virtual Machine",
-  "description": "The contents of this file are copied from `libra/libra`. Make your edits there.",
-  "source": "@site/docs/crates/vm.md",
-  "permalink": "/docs/crates/vm",
-  "editUrl": "https://github.com/libra/libra/edit/master/language/vm/README.md"
-}
