@@ -80,7 +80,7 @@ module.exports = {
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      require.resolve('./temp-preset'),
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
