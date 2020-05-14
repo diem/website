@@ -18,7 +18,7 @@ const getClasses = (classNames = []) =>
       : styles[c]
   );
 
-function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, isRoot = false}) {
+function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...props}) {
   const {extra = {}, items, href, label, type} = item;
   const {classNames, icon, theme: itemTheme = theme} = extra;
   const [collapsed, setCollapsed] = useState(item.collapsed);
