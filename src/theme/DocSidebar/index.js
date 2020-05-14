@@ -43,28 +43,34 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
       return (
         items.length > 0 && (
           <li
-            className={classnames('menu__list-item', {
-              'menu__list-item--collapsed': collapsed,
-            })}
+            className={classnames(
+              'menu__list-item', 
+              styles.listItem, 
+              styles.category,
+              {
+                'menu__list-item--collapsed': collapsed,
+              },
+            )}
             key={label}>
-            <a
-              className={classnames(
-                "menu__link", 
-                styles[itemTheme],
-                ...getClasses(classNames),
-                {
-                  'menu__link--sublist': collapsible,
-                  'menu__link--active': collapsible && !item.collapsed,
-                },
-              )}
-              onClick={collapsible ? handleItemClick : undefined}
-              {...props}>
-              {label}
-            </a>
             {icon &&
               <img className={styles.icon} src={useBaseUrl(icon)} />
             }
             <ul className={classnames("menu__list", styles[itemTheme])}>
+              <a
+                className={classnames(
+                  "menu__link", 
+                  styles.menuLink, 
+                  styles[itemTheme],
+                  ...getClasses(classNames),
+                  {
+                    'menu__link--sublist': collapsible,
+                    'menu__link--active': collapsible && !item.collapsed,
+                  },
+                )}
+                onClick={collapsible ? handleItemClick : undefined}
+                {...props}>
+                {label}
+              </a>
               {items.map((childItem) => (
                 <DocSidebarItem
                   tabIndex={collapsed ? '-1' : '0'}
@@ -86,18 +92,19 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
         <li 
           className={classnames(
             "menu__list-item", 
+            styles.listItem,
             styles[itemTheme],
             ...getClasses(classNames),
           )} 
           key={label}
         >
           <Link
-            className="menu__link"
+            className={classnames("menu__link", styles.menuLink)}
             to={href}
             {...(isInternalUrl(href)
               ? {
                   isNavLink: true,
-                  activeClassName: 'menu__link--active',
+                  activeClassName: styles.active,
                   exact: true,
                   onClick: onItemClick,
                 }
@@ -109,7 +116,7 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
             {icon &&
               <img className={styles.icon} src={useBaseUrl(icon)} />
             }
-            {label}
+            <span>{label}</span>
           </Link>
         </li>
       );
@@ -229,7 +236,7 @@ function DocSidebar(props) {
             </svg>
           )}
         </button>
-        <ul className="menu__list">
+        <ul className={classnames("menu__list", styles.menuList)}>
           {sidebarData.map((item) => (
             <DocSidebarItem
               key={item.label}
