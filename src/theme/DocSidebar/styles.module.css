@@ -78,11 +78,17 @@
 }
 
 .sidebar .menu .category ul {
+  display: flex;
+  flex-direction: column;
   margin-left: 0;
 }
 
 .category:first-child {
   margin-top: 0;
+}
+
+.sidebar ul > .menuLink {
+  align-self: flex-start;
 }
 
 .sidebar ul > .menuLink:hover {

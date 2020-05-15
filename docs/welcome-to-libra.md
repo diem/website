@@ -1,6 +1,7 @@
 ---
 id: welcome-to-libra
 title: Welcome
+sidebar_label: Home
 ---
 
 Welcome to the Libra developer site! The Libra Association’s mission is to enable a simple global payment system and financial infrastructure that empowers billions of people.
