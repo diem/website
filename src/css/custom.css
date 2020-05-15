@@ -28,3 +28,31 @@ html {
 * {
   list-style: none;
 }
+
+body {
+  font-family: 'NB International Pro';
+}
+
+@font-face {
+  font-family: 'NB International Pro';
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  src: local('NBInternationalPro-Reg'), local('NBInternationalRegularWebfont'),
+    url('/fonts/nb_international_pro_regular-webfont-c77cab7d176ad6c0a735e9e54398f4b5.eot') format('embedded-opentype'),
+    url('/fonts/nb_international_pro_regular-webfont-23316df531b081018ab50f3fdebb911d.woff2') format('woff2'),
+    url('/fonts/nb_international_pro_regular-webfont-2055eda1f28e3f2766b54ff5d7fa9c3a.woff') format('woff'),
+    url('/fonts/nb_international_pro_regular-webfont-5a1862044e5200d96d6e081b00abaab2.tff') format('truetype');
+}
+
+@font-face {
+  font-family: 'NB International Pro';
+  font-weight: 300;
+  font-style: normal;
+  font-display: auto;
+  src: local('NBInternationalPro-Lig'), local('NBInternationalLightWebfont'),
+    url('/fonts/nb_international_pro_light-webfont-79e1edf03d8ddf7d46731839a1463613.eot') format('embedded-opentype'),
+    url('/fonts/nb_international_pro_light-webfont-51e77a94d273016b7b0fbf54dc201e99.woff2') format('woff2'),
+    url('/fonts/nb_international_pro_light-webfont-21efbc5b931089585cc7d67affc7490e.woff') format('woff'),
+    url('/fonts/nb_international_pro_light-webfont-07bd85ca228c4cd11e30a21b915f20c6.ttf') format('truetype');
+}
