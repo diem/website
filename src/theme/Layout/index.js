@@ -1,10 +1,3 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 import React from 'react';
 import Head from '@docusaurus/Head';
 import isInternalUrl from '@docusaurus/isInternalUrl';
@@ -78,9 +71,14 @@ function Layout(props) {
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
         <AnnouncementBar />
-        <Navbar />
-        <div className="main-wrapper">{children}</div>
-        {!noFooter && <Footer />}
+        <div>
+          <Navbar />
+          <div className="nav-spacer"></div>
+        </div>
+        <div className="nav-pusher">
+          <div className="main-wrapper width-wrapper">{children}</div>
+          {!noFooter && <Footer />}
+        </div>
       </TabGroupChoiceProvider>
     </ThemeProvider>
   );

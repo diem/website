@@ -33,6 +33,17 @@ body {
   font-family: 'NB International Pro';
 }
 
+/* main */
+body .hash-link {
+  position: inherit;
+  padding-right: 5px ;
+}
+
+.main-wrapper > div > div {
+  width: 370px !important;
+  margin-top: 2.25px !important;
+}
+
 @font-face {
   font-family: 'NB International Pro';
   font-weight: 400;
