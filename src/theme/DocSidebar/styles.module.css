@@ -1,17 +1,9 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 @media (min-width: 997px) {
   .sidebar {
     height: 100vh;
     overflow-y: auto;
     position: sticky;
     top: 0;
-    padding-top: var(--ifm-navbar-height);
   }
 
   .sidebar::-webkit-scrollbar {
@@ -70,4 +62,111 @@
   font-weight: var(--ifm-font-weight-bold);
   line-height: 0.9;
   width: 24px;
+}
+
+/* Custom */
+
+.sidebar {
+  font-size: 10px; /* Basis for em */
+  padding-left: 1.5em;
+  padding-bottom: 1em;
+}
+
+.menu .listItem {
+  display: flex;
+  margin: 0;
+}
+
+.sidebar .menu .category ul {
+  margin-left: 0;
+}
+
+.category:first-child {
+  margin-top: 0;
+}
+
+.sidebar ul > .menuLink:hover {
+  background-color: inherit;
+  cursor: default;
+}
+
+.menu .menuLink {
+  padding: 0;
+  align-self: center;
+}
+
+.menuLink span {
+  align-self: center;
+}
+
+.active {
+  color: var(--ifm-color-primary) !important;
+}
+
+.sidebar .listItem > .menuLink:hover {
+  background-color: inherit;
+  color: var(--ifm-color-primary);
+}
+
+.icon {
+  height: 25px;
+  width: 25px;
+  margin-right: 1.5em;
+}
+
+/* Passed in dynamically via sidebar config */
+
+.icon-small img {
+  width: 20px;
+  height: 20px;
+  margin-right: 1em;
+}
+
+.menu .back-to-home {
+  margin-top: 3em;
+}
+
+.menu .label {
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+
+.menu .category-index {
+  margin-bottom: 2.5em;
+}
+
+/* Themes */
+
+.primary .menuLink, .menuLink.primary {
+  color: black;
+  font-size: 1.8em;
+}
+
+.category ul.primary {
+  margin-bottom: 2em;
+}
+
+.category ul.primary > .menuLink {
+  color: #A9A9A9;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin-bottom: 1.5em;
+}
+.category ul.primary li {
+  margin: 1em 0;
+}
+
+.secondary .menuLink, .secondary > .menuLink {
+  color: #757575;
+  font-size: 1.6em;
+}
+
+.category ul.secondary {
+  margin-bottom: 1.7em;
+}
+
+.category ul.secondary > .menuLink {
+  color: black;
+  padding-top: .2em;
+  padding-bottom: .5em;
 }
