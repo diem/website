@@ -1,8 +1,0 @@
-{
-  "id": "crates/network",
-  "title": "Network",
-  "description": "The contents of this file are copied from `libra/libra`. Make your edits there.",
-  "source": "@site/docs/crates/network.md",
-  "permalink": "/docs/crates/network",
-  "editUrl": "https://github.com/libra/libra/edit/master/network/README.md"
-}

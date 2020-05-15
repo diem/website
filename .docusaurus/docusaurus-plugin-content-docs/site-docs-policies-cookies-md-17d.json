@@ -1,8 +1,0 @@
-{
-  "id": "policies/cookies-policy",
-  "title": "Cookies Policy",
-  "description": "## Cookies",
-  "source": "@site/docs/policies/cookies.md",
-  "permalink": "/docs/policies/cookies-policy",
-  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/policies/cookies.md"
-}

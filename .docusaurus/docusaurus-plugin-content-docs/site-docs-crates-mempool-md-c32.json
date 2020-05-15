@@ -1,8 +1,0 @@
-{
-  "id": "crates/mempool",
-  "title": "Mempool",
-  "description": "The contents of this file are copied from `libra/libra`. Make your edits there.",
-  "source": "@site/docs/crates/mempool.md",
-  "permalink": "/docs/crates/mempool",
-  "editUrl": "https://github.com/libra/libra/edit/master/mempool/README.md"
-}

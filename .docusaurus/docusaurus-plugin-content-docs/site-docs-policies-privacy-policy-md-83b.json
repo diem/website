@@ -1,8 +1,0 @@
-{
-  "id": "policies/privacy-policy",
-  "title": "Privacy Policy",
-  "description": "This website is owned and operated by the Libra Association (“Libra,” “us,” “our”). This Data Policy applies to the Libra Association website (“Website”). This Data Policy describes our practices for handling your information collected in connection with this Website.",
-  "source": "@site/docs/policies/privacy-policy.md",
-  "permalink": "/docs/policies/privacy-policy",
-  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/policies/privacy-policy.md"
-}

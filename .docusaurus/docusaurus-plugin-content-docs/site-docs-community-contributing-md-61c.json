@@ -1,8 +1,0 @@
-{
-  "id": "community/contributing",
-  "title": "Contribution Guide",
-  "description": "Our goal is to make contributing to the Libra project easy and transparent.",
-  "source": "@site/docs/community/contributing.md",
-  "permalink": "/docs/community/contributing",
-  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/community/contributing.md"
-}

@@ -1,8 +1,0 @@
-{
-  "id": "README",
-  "title": "README",
-  "description": "This directory contains the source files for Libra's Docusaurus documentation.",
-  "source": "@site/docs/README.md",
-  "permalink": "/docs/README",
-  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/README.md"
-}

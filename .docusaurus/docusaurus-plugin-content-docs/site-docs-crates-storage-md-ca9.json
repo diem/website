@@ -1,8 +1,0 @@
-{
-  "id": "crates/storage",
-  "title": "Storage",
-  "description": "The contents of this file are copied from `libra/libra`. Make your edits there.",
-  "source": "@site/docs/crates/storage.md",
-  "permalink": "/docs/crates/storage",
-  "editUrl": "https://github.com/libra/libra/edit/master/storage/README.md"
-}
