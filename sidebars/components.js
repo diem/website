@@ -10,6 +10,7 @@ const backToHome = {
 
 const getReference = (theme = 'primary') => {
   const classNames = [];
+  const type = theme === 'primary' ? 'doc' : 'ref';
 
   if (theme === 'secondary') {
     classNames.push({
@@ -26,21 +27,21 @@ const getReference = (theme = 'primary') => {
     type: 'category',
     items: [
       {
-        type: 'doc',
+        type,
         id: 'reference/glossary',
         extra: {
           icon: 'img/Terminology.svg',
         },
       },
       {
-        type: 'doc',
+        type,
         id: 'reference/roadmap',
         extra: {
           icon: 'img/Roadmap.png',
         },
       },
       {
-        type: 'doc',
+        type,
         id: 'reference/compliance',
         extra: {
           icon: 'img/Compliance.svg',
