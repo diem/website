@@ -1,4 +1,6 @@
-@media (min-width: 997px) {
+@value large-tablet-breakpoint-query from '~CSS/variables.module.css';
+
+@media large-tablet-breakpoint-query {
   .sidebar {
     height: 100vh;
     overflow-y: auto;
@@ -66,10 +68,15 @@
 
 /* Custom */
 
+@media large-tablet-breakpoint-query {
+  .sidebar {
+    height: calc(100vh - 180px);
+  }
+}
+
 .sidebar {
   font-size: 10px; /* Basis for em */
   padding-left: 1.5em;
-  padding-bottom: 1em;
 }
 
 .menu .listItem {
