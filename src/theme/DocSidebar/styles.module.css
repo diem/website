@@ -43,7 +43,7 @@
   }
 
   .menu {
-    padding: 0.5rem;
+    padding: 0 0.5rem;
   }
 }
 
@@ -124,14 +124,14 @@
 .icon {
   height: 25px;
   width: 25px;
-  margin-right: 1.5em;
+  margin-right: 1em;
 }
 
 /* Passed in dynamically via sidebar config */
 
 .icon-small img {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   margin-right: 1em;
 }
 
@@ -139,9 +139,15 @@
   margin-top: 3em;
 }
 
+.menu .back-to-home span {
+  color: #757575;
+  font-size: 18px;
+  margin-top: -3px;
+}
+
 .menu .label {
-  margin-top: 2.5em;
-  margin-bottom: 2.5em;
+  margin-top: 2.9em;
+  margin-bottom: 2.2em;
 }
 
 .menu .category-index {
@@ -151,22 +157,24 @@
 /* Themes */
 
 .primary .menuLink, .menuLink.primary {
-  color: black;
+  color: var(--ifm-font-color-base);
   font-size: 1.8em;
 }
 
 .category ul.primary {
-  margin-bottom: 2em;
+  margin-bottom: 3.5em;
 }
 
 .category ul.primary > .menuLink {
   color: #A9A9A9;
   font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: .6px;
+  margin-bottom: .8em;
   text-transform: uppercase;
-  margin-bottom: 1.5em;
 }
 .category ul.primary li {
-  margin: 1em 0;
+  margin: .35em 0;
 }
 
 .secondary .menuLink, .secondary > .menuLink {
