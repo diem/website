@@ -6,7 +6,7 @@ const Sidebar = [
     id: 'welcome-to-libra',
     extra: {
       classNames: ['label'],
-      icon: 'img/Home.svg',
+      icon: 'img/home.svg',
     }
   },
   {
@@ -17,35 +17,35 @@ const Sidebar = [
         type: 'ref',
         id: 'core/overview',
         extra: {
-          icon: 'img/Core Contributors.svg',
+          icon: 'img/core-contributors.svg',
         }
       },
       {
         type: 'ref',
         id: 'merchant/overview',
         extra: {
-          icon: 'img/Merchant Solutions.svg',
+          icon: 'img/merchant-solutions.svg',
         }
       },
       {
         type: 'ref',
         id: 'wallet-app/overview',
         extra: {
-          icon: 'img/Wallet App.svg',
+          icon: 'img/wallet-app.svg',
         }
       },
       {
         type: 'ref',
         id: 'move/overview',
         extra: {
-          icon: 'img/Move.svg',
+          icon: 'img/move.svg',
         }
       },
       {
         type: 'ref',
         id: 'node/overview',
         extra: {
-          icon: 'img/Node Operators.svg',
+          icon: 'img/node-operators.svg',
         }
       }
     ],

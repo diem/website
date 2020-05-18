@@ -1,10 +1,5 @@
-function requireUncached(module) {
-  delete require.cache[require.resolve(module)];
-  return require(module);
-}
-
-const Home = requireUncached('./home');
-const Core = requireUncached('./core');
+const Home = require('./home');
+const Core = require('./core');
 
 module.exports = {
   home: Home,

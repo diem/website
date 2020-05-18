@@ -1,7 +1,7 @@
 const backToHome = {
   extra: {
     classNames: ['back-to-home', 'icon-small'],
-    icon: 'img/arrow-Left.svg',
+    icon: 'img/arrow-left.svg',
   },
   href: '/docs/welcome-to-libra',
   label: 'Home',
@@ -30,21 +30,21 @@ const getReference = (theme = 'primary') => {
         type,
         id: 'reference/glossary',
         extra: {
-          icon: 'img/Terminology.svg',
+          icon: 'img/terminology.svg',
         },
       },
       {
         type,
         id: 'reference/roadmap',
         extra: {
-          icon: 'img/Roadmap.png',
+          icon: 'img/roadmap.png',
         },
       },
       {
         type,
         id: 'reference/compliance',
         extra: {
-          icon: 'img/Compliance.svg',
+          icon: 'img/compliance.svg',
         }
       }
     ],
