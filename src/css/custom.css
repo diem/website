@@ -36,6 +36,10 @@ body {
   font-family: 'NB International Pro';
 }
 
+body a:hover {
+  color: inherit;
+}
+
 body .hash-link {
   position: inherit;
   padding-right: 5px ;

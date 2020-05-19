@@ -6,6 +6,7 @@
  */
 
 .docPage {
+  color: var(--doc-black);
   display: flex;
 }
 

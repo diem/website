@@ -1,0 +1,23 @@
+.root {
+  color: var(--doc-black);
+  transition: .15s ease-in-out;
+  width: var(--doc-bucket-size);
+}
+
+.root:hover {
+  box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
+  text-decoration: none;
+}
+
+.root h4 {
+  font-weight: normal;
+}
+
+/* Properties */
+.has-rounded-corners {
+  border-radius: 5px;
+}
+
+.has-shadow {
+  box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.15);
+}
