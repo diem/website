@@ -1,0 +1,31 @@
+.root {
+  align-items: center;
+  background-color: var(--doc-background-color);
+  display: inline-flex;
+  padding: 20px;
+}
+
+.image {
+  height: 40px;
+  margin-right: 10px;
+  width: 40px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  width: 155px;
+}
+
+.title {
+  font-size: 15px;
+  margin: 0;
+}
+
+.tag {
+  background-color: rgba(116,104,171,0.1);
+  border-radius: 9px;
+  font-size: 9px;
+  margin-right: 3px;
+  padding: 3px 10px;
+}
