@@ -1,0 +1,18 @@
+.root {
+  align-items: center;
+  background-color: var(--doc-background-color);
+  display: inline-flex;
+  padding: 20px;
+}
+
+.image {
+  height: 40px;
+  margin-right: 10px;
+  width: 40px;
+}
+
+.title {
+  font-size: 12px;
+  margin: 0;
+  width: 155px;
+}
