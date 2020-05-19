@@ -1,0 +1,50 @@
+.root {
+  background-color: var(--doc-background-color);
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+}
+
+.contents {
+  align-items: center;
+  display: inline-flex;
+  height: 100%;
+  padding: 50px 15px;
+}
+
+.circleOverlay {
+  background-color: rgba(30,72,85,0.1);
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  height: 263px;
+  left: -183px;
+  opacity: .3;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 263px;
+}
+
+.root img {
+  height: 50px;
+  margin-right: 25px;
+  width: 50px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 140px;
+}
+
+.title {
+  font-size: 14px;
+  margin: 0;
+}
+
+.description {
+  font-size: 12px;
+  font-weight: 300;
+  margin: 0;
+}
