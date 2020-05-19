@@ -1,1 +1,5 @@
-export default {};
+import Buckets from './Buckets';
+
+export default {
+  ...Buckets,
+};
