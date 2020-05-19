@@ -12,11 +12,15 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import renderRoutes from '@docusaurus/renderRoutes';
 import Layout from '@theme/Layout';
 import DocSidebar from '@theme/DocSidebar';
-import MDXComponents from '@theme/MDXComponents';
+import ThemeComponents from '@theme/MDXComponents';
 import NotFound from '@theme/NotFound';
 import {matchPath} from '@docusaurus/router';
 
+import DocComponents from 'Components/docs';
+
 import styles from './styles.module.css';
+
+const MDXComponents = Object.assign(ThemeComponents, DocComponents);
 
 function DocPage(props) {
   const {route: baseRoute, docsMetadata, location} = props;
