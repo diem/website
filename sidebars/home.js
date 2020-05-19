@@ -17,21 +17,21 @@ const Sidebar = [
         type: 'ref',
         id: 'core/overview',
         extra: {
-          icon: 'img/core-contributors.svg',
+          icon: 'img/core-contributors-sm.svg',
         }
       },
       {
         type: 'ref',
         id: 'merchant/overview',
         extra: {
-          icon: 'img/merchant-solutions.svg',
+          icon: 'img/merchant-solutions-sm.svg',
         }
       },
       {
         type: 'ref',
         id: 'wallet-app/overview',
         extra: {
-          icon: 'img/wallet-app.svg',
+          icon: 'img/wallet-app-sm.svg',
         }
       },
       {
