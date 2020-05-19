@@ -1,0 +1,31 @@
+.root {
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 30px;
+  text-align: center;
+}
+
+.image {
+  height: 110px;
+  margin-bottom: 10px;
+  width: 110px;
+}
+
+.title {
+  color: white;
+  font-size: 18px;
+}
+
+/* colors  */
+.aqua {
+  background-color: #1E4855;
+}
+
+.purple-dark {
+  background-color: #15132C
+}
+
+.purple-light {
+  background-color: #42318C;
+}
