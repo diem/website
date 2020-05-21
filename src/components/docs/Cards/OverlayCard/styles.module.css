@@ -25,10 +25,13 @@
   width: 263px;
 }
 
-.root img {
-  height: 50px;
+.root .image {
+  --image-size: 50px;
+  background-repeat: no-repeat;
+  background-size: var(--image-size) var(--image-size);
+  height: var(--image-size);
   margin-right: 25px;
-  width: 50px;
+  width: var(--image-size);
 }
 
 .textContainer {
