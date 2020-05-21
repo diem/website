@@ -82,6 +82,7 @@ module.exports = {
   },
   plugins: [
     require.resolve('./plugins/alias/src'), 
+    require.resolve('./plugins/react-axe-ada-monitoring'), 
   ],
   presets: [
     [

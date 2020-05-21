@@ -69,7 +69,8 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
                     },
                   )}
                   onClick={collapsible ? handleItemClick : undefined}
-                  {...props}>
+                  {...props}
+                >
                   {label}
                 </a>
               </li>
