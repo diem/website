@@ -1,7 +1,7 @@
 .root {
   color: var(--doc-black);
   transition: .15s ease-in-out;
-  width: var(--doc-bucket-size);
+  width: var(--doc-card-size);
 }
 
 .root:hover {
@@ -9,15 +9,11 @@
   text-decoration: none;
 }
 
-.root h4 {
-  font-weight: normal;
-}
-
 /* Properties */
-.has-rounded-corners {
+.hasRoundedCorners {
   border-radius: 5px;
 }
 
-.has-shadow {
+.hasShadow {
   box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.15);
 }

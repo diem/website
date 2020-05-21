@@ -13,7 +13,7 @@ html {
   );
   --doc-background-color: white;
   --doc-black: #15112C;
-  --doc-bucket-size: 245px;
+  --doc-card-size: 245px;
   --ifm-color-primary: #42318C;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);

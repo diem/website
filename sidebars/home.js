@@ -3,7 +3,7 @@ const {getReference} = require('./components');
 const Sidebar = [
   {
     type: 'doc',
-    id: 'welcome-to-libra',
+    id: 'welcome-to-libra-v2',
     extra: {
       classNames: ['label'],
       icon: 'img/home.svg',
@@ -15,23 +15,23 @@ const Sidebar = [
     items: [
       {
         type: 'ref',
-        id: 'core/overview',
+        id: 'core/overview-v2',
         extra: {
-          icon: 'img/core-contributors-sm.svg',
+          icon: 'img/core-contributors.svg',
         }
       },
       {
         type: 'ref',
         id: 'merchant/overview',
         extra: {
-          icon: 'img/merchant-solutions-sm.svg',
+          icon: 'img/merchant-solutions.svg',
         }
       },
       {
         type: 'ref',
         id: 'wallet-app/overview',
         extra: {
-          icon: 'img/wallet-app-sm.svg',
+          icon: 'img/wallet-app.svg',
         }
       },
       {

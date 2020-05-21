@@ -5,17 +5,17 @@ const Sidebar = [
   {
     extra: {
       classNames: ['label'],
-      icon: 'img/core-contributors-sm.svg',
+      icon: 'img/core-contributors.svg',
       noLink: true,
     },
-    id: 'core/overview', 
+    id: 'core/overview-v2', 
     type: 'doc',
   },
   {
     extra: {
-      classNames: ['category-index'],
+      classNames: ['categoryIndex'],
     },
-    href: '/docs/core/overview',
+    href: '/docs/core/overview-v2',
     label: 'Overview',
     type: 'link',
   },
@@ -43,7 +43,7 @@ const Sidebar = [
       icon: 'img/develop.svg',
       theme: 'secondary',
     },
-    items: ['core/overview'],
+    items: ['core/overview-v2'],
     label: 'Develop',
     type: 'category',
   },

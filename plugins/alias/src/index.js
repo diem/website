@@ -9,7 +9,7 @@ module.exports = function(context, options) {
         resolve: {
           alias: {
             CSS: path.resolve(__dirname, '../../../src/css'),
-            Components: path.resolve(__dirname, '../../../src/components'),
+            components: path.resolve(__dirname, '../../../src/components'),
           }
         }
       };

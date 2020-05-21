@@ -1,5 +1,5 @@
-import Buckets from './Buckets';
+import Cards from './Cards';
 
 export default {
-  ...Buckets,
+  ...Cards,
 };

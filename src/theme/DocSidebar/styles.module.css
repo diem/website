@@ -129,17 +129,17 @@
 
 /* Passed in dynamically via sidebar config */
 
-.icon-small img {
+.iconSmall img {
   width: 15px;
   height: 15px;
   margin-right: 1em;
 }
 
-.menu .back-to-home {
+.menu .backToHome {
   margin-top: 3em;
 }
 
-.menu .back-to-home span {
+.menu .backToHome span {
   color: #757575;
   font-size: 18px;
   margin-top: -3px;
@@ -150,7 +150,7 @@
   margin-bottom: 2.2em;
 }
 
-.menu .category-index {
+.menu .categoryIndex {
   margin-bottom: 2.5em;
 }
 
