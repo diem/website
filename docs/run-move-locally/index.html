@@ -117,15 +117,15 @@ Balance is: 76.000000
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="create-move-module"></a><a href="#create-move-module" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create Move Module</h3>
 <p>Let’s start with an extremely simple module called <code>MyModule</code>. This module has a single procedure called <code>id</code>, which is an identity function for coins. It takes a <code>Libra::T&lt;LBR::T&gt;</code> resource as input and hands it back to the calling program. The Move code for this module is provided below. Change the address in the first line to be the address of the account you just created and then save it in a file named <code>my_module.move.</code> (Be sure to keep the &quot;0x&quot; prefix on the account address.)</p>
-<pre><code class="hljs">address 0x717da70a461fef6307990847590ad7af:
+<pre><code class="hljs">address 0x717da70a461fef6307990847590ad7af {
+  module MyModule {
+    use 0x0::Libra;
+    use 0x0::LBR;
 
-module MyModule {
-  use 0x0::Libra;
-  use 0x0::LBR;
-
-  // The identity function: takes a Libra::T&lt;LBR::T&gt; as input and hands it back
-  public fun id(c: Libra::T&lt;LBR::T&gt;): Libra::T&lt;LBR::T&gt; {
-    c
+    // The identity function: takes a Libra::T&lt;LBR::T&gt; as input and hands it back
+    public fun id(c: Libra::T&lt;LBR::T&gt;): Libra::T&lt;LBR::T&gt; {
+      c
+    }
   }
 }
 </code></pre>
@@ -157,15 +157,17 @@ Successfully published module
 <p><strong>Note</strong>: You'll find samples of transaction scripts in the <a href="https://github.com/libra/libra/tree/master/language/stdlib/transaction_scripts">libra/language/stdlib/transaction_scripts</a> directory.</p>
 </blockquote>
 <p>Now let’s write the following script to use <code>MyModule</code> and save it as <code>custom_script.move</code>:</p>
-<pre><code class="hljs">use 0x0::LibraAccount;
-use 0x0::LBR;
-use 0x0::Transaction;
-use 0x717da70a461fef6307990847590ad7af::MyModule;
+<pre><code class="hljs">script {
+  use 0x0::LibraAccount;
+  use 0x0::LBR;
+  use 0x0::Transaction;
+  use 0x717da70a461fef6307990847590ad7af::MyModule;
 
-fun main(amount: u64) {
-  let coin = LibraAccount::withdraw_from_sender&lt;LBR::T&gt;(amount);
-  // Calls the id procedure defined in our custom module
-  LibraAccount::deposit&lt;LBR::T&gt;(Transaction::sender(), MyModule::id(coin));
+  fun main(amount: u64) {
+    let coin = LibraAccount::withdraw_from_sender&lt;LBR::T&gt;(amount);
+    // Calls the id procedure defined in our custom module
+    LibraAccount::deposit&lt;LBR::T&gt;(Transaction::sender(), MyModule::id(coin));
+  }
 }
 </code></pre>
 <p>Be sure to change the account address for MyModule to match the account that you created.</p>
