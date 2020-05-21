@@ -49,28 +49,30 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
               styles.category,
               {
                 'menu__list-item--collapsed': collapsed,
+                [styles.withBackgroundImage]: icon,
               },
             )}
-            key={label}>
-            {icon &&
-              <img className={styles.icon} src={useBaseUrl(icon)} />
-            }
+            key={label}
+            style={icon ? { backgroundImage: `url('${useBaseUrl(icon)}')` } : {}}
+          >
             <ul className={classnames("menu__list", styles[itemTheme])}>
-              <a
-                className={classnames(
-                  "menu__link", 
-                  styles.menuLink, 
-                  styles[itemTheme],
-                  ...getClasses(classNames),
-                  {
-                    'menu__link--sublist': collapsible,
-                    'menu__link--active': collapsible && !item.collapsed,
-                  },
-                )}
-                onClick={collapsible ? handleItemClick : undefined}
-                {...props}>
-                {label}
-              </a>
+              <li className={styles.categoryTitle}>
+                <a
+                  className={classnames(
+                    "menu__link", 
+                    styles.menuLink, 
+                    styles[itemTheme],
+                    ...getClasses(classNames),
+                    {
+                      'menu__link--sublist': collapsible,
+                      'menu__link--active': collapsible && !item.collapsed,
+                    },
+                  )}
+                  onClick={collapsible ? handleItemClick : undefined}
+                  {...props}>
+                  {label}
+                </a>
+              </li>
               {items.map((childItem) => (
                 <DocSidebarItem
                   tabIndex={collapsed ? '-1' : '0'}
@@ -99,7 +101,10 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
           key={label}
         >
           <Link
-            className={classnames("menu__link", styles.menuLink)}
+            className={classnames("menu__link", styles.menuLink, {
+              [styles.withBackgroundImage]: icon,
+            })}
+            style={icon ? { backgroundImage: `url('${useBaseUrl(icon)}')` } : {}}
             to={href}
             {...(isInternalUrl(href)
               ? {
@@ -113,9 +118,6 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
                   rel: 'noreferrer noopener',
                 })}
             {...props}>
-            {icon &&
-              <img className={styles.icon} src={useBaseUrl(icon)} />
-            }
             <span>{label}</span>
           </Link>
         </li>
@@ -182,15 +184,15 @@ function DocSidebar(props) {
   }
 
   return (
-    <nav className={styles.sidebar}>
+    <nav aria-label="intra-site navigation" className={styles.sidebar}>
       {hideOnScroll && (
         <Link
           tabIndex="-1"
-          className={styles.sidebarLogo}
+          className={classnames(styles.sidebarLogo, styles.backgroundImage)}
           to={logoLink}
           {...logoLinkProps}>
           {logoImageUrl != null && (
-            <img key={isClient} src={logoImageUrl} alt={logoAlt} />
+            <img aria-hidden key={isClient} src={logoImageUrl} alt={logoAlt} />
           )}
           {title != null && <strong>{title}</strong>}
         </Link>
