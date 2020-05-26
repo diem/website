@@ -3,8 +3,6 @@ id: code-of-conduct
 title: Contributor Covenant Code of Conduct
 ---
 
-<!-- hide the edit button --><style>.edit-page-link {display: none !important; visibility: hidden !important;}</style>
-
 ## Our Pledge
 
 In the interest of fostering an open and welcoming environment, we as

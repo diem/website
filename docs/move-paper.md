@@ -1,9 +1,7 @@
 ---
 id: move-paper
-title: Move: A Language With Programmable Resources
+title: Move - A Language With Programmable Resources
 ---
-
-<!-- hide the table of contents --><style>.toc-headings {display: none !important; visibility: hidden !important;}</style>
 
 _**Note to readers:** This report was published before the Association released White Paper v2.0, which includes a number of key updates to the Libra payment system. Outdated links have been removed, but otherwise, this report has not been modified to incorporate the updates and should be read in that context._
 
