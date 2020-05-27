@@ -98,21 +98,23 @@
 <p>Now let us see how a programmer can interact with these modules and resources in a transaction script.</p>
 <pre><code class="hljs css language-move"><span class="hljs-comment">// Simple peer-peer payment example.</span>
 
-<span class="hljs-comment">// Use LibraAccount module published on the blockchain at account address</span>
-<span class="hljs-comment">// 0x0...0. 0x0 is shorthand that the language pads out to</span>
-<span class="hljs-comment">//16 bytes by adding leading zeroes.</span>
-use <span class="hljs-number">0x0</span>::<span class="hljs-type">LBR</span>;
-use <span class="hljs-number">0x0</span>::<span class="hljs-type">Libra</span>;
-use <span class="hljs-number">0x0</span>::<span class="hljs-type">LibraAccount</span>;
-fun main(payee: <span class="hljs-built_in">address</span>, amount: <span class="hljs-built_in">u64</span>) {
-  <span class="hljs-comment">// Acquire a Libra::T&lt;LBR::T&gt; resource with value `amount` from the sender's</span>
-  <span class="hljs-comment">// account.  This will fail if the sender's balance is less than `amount`.</span>
-  <span class="hljs-keyword">let</span> coin = <span class="hljs-type">LibraAccount</span>::withdraw_from_sender&lt;<span class="hljs-type">LBR</span>::<span class="hljs-type">T</span>&gt;(amount);
-  <span class="hljs-comment">// Move the `coin` resource into the account of `payee`. If there is no</span>
-  <span class="hljs-comment">// account at the address `payee`, this step will fail</span>
-  <span class="hljs-comment">// Note that we could have also written `deposit&lt;LBR::T&gt;` here, but the</span>
-  <span class="hljs-comment">// compiler is able to infer this for us based on the type of `coin`</span>
-  <span class="hljs-type">LibraAccount</span>::deposit(payee, coin)
+script {
+  <span class="hljs-comment">// Use LibraAccount module published on the blockchain at account address</span>
+  <span class="hljs-comment">// 0x0...0. 0x0 is shorthand that the language pads out to</span>
+  <span class="hljs-comment">// 16 bytes by adding leading zeroes.</span>
+  use <span class="hljs-number">0x0</span>::<span class="hljs-type">LBR</span>;
+  use <span class="hljs-number">0x0</span>::<span class="hljs-type">Libra</span>;
+  use <span class="hljs-number">0x0</span>::<span class="hljs-type">LibraAccount</span>;
+  fun main(payee: <span class="hljs-built_in">address</span>, amount: <span class="hljs-built_in">u64</span>) {
+    <span class="hljs-comment">// Acquire a Libra::T&lt;LBR::T&gt; resource with value `amount` from the sender's</span>
+    <span class="hljs-comment">// account.  This will fail if the sender's balance is less than `amount`.</span>
+    <span class="hljs-keyword">let</span> coin = <span class="hljs-type">LibraAccount</span>::withdraw_from_sender&lt;<span class="hljs-type">LBR</span>::<span class="hljs-type">T</span>&gt;(amount);
+    <span class="hljs-comment">// Move the `coin` resource into the account of `payee`. If there is no</span>
+    <span class="hljs-comment">// account at the address `payee`, this step will fail</span>
+    <span class="hljs-comment">// Note that we could have also written `deposit&lt;LBR::T&gt;` here, but the</span>
+    <span class="hljs-comment">// compiler is able to infer this for us based on the type of `coin`</span>
+    <span class="hljs-type">LibraAccount</span>::deposit(payee, coin)
+  }
 }
 </code></pre>
 <p>Let us look at a more complex example. In this example, we will use a transaction script to pay multiple recipients instead of just one.</p>
@@ -120,19 +122,21 @@ fun main(payee: <span class="hljs-built_in">address</span>, amount: <span class=
 <span class="hljs-comment">// emphasize the ability to split a `Libra::T&lt;LBR::T&gt;` resource. The more concise</span>
 <span class="hljs-comment">// way would be to use multiple calls to `LibraAccount::withdraw_from_sender`.</span>
 
-use <span class="hljs-number">0x0</span>::<span class="hljs-type">LBR</span>;
-use <span class="hljs-number">0x0</span>::<span class="hljs-type">Libra</span>;
-use <span class="hljs-number">0x0</span>::<span class="hljs-type">LibraAccount</span>;
-fun main(payee1: <span class="hljs-built_in">address</span>, amount1: <span class="hljs-built_in">u64</span>, payee2: <span class="hljs-built_in">address</span>, amount2: <span class="hljs-built_in">u64</span>) {
-  <span class="hljs-keyword">let</span> total = amount1 + amount2;
-  <span class="hljs-keyword">let</span> coin1 = <span class="hljs-type">LibraAccount</span>::withdraw_from_sender&lt;<span class="hljs-type">LBR</span>::<span class="hljs-type">T</span>&gt;(total);
-  <span class="hljs-comment">// This mutates `coin1`, which now has value `amount1`.</span>
-  <span class="hljs-comment">// `coin2` has value `amount2`.</span>
-  <span class="hljs-keyword">let</span> coin2 = <span class="hljs-type">LibraCoin</span>::withdraw(&amp;<span class="hljs-keyword">mut</span> coin1, amount2);
+script {
+  use <span class="hljs-number">0x0</span>::<span class="hljs-type">LBR</span>;
+  use <span class="hljs-number">0x0</span>::<span class="hljs-type">Libra</span>;
+  use <span class="hljs-number">0x0</span>::<span class="hljs-type">LibraAccount</span>;
+  fun main(payee1: <span class="hljs-built_in">address</span>, amount1: <span class="hljs-built_in">u64</span>, payee2: <span class="hljs-built_in">address</span>, amount2: <span class="hljs-built_in">u64</span>) {
+    <span class="hljs-keyword">let</span> total = amount1 + amount2;
+    <span class="hljs-keyword">let</span> coin1 = <span class="hljs-type">LibraAccount</span>::withdraw_from_sender&lt;<span class="hljs-type">LBR</span>::<span class="hljs-type">T</span>&gt;(total);
+    <span class="hljs-comment">// This mutates `coin1`, which now has value `amount1`.</span>
+    <span class="hljs-comment">// `coin2` has value `amount2`.</span>
+    <span class="hljs-keyword">let</span> coin2 = <span class="hljs-type">LibraCoin</span>::withdraw(&amp;<span class="hljs-keyword">mut</span> coin1, amount2);
 
-  <span class="hljs-comment">// Perform the payments</span>
-  <span class="hljs-type">LibraAccount</span>::deposit(payee1, coin1);
-  <span class="hljs-type">LibraAccount</span>::deposit('payee2,coin2)
+    <span class="hljs-comment">// Perform the payments</span>
+    <span class="hljs-type">LibraAccount</span>::deposit(payee1, coin1);
+    <span class="hljs-type">LibraAccount</span>::deposit(payee2, coin2)
+  }
 }
 </code></pre>
 <p>This concludes our &quot;tour&quot; of transaction scripts. For more examples, including the transaction scripts supported in the initial testnet, refer to <code>libra/language/stdlib/transaction_scripts</code>.</p>
@@ -146,54 +150,58 @@ Bob is going to create an account at address <em>a</em> at some point in the fut
 <li>Allows Bob to claim the resource (the <code>claim_for_recipient</code> procedure).</li>
 <li>Allows anyone with an <code>EarmarkedLibra::T</code> to destroy it and acquire the underlying coin (the <code>unwrap</code> procedure).</li>
 </ul>
-<pre><code class="hljs css language-move"><span class="hljs-comment">// A module for earmarking a coin for a specific recipient</span>
-<span class="hljs-keyword">module</span> <span class="hljs-type">EarmarkedLibraCoin</span> {
-  use <span class="hljs-number">0x0</span>::<span class="hljs-type">Libra</span>;
+<pre><code class="hljs css language-move"><span class="hljs-comment">// The address where the module will be published:</span>
+<span class="hljs-built_in">address</span> <span class="hljs-number">0xcc2219df031a68115fad9aee98e051e9</span> {
 
-  <span class="hljs-comment">// A wrapper containing a generic Libra and the address of the recipient the</span>
-  <span class="hljs-comment">// coin is earmarked for.</span>
-  <span class="hljs-struct"><span class="hljs-keyword">resource</span> T&lt;Token&gt; {</span>
-    coin: <span class="hljs-type">Libra</span>::<span class="hljs-type">T</span>&lt;<span class="hljs-type">Token</span>&gt;,
-    recipient: <span class="hljs-built_in">address</span>
+  <span class="hljs-comment">// A module for earmarking a coin for a specific recipient</span>
+  <span class="hljs-keyword">module</span> <span class="hljs-type">EarmarkedLibraCoin</span> {
+    use <span class="hljs-number">0x0</span>::<span class="hljs-type">Libra</span>;
+
+    <span class="hljs-comment">// A wrapper containing a generic Libra and the address of the recipient the</span>
+    <span class="hljs-comment">// coin is earmarked for.</span>
+    <span class="hljs-struct"><span class="hljs-keyword">resource</span> <span class="hljs-keyword">struct</span> T&lt;Token&gt; {</span>
+      coin: <span class="hljs-type">Libra</span>::<span class="hljs-type">T</span>&lt;<span class="hljs-type">Token</span>&gt;,
+      recipient: <span class="hljs-built_in">address</span>
+    }
+
+    <span class="hljs-comment">// Create a new earmarked coin with the given `recipient`.</span>
+    <span class="hljs-comment">// Publish the coin under the transaction sender's account address.</span>
+    <span class="hljs-keyword">public</span> fun create&lt;<span class="hljs-type">Token</span>&gt;(coin: <span class="hljs-type">Libra</span>::<span class="hljs-type">T</span>&lt;<span class="hljs-type">Token</span>&gt;, recipient: <span class="hljs-built_in">address</span>) {
+      <span class="hljs-comment">// Construct or "pack" a new resource of type T. Only procedures of the</span>
+      <span class="hljs-comment">// `EarmarkedLibraCoin` module can create an `EarmarkedLibraCoin.T`.</span>
+      <span class="hljs-keyword">let</span> t = <span class="hljs-type">T</span> { coin, recipient };
+
+      <span class="hljs-comment">// Publish the earmarked coin under the transaction sender's account</span>
+      <span class="hljs-comment">// address. Each account can contain at most one resource of a given type;</span>
+      <span class="hljs-comment">// this call will fail if the sender already has a resource of this type.</span>
+      <span class="hljs-built_in">move_to_sender</span>(t);
+    }
+
+    <span class="hljs-comment">// Allow the transaction sender to claim a coin that was earmarked for her.</span>
+    <span class="hljs-keyword">public</span> fun claim_for_recipient&lt;<span class="hljs-type">Token</span>&gt;(
+      earmarked_coin_address: <span class="hljs-built_in">address</span>
+    ): <span class="hljs-type">Libra</span>::<span class="hljs-type">T</span>&lt;<span class="hljs-type">Token</span>&gt; acquires <span class="hljs-type">T</span> {
+      <span class="hljs-comment">// Remove the earmarked coin resource published under `earmarked_coin_address`</span>
+      <span class="hljs-comment">// and "unpack" it to remove `coin and `recipient`.</span>
+      <span class="hljs-comment">// If there is no resource of type T&lt;Token&gt; published under the address, this will fail.</span>
+      <span class="hljs-keyword">let</span> <span class="hljs-type">T</span> { coin, recipient } = <span class="hljs-built_in">move_from</span>&lt;<span class="hljs-type">T</span>&lt;<span class="hljs-type">Token</span>&gt;&gt;(earmarked_coin_address);
+
+      <span class="hljs-comment">// Ensure that the transaction sender is the recipient. If this assertion</span>
+      <span class="hljs-comment">// fails, the transaction will fail and none of its effects (e.g.,</span>
+      <span class="hljs-comment">// removing the earmarked coin) will be committed.  99 is an error code</span>
+      <span class="hljs-comment">// that will be emitted in the transaction output if the assertion fails.</span>
+      <span class="hljs-built_in">assert</span>(recipient == <span class="hljs-type">Transaction</span>::sender(), <span class="hljs-number">99</span>);
+      <span class="hljs-comment">// Return the coin</span>
+      coin
+    }
+
+    <span class="hljs-comment">// Allow the creator of the earmarked coin to reclaim it.</span>
+    <span class="hljs-keyword">public</span> fun claim_for_creator&lt;<span class="hljs-type">Token</span>&gt;(): <span class="hljs-type">Libra</span>::<span class="hljs-type">T</span>&lt;<span class="hljs-type">Token</span>&gt; acquires <span class="hljs-type">T</span> {
+      <span class="hljs-keyword">let</span> <span class="hljs-type">T</span> { coin, recipient:_ } = <span class="hljs-built_in">move_from</span>&lt;<span class="hljs-type">T</span>&lt;<span class="hljs-type">Token</span>&gt;&gt;(<span class="hljs-type">Transaction</span>::sender());
+      coin
+    }
+
   }
-
-  <span class="hljs-comment">// Create a new earmarked coin with the given `recipient`.</span>
-  <span class="hljs-comment">// Publish the coin under the transaction sender's account address.</span>
-  <span class="hljs-keyword">public</span> create&lt;<span class="hljs-type">Token</span>&gt;(coin: <span class="hljs-type">Libra</span>::<span class="hljs-type">T</span>&lt;<span class="hljs-type">Token</span>&gt;, recipient: <span class="hljs-built_in">address</span>) {
-    <span class="hljs-comment">// Construct or "pack" a new resource of type T. Only procedures of the</span>
-    <span class="hljs-comment">// `EarmarkedLibraCoin` module can create an `EarmarkedLibraCoin.T`.</span>
-    <span class="hljs-keyword">let</span> t = <span class="hljs-type">T</span> { coin, recipient };
-
-    <span class="hljs-comment">// Publish the earmarked coin under the transaction sender's account</span>
-    <span class="hljs-comment">// address. Each account can contain at most one resource of a given type;</span>
-    <span class="hljs-comment">// this call will fail if the sender already has a resource of this type.</span>
-    <span class="hljs-built_in">move_to_sender</span>(t);
-  }
-
-  <span class="hljs-comment">// Allow the transaction sender to claim a coin that was earmarked for her.</span>
-  <span class="hljs-keyword">public</span> claim_for_recipient&lt;<span class="hljs-type">Token</span>&gt;(
-  earmarked_coin_address: <span class="hljs-built_in">address</span>
-): <span class="hljs-type">Libra</span>::<span class="hljs-type">T</span>&lt;<span class="hljs-type">Token</span>&gt; acquires <span class="hljs-type">T</span> {
-    <span class="hljs-comment">// Remove the earmarked coin resource published under `earmarked_coin_address`</span>
-    <span class="hljs-comment">// and “unpack” it to remove `coin and `recipient`.</span>
-    <span class="hljs-comment">// If there is no resource of type T&lt;Token&gt; published under the address, this will fail.</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-type">T</span> { coin, recipient } = <span class="hljs-built_in">move_from</span>&lt;<span class="hljs-type">T</span>&lt;<span class="hljs-type">Token</span>&gt;&gt;(earmarked_coin_address);
-
-    <span class="hljs-comment">// Ensure that the transaction sender is the recipient. If this assertion</span>
-    <span class="hljs-comment">// fails, the transaction will fail and none of its effects (e.g.,</span>
-    <span class="hljs-comment">// removing the earmarked coin) will be committed.  99 is an error code</span>
-    <span class="hljs-comment">// that will be emitted in the transaction output if the assertion fails.</span>
-    <span class="hljs-built_in">assert</span>(recipient == <span class="hljs-type">Transaction</span>::sender(), <span class="hljs-number">99</span>);
-    <span class="hljs-comment">// Return the coin</span>
-    coin
-  }
-
-  <span class="hljs-comment">// Allow the creator of the earmarked coin to reclaim it.</span>
-  <span class="hljs-keyword">public</span> claim_for_creator&lt;<span class="hljs-type">Token</span>&gt;(): <span class="hljs-type">Libra</span>::<span class="hljs-type">T</span>&lt;<span class="hljs-type">Token</span>&gt; acquires <span class="hljs-type">T</span> {
-    <span class="hljs-keyword">let</span> <span class="hljs-type">T</span> { coin, recipient:_ } = <span class="hljs-built_in">move_from</span>&lt;<span class="hljs-type">T</span>&lt;<span class="hljs-type">Token</span>&gt;&gt;(<span class="hljs-type">Transaction</span>::sender());
-    coin
-  }
-
 }
 </code></pre>
 <p>Alice can create an earmarked coin for Bob by creating a transaction script that invokes <code>create</code> on Bob's address <em>a</em> and a <code>Libra::T</code> that she owns. Once <em>a</em> has been created, Bob can claim the coin by sending a transaction from <em>a</em>. This invokes <code>claim_for_recipient</code> to claim a <code>Libra::T</code> for Bob that he can store in whichever address he wishes. If Bob takes too long to create an account under <em>a</em> and Alice wants to remove the earmark from her coins, she can do so by using <code>claim_for_creator</code>.</p>
