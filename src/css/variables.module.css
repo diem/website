@@ -1,3 +1,67 @@
+@media large-tablet-breakpoint-query {
+  :root {
+    --primary-nav-height: 80px;
+  };
+}
+
+:root {
+  /* Sizing */
+  --body-horizontal-padding: 30px;
+  --body-padding-top: 50px;
+  --cumulative-desktop-body-padding: calc(
+    var(--total-nav-height) +
+    var(--body-padding-top)
+  );
+  --doc-card-size: 245px;
+  --ifm-code-font-size: 95%;
+  --nav-height-mobile: 60px;
+  --nav-horizontal-padding: var(--body-horizontal-padding);
+  --primary-nav-height: 80px;
+  --right-sidebar-width: 230px;
+  --subnav-height: 60px;
+  --total-nav-height: calc( var(--primary-nav-height) + var(--subnav-height) );
+  /* Global Colors */
+  --accent-highlight: var(--brand-color);
+  --brand-color: #42318c;
+  --dark-mode-black-lighter: #3C4357;
+  --dark-mode-black-darker: #131313;
+  --dark-mode-black-darkest: #191F36;
+  --dark-mode-gray-1: #969CA5;
+  --dark-mode-gray-2: #A3ACB9;
+  --dark-mode-gray-3: #A9A9A9;
+  --dark-mode-white-ghost: #FAFAFA;
+  --default-background-color: white;
+  --default-border-color: #E5E5E5;
+  --primary-gray: #757575;
+  /* Component specific colors */
+  --doc-component-background: white;
+  --doc-primary: #15112C;
+  --doc-title: var(--doc-black);
+  --nav-black: #414f64;
+  --nav-page-indicator-primary: #354052;
+  --nav-page-indicator-secondary: #5F7186;
+  --nav-primary-text-color: #42318c;
+  --right-sidebar-top-bar-hover: #354052;
+  /* TODO: Look into accounting varying browser widths of scrollbar */;
+  --scrollbar-width: 10px;
+  --sidebar-gray: var(--dark-mode-gray-1);
+  --sidebar-horizontal-padding: var(--body-horizontal-padding);
+  --sidebar-primary-title: #1c1e21;
+  --subnav-background: #F9F8F8;
+  --subnav-text-color: black;
+  --toc-color: black;
+  --toggle-background: #4d4d4d;
+  --toggle-indicator-background: #fafafa;
+  /* legacy colors */
+  --ifm-color-primary: #42318C;
+  --ifm-color-primary-dark: rgb(33, 175, 144);
+  --ifm-color-primary-darker: rgb(31, 165, 136);
+  --ifm-color-primary-darkest: rgb(26, 136, 112);
+  --ifm-color-primary-light: rgb(70, 203, 174);
+  --ifm-color-primary-lighter: rgb(102, 212, 189);
+  --ifm-color-primary-lightest: rgb(146, 224, 208);
+};
+
 /* Breakpoints */
 @value small-mobile-breakpoint-size: 320;
 @value small-mobile-breakpoint-query: (min-width: calc(small-mobile-breakpoint-size * 1px));
