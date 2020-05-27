@@ -1,0 +1,23 @@
+@value large-tablet-breakpoint-query from '~CSS/variables.module.css';
+
+.root {
+  --right-sidebar-horizontal-padding: 27px;
+  border-left-color: var(--default-border-color);
+  border-left-style: solid;
+  border-left-width: 1px;
+  display: none;
+  flex-shrink: 0;
+  max-height: calc(100vh - (var(--ifm-navbar-height) + 2rem));
+  overflow-y: auto;
+  padding: 0;
+  position: sticky;
+  right: 0;
+  top: 0;
+  width: 230px;
+}
+
+@media large-tablet-breakpoint-query {
+  .root {
+    display: block;
+  }
+}
