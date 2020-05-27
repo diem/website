@@ -6,6 +6,7 @@ const Sidebar = [
     extra: {
       classNames: ['label'],
       icon: 'img/core-contributors.svg',
+      iconDark: 'img/core-contributors-dark.svg',
       noLink: true,
     },
     id: 'core/overview-v2', 
@@ -22,6 +23,7 @@ const Sidebar = [
   {
     extra: {
       icon: 'img/concepts.svg',
+      iconDark: 'img/concepts-dark.svg',
       theme: 'secondary',
     },
     items: ['libra-protocol'],
@@ -31,6 +33,7 @@ const Sidebar = [
   {
     extra: {
       icon: 'img/tutorials.svg',
+      iconDark: 'img/tutorials-dark.svg',
       theme: 'secondary',
     },
     items: ['my-first-transaction', 'run-local-network'],
@@ -41,6 +44,7 @@ const Sidebar = [
     extra: {
       classNames: [],
       icon: 'img/develop.svg',
+      iconDark: 'img/develop-dark.svg',
       theme: 'secondary',
     },
     items: ['core/overview-v2'],
