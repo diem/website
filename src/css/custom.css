@@ -1,13 +1,17 @@
-html {
-  overflow-y: hidden;
-}
-
 /* stylelint-disable docusaurus/copyright-header */
 * {
   list-style: none;
 }
 
-body {
+html, body {
+  overflow: hidden;
+}
+
+html {
+  background-color: var(--default-background-color);
+}
+
+body, input {
   font-family: 'NB International Pro';
 }
 
@@ -20,9 +24,21 @@ body .hash-link {
   padding-right: 5px ;
 }
 
-.main-wrapper > div > div {
-  width: 400px !important;
-  margin-top: 2.25px !important;
+main > .container.padding-vert--lg  {
+  padding-top: 0 !important;
+}
+
+main article {
+  margin-top: 20px;
+}
+
+main article h1,
+main article h2,
+main article h3,
+main article h4,
+main article h5,
+main article h6 {
+  color: var(--doc-title);
 }
 
 .prism-code > * {

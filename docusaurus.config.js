@@ -7,7 +7,10 @@ module.exports = {
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
-    disableDarkMode: true,
+    algolia: {
+      apiKey: 'eb29b473d27eae9cc46c84eb3a2e4063',
+      indexName: 'libra-website',
+    },
     sidebarCollapsible: false,
     navbar: {
       title: 'My Site',
