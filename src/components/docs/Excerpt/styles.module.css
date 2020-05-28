@@ -1,0 +1,49 @@
+@value large-tablet-breakpoint-query from '~CSS/variables.module.css';
+@value desktop-breakpoint-query from '~CSS/variables.module.css';
+
+.root {
+  box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  margin-bottom: 25px;
+  padding: 30px 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.imageContainer {
+  align-items: flex-start;
+  display: flex;
+  flex-shrink: 0;
+  padding-right: 25px;
+  margin-bottom: 20px;
+}
+
+.image {
+  width: 125px;
+}
+
+.text {
+  margin: 0;
+}
+
+@media large-tablet-breakpoint-query {
+  .content {
+    flex-direction: row;
+  }
+}
+
+@media desktop-breakpoint-query {
+  .content {
+    margin: 0 55px;
+  }
+
+  .imageContainer {
+    padding-right: 50px;
+    margin-bottom: 0;
+  }
+}
