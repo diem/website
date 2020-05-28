@@ -1,38 +1,17 @@
-html {
-  overflow-y: hidden;
-}
-
 /* stylelint-disable docusaurus/copyright-header */
-:root {
-  --body-horizontal-padding: 20px;
-  --body-padding-top: 50px;
-  --cumulative-desktop-body-padding: calc(
-    var(--primary-nav-height-desktop) +
-    var(--subnav-height-desktop) +
-    var(--body-padding-top)
-  );
-  --doc-background-color: white;
-  --doc-black: #15112C;
-  --doc-card-size: 245px;
-  --ifm-color-primary: #42318C;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
-  --ifm-code-font-size: 95%;
-  --nav-height-mobile: 60px;
-  --nav-black: #414f64;
-  --primary-nav-height-desktop: 80px;
-  --subnav-height-desktop: 60px;
-}
-
 * {
   list-style: none;
 }
 
-body {
+html, body {
+  overflow: hidden;
+}
+
+html {
+  background-color: var(--default-background-color);
+}
+
+body, input {
   font-family: 'NB International Pro';
 }
 
@@ -45,10 +24,33 @@ body .hash-link {
   padding-right: 5px ;
 }
 
-.main-wrapper > div > div {
-  width: 400px !important;
-  margin-top: 2.25px !important;
+main > .container.padding-vert--lg  {
+  padding-top: 0 !important;
 }
+
+main article {
+  margin-top: 20px;
+}
+
+main article h1,
+main article h2,
+main article h3,
+main article h4,
+main article h5,
+main article h6 {
+  color: var(--doc-title);
+}
+
+.prism-code > * {
+  /* 
+   * Prevents code block from overflowing on extremely
+   * long words
+   */
+  white-space: pre-wrap !important;
+  word-break: break-all;
+}
+
+/* Fonts */
 
 @font-face {
   font-family: 'NB International Pro';
