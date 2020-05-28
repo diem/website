@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "TEST_ADA=1 docusaurus start",
+    "start": "docusaurus start",
+    "start-with-ada": "TEST_ADA=1 docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy"
@@ -12,7 +13,7 @@
     "@docusaurus/core": "^2.0.0-alpha.53",
     "@docusaurus/preset-classic": "^2.0.0-alpha.53",
     "classnames": "^2.2.6",
-    "libra-docusaurus-nav": "^1.1.4",
+    "libra-docusaurus-nav": "^1.2.6",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },

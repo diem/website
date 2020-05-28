@@ -1,6 +1,7 @@
 .root {
-  color: var(--doc-black);
-  transition: .15s ease-in-out;
+  --transition-speed: .15s;
+  color: var(--doc-primary);
+  transition: box-shadow var(--transition-speed) ease-in-out;
   width: var(--doc-card-size);
 }
 
