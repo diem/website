@@ -1,5 +1,6 @@
 .root {
-  background-color: var(--doc-background-color);
+  --transition-speed: .25s;
+  background-color: var(--doc-component-background);
   display: inline-block;
   overflow: hidden;
   position: relative;
@@ -22,7 +23,12 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  transition: background-color var(--transition-speed) ease-in-out;
   width: 263px;
+}
+
+.root:hover .circleOverlay {
+  background-color: #8ECFBA;
 }
 
 .root .image {
