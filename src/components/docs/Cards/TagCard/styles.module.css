@@ -1,6 +1,6 @@
 .root {
   align-items: center;
-  background-color: var(--doc-background-color);
+  background-color: var(--doc-component-background);
   display: inline-flex;
   padding: 20px;
 }
