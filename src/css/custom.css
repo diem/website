@@ -25,6 +25,17 @@ body .hash-link {
   margin-top: 2.25px !important;
 }
 
+.prism-code > * {
+  /* 
+   * Prevents code block from overflowing on extremely
+   * long words
+   */
+  white-space: pre-wrap !important;
+  word-break: break-all;
+}
+
+/* Fonts */
+
 @font-face {
   font-family: 'NB International Pro';
   font-weight: 400;

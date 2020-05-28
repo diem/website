@@ -42,6 +42,8 @@
   --nav-page-indicator-secondary: #5F7186;
   --nav-primary-text-color: #42318c;
   --right-sidebar-top-bar-hover: #354052;
+  --snippet-header-background: #E3E8EE;
+  --snippet-copy-color: #6B7689;
   /* TODO: Look into accounting varying browser widths of scrollbar */;
   --scrollbar-width: 10px;
   --sidebar-gray: var(--dark-mode-gray-1);

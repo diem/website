@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -23,6 +24,17 @@ const WithBackgroundImage = ({
       {children}
     </Tag>
   );
-}
+};
+
+WithBackgroundImage.propTypes = {
+  children: PropTypes.element,
+  imageDark: PropTypes.string,
+  imageLight: PropTypes.string.isRequired,
+  tag: PropTypes.oneOf(PropTypes.element, PropTypes.string).isRequired,
+};
+
+WithBackgroundImage.defaultProps = {
+  tag: 'div',
+};
 
 export default WithBackgroundImage;
