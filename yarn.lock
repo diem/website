@@ -5217,10 +5217,10 @@ levenary@^1.1.1:
   dependencies:
     leven "^3.1.0"
 
-libra-docusaurus-nav@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/libra-docusaurus-nav/-/libra-docusaurus-nav-1.1.4.tgz#e870414d1e825f658b6a6e2b4f07150f334a0c84"
-  integrity sha512-aKLj263maqcedQwzI9K5SuUQy6vSWw8Ymz56KKfjEqhyHaG3BdYxqddoNh+l/2zAvADkaocolReLxR8BIPXUiw==
+libra-docusaurus-nav@^1.2.6:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/libra-docusaurus-nav/-/libra-docusaurus-nav-1.2.6.tgz#b7d7fe578eebb2eb2b1707c916d5bdf0add1c152"
+  integrity sha512-3/E2w9dMfRAxBP9rqguuq6R1O/2IC8eL9GDzBegcWyR6MBkOcLI8y6gEJ+RXVvllY8Afg6R7lAW0m1ZSdbIWwQ==
   dependencies:
     prop-types "^15.7.2"
     react "^16.13.1"

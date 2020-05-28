@@ -4,6 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
 import useLogo from '@theme/hooks/useLogo';
 import Link from '@docusaurus/Link';
+import SearchBar from '@theme/SearchBar';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 
@@ -157,6 +158,7 @@ function mutateSidebarCollapsingState(item, path) {
 
 function DocSidebar(props) {
   const [showResponsiveSidebar, setShowResponsiveSidebar] = useState(false);
+  const [isSearchBarExpanded, setIsSearchBarExpanded] = useState(false);
   const {
     siteConfig: {
       themeConfig: {navbar: {title, hideOnScroll = false} = {}},
@@ -248,6 +250,10 @@ function DocSidebar(props) {
           )}
         </button>
         <ul className={classnames("menu__list", styles.menuList)}>
+          <SearchBar
+            handleSearchBarToggle={setIsSearchBarExpanded}
+            isSearchBarExpanded={isSearchBarExpanded}
+          />
           {sidebarData.map((item) => (
             <DocSidebarItem
               key={item.label}
