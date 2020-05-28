@@ -1,14 +1,17 @@
 .root {
   align-items: center;
-  background-color: var(--doc-background-color);
+  background-color: var(--doc-component-background);
   display: inline-flex;
   padding: 20px;
 }
 
 .image {
-  height: 40px;
+  --image-size: 40px;
+  background-repeat: no-repeat;
+  background-size: var(--image-size) var(--image-size);
+  height: var(--image-size);
   margin-right: 10px;
-  width: 40px;
+  width: var(--image-size);
 }
 
 .textContainer {

@@ -31,6 +31,7 @@ const getReference = (theme = 'primary') => {
         id: 'reference/glossary',
         extra: {
           icon: 'img/terminology.svg',
+          iconDark: 'img/terminology-dark.svg',
         },
       },
       {
@@ -38,6 +39,7 @@ const getReference = (theme = 'primary') => {
         id: 'reference/roadmap',
         extra: {
           icon: 'img/roadmap.png',
+          iconDark: 'img/reference-dark.svg',
         },
       },
       {
@@ -45,6 +47,7 @@ const getReference = (theme = 'primary') => {
         id: 'reference/compliance',
         extra: {
           icon: 'img/compliance.svg',
+          iconDark: 'img/compliance-dark.svg',
         }
       }
     ],

@@ -1,5 +1,6 @@
 .root {
-  background-color: var(--doc-background-color);
+  --transition-speed: .25s;
+  background-color: var(--doc-component-background);
   display: inline-block;
   overflow: hidden;
   position: relative;
@@ -22,13 +23,21 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  transition: background-color var(--transition-speed) ease-in-out;
   width: 263px;
 }
 
-.root img {
-  height: 50px;
+.root:hover .circleOverlay {
+  background-color: #8ECFBA;
+}
+
+.root .image {
+  --image-size: 50px;
+  background-repeat: no-repeat;
+  background-size: var(--image-size) var(--image-size);
+  height: var(--image-size);
   margin-right: 25px;
-  width: 50px;
+  width: var(--image-size);
 }
 
 .textContainer {

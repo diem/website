@@ -11,7 +11,10 @@ const OverlayCard = ({ description, icon, title, to }) => (
   <BaseContainer className={styles.root} to={to}>
     <div className={styles.circleOverlay} />
     <div className={styles.contents}>
-      <img className={styles.image} src={useBaseUrl(icon)} />
+      <div
+        className={styles.image}
+        style={{ backgroundImage: `url('${useBaseUrl(icon)}')` }}
+      />
       <div className={styles.textContainer}>
         <span className={styles.title}>{title}</span>
         <p className={styles.description}>{description}</p>

@@ -14,7 +14,10 @@ const ColorCard = ({ color, icon, title, to }) => (
     hasShadow={false} 
     to={to}
   >
-    <img className={styles.image} src={useBaseUrl(icon)} />
+    <div 
+      className={styles.image} 
+      style={{ backgroundImage: `url('${useBaseUrl(icon)}')` }}
+    />
     <span className={styles.title}>{title}</span>
   </BaseContainer>
 );
