@@ -21,10 +21,7 @@ export default function (props) {
   return (
     <Toggle
       disabled={!isClient}
-      icons={{
-        checked: <Moon />,
-        unchecked: <Sun />,
-      }}
+      icons={false}
       {...props}
     />
   );

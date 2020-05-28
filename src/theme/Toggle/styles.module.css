@@ -8,10 +8,10 @@
 .toggle {
   align-items: center;
   display: flex;
-  height: 10px;
+  height: 5px;
   justify-content: center;
   position: relative;
-  width: 10px;
+  width: 5px;
 }
 .toggle::before {
   position: absolute;
@@ -66,8 +66,8 @@
 }
 
 :global(.react-toggle-track) {
-  width: 50px;
-  height: 24px;
+  width: 17px;
+  height: 12px;
   padding: 0;
   border-radius: 30px;
   background-color: #4d4d4d;
@@ -126,11 +126,10 @@
   position: absolute;
   top: 1px;
   left: 1px;
-  width: 22px;
-  height: 22px;
-  border: 1px solid #4d4d4d;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background-color: #fafafa;
+  background-color: var(--toggle-indicator-background);
 
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -143,18 +142,6 @@
 
 :global([data-theme='dark'] .react-toggle .react-toggle-thumb),
 :global(.react-toggle--checked .react-toggle-thumb) {
-  left: 27px;
+  left: 5.5px;
   border-color: #19ab27;
-}
-
-:global(.react-toggle--focus .react-toggle-thumb) {
-  -webkit-box-shadow: 0px 0px 3px 2px #0099e0;
-  -moz-box-shadow: 0px 0px 3px 2px #0099e0;
-  box-shadow: 0px 0px 2px 3px #0099e0;
-}
-
-:global(.react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb) {
-  -webkit-box-shadow: 0px 0px 5px 5px #0099e0;
-  -moz-box-shadow: 0px 0px 5px 5px #0099e0;
-  box-shadow: 0px 0px 5px 5px #0099e0;
 }
