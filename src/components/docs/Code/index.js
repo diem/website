@@ -72,18 +72,20 @@ const Header = ({ snippetID, target }) => {
   );
 };
 
-const Code = ({ code, language }) => {
+const Code = ({ children, className: languageClassName }) => {
   const {isDarkTheme} = useThemeContext();
   const [snippetID, setSnippetID] = useState(null);
   const target = useRef(null);
 
-  const parsedCode = code.trim();
+  let code = children.replace(/\n$/, '');
   const theme = isDarkTheme ? darkCodeTheme : lightCodeTheme;
+  let language =
+    languageClassName && languageClassName.replace(/language-/, '');
 
   useEffect(() => setSnippetID(`snippet-${getUniqueID()}`), []);
 
   return (
-    <Highlight {...defaultProps} theme={theme} code={parsedCode} language={language}>
+    <Highlight {...defaultProps} theme={theme} code={code} language={language}>
       {({ className,style, tokens, getLineProps, getTokenProps }) => (
         <div className={styles.root}>
           <Header snippetID={snippetID} target={target} />
@@ -106,16 +108,16 @@ const Code = ({ code, language }) => {
 };
 
 Code.propTypes = {
-  code: PropTypes.string.isRequired,
   /*
    * For a list of available languages, see 
    * https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
    */
-  language: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 Code.defaultProps = {
-  language: 'plaintext',
+  className: 'language-plaintext',
 };
 
 export default Code;
