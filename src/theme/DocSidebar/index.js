@@ -1,12 +1,16 @@
 import React, {useState, useCallback} from 'react';
-import classnames from 'classnames';
+
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
 import useLogo from '@theme/hooks/useLogo';
 import Link from '@docusaurus/Link';
+import SearchBar from '@theme/SearchBar';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 
+import WithBackgroundImage from 'components/WithBackgroundImage';
+
+import classnames from 'classnames';
 import styles from './styles.module.css';
 
 const MOBILE_TOGGLE_SIZE = 24;
@@ -20,7 +24,7 @@ const getClasses = (classNames = []) =>
 
 function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...props}) {
   const {extra = {}, items, href, label, type} = item;
-  const {classNames, icon, theme: itemTheme = theme} = extra;
+  const {classNames, icon, iconDark, theme: itemTheme = theme} = extra;
   const [collapsed, setCollapsed] = useState(item.collapsed);
   const [prevCollapsedProp, setPreviousCollapsedProp] = useState(null);
 
@@ -42,35 +46,40 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
     case 'category':
       return (
         items.length > 0 && (
-          <li
+          <WithBackgroundImage
             className={classnames(
               'menu__list-item', 
               styles.listItem, 
               styles.category,
               {
                 'menu__list-item--collapsed': collapsed,
+                [styles.withBackgroundImage]: icon,
               },
             )}
-            key={label}>
-            {icon &&
-              <img className={styles.icon} src={useBaseUrl(icon)} />
-            }
+            key={label}
+            tag="li"
+            imageDark={iconDark}
+            imageLight={icon}
+          >
             <ul className={classnames("menu__list", styles[itemTheme])}>
-              <a
-                className={classnames(
-                  "menu__link", 
-                  styles.menuLink, 
-                  styles[itemTheme],
-                  ...getClasses(classNames),
-                  {
-                    'menu__link--sublist': collapsible,
-                    'menu__link--active': collapsible && !item.collapsed,
-                  },
-                )}
-                onClick={collapsible ? handleItemClick : undefined}
-                {...props}>
-                {label}
-              </a>
+              <li className={styles.categoryTitle}>
+                <a
+                  className={classnames(
+                    "menu__link", 
+                    styles.menuLink, 
+                    styles[itemTheme],
+                    ...getClasses(classNames),
+                    {
+                      'menu__link--sublist': collapsible,
+                      'menu__link--active': collapsible && !item.collapsed,
+                    },
+                  )}
+                  onClick={collapsible ? handleItemClick : undefined}
+                  {...props}
+                >
+                  {label}
+                </a>
+              </li>
               {items.map((childItem) => (
                 <DocSidebarItem
                   tabIndex={collapsed ? '-1' : '0'}
@@ -82,7 +91,7 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
                 />
               ))}
             </ul>
-          </li>
+          </WithBackgroundImage>
         )
       );
 
@@ -98,8 +107,13 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
           )} 
           key={label}
         >
-          <Link
-            className={classnames("menu__link", styles.menuLink)}
+          <WithBackgroundImage
+            className={classnames("menu__link", styles.menuLink, {
+              [styles.withBackgroundImage]: icon,
+            })}
+            imageDark={iconDark}
+            imageLight={icon}
+            tag={Link}
             to={href}
             {...(isInternalUrl(href)
               ? {
@@ -112,12 +126,10 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
                   target: '_blank',
                   rel: 'noreferrer noopener',
                 })}
-            {...props}>
-            {icon &&
-              <img className={styles.icon} src={useBaseUrl(icon)} />
-            }
+            {...props}
+          >
             <span>{label}</span>
-          </Link>
+          </WithBackgroundImage>
         </li>
       );
   }
@@ -146,6 +158,7 @@ function mutateSidebarCollapsingState(item, path) {
 
 function DocSidebar(props) {
   const [showResponsiveSidebar, setShowResponsiveSidebar] = useState(false);
+  const [isSearchBarExpanded, setIsSearchBarExpanded] = useState(false);
   const {
     siteConfig: {
       themeConfig: {navbar: {title, hideOnScroll = false} = {}},
@@ -182,15 +195,15 @@ function DocSidebar(props) {
   }
 
   return (
-    <nav className={styles.sidebar}>
+    <nav aria-label="intra-site navigation" className={styles.sidebar}>
       {hideOnScroll && (
         <Link
           tabIndex="-1"
-          className={styles.sidebarLogo}
+          className={classnames(styles.sidebarLogo, styles.backgroundImage)}
           to={logoLink}
           {...logoLinkProps}>
           {logoImageUrl != null && (
-            <img key={isClient} src={logoImageUrl} alt={logoAlt} />
+            <img aria-hidden key={isClient} src={logoImageUrl} alt={logoAlt} />
           )}
           {title != null && <strong>{title}</strong>}
         </Link>
@@ -237,6 +250,10 @@ function DocSidebar(props) {
           )}
         </button>
         <ul className={classnames("menu__list", styles.menuList)}>
+          <SearchBar
+            handleSearchBarToggle={setIsSearchBarExpanded}
+            isSearchBarExpanded={isSearchBarExpanded}
+          />
           {sidebarData.map((item) => (
             <DocSidebarItem
               key={item.label}

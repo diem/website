@@ -1,9 +1,9 @@
 const backToHome = {
   extra: {
-    classNames: ['back-to-home', 'icon-small'],
+    classNames: ['backToHome', 'iconSmall'],
     icon: 'img/arrow-left.svg',
   },
-  href: '/docs/welcome-to-libra',
+  href: '/docs/welcome-to-libra-v2',
   label: 'Home',
   type: 'link',
 };
@@ -31,6 +31,7 @@ const getReference = (theme = 'primary') => {
         id: 'reference/glossary',
         extra: {
           icon: 'img/terminology.svg',
+          iconDark: 'img/terminology-dark.svg',
         },
       },
       {
@@ -38,6 +39,7 @@ const getReference = (theme = 'primary') => {
         id: 'reference/roadmap',
         extra: {
           icon: 'img/roadmap.png',
+          iconDark: 'img/reference-dark.svg',
         },
       },
       {
@@ -45,6 +47,7 @@ const getReference = (theme = 'primary') => {
         id: 'reference/compliance',
         extra: {
           icon: 'img/compliance.svg',
+          iconDark: 'img/compliance-dark.svg',
         }
       }
     ],

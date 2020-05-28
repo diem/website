@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Head from '@docusaurus/Head';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -11,6 +12,12 @@ import Navbar from '@theme/Navbar';
 import Footer from '@theme/Footer';
 
 import './styles.css';
+
+// Provided via plugins/react-axe-ada-monitoring
+if (TEST_ADA) {
+  var axe = require('react-axe');
+  axe(React, ReactDOM, 1000);
+}
 
 function Layout(props) {
   const {siteConfig = {}} = useDocusaurusContext();

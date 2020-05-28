@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="30px" viewBox="0 0 22 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Compliance</title>
+    <g id="---Developers" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Documentation---Core-Contributors---Coding-Guidelines-Dark-Mode" transform="translate(-33.000000, -1508.000000)">
+            <g id="Left-Rail" transform="translate(0.000000, 1013.000000)">
+                <g id="Left-TOC" transform="translate(30.000000, 88.000000)">
+                    <g id="Support" transform="translate(0.000000, 314.000000)">
+                        <g id="Compliance" transform="translate(3.000000, 93.000000)">
+                            <g id="Group-21">
+                                <path d="M16.9265,23.1264 L20.9265,23.1264 L20.9265,26.1264 L13.9265,26.1264 C13.9265,24.4694 15.2695,23.1264 16.9265,23.1264" id="Fill-1" fill="#A3ACBE"></path>
+                                <polyline id="Stroke-3" stroke="#A3ACBD" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" points="3.5666 18.2939 3.5666 4.6499 7.7446 4.6499"></polyline>
+                                <polyline id="Stroke-5" stroke="#A3ACBD" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" points="16.8166 4.6498 21.0666 4.6498 21.0666 26.1498 10.7586 26.1498"></polyline>
+                                <path d="M14.0417,2.6498 C14.0537,2.5678 14.0667,2.4858 14.0667,2.3998 C14.0667,1.4338 13.2837,0.6498 12.3167,0.6498 C11.3507,0.6498 10.5667,1.4338 10.5667,2.3998 C10.5667,2.4858 10.5797,2.5678 10.5917,2.6498 L7.8167,2.6498 L7.8167,6.6498 L16.8167,6.6498 L16.8167,2.6498 L14.0417,2.6498 Z" id="Stroke-7" stroke="#A3ACBD" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M11.6501,23.1498 C11.6501,26.1878 9.1881,28.6498 6.1501,28.6498 C3.1121,28.6498 0.6501,26.1878 0.6501,23.1498 C0.6501,20.1118 3.1121,17.6498 6.1501,17.6498 C9.1881,17.6498 11.6501,20.1118 11.6501,23.1498 Z" id="Stroke-9" stroke="#A3ACBD" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <line x1="7.6501" y1="10.6498" x2="17.1501" y2="10.6498" id="Stroke-11" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></line>
+                                <line x1="7.6501" y1="13.8168" x2="17.1501" y2="13.8168" id="Stroke-13" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></line>
+                                <line x1="12.6501" y1="16.9833" x2="17.1501" y2="16.9833" id="Stroke-15" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></line>
+                                <line x1="14.4001" y1="20.1498" x2="17.1501" y2="20.1498" id="Stroke-17" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></line>
+                                <polyline id="Stroke-19" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" points="8.1501 21.2748 5.4361 25.1318 4.1501 23.8468"></polyline>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
