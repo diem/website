@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import Clipboard from 'clipboard';
 import Highlight, { defaultProps } from "prism-react-renderer";
-import darkCodeTheme from "prism-react-renderer/themes/paleNight";
+import darkCodeTheme from "prism-react-renderer/themes/palenight";
 import lightCodeTheme from "prism-react-renderer/themes/github";
 import PropTypes from 'prop-types';
 
@@ -109,7 +109,7 @@ const Code = ({ children, className: languageClassName }) => {
 
 Code.propTypes = {
   /*
-   * For a list of available languages, see 
+   * For a list of available languages, see
    * https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
    */
   className: PropTypes.string.isRequired,
