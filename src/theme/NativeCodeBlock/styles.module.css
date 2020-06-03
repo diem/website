@@ -61,3 +61,15 @@
   min-width: 100%;
   padding: var(--ifm-pre-padding);
 }
+
+.codeBlockContent :global(.token-line) {
+  display: table-row;
+}
+
+.lineNumber {
+  display: table-cell;
+  padding-right: 13px;
+  text-align: right;
+  user-select: none;
+  word-break: keep-all;
+}
