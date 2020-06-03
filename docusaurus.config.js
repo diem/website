@@ -1,3 +1,6 @@
+const darkCodeTheme = require("prism-react-renderer/themes/palenight");
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+
 module.exports = {
   title: 'My Site',
   tagline: 'The Libra Association’s mission is to enable a simple global payment system and financial infrastructure that empowers billions of people.',
