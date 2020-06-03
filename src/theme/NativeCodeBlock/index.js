@@ -114,6 +114,7 @@ export default ({children, className: languageClassName, metastring}) => {
   let codeBlockTitle = '';
 
   const {isDarkTheme} = useThemeContext();
+  const {enableLineNumbers} = prism;
   const lightModeTheme = prism.theme || defaultTheme;
   const darkModeTheme = prism.darkTheme || lightModeTheme;
   const prismTheme = isDarkTheme ? darkModeTheme : lightModeTheme;
@@ -250,6 +251,9 @@ export default ({children, className: languageClassName, metastring}) => {
 
                   return (
                     <div key={i} {...lineProps}>
+                      {enableLineNumbers &&
+                        <span className={styles.lineNumber}>{i + 1}</span>
+                      }
                       {line.map((token, key) => (
                         <span key={key} {...getTokenProps({token, key})} />
                       ))}
