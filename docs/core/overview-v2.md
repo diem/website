@@ -4,6 +4,60 @@ title: Libra Core Overview
 sidebar_label: Core Contributors
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<div className="snippet-container">
+  <Tabs
+    defaultValue="js"
+    values={[
+      { label: 'Javascript', value: 'js', },
+      { label: 'Python', value: 'py', },
+      { label: 'Java', value: 'java', },
+    ]
+  }>
+  <TabItem value="js">
+
+  ```jsx
+  import React, { useState } from "react";
+   
+  function Example() {
+    const [count, setCount] = useState(0);
+     
+    return (
+      <div>
+        <p>You clicked {count} times</p>
+        <button onClick={() => setCount(count + 1)}>
+          Click me
+        </button>
+      </div>
+    );
+  }
+  ```
+
+  </TabItem>
+  <TabItem value="py">
+
+  ```py
+  def hello_world():
+    print('Hello, world!')
+  ```
+
+  </TabItem>
+  <TabItem value="java">
+
+  ```java
+  class HelloWorld {
+    public static void main(String args[]) {
+      System.out.println("Hello, World");
+    }
+  }
+  ```
+
+  </TabItem>
+  </Tabs>
+</div>
+
 ### Excerpt Demo
 
 <Excerpt image="img/white-paper-screenshot.png">
