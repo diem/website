@@ -1,0 +1,38 @@
+@value desktop-breakpoint-query from '~CSS/variables.module.css';
+@value larget-tablet-breakpoint-size from '~CSS/variables.module.css';
+
+.docTitle {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.docItemContainer {
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+
+.docItemWrapper {
+  display: flex;
+  padding: 0;
+}
+
+.docItemWrapper article {
+  padding: 0 20px;
+}
+
+.docLastUpdatedAt {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: calc(large-tablet-breakpoint-size * 1px)) {
+  .docTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media desktop-breakpoint-query {
+  .docItemWrapper article {
+    padding: 0 60px;
+  }
+}

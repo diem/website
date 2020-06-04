@@ -1,0 +1,21 @@
+.root {
+  align-items: center;
+  background-color: var(--doc-component-background);
+  display: inline-flex;
+  padding: 20px;
+}
+
+.image {
+  --image-size: 40px;
+  background-size: var(--image-size) var(--image-size);
+  background-repeat: no-repeat;
+  height: var(--image-size);
+  margin-right: 10px;
+  width: var(--image-size);
+}
+
+.title {
+  font-size: 12px;
+  margin: 0;
+  width: 155px;
+}

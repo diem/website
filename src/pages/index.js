@@ -58,7 +58,7 @@ function HomeSplash({ siteConfig }) {
         <Logo img_src={`${baseUrl}img/libra-header-logo-white.png`} />
         <ProjectTitle siteConfig={siteConfig} />
         <PromoSection>
-          <Button href={docUrl('welcome-to-libra')}>Welcome to the Developer Site</Button>
+          <Button href={docUrl('welcome-to-libra-v2')}>Welcome to the Developer Site</Button>
           <Button href={docUrl('the-libra-blockchain-paper')}>
             Libra Blockchain Technical Paper
           </Button>

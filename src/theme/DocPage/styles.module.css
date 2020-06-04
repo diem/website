@@ -1,0 +1,33 @@
+@value large-tablet-breakpoint-query from '~CSS/variables.module.css';
+
+.docPage {
+  color: var(--doc-primary);
+  display: flex;
+}
+
+.docSidebarContainer {
+  box-sizing: border-box;
+  width: 300px;
+  position: relative;
+}
+
+.docMainContainer {
+  flex: 1;
+  flex-grow: 1;
+}
+
+@media large-tablet-breakpoint-query {
+  .docSidebarContainer {
+    border-right: 1px solid var(--default-border-color);
+  }
+}
+
+@media (max-width: 996px) {
+  .docPage {
+    display: inherit;
+  }
+
+  .docSidebarContainer {
+    margin-top: 0;
+  }
+}

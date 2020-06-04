@@ -1,0 +1,20 @@
+.root {
+  --transition-speed: .15s;
+  color: var(--doc-primary);
+  transition: box-shadow var(--transition-speed) ease-in-out;
+  width: var(--doc-card-size);
+}
+
+.root:hover {
+  box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
+  text-decoration: none;
+}
+
+/* Properties */
+.hasRoundedCorners {
+  border-radius: 5px;
+}
+
+.hasShadow {
+  box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.15);
+}

@@ -15,6 +15,7 @@ node_modules/
 # Generated files
 .docusaurus/
 .cache-loader
+.vercel
 
 # libra/libra is cloned from github and used to extract crate READMEs and Coding Guidelibnes
 libra
