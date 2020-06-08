@@ -11,6 +11,8 @@ html[data-theme='dark'] {
   --doc-component-background: var(--dark-mode-black-lighter);
   --doc-primary: white;
   --doc-title: white;
+  --ifm-tabs-color-active: white;
+  --ifm-tabs-color: var(--primary-gray);
   --nav-page-indicator-primary: white;
   --nav-page-indicator-secondary: var(--dark-mode-gray-1);
   --nav-primary-text-color: white;
@@ -19,6 +21,7 @@ html[data-theme='dark'] {
   --sidebar-gray: var(--dark-mode-gray-1);
   --sidebar-primary-title: var(--dark-mode-gray-2);
   --snippet-copy-color: white;
+  --snippet-copy-url: url('/img/copy-dark.svg');
   --snippet-header-background: #50576B;
   --subnav-background: #2A3045;
   --subnav-text-color: var(--dark-mode-gray-1);
@@ -72,6 +75,7 @@ html[data-theme='dark'] {
   --sidebar-gray: var(--dark-mode-gray-1);
   --sidebar-horizontal-padding: var(--body-horizontal-padding);
   --sidebar-primary-title: #1c1e21;
+  --snippet-copy-url: url('/img/copy.svg');
   --subnav-background: #F9F8F8;
   --subnav-text-color: black;
   --toc-color: black;
