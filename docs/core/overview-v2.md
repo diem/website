@@ -1,193 +1,82 @@
 ---
 id: overview-v2
-title: Libra Core Overview
 sidebar_label: Core Contributors
+title: Core Contributor Overview
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+The Libra blockchain consists of a set of functionality and technology working together to safely and effectively execute transactions. All of these pieces are part of the Libra core. 
 
-<div className="snippet-container">
-  <Tabs
-    defaultValue="js"
-    values={[
-      { label: 'Javascript', value: 'js', },
-      { label: 'Python', value: 'py', },
-      { label: 'Java', value: 'java', },
-    ]
-  }>
-  <TabItem value="js">
-
-  ```jsx
-  import React, { useState } from "react";
-   
-  function Example() {
-    const [count, setCount] = useState(0);
-     
-    return (
-      <div>
-        <p>You clicked {count} times</p>
-        <button onClick={() => setCount(count + 1)}>
-          Click me
-        </button>
-      </div>
-    );
-  }
-  ```
-
-  </TabItem>
-  <TabItem value="py">
-
-  ```py
-  def hello_world():
-    print('Hello, world!')
-  ```
-
-  </TabItem>
-  <TabItem value="java">
-
-  ```java
-  class HelloWorld {
-    public static void main(String args[]) {
-      System.out.println("Hello, World");
-    }
-  }
-  ```
-
-  </TabItem>
-  </Tabs>
-</div>
-
-### Excerpt Demo
-
-<Excerpt image="img/white-paper-screenshot.png">
-  The world truly needs a reliable digital currency and infrastructure that together can deliver on the promise of “the internet of money.” Securing your financial assets on your mobile device should be simple and intuitive. Moving money around globally should be as easy and cost-effective as — and even more safe and secure than — sending a text message or sharing a photo, no matter where you live, what you do, or how much you earn.  
-  <a href='#'>— Libra White Paper</a>
-</Excerpt>
-
-```jsx
-import React, { useState } from "react";
-   
-function Example() {
-  const [count, setCount] = useState(0);
-   
-  return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-    </div>
-  );
-}
-```
-
-```
-usage: <command> <args>
-
-Use the following commands:
-
-account | a
-  Account operations
-query | q
-  Query operations
-transfer | transferb | t | tb
-  <sender_account_address>|<sender_account_ref_id> <receiver_account_address>|<receiver_account_ref_id> <number_of_coins> [gas_unit_price (default=0)] [max_gas_amount (default 10000)] Suffix 'b' is for blocking.
-  Transfer coins from account to another.
-help | h
-  Prints this help
-quit | q!
-  Exit this client
-
-
-Please, input commands:
-
-libra%
-```
-
-Libra Core is the official name for the open-source implementation of the Libra protocol published by the Libra Association.
-
-### Discover Core Contributor
+## Discover Core Contributor
 
 <CardsWrapper>
   <ColorCard 
     color="purpleDark"
-    icon="img/four-squares-temp.png"
+    icon="img/transaction.svg"
+    iconDark="img/transaction-dark.svg"
     to="#"
     title="Send a test transaction"
   />
   <ColorCard 
     color="purpleLight"
-    icon="img/four-squares-temp.png"
+    icon="img/docs/move-program.svg" 
+    iconDark="img/docs/move-program-dark.svg"
     to="#"
     title="Run a client"
   />
   <ColorCard 
     color="aqua"
-    icon="img/four-squares-temp.png"
+    icon="img/docs/try-a-wallet.svg" 
+    iconDark="img/docs/try-a-wallet-dark.svg"
     to="#"
     title="Query the Libra blockchain"
   />
 </CardsWrapper>
 
-### Learn
+## Learn
 
 <CardsWrapper>
   <OverlayCard 
     description="I want to understand nodes"
-    icon="img/docs/node.svg" 
-    title="Nodes" 
+    icon="img/wallet-app.svg"
+    iconDark="img/wallet-app-dark.svg"
+    title="Nodes"
     to="#"
   />
   <OverlayCard 
     description="How do transactions work?"
-    icon="img/four-squares-temp.png" 
-    title="Transactions" 
+    icon="img/wallet-app.svg"
+    iconDark="img/wallet-app-dark.svg"
+    title="Transactions"
     to="#"
   />
   <OverlayCard 
     description="What does a Libra account look like?"
-    icon="img/wallet-app.svg" 
+    icon="img/wallet-app.svg"
+    iconDark="img/wallet-app-dark.svg"
     title="Accounts" 
     to="#"
   />
 </CardsWrapper>
 
-### Develop
+## Develop
 
 <CardsWrapper>
   <SimpleCard
-    icon="img/four-squares-temp.png"
-    title="Read me the core specifications"
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Read the core specifications"
     to="#"
   />
   <SimpleCard
-    icon="img/four-squares-temp.png"
-    title="Using the client SDK"
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    title="Using the Client SDK"
     to="#"
   />
   <SimpleCard
-    icon="img/core-contributors.svg"
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
     title="Show me the developer APIs"
     to="#"
   />
 </CardsWrapper>
-
-
-* This software is the first implementation of the Libra protocol and the Move language.
-* Libra Core includes both validator and client functionalities.
-* Libra Core is written in Rust.
-
-## Component READMEs of Libra Core
-
-* [Admission Control](crates/admission-control.md)
-* [Bytecode Verifier](crates/bytecode-verifier.md)
-* [Consensus](crates/consensus.md)
-* [Crypto](crates/crypto.md)
-* [Execution](crates/execution.md)
-* [Mempool](crates/mempool.md)
-* [Move IR Compiler](crates/ir-to-bytecode.md)
-* [Move Language](crates/move-language.md)
-* [Network](crates/network.md)
-* [Storage](crates/storage.md)
-* [Virtual Machine](crates/vm.md)
