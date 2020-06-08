@@ -1,4 +1,4 @@
-@value large-tablet-breakpoint-query from '~CSS/variables.module.css';
+@value large-tablet-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
 
 .root {
   --horizontal-spacing: 15px;
@@ -10,5 +10,5 @@
 
 .root > * {
   margin-right: var(--horizontal-spacing);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
