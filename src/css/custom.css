@@ -50,7 +50,74 @@ main article h6 {
   word-break: break-all;
 }
 
+/* Code Snippet  */
+.snippet-container {
+  position: relative;
+}
+
+.snippet-container .tabs, .snippet-header {
+  background-color: var(--snippet-header-background);
+  border-top-left-radius: var(--ifm-global-radius);
+  border-top-right-radius: var(--ifm-global-radius);
+  flex-wrap: wrap;
+  height: 36px;
+}
+
+.single-wrapper {
+  height: 100%;
+}
+
+.snippet-container .tab-item {
+  border: 0px !important;
+  font-family: NB International Pro Bold;
+  font-size: 12px;
+  outline: none;
+  padding: 8px;
+}
+
+.snippet-container .tab-item:hover,
+.snippet-container .tab-item:focus {
+  background-color: inherit;
+}
+
+.snippet-container .tab-item:first-child {
+  padding-left: 15px;
+}
+
+.snippet-container div {
+  position: initial;
+}
+
+.snippet-container div[role="tabpanel"] {
+  margin: 0 !important;
+}
+
+.snippet-container button {
+  --icon-size: 12px;
+  background-color: transparent;
+  background-image: var(--snippet-copy-url);
+  background-position: 99% 2px;
+  background-repeat: no-repeat;
+  background-size: var(--icon-size);
+  color: var(--snippet-copy-color);
+  font-size: 10px;
+  opacity: 1 !important;
+  padding: 3px calc(var(--icon-size) + 9px) 3px 0;
+  visibility: visible !important;
+  top: 9px;
+}
+
+.snippet-container .prism-code {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
 /* Fonts */
+
+@font-face {
+  font-family: 'NB International Pro Bold';
+  src: url('/fonts/nb_international_pro_bold.otf');
+}
 
 @font-face {
   font-family: 'NB International Pro';
