@@ -1,8 +1,10 @@
+@value small-tablet-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
+
 .root {
   --transition-speed: .15s;
   color: var(--doc-primary);
   transition: box-shadow var(--transition-speed) ease-in-out;
-  width: var(--doc-card-size);
+  width: 100%;
 }
 
 .root:hover {
@@ -21,4 +23,10 @@
 
 :root {
   --doc-card-size: 243px;
+}
+
+@media small-tablet-breakpoint-query {
+  .root {
+    width: var(--doc-card-size);
+  }
 }
