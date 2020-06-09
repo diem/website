@@ -4,7 +4,7 @@ sidebar_label: Home
 title: Welcome to the Libra Developer site
 ---
 
-Depending on your goals, please choose an appropriate persona below.
+<br />
 
 ## Start with your use case
 

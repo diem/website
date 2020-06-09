@@ -19,10 +19,6 @@ module.exports = {
       theme: lightCodeTheme,
       enableLineNumbers: true,
     },
-    logo: {
-      alt: 'Libra Logo',
-      to: 'https://libra.org/'
-    },
     sidebarCollapsible: false,
     siteID: 'developers',
     navbar: {
