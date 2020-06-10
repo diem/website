@@ -21,8 +21,8 @@ const Excerpt = ({children, image}) => {
 };
 
 Excerpt.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.string]).isRequired,
   image: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
 };
 
 export default Excerpt;
