@@ -2,19 +2,24 @@
   align-items: center;
   display: inline-flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 30px 30px 39px;
   text-align: center;
 }
 
 .image {
-  height: 110px;
-  margin-bottom: 10px;
-  width: 110px;
+  --size: 100px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: var(--size) var(--size);
+  height: var(--size);
+  margin-bottom: 20px;
+  width: var(--size);
 }
 
 .title {
   color: white;
   font-size: 18px;
+  line-height: 20px;
 }
 
 /* colors  */
