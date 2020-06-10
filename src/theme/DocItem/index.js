@@ -6,7 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 
-import RightSidebar from './RightSidebar';
+import {RightSidebar} from 'libra-docusaurus';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';
@@ -83,14 +83,13 @@ function DocItem(props) {
                   <DocContent />
                 </div>
               </article>
-              <div className="padding-vert--lg">
-              </div>
+              <div className="padding-vert--lg" />
             </div>
           </div>
-          <RightSidebar
-            editUrl={editUrl}
-            headings={DocContent.rightToc} 
-          />
+        <RightSidebar
+          editUrl={editUrl}
+          headings={DocContent.rightToc} 
+        />
       </div>
     </>
   );
