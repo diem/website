@@ -10,7 +10,7 @@
   align-items: center;
   display: inline-flex;
   height: 100%;
-  padding: 50px 15px;
+  padding: 48px 15px;
 }
 
 .circleOverlay {
@@ -18,7 +18,7 @@
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
   height: 263px;
-  left: -183px;
+  left: -184px;
   opacity: .3;
   position: absolute;
   top: 50%;
@@ -28,15 +28,15 @@
 }
 
 .root:hover .circleOverlay {
-  background-color: #8ECFBA;
+  background-color: var(--overlay-card-hover);
 }
 
 .root .image {
-  --image-size: 50px;
+  --image-size: 45px;
   background-repeat: no-repeat;
   background-size: var(--image-size) var(--image-size);
   height: var(--image-size);
-  margin-right: 25px;
+  margin-right: 29px;
   width: var(--image-size);
 }
 
@@ -55,5 +55,14 @@
 .description {
   font-size: 12px;
   font-weight: 300;
+  line-height: 16px;
   margin: 0;
+}
+
+html[data-theme='dark'] {
+  --overlay-card-hover: #30384A;
+}
+
+:root {
+  --overlay-card-hover: #8ecfba;
 }
