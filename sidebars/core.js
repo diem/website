@@ -4,7 +4,7 @@ const Sidebar = [
    backToHome,
   {
     extra: {
-      classNames: ['label'],
+      classNames: ['spacer'],
       icon: 'img/core-contributors.svg',
       iconDark: 'img/core-contributors-dark.svg',
       noLink: true,
@@ -26,7 +26,7 @@ const Sidebar = [
       iconDark: 'img/concepts-dark.svg',
       theme: 'secondary',
     },
-    items: ['libra-protocol'],
+    items: ['libra-protocol', 'demo'],
     label: 'Concepts',
     type: 'category',
   },

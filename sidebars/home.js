@@ -5,7 +5,7 @@ const Sidebar = [
     type: 'doc',
     id: 'welcome-to-libra-v2',
     extra: {
-      classNames: ['label'],
+      classNames: ['spacer'],
       icon: 'img/home.svg',
       iconDark: 'img/home-dark.svg',
     },
