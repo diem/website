@@ -9,7 +9,7 @@ const Sidebar = [
       iconDark: 'img/core-contributors-dark.svg',
       noLink: true,
     },
-    id: 'core/overview-v2', 
+    id: 'core/overview-v2',
     type: 'doc',
   },
   {
@@ -26,9 +26,13 @@ const Sidebar = [
       iconDark: 'img/concepts-dark.svg',
       theme: 'secondary',
     },
-    items: ['libra-protocol', 'demo'],
     label: 'Concepts',
     type: 'category',
+    items: [
+      'core/libra-protocol',
+      'core/life-of-a-transaction',
+      'demo'
+    ]
   },
   {
     extra: {
@@ -36,9 +40,13 @@ const Sidebar = [
       iconDark: 'img/tutorials-dark.svg',
       theme: 'secondary',
     },
-    items: ['my-first-transaction', 'run-local-network'],
     label: 'Tutorials',
     type: 'category',
+    items: [
+      'core/my-first-transaction',
+      'core/move-overview',
+      'core/run-local-network'
+    ]
   },
   {
     extra: {
@@ -47,9 +55,14 @@ const Sidebar = [
       iconDark: 'img/develop-dark.svg',
       theme: 'secondary',
     },
-    items: ['core/overview-v2'],
     label: 'Develop',
     type: 'category',
+    items: [
+      'core/libra-open-source-paper',
+      'core/contributing',
+      'core/coding-guidelines',
+      'core/libra-cli',
+    ]
   },
   getReference('secondary'),
 ];
