@@ -23,7 +23,7 @@ const getReference = (theme = 'primary') => {
     extra: {
       classNames: classNames,
     },
-    label: 'Reference', 
+    label: 'Reference',
     type: 'category',
     items: [
       {
@@ -45,6 +45,14 @@ const getReference = (theme = 'primary') => {
       {
         type,
         id: 'reference/compliance',
+        extra: {
+          icon: 'img/compliance.svg',
+          iconDark: 'img/compliance-dark.svg',
+        }
+      },
+      {
+        type,
+        id: 'reference/security',
         extra: {
           icon: 'img/compliance.svg',
           iconDark: 'img/compliance-dark.svg',

@@ -29,9 +29,14 @@ const Sidebar = [
     label: 'Concepts',
     type: 'category',
     items: [
+      'demo',
+      'core/welcome-to-libra',
       'core/libra-protocol',
       'core/life-of-a-transaction',
-      'demo'
+      'core/the-libra-blockchain-paper',
+      'core/move-paper',
+      'core/state-machine-replication-paper',
+      'core/libra-core-overview',
     ]
   },
   {
@@ -45,7 +50,8 @@ const Sidebar = [
     items: [
       'core/my-first-transaction',
       'core/move-overview',
-      'core/run-local-network'
+      'core/run-local-network',
+      'core/run-move-locally',
     ]
   },
   {
