@@ -1,6 +1,6 @@
 ---
 id: security
-title: Reporting Vulnerabilities
+title: Security
 ---
 
 This document outlines security procedures and general policies for the Libra project.

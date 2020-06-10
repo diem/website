@@ -14,7 +14,7 @@ The Libra testnet is a demonstration of an early prototype of the Libra Blockcha
 
 At the heart of the Libra protocol are two fundamental concepts — transactions and states. At any point in time, the blockchain has a “state.” The state (or ledger state) represents the current snapshot of data on the chain. Executing a transaction changes the state of the blockchain.
 
-![Figure 1.1 A Transaction changes state.](static/img/docs/transactions.svg)
+![Figure 1.1 A Transaction changes state.](/img/docs/transactions.svg)
 <small class="figure">FIGURE 1.1 TRANSACTIONS CHANGE STATE.</small>
 
 Figure 1.1 represents the change of state of the Libra Blockchain that occurs when a transaction is executed. For example, at state S~N-1~, Alice has a balance of 110 LBR, and Bob has a balance of 52 LBR. When a transaction is applied to the blockchain, it generates a new state. To transition from S~N-1~ to S~N~, transaction T~N~ is applied against the state S~N-1~. This causes Alice’s balance to be reduced by 10 LBR and Bob’s balance to be increased by 10 LBR. The new state S~N~ now shows these updated balances. In figure 1.1:
@@ -84,7 +84,7 @@ In a blockchain, the client does not need to trust the entity from which it is r
 ## Validator Node (Validator)
 
 Clients of the Libra Blockchain create transactions and submit them to a validator node. A validator node runs a consensus protocol (together with other validator nodes), executes the transactions, and stores the transactions and the execution results in the blockchain. Validator nodes decide which transactions will be added to the blockchain and in which order.
-![Figure 1.1 Logical components of a validator.](static/img/docs/validator.svg)
+![Figure 1.1 Logical components of a validator.](/img/docs/validator.svg)
 <small class="figure">FIGURE 1.2 LOGICAL COMPONENTS OF A VALIDATOR.</small>
 
 A validator node contains the following logical components:
