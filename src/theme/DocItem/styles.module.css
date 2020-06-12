@@ -4,6 +4,11 @@
 
 .docItemContainer {
   margin: 0 auto;
+  padding: 
+    var(--doc-padding-top) 
+    var(--doc-padding-right) 
+    var(--doc-padding-bottom) 
+    var(--doc-padding-left);
 }
 
 .docItemWrapper {
@@ -12,16 +17,44 @@
   padding: 0;
 }
 
-.docItemWrapper article {
-  padding: 
-    var(--doc-padding-top) 
-    var(--doc-padding-right) 
-    var(--doc-padding-bottom) 
-    var(--doc-padding-left);
+.pagination {
+  display: flex;
+  font-size: 14px;
+  padding-top: 80px;
+  padding-bottom: 20px;
 }
 
-.docLastUpdatedAt {
-  font-weight: bold;
+.pagination > a {
+  align-items: center;
+  display: flex;
+}
+
+.pagination > a:hover {
+  text-decoration: none;
+}
+
+.previous {
+  padding-right: 20px;
+}
+
+.previous svg, .next span {
+  margin-right: 10px;
+}
+
+.pagination span {
+  color: var(--pagination-enabled);
+}
+
+.pagination use {
+  fill: var(--pagination-enabled);
+}
+
+.disabled span {
+  color: var(--pagination-disabled);
+}
+
+.disabled use {
+  fill: var(--pagination-disabled);
 }
 
 @media only screen and (max-width: calc(large-tablet-breakpoint-size * 1px)) {
@@ -31,11 +64,15 @@
   }
 }
 
-html[data-theme='dark'] {
-  --doc-primary: white;
-  --doc-secondary-color: var(--dark-mode-gray-2)
+html {
+  --doc-primary: #15112C;
+  --pagination-disabled: var(--light-gray-1);
+  --pagination-enabled: var(--gray-4);
 }
 
-:root {
-  --doc-primary: #15112C;
+html[data-theme='dark'] {
+  --doc-primary: white;
+  --doc-secondary-color: var(--gray-2);
+  --pagination-disabled: var(--gray-4);
+  --pagination-enabled: var(--light-gray-1);
 }
