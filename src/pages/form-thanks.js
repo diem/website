@@ -1,17 +1,22 @@
 import React from 'react';
 
+import Layout from '@theme/Layout';
 import FormContainer from '@theme/ContactForm/form-container';
 import FormHeader from '@theme/ContactForm/form-header';
 
-const FormThanks = (props) => {
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
+import 'CSS/disable-adblock.css';
+
+const FormThanks = () => {
+  const {siteConfig: {baseUrl}} = useDocusaurusContext();
+
   return (
-    <FormContainer
-      {...props}
-      title="Thank you!"
-      subtitle=""
-    >
-      <a className="button" href={props.config.baseUrl}>Return</a>
-    </FormContainer>
+    <Layout containWidth={false}>
+      <FormContainer title="Thank you!" subtitle="">
+        <a className="button" href={baseUrl}>Return</a>
+      </FormContainer>
+    </Layout>
   );
 };
 

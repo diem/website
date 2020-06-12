@@ -1,6 +1,7 @@
 import React from 'react';
 
 import countryCodes from '@theme/ContactForm/country-codes';
+import Layout from '@theme/Layout';
 import FormContainer from '@theme/ContactForm/form-container';
 
 /**
@@ -282,12 +283,14 @@ const formFields = [{
 
 export default props => {
   return (
-    <FormContainer
-      {...props}
-      formId="partnerForm_2019-10-14"
-      fields={formFields}
-      title="Partner Interest"
-      subtitle="Please complete the form below and hit submit."
-    />
+    <Layout containWidth={false}>
+      <FormContainer
+        {...props}
+        formId="partnerForm_2019-10-14"
+        fields={formFields}
+        title="Partner Interest"
+        subtitle="Please complete the form below and hit submit."
+      />
+    </Layout>
   );
 };

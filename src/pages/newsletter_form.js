@@ -2,6 +2,7 @@ import React from 'react';
 
 import countryCodes from '@theme/ContactForm/country-codes';
 import FormContainer from '@theme/ContactForm/form-container';
+import Layout from '@theme/Layout';
 
 const formFields = [{
   items: [{
@@ -61,12 +62,14 @@ const formFields = [{
 
 export default props => {
   return (
-    <FormContainer
-      {...props}
-      fields={formFields}
-      formId="newsletterForm"
-      title="Newsletter Sign-up"
-      subtitle="Please complete the form below and hit submit."
-    />
+    <Layout containWidth={false}>
+      <FormContainer
+        {...props}
+        fields={formFields}
+        formId="newsletterForm"
+        title="Newsletter Sign-up"
+        subtitle="Please complete the form below and hit submit."
+      />
+    </Layout>
   );
 }

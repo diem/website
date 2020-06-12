@@ -1,17 +1,18 @@
 import React from 'react';
 
+import Layout from '@theme/Layout';
+
+import 'CSS/forms.css';
+
 const Help = props => {
-  const {config: siteConfig, language = ''} = props;
-  const {baseUrl, docsUrl} = siteConfig;
-  const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
-  const langPart = `${language ? `${language}/` : ''}`;
-  const docUrl = doc => `${baseUrl}${docsPart}${langPart}${doc}`;
+  const docUrl = doc => `/docs/${doc}`;
 
   const supportLinks = [
     {
-      content: `Learn more using the [documentation on this site.](${docUrl(
-        'welcome-to-libra.html',
-      )})`,
+      content: 
+        <p>
+          Learn more using the <a href={docUrl('')}> documentation on this site</a>
+        </p>,
       title: 'Browse Docs',
     },
     {
@@ -25,17 +26,23 @@ const Help = props => {
   ];
 
   return (
-    <div className="docMainWrapper wrapper">
-      <div className="mainContainer documentContainer postContainer">
-        <div className="post">
-          <header className="postHeader">
-            <h1>Need help?</h1>
-          </header>
-          <p>This project is maintained by a dedicated group of people.</p>
-          <div contents={supportLinks} layout="threeColumn" />
+    <Layout>
+      <div className="post">
+        <header className="postHeader">
+          <h1>Need help?</h1>
+        </header>
+        <p>This project is maintained by a dedicated group of people.</p>
+        <div id="columnContainer">
+          {supportLinks.map(({content, title}) => (
+            <div>
+              <h1>{title}</h1>
+              <p>{content}</p>
+            </div>
+          ))}
         </div>
+        <div contents={supportLinks} layout="threeColumn" />
       </div>
-    </div>
+    </Layout>
   );
 };
 

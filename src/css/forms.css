@@ -94,7 +94,7 @@
 }
 
 .formPage form label {
-  color: #39298C;
+  color: var(--accent-highlight);
   font-weight: bold;
   width: 95%;
   font-size: 0.8em;
@@ -179,7 +179,6 @@ form label.required:after {
   display: none;
 }
 
-
 @media (max-width: 800px) {
   .formPage .formWrapper,
   .formPage form .inputGroup,
@@ -194,3 +193,52 @@ form label.required:after {
     top: -2em;
   }
 }
+
+/** V2 additions */
+.formHero {
+  background-image: url('/img/hero.jpg');
+  background-size: cover;
+  padding: 4rem 0;
+}
+
+.post {
+  padding: 30px var(--body-horizontal-padding);
+}
+
+#columnContainer {
+  display: flex;
+  padding: 2rem 0;
+}
+
+.formWrapper {
+  padding: 3rem 0;
+}
+
+#columnContainer > div {
+  padding: 0 5px;
+  flex: 1;
+}
+
+.button {
+  color: var(--accent-highlight);
+}
+
+.button:hover {
+  color: inherit;
+}
+
+.postContainer {
+  padding: 28px;
+}
+
+@media (max-width: 800px) {
+  #columnContainer {
+    flex-direction: column;
+    padding: 0 0 25px 0;
+  }
+
+  #columnContainer > div {
+    padding: 0;
+  }
+}
+/* End */
