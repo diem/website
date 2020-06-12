@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Head from '@docusaurus/Head';
 import isInternalUrl from '@docusaurus/isInternalUrl';
@@ -11,6 +11,9 @@ import {RightSidebar} from 'libra-docusaurus';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';
+
+const scrollToTop = () => 
+  document.querySelector(`.nav-pusher`).scrollTo(0, 0);
 
 function DocItem(props) {
   const {siteConfig = {}} = useDocusaurusContext();
@@ -40,6 +43,8 @@ function DocItem(props) {
   if (!isInternalUrl(metaImage)) {
     metaImageUrl = metaImage;
   }
+
+  useEffect(scrollToTop, []);
 
   return (
     <>
@@ -84,6 +89,9 @@ function DocItem(props) {
                   <DocContent />
                 </div>
               </article>
+              <span className={styles.community}>
+                <a href="https://community.libra.org/">Ask the community</a> for support
+              </span>
               <Pagination metadata={metadata} />
             </div>
           </div>
