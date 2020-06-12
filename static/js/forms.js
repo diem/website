@@ -93,34 +93,32 @@
     }
   }
 
-  document.addEventListener('DOMContentLoaded', function(event) {
-    // Do not add search on form pages
-    const search = document.querySelector('.navSearchWrapper.reactNavSearchWrapper');
-    if (search && document.forms.length > 0) {
-      // The following does not work on IE 11: search.remove();
-      search.outerHTML = "";
-    }
+  // Do not add search on form pages
+  const search = document.querySelector('.navSearchWrapper.reactNavSearchWrapper');
+  if (search && document.forms.length > 0) {
+    // The following does not work on IE 11: search.remove();
+    search.outerHTML = "";
+  }
 
-    var orgInput = document.getElementById('organizationType');
-    if (orgInput) {
-      orgInput.addEventListener('change', function(event) {
-        handleOrgTypeChange(orgInput.value);
-      });
-    }
+  var orgInput = document.getElementById('organizationType');
+  if (orgInput) {
+    orgInput.addEventListener('change', function(event) {
+      handleOrgTypeChange(orgInput.value);
+    });
+  }
 
-    var enterpriseInput = document.getElementById('enterpriseField');
-    if (enterpriseInput) {
-      enterpriseInput.addEventListener('change', function(event) {
-        handleEnterpriseChange(enterpriseInput.value);
-      });
-    }
+  var enterpriseInput = document.getElementById('enterpriseField');
+  if (enterpriseInput) {
+    enterpriseInput.addEventListener('change', function(event) {
+      handleEnterpriseChange(enterpriseInput.value);
+    });
+  }
 
-    var enterpriseTypeInput = document.getElementById('enterpriseType');
-    if (enterpriseTypeInput) {
-      enterpriseTypeInput.addEventListener('change', function(event) {
-        handleEnterpriseTypeChange(enterpriseTypeInput.value);
-      });
-    }  
-  });
+  var enterpriseTypeInput = document.getElementById('enterpriseType');
+  if (enterpriseTypeInput) {
+    enterpriseTypeInput.addEventListener('change', function(event) {
+      handleEnterpriseTypeChange(enterpriseTypeInput.value);
+    });
+  }  
 
 }();
