@@ -12,13 +12,14 @@ const ColorCard = ({ color, icon, overlay, title, to, type, ...props }) => (
   <BaseContainer 
     className={classnames(styles.root, styles[color], {
       [styles.snippetTab]: type === 'snippetTab',
+      [styles.withOverlay]: type === 'snippetTab' && overlay,
     })} 
     hasShadow={false}
     tabIndex={type === 'snippetTab' && -1}
     to={to}
     {...props}
   >
-    {type === 'snippetTab' && (
+    {type === 'snippetTab' && overlay && (
       <div className={styles.overlay}>
         <span>{overlay}</span>
       </div>

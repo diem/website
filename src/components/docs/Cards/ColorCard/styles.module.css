@@ -197,6 +197,35 @@ desktop-breakpoint-query {
   }
 }
 
+@media large-tablet-breakpoint-query and desktop-breakpoint-max-query {
+  .root.snippetTab.withOverlay:hover {
+    flex-direction: row;
+  }
+
+  .root.snippetTab .overlay {
+    display: none;
+  }
+
+  .root.snippetTab.withOverlay:hover .overlay {
+    margin-right: 50px; /* clear anything to the right. The exact number is somewhat arbitrary */
+    width: 100%;
+  }
+
+  .root.snippetTab.withOverlay:hover .overlay {
+    display: flex;
+  }
+
+  .root.snippetTab .image {
+    margin-bottom: calc( 5px + 5% );
+  }
+
+  .root.snippetTab .title {
+    font-size: 15px;
+    line-height: 17px;
+    margin-bottom: 15px;
+  }
+}
+
 html[data-theme="dark"] .root.snippetTab {
   --carot-background-color: var(--accent-highlight);
 }

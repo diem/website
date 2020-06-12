@@ -6,6 +6,7 @@
 @value desktop-breakpoint-max-query from '~libra-docusaurus/src/variables.module.css';
 
 .root {
+  --carot-offset: 10px;
   --snippet-background-color: rgb(246, 248, 250);
   margin-bottom: 25px;
 }
@@ -87,12 +88,26 @@ desktop-breakpoint-query {
     height: 100%;
     margin: 0;
     overflow: scroll;
+    padding: 15px 20px 5px 25px;
     position: absolute;
     width: 100%;
   }
 
   .root :global(.prism-code) {
     max-height: initial;
+  }
+}
+
+@media large-tablet-breakpoint-query and desktop-breakpoint-max-query {
+  .root li[role="tab"] {
+    background: transparent !important;
+    border-radius: 0;
+    overflow: hidden;
+    padding-bottom: var(--carot-offset);
+  }
+
+  .root div[role="tabpanel"] {
+    margin-top: calc( var(--carot-offset) * -1 ) !important;
   }
 }
 
