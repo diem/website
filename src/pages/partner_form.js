@@ -1,11 +1,7 @@
-/**
- * Form for the Partner Interest data.
- */
-const React = require('react');
+import React from 'react';
 
-const FormContainer = require(`${process.cwd()}/core/ContactForm/form-container.js`);
-const countryCodes = require(`${process.cwd()}/core/ContactForm/country-codes.js`);
-
+import countryCodes from '@theme/ContactForm/country-codes';
+import FormContainer from '@theme/ContactForm/form-container';
 
 /**
  * NOTE: These ids should map to the Segment Zendesk mapping.
@@ -284,7 +280,7 @@ const formFields = [{
   }]
 }];
 
-function PartnerInterestForm(props) {
+export default props => {
   return (
     <FormContainer
       {...props}
@@ -294,6 +290,4 @@ function PartnerInterestForm(props) {
       subtitle="Please complete the form below and hit submit."
     />
   );
-}
-
-module.exports = PartnerInterestForm;
+};

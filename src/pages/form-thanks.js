@@ -1,12 +1,7 @@
-/**
- * Copyright (c) The Libra Core Contributors
- * SPDX-License-Identifier: Apache-2.0
- */
+import React from 'react';
 
-const React = require('react');
-const FormContainer = require(`${process.cwd()}/core/ContactForm/form-container.js`);
-const FormHeader = require(`${process.cwd()}/core/ContactForm/form-header.js`);
-
+import FormContainer from '@theme/ContactForm/form-container';
+import FormHeader from '@theme/ContactForm/form-header';
 
 const FormThanks = (props) => {
   return (
@@ -20,4 +15,4 @@ const FormThanks = (props) => {
   );
 };
 
-module.exports = FormThanks;
+export default FormThanks;

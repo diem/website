@@ -2,7 +2,7 @@
  * See: https://github.com/samayo/country-json/blob/master/src/country-by-abbreviation.json
  * See: https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/blob/master/all/all.json
  */
-const countryCodes = [
+const CountryCodes = [
   {
     "country": "Afghanistan",
     "abbreviation": "AF"
@@ -1017,4 +1017,4 @@ const countryCodes = [
   }
 ];
 
-module.exports = countryCodes;
+export default CountryCodes;

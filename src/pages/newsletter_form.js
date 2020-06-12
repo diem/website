@@ -1,11 +1,7 @@
-/**
- * Form for the Newletter signup.
- */
-const React = require('react');
+import React from 'react';
 
-const FormContainer = require(`${process.cwd()}/core/ContactForm/form-container.js`);
-const countryCodes = require(`${process.cwd()}/core/ContactForm/country-codes.js`);
-
+import countryCodes from '@theme/ContactForm/country-codes';
+import FormContainer from '@theme/ContactForm/form-container';
 
 const formFields = [{
   items: [{
@@ -63,8 +59,7 @@ const formFields = [{
   }]
 }];
 
-
-function NewsletterForm(props) {
+export default props => {
   return (
     <FormContainer
       {...props}
@@ -75,5 +70,3 @@ function NewsletterForm(props) {
     />
   );
 }
-
-module.exports = NewsletterForm;

@@ -1,14 +1,8 @@
-/**
- * Copyright (c) The Libra Core Contributors
- * SPDX-License-Identifier: Apache-2.0
- */
+import React from 'react';
 
-const React = require('react');
-
-const EnableJavaScript = require(`${process.cwd()}/core/ContactForm/enable-javascript.js`);
-const FieldSet = require(`${process.cwd()}/core/ContactForm/fieldset.js`);
-const FormHeader = require(`${process.cwd()}/core/ContactForm/form-header.js`);
-
+import EnableJavaScript from './enable-javascript';
+import FieldSet from './fieldset';
+import FormHeader from './form-header';
 
 const getFields = (fields) => {
   return fields.map((config, idx) => {
@@ -76,4 +70,4 @@ const FormContainer = (props) => {
   );
 };
 
-module.exports = FormContainer;
+export default FormContainer;

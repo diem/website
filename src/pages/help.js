@@ -1,12 +1,6 @@
-/**
- * Copyright (c) The Libra Core Contributors
- * SPDX-License-Identifier: Apache-2.0
- */
+import React from 'react';
 
-const React = require('react');
-
-
-function Help(props) {
+const Help = props => {
   const {config: siteConfig, language = ''} = props;
   const {baseUrl, docsUrl} = siteConfig;
   const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
@@ -43,6 +37,6 @@ function Help(props) {
       </div>
     </div>
   );
-}
+};
 
-module.exports = Help;
+export default Help;
