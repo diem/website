@@ -67,6 +67,19 @@ desktop-breakpoint-query {
     flex: 1;
   }
 
+  .root div[role="tabpanel"] > div {
+    height: 100%;
+    position: relative;
+  }
+
+  .root div[role="tabpanel"] > div > div { /* CodeBlock Component */
+    height: 100%;
+    margin: 0;
+    overflow: scroll;
+    position: absolute;
+    width: 100%;
+  }
+
   .root :global(.prism-code) {
     max-height: initial;
   }
