@@ -1,5 +1,5 @@
 import React from 'react';
-import CodeBlock from '../NativeCodeBlock';
+import CodeBlock from '@theme-original/CodeBlock';
 
 const Wrapper = ({isWithinTab, ...props}) => {
   if (isWithinTab) {

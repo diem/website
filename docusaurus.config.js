@@ -17,7 +17,6 @@ module.exports = {
     prism: {
       darkTheme: darkCodeTheme,
       theme: lightCodeTheme,
-      enableLineNumbers: true,
     },
     sidebarCollapsible: false,
     siteID: 'developers',
