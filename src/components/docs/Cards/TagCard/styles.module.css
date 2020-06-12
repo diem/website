@@ -2,13 +2,16 @@
   align-items: center;
   background-color: var(--doc-component-background);
   display: inline-flex;
-  padding: 15px 20px;
+  padding: 
+    calc( 14px + var(--border-width) ) 
+    calc( 19px + var(--border-width) );
 }
 
 .image {
   --image-size: 40px;
   background-repeat: no-repeat;
   background-size: var(--image-size) var(--image-size);
+  flex-shrink: 0;
   height: var(--image-size);
   margin-right: 10px;
   width: var(--image-size);
@@ -35,7 +38,7 @@
 }
 
 html[data-theme='dark'] {
-  --tag-background: var(--dark-mode-gray-2);
+  --tag-background: var(--gray-2);
 }
 
 :root {

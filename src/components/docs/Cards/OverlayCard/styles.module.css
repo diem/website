@@ -10,7 +10,9 @@
   align-items: center;
   display: inline-flex;
   height: 100%;
-  padding: 48px 15px;
+  padding: 
+    calc( 47px + var(--border-width) ) 
+    calc( 14px + var(--border-width) );
 }
 
 .circleOverlay {
@@ -59,10 +61,14 @@
   margin: 0;
 }
 
-html[data-theme='dark'] {
-  --overlay-card-hover: #30384A;
+html {
+  --overlay-card-hover: #8ecfba;
 }
 
-:root {
-  --overlay-card-hover: #8ecfba;
+html[data-theme='dark'] {
+  --overlay-card-hover: inherit;
+}
+
+html[data-theme='dark'] .circleOverlay {
+  transition: none;
 }

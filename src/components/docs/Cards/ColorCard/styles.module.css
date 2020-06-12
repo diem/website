@@ -2,7 +2,10 @@
   align-items: center;
   display: inline-flex;
   flex-direction: column;
-  padding: 30px 30px 39px;
+  padding: 
+    calc( var(--border-width) + 29px ) 
+    30px 
+    calc( var(--border-width) + 38px );
   text-align: center;
 }
 

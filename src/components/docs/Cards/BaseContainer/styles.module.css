@@ -1,6 +1,7 @@
 @value small-tablet-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
 
 .root {
+  --border-width: 1px;
   --transition-speed: .15s;
   color: var(--doc-primary);
   transition: box-shadow var(--transition-speed) ease-in-out;
@@ -21,12 +22,21 @@
   box-shadow: 0px 8px 15px 0px rgba(0,0,0,0.15);
 }
 
-:root {
-  --doc-card-size: 243px;
-}
-
 @media small-tablet-breakpoint-query {
   .root {
     width: var(--doc-card-size);
   }
+}
+
+html {
+  --doc-card-size: 243px;
+}
+
+html[data-theme='dark'] .root {
+  border: var(--border-width) solid transparent;
+}
+
+html[data-theme='dark'] .root:hover {
+  border-color: white;
+  transition: border-color .2s ease-in-out;
 }
