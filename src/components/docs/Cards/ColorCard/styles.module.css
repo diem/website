@@ -19,6 +19,20 @@
   text-align: center;
 }
 
+.root .overlay {
+  background-color: var(--background-color);
+  color: white;
+  display: flex;
+  height: 100%;
+  padding: 10px;
+  width: var(--doc-card-size);
+  z-index: 10;
+}
+
+.root .overlay span {
+  align-self: center;
+}
+
 .image {
   --size: 100px;
   background-repeat: no-repeat;
@@ -57,11 +71,35 @@
 }
 
 .root.snippetTab:hover {
+  box-shadow: none;
   border: 0;
+}
+
+.root.snippetTab .overlay {
+  display: flex;
+  flex-shrink: 0;
+  font-size: 12px;
+  line-height: 16px;
+  margin-left: calc( ( var(--doc-card-size) + var(--snippet-horizontal-padding) ) * -1 );
+  margin-right: var(--snippet-horizontal-padding);
+}
+
+.root.snippetTab:hover .overlay {
+  margin-left: calc( var(--snippet-horizontal-padding) * -1 );
+}
+
+.root.snippetTab:hover .overlay span {
+  width: 100%;
 }
 
 .root.snippetTab .title {
   font-weight: normal;
+}
+
+@media small-tablet-breakpoint-max-query {
+  .root.snippetTab .overlay {
+    display: none;
+  }
 }
 
 @media small-tablet-breakpoint-max-query, 

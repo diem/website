@@ -8,7 +8,7 @@ import BaseContainer from '../BaseContainer';
 import classnames from 'classnames';
 import styles from './styles.module.css';
 
-const ColorCard = ({ color, icon, title, to, type, ...props }) => (
+const ColorCard = ({ color, icon, overlay, title, to, type, ...props }) => (
   <BaseContainer 
     className={classnames(styles.root, styles[color], {
       [styles.snippetTab]: type === 'snippetTab',
@@ -18,6 +18,11 @@ const ColorCard = ({ color, icon, title, to, type, ...props }) => (
     to={to}
     {...props}
   >
+    {type === 'snippetTab' && (
+      <div className={styles.overlay}>
+        <span>{overlay}</span>
+      </div>
+    )}
     <div 
       className={styles.image} 
       style={{ backgroundImage: `url('${useBaseUrl(icon)}')` }}
@@ -29,6 +34,7 @@ const ColorCard = ({ color, icon, title, to, type, ...props }) => (
 ColorCard.propTypes = {
   color: PropTypes.oneOf(['aqua', 'purpleDark', 'purpleLight']).isRequired,
   icon: PropTypes.string.isRequired,
+  overlay: PropTypes.string,
   title: PropTypes.string.isRequired,
   to: PropTypes.string,
   type: PropTypes.oneOf(['default', 'snippetTab']),
