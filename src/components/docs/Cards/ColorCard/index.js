@@ -8,11 +8,15 @@ import BaseContainer from '../BaseContainer';
 import classnames from 'classnames';
 import styles from './styles.module.css';
 
-const ColorCard = ({ color, icon, title, to }) => (
+const ColorCard = ({ color, icon, title, to, type, ...props }) => (
   <BaseContainer 
-    className={classnames(styles.root, styles[color])} 
-    hasShadow={false} 
+    className={classnames(styles.root, styles[color], {
+      [styles.snippetTab]: type === 'snippetTab',
+    })} 
+    hasShadow={false}
+    tabIndex={type === 'snippetTab' && -1}
     to={to}
+    {...props}
   >
     <div 
       className={styles.image} 
@@ -27,6 +31,11 @@ ColorCard.propTypes = {
   icon: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   to: PropTypes.string,
+  type: PropTypes.oneOf(['default', 'snippetTab']),
+};
+
+ColorCard.defaultProps = {
+  type: 'default',
 };
 
 export default ColorCard;

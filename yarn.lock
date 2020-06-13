@@ -6101,10 +6101,10 @@ levenary@^1.1.1:
   dependencies:
     leven "^3.1.0"
 
-libra-docusaurus@^0.4.7:
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/libra-docusaurus/-/libra-docusaurus-0.4.7.tgz#556230a286fb3e7594d1b223c6f53005e781e17f"
-  integrity sha512-2Mx7Mre0vyYDBME6MSLPdp3mibp8KE5dO4NPyct7vPLbd/n78ZvhBv9OPSbpIzKyrw4moN6HeFKUPAevR87ntg==
+libra-docusaurus@^0.4.10:
+  version "0.4.10"
+  resolved "https://registry.yarnpkg.com/libra-docusaurus/-/libra-docusaurus-0.4.10.tgz#36cf1bc250ce5a13bedec6665b202200241f9884"
+  integrity sha512-ysQFVF1DIKIwFYXy2YnpAs+bISNzGQo2zEQIej0Y6SWp6NzQSRKemjLNiYg2qhjilZAXtm1chpF9zYdnZnUfyA==
   dependencies:
     "@svgr/webpack" "^5.4.0"
     prop-types "^15.7.2"
