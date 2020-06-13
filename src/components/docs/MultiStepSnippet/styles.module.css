@@ -1,6 +1,9 @@
 @value small-tablet-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
+@value small-tablet-breakpoint-max-query from '~libra-docusaurus/src/variables.module.css';
+@value large-tablet-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
 @value large-tablet-breakpoint-max-query from '~libra-docusaurus/src/variables.module.css';
 @value desktop-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
+@value desktop-breakpoint-max-query from '~libra-docusaurus/src/variables.module.css';
 
 .root {
   --snippet-background-color: rgb(246, 248, 250);
@@ -44,6 +47,14 @@
 
 .root :global(.prism-code) > div { /* CodeBlockLines */
   padding: 0;
+}
+
+@media small-tablet-breakpoint-max-query, 
+large-tablet-breakpoint-query and desktop-breakpoint-max-query {
+  li[role="tab"]:before {
+    content: '';
+    padding-top: 100%;
+  }
 }
 
 @media small-tablet-breakpoint-query and large-tablet-breakpoint-max-query,
