@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 
 import Pagination from './Pagination';
-import {RightSidebar} from 'libra-docusaurus';
+import {RightSidebar} from 'libra-components';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';
