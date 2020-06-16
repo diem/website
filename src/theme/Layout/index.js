@@ -1,4 +1,4 @@
 import React from 'react';
-import {Layout} from 'libra-docusaurus';
+import {Layout} from 'libra-components';
 
 export default Layout;
