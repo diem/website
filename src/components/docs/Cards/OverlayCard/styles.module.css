@@ -41,6 +41,7 @@
   height: var(--image-size);
   margin-right: 29px;
   width: var(--image-size);
+  z-index: var(--z-just-above);
 }
 
 .textContainer {
