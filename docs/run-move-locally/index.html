@@ -97,7 +97,7 @@ libra%
 </code></pre>
 <p>For detailed instructions on working with a local cluster of validator nodes, refer to <a href="/docs/run-local-network">Run a Local Network</a>.</p>
 <h3><a class="anchor" aria-hidden="true" id="create-an-account"></a><a href="#create-an-account" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create an Account</h3>
-<p>Each Move module and resource type is hosted by a specific account address. For example, the <code>Libra</code> module is hosted by the account at address <code>0x0</code>. To import the <code>Libra</code> module in other modules or transaction scripts, your Move code would specify <code>use 0x0::Libra</code>.</p>
+<p>Each Move module and resource type is hosted by a specific account address. For example, the <code>Libra</code> module is hosted by the account at address <code>0x1</code>. To import the <code>Libra</code> module in other modules or transaction scripts, your Move code would specify <code>use 0x1::Libra</code>.</p>
 <p>Before publishing a Move module, you first need to create an account to host it:</p>
 <pre><code class="hljs">libra% account create
 &gt;&gt; Creating/retrieving next account from wallet
@@ -120,11 +120,11 @@ Balance is: 76.000000LBR
 <p>Let’s start with an extremely simple module called <code>MyModule</code>. This module has a single procedure called <code>id</code>, which is an identity function for coins. It takes a <code>Libra::T&lt;LBR::T&gt;</code> resource as input and hands it back to the calling program. The Move code for this module is provided below. Change the address in the first line to be the address of the account you just created and then save it in a file named <code>my_module.move.</code> (Be sure to keep the &quot;0x&quot; prefix on the account address.)</p>
 <pre><code class="hljs">address 0x717da70a461fef6307990847590ad7af {
   module MyModule {
-    use 0x0::Libra;
-    use 0x0::LBR;
+    use 0x1::Libra::Libra;
+    use 0x1::LBR::LBR;
 
-    // The identity function: takes a Libra::T&lt;LBR::T&gt; as input and hands it back
-    public fun id(c: Libra::T&lt;LBR::T&gt;): Libra::T&lt;LBR::T&gt; {
+    // The identity function: takes a Libra&lt;LBR&gt; as input and hands it back
+    public fun id(c: Libra&lt;LBR&gt;): Libra&lt;LBR&gt; {
       c
     }
   }
@@ -161,15 +161,16 @@ Successfully published module
 </blockquote>
 <p>Now let’s write the following script to use <code>MyModule</code> and save it as <code>custom_script.move</code>:</p>
 <pre><code class="hljs">script {
-  use 0x0::LibraAccount;
-  use 0x0::LBR;
-  use 0x0::Transaction;
+  use 0x1::LibraAccount;
+  use 0x1::LBR::LBR;
   use 0x717da70a461fef6307990847590ad7af::MyModule;
 
-  fun main(amount: u64) {
-    let coin = LibraAccount::withdraw_from_sender&lt;LBR::T&gt;(amount);
+  fun main(account: &amp;signer, amount: u64) {
+    let withdrawal_cap = LibraAccount::extract_withdraw_capability(account);
+    let coin = LibraAccount::withdraw_from&lt;LBR&gt;(&amp;withdrawal_cap, amount);
+    LibraAccount::restore_withdraw_capability(withdrawal_cap);
     // Calls the id procedure defined in our custom module
-    LibraAccount::deposit&lt;LBR::T&gt;(Transaction::sender(), MyModule::id(coin));
+    LibraAccount::deposit_to&lt;LBR&gt;(account, MyModule::id(coin));
   }
 }
 </code></pre>
