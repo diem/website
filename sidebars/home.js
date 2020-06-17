@@ -40,7 +40,7 @@ const Sidebar = [
       },
       {
         type: 'ref',
-        id: 'move/overview',
+        id: 'move/overview-v2',
         extra: {
           icon: 'img/move.svg',
           iconDark: 'img/move-dark.svg',
