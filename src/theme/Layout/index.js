@@ -1,4 +1,6 @@
 import React from 'react';
-import {Layout} from 'libra-components';
+import LibraComponents from 'libra-components';
 
-export default Layout;
+export const OVERFLOW_CONTAINER_CLASS = LibraComponents.OVERFLOW_CONTAINER_CLASS;
+
+export default LibraComponents.Layout;
