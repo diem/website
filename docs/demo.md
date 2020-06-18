@@ -598,7 +598,7 @@ function Example() {
 ```
 
 
-### Excerpt Demo
+## Excerpt Demo
 
 <Excerpt image="img/white-paper-excerpt.svg">
   The world truly needs a reliable digital currency and infrastructure that together can deliver on the promise of “the internet of money.” Securing your financial assets on your mobile device should be simple and intuitive. Moving money around globally should be as easy and cost-effective as — and even more safe and secure than — sending a text message or sharing a photo, no matter where you live, what you do, or how much you earn.  

@@ -10,4 +10,4 @@ The upcoming Libra Reference Wallet, for web and mobile, will demonstrate key te
 
 For developers with existing digital wallets or familiarity building digital financial products, we will publish an integration guide to help you prepare for mainnet.
 
-For this and future announcements, be sure to sign up for the developer newsletter. [PUT IN LINK TO NEWSLETTER HERE]
+For this and future announcements, be sure to sign up for the [developer newsletter](/newsletter_form).
