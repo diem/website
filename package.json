@@ -12,8 +12,9 @@
   "dependencies": {
     "@docusaurus/core": "^2.0.0-alpha.53",
     "@docusaurus/preset-classic": "^2.0.0-alpha.53",
+    "@svgr/webpack": "^5.4.0",
     "classnames": "^2.2.6",
-    "libra-docusaurus-nav": "^1.2.6",
+    "libra-docusaurus": "^0.4.10",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },

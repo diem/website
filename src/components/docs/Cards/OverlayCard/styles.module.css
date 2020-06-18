@@ -10,7 +10,9 @@
   align-items: center;
   display: inline-flex;
   height: 100%;
-  padding: 50px 15px;
+  padding: 
+    calc( 47px + var(--border-width) ) 
+    calc( 14px + var(--border-width) );
 }
 
 .circleOverlay {
@@ -18,7 +20,7 @@
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
   height: 263px;
-  left: -183px;
+  left: -184px;
   opacity: .3;
   position: absolute;
   top: 50%;
@@ -28,15 +30,16 @@
 }
 
 .root:hover .circleOverlay {
-  background-color: #8ECFBA;
+  background-color: var(--overlay-card-hover);
 }
 
-.root .image {
-  --image-size: 50px;
+.image {
+  --image-size: 45px;
   background-repeat: no-repeat;
   background-size: var(--image-size) var(--image-size);
+  flex-shrink: 0;
   height: var(--image-size);
-  margin-right: 25px;
+  margin-right: 29px;
   width: var(--image-size);
 }
 
@@ -44,7 +47,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 140px;
 }
 
 .title {
@@ -55,5 +57,18 @@
 .description {
   font-size: 12px;
   font-weight: 300;
+  line-height: 16px;
   margin: 0;
+}
+
+html {
+  --overlay-card-hover: #8ecfba;
+}
+
+html[data-theme='dark'] {
+  --overlay-card-hover: inherit;
+}
+
+html[data-theme='dark'] .circleOverlay {
+  transition: none;
 }

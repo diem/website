@@ -2,7 +2,11 @@
   align-items: center;
   background-color: var(--doc-component-background);
   display: inline-flex;
-  padding: 20px;
+  padding: 
+    calc( 19px + var(--border-width) )
+    calc( 14px + var(--border-width) )
+    calc( 19px + var(--border-width) )
+    calc( 19px + var(--border-width) );
 }
 
 .image {
@@ -16,6 +20,6 @@
 
 .title {
   font-size: 12px;
+  font-weight: 300;
   margin: 0;
-  width: 155px;
 }

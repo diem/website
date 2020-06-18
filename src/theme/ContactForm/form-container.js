@@ -1,14 +1,12 @@
-/**
- * Copyright (c) The Libra Core Contributors
- * SPDX-License-Identifier: Apache-2.0
- */
+import React, {useEffect} from 'react';
 
-const React = require('react');
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-const EnableJavaScript = require(`${process.cwd()}/core/ContactForm/enable-javascript.js`);
-const FieldSet = require(`${process.cwd()}/core/ContactForm/fieldset.js`);
-const FormHeader = require(`${process.cwd()}/core/ContactForm/form-header.js`);
+import EnableJavaScript from './enable-javascript';
+import FieldSet from './fieldset';
+import FormHeader from './form-header';
 
+import 'CSS/forms.css';
 
 const getFields = (fields) => {
   return fields.map((config, idx) => {
@@ -34,17 +32,14 @@ const getForm = (formId, fields) => {
 }
 
 
-const FormContainer = (props) => {
-  const {
-    children,
-    config: {
-      baseUrl
-    },
-    fields,
-    formId,
-    title,
-    subtitle
-  } = props;
+const FormContainer = ({ children, fields, formId, subtitle, title }) => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = '/js/forms.js';
+    document.body.appendChild(script);
+  }, []);
+  const {siteConfig: {baseUrl}} = useDocusaurusContext();
 
   /**
    * Get the className and src props for the img elements.
@@ -65,15 +60,13 @@ const FormContainer = (props) => {
         <img {...getImageProps('bgCircleLeft', 'bg-circle-whole.svg')} />
         <img {...getImageProps('bgCircleBottom', 'bg-circle-half.svg')} />
         <img {...getImageProps('bgCircleRight', 'bg-circle-whole.svg')} />
-        <div className="mainContainer documentContainer postContainer">
+        <div className="mainContainer documentContainer postContainer width-wrapper">
           {getForm(formId, fields)}
           {children}
         </div>
-
       </div>
-
     </div>
   );
 };
 
-module.exports = FormContainer;
+export default FormContainer;

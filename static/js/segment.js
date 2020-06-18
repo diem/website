@@ -43,14 +43,12 @@
   /**
    * Find the form on the loaded page and send segment the form data on submit
    */
-  document.addEventListener('DOMContentLoaded', function(event) {
-    testSegment();
-    const forms = document.forms;
-    for (i = 0; i < forms.length; i++) {
-      const form = forms[i];
-      trackFormData(form);
-    }
-  });
+  testSegment();
+  const forms = document.forms;
+  for (let i = 0; i < forms.length; i++) {
+    const form = forms[i];
+    trackFormData(form);
+  }
 
   function toggleEnabledFormButton(on) {
     const button = document.querySelector("button[type='submit']")

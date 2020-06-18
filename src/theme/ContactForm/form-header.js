@@ -1,10 +1,4 @@
-/**
- * Copyright (c) The Libra Core Contributors
- * SPDX-License-Identifier: Apache-2.0
- */
-
-const React = require('react');
-
+import React from 'react';
 
 const FormHeader = ({ title, subtitle }) => {
   return (
@@ -15,4 +9,4 @@ const FormHeader = ({ title, subtitle }) => {
   );
 };
 
-module.exports = FormHeader;
+export default FormHeader;

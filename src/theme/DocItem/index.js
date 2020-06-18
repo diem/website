@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Head from '@docusaurus/Head';
 import isInternalUrl from '@docusaurus/isInternalUrl';
@@ -6,10 +6,14 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 
-import RightSidebar from './RightSidebar';
+import Pagination from './Pagination';
+import {RightSidebar} from 'libra-docusaurus';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';
+
+const scrollToTop = () => 
+  document.querySelector(`.nav-pusher`).scrollTo(0, 0);
 
 function DocItem(props) {
   const {siteConfig = {}} = useDocusaurusContext();
@@ -39,6 +43,8 @@ function DocItem(props) {
   if (!isInternalUrl(metaImage)) {
     metaImageUrl = metaImage;
   }
+
+  useEffect(scrollToTop, []);
 
   return (
     <>
@@ -83,14 +89,16 @@ function DocItem(props) {
                   <DocContent />
                 </div>
               </article>
-              <div className="padding-vert--lg">
-              </div>
+              <span className={styles.community}>
+                <a href="https://community.libra.org/">Ask the community</a> for support
+              </span>
+              <Pagination metadata={metadata} />
             </div>
           </div>
-          <RightSidebar
-            editUrl={editUrl}
-            headings={DocContent.rightToc} 
-          />
+        <RightSidebar
+          editUrl={editUrl}
+          headings={DocContent.rightToc} 
+        />
       </div>
     </>
   );

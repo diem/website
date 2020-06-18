@@ -1,10 +1,4 @@
-/**
- * Copyright (c) The Libra Core Contributors
- * SPDX-License-Identifier: Apache-2.0
- */
-
-const React = require('react');
-
+import React from 'react';
 
 /**
  * Get the option elements. An initial disabled option is added for the
@@ -57,4 +51,4 @@ const SelectInput = (props) => {
   );
 };
 
-module.exports = SelectInput;
+export default SelectInput;

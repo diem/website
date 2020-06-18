@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames';
 import styles from './styles.module.css';
 
-const BaseContainer = ({children, className, hasShadow, hasRoundedCorners, to}) => (
+const BaseContainer = ({children, className, hasShadow, hasRoundedCorners, to, ...props}) => (
   <a 
     className={classnames(styles.root, className, {
       [styles.hasShadow]: hasShadow,
@@ -12,6 +12,7 @@ const BaseContainer = ({children, className, hasShadow, hasRoundedCorners, to}) 
     })} 
     href={to}
     target="_blank"
+    {...props}
   >
     {children}
   </a>

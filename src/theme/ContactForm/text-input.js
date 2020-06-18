@@ -1,10 +1,4 @@
-/**
- * Copyright (c) The Libra Core Contributors
- * SPDX-License-Identifier: Apache-2.0
- */
-
-const React = require('react');
-
+import React from 'react';
 
 const getInput = (id, inputProps) => {
   const type = inputProps.type || 'text';
@@ -37,4 +31,4 @@ const TextInput = ({ label, id, ...inputProps }) => {
   );
 };
 
-module.exports = TextInput;
+export default TextInput;

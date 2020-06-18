@@ -1,12 +1,6 @@
-/**
- * Copyright (c) The Libra Core Contributors
- * SPDX-License-Identifier: Apache-2.0
- */
-
-const React = require('react');
-const TextInput = require(`${process.cwd()}/core/ContactForm/text-input.js`);
-const SelectInput = require(`${process.cwd()}/core/ContactForm/select-input.js`);
-
+import React from 'react';
+import TextInput from './text-input';
+import SelectInput from './select-input';
 
 /**
  * Get the legend if "title" was passed in
@@ -28,7 +22,7 @@ const getInputs = (items) => {
 }
 
 
-const FieldSet = ({ title, items}) => {
+const FieldSet = ({ title, items }) => {
   return (
     <fieldset>
       {getLegend(title)}
@@ -37,4 +31,4 @@ const FieldSet = ({ title, items}) => {
   );
 };
 
-module.exports = FieldSet;
+export default FieldSet;
