@@ -40,7 +40,7 @@
 
 html {
   --pagination-disabled: var(--light-gray-1);
-  --pagination-enabled: var(--gray-4);
+  --pagination-enabled: var(--gray-5);
 }
 
 html[data-theme='dark'] {
