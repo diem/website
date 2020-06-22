@@ -78,7 +78,6 @@ function Tabs(props) {
     <div>
       <ul
         role="tablist"
-        aria-orientation="horizontal"
         className={classnames('tabs', {
           'tabs--block': block,
         })}>
@@ -94,6 +93,7 @@ function Tabs(props) {
             ref={(tabControl) => tabRefs.push(tabControl)}
             onKeyDown={(event) => handleKeydown(tabRefs, event.target, event)}
             onFocus={() => changeSelectedValue(value)}
+            onMouseOver={() => changeSelectedValue(value)}
             onClick={() => changeSelectedValue(value)}>
             {label}
           </li>
