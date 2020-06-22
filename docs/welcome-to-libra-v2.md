@@ -10,10 +10,6 @@ The Libra payment system is built on a secure, scalable, and reliable blockchain
 
 <div className="margin-vert--xl" />
 
-<h2 id="test">Yo yo</h2>
-
-## ahoy matey
-
 <CardsWrapper title="We welcome developers who want to:">
   <OverlayCard 
     description="I want to develop a wallet for the Libra Ecosystem"
