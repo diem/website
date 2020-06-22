@@ -71,10 +71,25 @@ body a:hover {
   background-repeat: no-repeat;
   background-position: right;
   background-size: 12px;
+  opacity: 1;
+  padding-right: 20px;
+  visibility: visible;
+}
+
+.snippet-container button,
+.snippet-container .learn-more {
   color: var(--copy-snippet-color);
   font-size: 10px;
-  padding-right: 20px;
-  top: 5px;
+  line-height: var(--snippet-header-height);
+  padding-top: 0;
+  padding-bottom: 0;
+  top: 0;
+}
+
+.snippet-container .learn-more {
+  position: absolute;
+  right: 69px;
+  text-decoration: none;
 }
 
 .snippet-container .prism-code {
