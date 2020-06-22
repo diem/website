@@ -4,9 +4,9 @@ sidebar_label: Home
 title: Libra Developer Documentation
 ---
 
-Browse the latest documentation on the Libra core, wallets, payments, and node operations. 
+Browse the latest documentation on the Libra Core, wallets, payments, and node operations. 
 
-<p>The Libra payment system is built on a secure, scalable, and reliable blockchain. It is backed by a reserve of high-quality liquid assets comprising cash or ca​sh eq​uivalents and very short-term government secu​rities. This will help ensure that people and businesses have confidence that their Libra Coins can be converted into their local currency. It is governed by the [Libra Association](link) and its subsidiary Libra Networks, tasked with developing and operating the Libra network and the Libra project.</p>
+The Libra payment system is built on a secure, scalable, and reliable blockchain. It is backed by a reserve of high-quality liquid assets comprising cash or ca​sh eq​uivalents and very short-term government secu​rities. This will help ensure that people and businesses have confidence that their Libra Coins can be converted into their local currency. It is governed by the [Libra Association](http://libra.org/) and its subsidiary Libra Networks, tasked with developing and operating the Libra network and the Libra project.
 
 <div className="margin-vert--xl" />
 
