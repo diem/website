@@ -35,7 +35,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/libra/website/tree/staging',
+          editUrl: 'https://github.com/libra/website/edit/master',
         },
 
         blog: {
