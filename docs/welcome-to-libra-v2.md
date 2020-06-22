@@ -5,6 +5,113 @@ disable_pagination: true
 sidebar_label: Home
 ---
 
+Browse the latest documentation on the Libra Core, wallets, payments, and node operations. 
+
+<div className="margin-vert--lg" />
+
+The Libra payment system is built on a secure, scalable, and reliable blockchain. It is backed by a reserve of high-quality liquid assets comprising cash or ca​sh eq​uivalents and very short-term government secu​rities. This will help ensure that people and businesses have confidence that their Libra Coins can be converted into their local currency. It is governed by the [Libra Association](http://libra.org/) and its subsidiary Libra Networks, tasked with developing and operating the Libra network and the Libra project.
+
+<CardsWrapper title="We welcome developers who want to:">
+  <OverlayCard 
+    description="This section of content will be available soon"
+    icon="img/core-contributors.svg" 
+    iconDark="img/core-contributors-dark.svg" 
+    title="Contribute to Core" 
+    to="#"
+  />
+  <OverlayCard 
+    description="This section of content will be available soon"
+    icon="img/merchant-solutions.svg" 
+    iconDark="img/merchant-solutions-dark.svg"
+    title="Contribute to Libra Blockchain" 
+    to="#"
+  />
+  <OverlayCard 
+    description="This section of content will be available soon"
+    icon="img/wallet-app.svg" 
+    iconDark="img/wallet-app-dark.svg"
+    title="Build a Wallet" 
+    to="#"
+  />
+  <OverlayCard
+    description="This section of content will be available soon"
+    icon="img/wallet-app.svg" 
+    iconDark="img/wallet-app-dark.svg"
+    title="Develop a wallet for the Libra Network"
+    to="#"
+  />
+  <OverlayCard
+    description="This section of content will be available soon"
+    icon="img/move.svg" 
+    iconDark="img/move-dark.svg"
+    title="Develop with Move"
+    to="#"
+  />
+  <OverlayCard
+    description="This section of content will be available soon"
+    icon="img/move.svg" 
+    iconDark="img/move-dark.svg"
+    title="Learn about and experiment with the Move language"
+    to="#"
+  />
+  <OverlayCard
+    description="This section of content will be available soon"
+    icon="img/merchant-solutions.svg" 
+    iconDark="img/merchant-solutions-dark.svg" 
+    title="Accept Payments"
+    to="#"
+  />
+  <OverlayCard
+    description="This section of content will be available soon"
+    icon="img/merchant-solutions.svg" 
+    iconDark="img/merchant-solutions-dark.svg" 
+    title="Accept payments and integrate with the network"
+    to="#"
+  />
+  <OverlayCard
+    description="This section of content will be available soon"
+    icon="img/move.svg" 
+    iconDark="img/move-dark.svg"
+    title="Run a Full Node"
+    to="#"
+  />
+  <OverlayCard
+    description="This section of content will be available soon"
+    icon="img/core-contributors.svg" 
+    iconDark="img/core-contributors-dark.svg" 
+    title="Learn how to operate full nodes in the Libra Blockchain"
+    to="#"
+  />
+</CardsWrapper>
+
+## Explore Github
+
+<CardsWrapper>
+  <TagCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    tags={["Web", "Mobile", "Merchant"]}
+    title="Reference Wallet"
+    to="https://github.com/libra"
+  />
+  <TagCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    tags={["Web", "Mobile", "Merchant"]}
+    title="Reference Merchant"
+    to="https://github.com/libra"
+  />
+  <TagCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    tags={["Web", "Mobile", "Core"]}
+    title="Libra Core"
+    to="https://github.com/libra"
+  />
+</CardsWrapper>
+
+<div className="margin-vert--lg" />
+
 ## Discover Libra Docs
 
 <MultiStepSnippet
@@ -88,77 +195,8 @@ git clone git@github.com:libra/libra-wallet.git
 </MultiStepTabItem>
 </MultiStepSnippet>
 
-Browse the latest documentation on the Libra Core, wallets, payments, and node operations. 
-
-The Libra payment system is built on a secure, scalable, and reliable blockchain. It is backed by a reserve of high-quality liquid assets comprising cash or ca​sh eq​uivalents and very short-term government secu​rities. This will help ensure that people and businesses have confidence that their Libra Coins can be converted into their local currency. It is governed by the [Libra Association](http://libra.org/) and its subsidiary Libra Networks, tasked with developing and operating the Libra network and the Libra project.
-
-<div className="margin-vert--xl" />
-
-<CardsWrapper title="We welcome developers who want to:">
-  <OverlayCard 
-    description="I want to develop a wallet for the Libra Ecosystem"
-    icon="img/wallet-app.svg" 
-    iconDark="img/wallet-app-dark.svg"
-    title="Build a Wallet" 
-    to="#"
-  />
-  <OverlayCard 
-    description="I'm a merchant who wants to integrate & accept Libra payments"
-    icon="img/merchant-solutions.svg" 
-    iconDark="img/merchant-solutions-dark.svg" 
-    title="Accept Payments" 
-    to="#"
-  />
-  <OverlayCard 
-    description="I want to use Move to develop transaction logic & smart contract"
-    icon="img/move.svg" 
-    iconDark="img/move-dark.svg" 
-    title="Develop with Move" 
-    to="#"
-  />
-  <OverlayCard 
-    description="I want to learn about Libra under the hood or contribute improvements"
-    icon="img/core-contributors.svg" 
-    iconDark="img/core-contributors-dark.svg" 
-    title="Contribute to Core" 
-    to="#"
-  />
-  <OverlayCard 
-    description="I want to run a full Libra node"
-    icon="img/node-operators.svg" 
-    iconDark="img/node-operators-dark.svg" 
-    title="Run a Node" 
-    to="#"
-  />
-</CardsWrapper>
-
-## Explore Github
-
-<CardsWrapper>
-  <TagCard
-    icon="img/github.svg"
-    iconDark="img/github-dark.svg"
-    tags={["Web", "Mobile", "Merchant"]}
-    title="Reference Wallet"
-    to="https://github.com/libra"
-  />
-  <TagCard
-    icon="img/github.svg"
-    iconDark="img/github-dark.svg"
-    tags={["Web", "Mobile", "Merchant"]}
-    title="Reference Merchant"
-    to="https://github.com/libra"
-  />
-  <TagCard
-    icon="img/github.svg"
-    iconDark="img/github-dark.svg"
-    tags={["Web", "Mobile", "Core"]}
-    title="Libra Core"
-    to="https://github.com/libra"
-  />
-</CardsWrapper>
+Check out the Libra network’s documentation and community sites, and stay up to date by signing up for our newsletter here.
 
 <div className="margin-vert--lg" />
 
-Check out the Libra network’s documentation and community sites, and stay up to date by signing up for our newsletter here.
 Tell us your plan to build a product or service. We know that not all aspects of the Libra network will be available immediately to some developers. We're excited to work with the community to evolve these features, and look forward to your participation!
