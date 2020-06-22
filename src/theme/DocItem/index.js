@@ -33,6 +33,7 @@ function DocItem(props) {
   } = metadata;
   const {
     frontMatter: {
+      disable_pagination: disablePagination,
       image: metaImage,
       keywords,
       hide_title: hideTitle,
@@ -94,7 +95,9 @@ function DocItem(props) {
               <span className={styles.community}>
                 <a href="https://community.libra.org/">Ask the community</a> for support
               </span>
-              <Pagination metadata={metadata} />
+              {!disablePagination && 
+                <Pagination metadata={metadata} />
+              }
             </div>
           </div>
         <RightSidebar
