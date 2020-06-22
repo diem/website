@@ -1,3 +1,3 @@
-import {DocSidebar} from 'libra-components';
+import {DocSidebar} from 'libra-docusaurus';
 
 export default DocSidebar;
