@@ -41,5 +41,4 @@ html {
 
 html[data-theme='dark'] {
   --doc-primary: white;
-  --doc-secondary-color: var(--gray-2);
 }
