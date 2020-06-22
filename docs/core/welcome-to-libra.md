@@ -8,7 +8,7 @@ Welcome to the Libra developer site! The Libra Association’s mission is to ena
 
 <blockquote>
 The world needs a reliable and interoperable payment system that can deliver on the promise of “the internet of money.” Securing your financial assets on your mobile device should be simple and intuitive. Moving money around globally, and in a compliant way, should be as easy and cost-effective as — and even safer and more secure than — sending a message or sharing a photo, no matter where you are, what you do, or how much you earn. New product innovation and additional entrants lower barriers to access and facilitate frictionless payments for more people.
-- <a href="https://libra.org/en-us/whitepaper">Libra White Paper</a>
+- <a href="https://libra.org/whitepaper">Libra White Paper</a>
 </blockquote>
 
 The Libra payment system is built on a secure, scalable, and reliable blockchain. It is backed by a reserve of high-quality liquid assets comprising cash or ca​sh eq​uivalents and very short-term government secu​rities. This will help ensure that people and businesses have confidence that their Libra Coins can be converted into their local currency. It is governed by the Libra Association and its subsidiary Libra Networks, tasked with developing and operating the Libra network and the Libra project.
@@ -20,7 +20,7 @@ The goal of the Libra Blockchain is to serve as a foundation for financial servi
   <li>Highly secure to ensure the safety of funds and financial data.</li>
   <li>Flexible, so that it can power future innovation in financial services.</li>
 </ul> 
-— <a href="https://libra.org/en-us/whitepaper">Libra White Paper</a>
+— <a href="https://libra.org/whitepaper">Libra White Paper</a>
 </blockquote>
 
 The Association has open-sourced an early preview of the Libra [testnet](https://developers.libra.org/docs/reference/glossary#testnet), with accompanying documentation. The testnet is still under development, but you can read, build, and provide feedback right away. In contrast to the forthcoming Libra mainnet, the testnet merely simulates a digital payment system and the coins on the testnet have _no real-world value_.
@@ -75,7 +75,7 @@ The Libra project welcomes a wide variety of developers, ranging from people who
 The Libra repository contains a command-line interface (CLI) for submitting transactions to the testnet. My First [Transaction](https://developers.libra.org/docs/my-first-transaction) guides you through executing your first transaction on the Libra Blockchain using the Libra CLI client. The CLI allows a participant to construct, sign, and submit transactions to a [validator node](https://developers.libra.org/docs/reference/glossary#validator-node). Similarly, it allows a participant to issue queries to the Libra Blockchain (through the validator node or a full node), request the status of a transaction or account, and verify the response.
 
 <blockquote class="block_note">
-Note: While all developers are free to use the tesnet, mainnet will follow a phased rollout plan. Initially, the network will only be accessible to <a href="https://libra.org/en-US/white-paper/#lexicon">Designated Dealers</a> and <a href="https://libra.org/en-US/white-paper/#lexicon">Regulated Virtual Asset Service Providers (VASPs)</a> while the Association continues to develop its certification process for other VASPs and its compliance framework for <a href="https://libra.org/en-US/white-paper/#lexicon">Unhosted Wallets</a> based on the feedback received from regulators. The Association intends to make the network accessible to <a href="https://libra.org/en-US/white-paper/#lexicon">Certified VASPs</a> and Unhosted Wallets once the relevant compliance frameworks have been finalized. We know that due to our phased rollout plans, not all aspects of the Libra network will be available immediately to some developers, but we are excited to work with the community to drive the evolution of these features. For more details, click <a href="https://libra.org/en-US/white-paper/#compliance-and-the-prevention-of-illicit-activity">here</a>.
+Note: While all developers are free to use the tesnet, mainnet will follow a phased rollout plan. Initially, the network will only be accessible to <a href="https://libra.org/white-paper/#lexicon">Designated Dealers</a> and <a href="https://libra.org/white-paper/#lexicon">Regulated Virtual Asset Service Providers (VASPs)</a> while the Association continues to develop its certification process for other VASPs and its compliance framework for <a href="https://libra.org/white-paper/#lexicon">Unhosted Wallets</a> based on the feedback received from regulators. The Association intends to make the network accessible to <a href="https://libra.org/white-paper/#lexicon">Certified VASPs</a> and Unhosted Wallets once the relevant compliance frameworks have been finalized. We know that due to our phased rollout plans, not all aspects of the Libra network will be available immediately to some developers, but we are excited to work with the community to drive the evolution of these features. For more details, click <a href="https://libra.org/white-paper/#compliance-and-the-prevention-of-illicit-activity">here</a>.
 </blockquote>
 
 ### Stay Updated

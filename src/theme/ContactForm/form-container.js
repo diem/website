@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-import EnableJavaScript from './enable-javascript';
+import DisableAdblock from './disable-adblock';
 import FieldSet from './fieldset';
 import FormHeader from './form-header';
 
@@ -53,7 +53,7 @@ const FormContainer = ({ children, fields, formId, subtitle, title }) => {
 
   return (
     <div className="mainContainer formPage">
-      <EnableJavaScript baseUrl={baseUrl} />
+      <DisableAdblock baseUrl={baseUrl} />
       <FormHeader title={title} subtitle={subtitle} />
       <div className="wrapper">
         <img {...getImageProps('formIcon', 'form-icon.svg')} />

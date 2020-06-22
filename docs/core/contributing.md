@@ -11,7 +11,7 @@ The Libra Core project is currently an early-stage prototype, it is undergoing r
 
 ## Contributor License Agreement
 
-The Libra project follows many popular Open Source projects by requiring a signed CLA before accepting contributions. [Sign the CLA](https://libra.org/en-US/cla-sign/).
+The Libra project follows many popular Open Source projects by requiring a signed CLA before accepting contributions. [Sign the CLA](https://libra.org/cla-sign/).
 
 ## Contributing to Libra Core
 

@@ -30,7 +30,6 @@ const Sidebar = [
     type: 'category',
     items: [
       'demo',
-      'core/welcome-to-libra',
       'core/libra-protocol',
       'core/life-of-a-transaction',
       'core/the-libra-blockchain-paper',

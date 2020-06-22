@@ -6,6 +6,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 
+import {OVERFLOW_CONTAINER_CLASS} from '@theme/Layout';
+
 import Pagination from './Pagination';
 import {RightSidebar} from 'libra-components';
 
@@ -13,7 +15,7 @@ import classnames from 'classnames';
 import styles from './styles.module.css';
 
 const scrollToTop = () => 
-  document.querySelector(`.nav-pusher`).scrollTo(0, 0);
+  document.querySelector(`.${OVERFLOW_CONTAINER_CLASS}`).scrollTo(0, 0);
 
 function DocItem(props) {
   const {siteConfig = {}} = useDocusaurusContext();
