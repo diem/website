@@ -12,7 +12,7 @@ Move takes its cue from [Rust](https://www.rust-lang.org/) by using resource typ
 
 Move was designed and created as the programming language for the Libra network. That said, there are two items to note. First, the Libra network mainnet has not yet launched, so Move is still evolving. Second, Move can be used as language for [other blockchain platforms](https://github.com/co-move/comove) (even non-blockchain uses as well).
 
-Given custom Move modules will not be supported at [launch](https://libra.org/en-US/white-paper/#whats-next), we are targeting an early Move Developer persona.
+Given custom Move modules will not be supported at [launch](https://libra.org/white-paper/#whats-next), we are targeting an early Move Developer persona.
 
 
 The early Move Developer is one with some programming experience, who wants to begin understanding the core programming language used to implement custom transaction logic and smart contracts for the Libra Blockchain. 
