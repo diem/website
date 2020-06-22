@@ -5,7 +5,7 @@
   display: flex;
   flex-wrap: wrap;
   /* Account for the margin of the final card on a line */
-  width: calc(100% + var(--horizontal-spacing));
+  width: calc(100% + calc( var(--horizontal-spacing) * 2 ));
 }
 
 .root > * {
