@@ -52,6 +52,7 @@
 
 .title {
   font-size: 14px;
+  line-height: 16px;
   margin: 0;
 }
 
@@ -60,6 +61,7 @@
   font-weight: 300;
   line-height: 16px;
   margin: 0;
+  margin-top: 2px;
 }
 
 html {
