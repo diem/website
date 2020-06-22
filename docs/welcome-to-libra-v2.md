@@ -1,7 +1,8 @@
 ---
 id: welcome-to-libra-v2
-sidebar_label: Home
 title: Libra Developer Documentation
+disable_pagination: true
+sidebar_label: Home
 ---
 
 Browse the latest documentation on the Libra Core, wallets, payments, and node operations. 
