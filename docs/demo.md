@@ -46,7 +46,7 @@ import TabItem from '@theme/TabItem';
     )},
   ]
 }>
-<TabItem value="js">
+<MultiStepTabItem value="js">
 
 ```jsx
 import React, { useState } from "react"; wef wef wef wef ewfw fe ew wef ewf we ;
@@ -91,16 +91,16 @@ function Example() {
 }
 ```
 
-</TabItem>
-<TabItem value="py">
+</MultiStepTabItem>
+<MultiStepTabItem value="py">
 
 ```py
 def hello_world():
   print('Hello, world!')
 ```
 
-</TabItem>
-<TabItem value="java">
+</MultiStepTabItem>
+<MultiStepTabItem value="java">
 
 ```java
 class HelloWorld {
@@ -110,7 +110,7 @@ class HelloWorld {
 }
 ```
 
-</TabItem>
+</MultiStepTabItem>
 </MultiStepSnippet>
 
 ## 4 Tabs
@@ -157,7 +157,7 @@ class HelloWorld {
     )},
   ]
 }>
-<TabItem value="js">
+<MultiStepTabItem value="js">
 
 ```jsx
 import React, { useState } from "react"; wef wef wef wef ewfw fe ew wef ewf we ;
@@ -202,16 +202,16 @@ function Example() {
 }
 ```
 
-</TabItem>
-<TabItem value="py">
+</MultiStepTabItem>
+<MultiStepTabItem value="py">
 
 ```py
 def hello_world():
   print('Hello, world!')
 ```
 
-</TabItem>
-<TabItem value="java">
+</MultiStepTabItem>
+<MultiStepTabItem value="java">
 
 ```java
 class HelloWorld {
@@ -221,8 +221,8 @@ class HelloWorld {
 }
 ```
 
-</TabItem>
-<TabItem value="CSS">
+</MultiStepTabItem>
+<MultiStepTabItem value="CSS">
 
 ```java
 class HelloWorldwefiowief {
@@ -232,7 +232,7 @@ class HelloWorldwefiowief {
 }
 ```
 
-</TabItem>
+</MultiStepTabItem>
 </MultiStepSnippet>
 
 ## 5 Tabs
@@ -289,7 +289,7 @@ class HelloWorldwefiowief {
     )},
   ]
 }>
-<TabItem value="js">
+<MultiStepTabItem value="js">
 
 ```jsx
 import React, { useState } from "react"; wef wef wef wef ewfw fe ew wef ewf we ;
@@ -334,16 +334,16 @@ function Example() {
 }
 ```
 
-</TabItem>
-<TabItem value="py">
+</MultiStepTabItem>
+<MultiStepTabItem value="py">
 
 ```py
 def hello_world():
   print('Hello, world!')
 ```
 
-</TabItem>
-<TabItem value="java">
+</MultiStepTabItem>
+<MultiStepTabItem value="java">
 
 ```java
 class HelloWorld {
@@ -353,8 +353,8 @@ class HelloWorld {
 }
 ```
 
-</TabItem>
-<TabItem value="fourth">
+</MultiStepTabItem>
+<MultiStepTabItem value="fourth">
 
 ```java
 class HeyYalllllll {
@@ -364,8 +364,8 @@ class HeyYalllllll {
 }
 ```
 
-</TabItem>
-<TabItem value="fifth">
+</MultiStepTabItem>
+<MultiStepTabItem value="fifth">
 
 ```jsx
 function test() {
@@ -373,7 +373,7 @@ function test() {
 }
 ```
 
-</TabItem>
+</MultiStepTabItem>
 
 </MultiStepSnippet>
 
@@ -410,7 +410,7 @@ function test() {
     )},
   ]
 }>
-<TabItem value="js">
+<MultiStepTabItem value="js">
 
 ```jsx
 import React, { useState } from "react"; wef wef wef wef ewfw fe ew wef ewf we ;
@@ -455,16 +455,16 @@ function Example() {
 }
 ```
 
-</TabItem>
-<TabItem value="py">
+</MultiStepTabItem>
+<MultiStepTabItem value="py">
 
 ```py
 def hello_world():
   print('Hello, world!')
 ```
 
-</TabItem>
-<TabItem value="java">
+</MultiStepTabItem>
+<MultiStepTabItem value="java">
 
 ```java
 class HelloWorld {
@@ -474,7 +474,7 @@ class HelloWorld {
 }
 ```
 
-</TabItem>
+</MultiStepTabItem>
 </MultiStepSnippet>
 
 ## One tab has much longer text HOVER text than the rest
@@ -511,7 +511,7 @@ class HelloWorld {
     )},
   ]
 }>
-<TabItem value="js">
+<MultiStepTabItem value="js">
 
 ```jsx
 import React, { useState } from "react"; wef wef wef wef ewfw fe ew wef ewf we ;
@@ -556,16 +556,16 @@ function Example() {
 }
 ```
 
-</TabItem>
-<TabItem value="py">
+</MultiStepTabItem>
+<MultiStepTabItem value="py">
 
 ```py
 def hello_world():
   print('Hello, world!')
 ```
 
-</TabItem>
-<TabItem value="java">
+</MultiStepTabItem>
+<MultiStepTabItem value="java">
 
 ```java
 class HelloWorld {
@@ -575,7 +575,7 @@ class HelloWorld {
 }
 ```
 
-</TabItem>
+</MultiStepTabItem>
 </MultiStepSnippet>
 
 ## Normal Code Snippet
