@@ -84,7 +84,7 @@
   outline: none;
 }
 
-.root.snippetTab:hover {
+:global(.tab-item--active) .root.snippetTab {
   box-shadow: none;
   border: 0;
 }
@@ -98,22 +98,16 @@
   margin-right: var(--snippet-horizontal-padding);
 }
 
-.root.snippetTab:hover .overlay {
+:global(.tab-item--active) .root.snippetTab .overlay {
   margin-left: calc( var(--snippet-horizontal-padding) * -1 );
 }
 
-.root.snippetTab:hover .overlay span {
+:global(.tab-item--active) .overlay span {
   width: 100%;
 }
 
 .root.snippetTab .title {
   font-weight: normal;
-}
-
-@media small-tablet-breakpoint-max-query {
-  .root.snippetTab .overlay {
-    display: none;
-  }
 }
 
 @media small-tablet-breakpoint-max-query, 
@@ -152,7 +146,7 @@ large-tablet-breakpoint-query and desktop-breakpoint-max-query {
   }
 }
 
-@media mobile-breakpoint-query and small-tablet-breakpoint-max-query,
+@media small-tablet-breakpoint-max-query,
 large-tablet-breakpoint-query and desktop-breakpoint-max-query {
   .root.snippetTab {
     padding-right: 10px;
@@ -197,8 +191,9 @@ desktop-breakpoint-query {
   }
 }
 
-@media large-tablet-breakpoint-query and desktop-breakpoint-max-query {
-  .root.snippetTab.withOverlay:hover {
+@media small-tablet-breakpoint-max-query,
+large-tablet-breakpoint-query and desktop-breakpoint-max-query {
+  :global(.tab-item--active) .root.snippetTab.withOverlay {
     flex-direction: row;
   }
 
@@ -206,13 +201,10 @@ desktop-breakpoint-query {
     display: none;
   }
 
-  .root.snippetTab.withOverlay:hover .overlay {
+  :global(.tab-item--active) .root.snippetTab .overlay {
+    display: flex;
     margin-right: 50px; /* clear anything to the right. The exact number is somewhat arbitrary */
     width: 100%;
-  }
-
-  .root.snippetTab.withOverlay:hover .overlay {
-    display: flex;
   }
 
   .root.snippetTab .image {
