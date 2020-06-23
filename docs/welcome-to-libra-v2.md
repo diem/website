@@ -121,7 +121,6 @@ The Libra payment system is built on a secure, scalable, and reliable blockchain
       <ColorCard 
         color="purpleDark"
         icon="img/transaction.svg"
-        iconDark="img/transaction-dark.svg"
         overlay="Send a test transaction to orem ipsum dolor sit amet, ctetur adipiscing elit, sed do"
         title="Send a test transaction"
         type="snippetTab"
@@ -131,7 +130,6 @@ The Libra payment system is built on a secure, scalable, and reliable blockchain
       <ColorCard 
         color="purpleLight"
         icon="img/docs/move-program.svg" 
-        iconDark="img/docs/move-program-dark.svg"
         overlay="Second overlay (no content specified in comps"
         title="Write a move program"
         type="snippetTab"
@@ -141,7 +139,6 @@ The Libra payment system is built on a secure, scalable, and reliable blockchain
       <ColorCard 
         color="aqua"
         icon="img/docs/try-a-wallet.svg" 
-        iconDark="img/docs/try-a-wallet-dark.svg"
         overlay="Third overlay (no content specified in comps"
         title="Try out a wallet"
         type="snippetTab"
