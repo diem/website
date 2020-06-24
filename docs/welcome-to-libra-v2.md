@@ -21,8 +21,8 @@ The Libra payment system is built on a secure, scalable, and reliable blockchain
   />
   <OverlayCard 
     description="This section of content will be available soon"
-    icon="img/merchant-solutions.svg" 
-    iconDark="img/merchant-solutions-dark.svg"
+    icon="img/docs/merchant-solutions.svg" 
+    iconDark="img/docs/merchant-solutions-dark.svg"
     title="Contribute to Libra Blockchain" 
     to="#"
   />
@@ -56,15 +56,15 @@ The Libra payment system is built on a secure, scalable, and reliable blockchain
   />
   <OverlayCard
     description="This section of content will be available soon"
-    icon="img/merchant-solutions.svg" 
-    iconDark="img/merchant-solutions-dark.svg" 
+    icon="img/docs/merchant-solutions.svg" 
+    iconDark="img/docs/merchant-solutions-dark.svg" 
     title="Accept Payments"
     to="#"
   />
   <OverlayCard
     description="This section of content will be available soon"
-    icon="img/merchant-solutions.svg" 
-    iconDark="img/merchant-solutions-dark.svg" 
+    icon="img/docs/merchant-solutions.svg" 
+    iconDark="img/docs/merchant-solutions-dark.svg" 
     title="Accept payments and integrate with the network"
     to="#"
   />
