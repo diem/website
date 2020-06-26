@@ -181,6 +181,7 @@ large-tablet-breakpoint-query and desktop-breakpoint-max-query {
 @media mobile-breakpoint-query {
   .overlay {
     font-size: 12px;
+    line-height: 18px;
     padding: 10px;
   }
 }

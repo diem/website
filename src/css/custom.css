@@ -20,6 +20,8 @@ body a:hover {
 
 /* Code Snippet  */
 .snippet-container {
+  --snippet-background: rgb(246, 248, 250);
+  background-color: var(--snippet-background);
   position: relative;
 }
 
@@ -105,4 +107,5 @@ body a:hover {
 html[data-theme='dark'] .snippet-container {
   --copy-snippet-url: url('/img/copy-dark.svg');
   --copy-snippet-color: white;
+  --snippet-background: rgb(41, 45, 62);
 }
