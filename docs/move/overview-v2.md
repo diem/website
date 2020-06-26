@@ -33,3 +33,6 @@ Currently, Move is not targeting developers who wish to create custom modules an
 
 Move has all of the syntax and semantics you would expect from a first-class programming language. However, there is an entire architecture dedicated to creating, using, and executing code based on Move. The diagram below shows the architecture of Move as it pertains to the Libra payment system, from using the source language to script execution. Click on a specific topic of the diagram to be taken to more information about that specific area.
 
+## Reference
+
+<OverviewReferences exclude="move" />

@@ -1,12 +1,14 @@
 ---
 id: overview-v2
 sidebar_label: Core Contributors
-title: Core Contributor Overview
+title: Core Contributor
 ---
 
-The Libra blockchain consists of a set of functionality and technology working together to safely and effectively execute transactions. All of these pieces are part of the Libra core. 
+This section details the concepts and technology powering the Libra Blockchain and how you can contribute to the Libra Core. 
 
-## Discover Core Contributor
+The Libra Core is a set of functionalities and technologies working together to make transacting on the Libra Blockchain effective and secure. 
+
+## Discover
 
 <CardsWrapper>
   <ColorCard 
@@ -80,3 +82,8 @@ The Libra blockchain consists of a set of functionality and technology working t
     to="#"
   />
 </CardsWrapper>
+
+
+## Reference
+
+<OverviewReferences exclude="core" />
