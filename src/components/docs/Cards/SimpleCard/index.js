@@ -4,12 +4,15 @@ import PropTypes from 'prop-types';
 import BaseContainer from '../BaseContainer';
 import {WithBackgroundImage} from 'libra-docusaurus';
 
+import classnames from 'classnames';
 import styles from './styles.module.css';
 
-const SimpleCard = ({ icon, iconDark, title, to }) => (
+const SimpleCard = ({ icon, iconDark, smallerImage, title, to }) => (
   <BaseContainer className={styles.root} to={to}>
     <WithBackgroundImage 
-      className={styles.image}
+      className={classnames(styles.image, {
+        [styles.smaller]: smallerImage,
+      })}
       imageLight={icon}
       imageDark={iconDark}
     />
@@ -20,6 +23,7 @@ const SimpleCard = ({ icon, iconDark, title, to }) => (
 SimpleCard.propTypes = {
   icon: PropTypes.string.isRequired,
   iconDark: PropTypes.string,
+  smallerImage: PropTypes.bool,
   title: PropTypes.string.isRequired,
   to: PropTypes.string,
 };

@@ -7,7 +7,7 @@ import {WithBackgroundImage} from 'libra-docusaurus';
 import styles from './styles.module.css';
 
 const TagCard = ({ icon, iconDark, tags, title, to }) => (
-  <BaseContainer className={styles.root} to={to}>
+  <BaseContainer className={styles.root} target="__blank" to={to}>
     <WithBackgroundImage
       className={styles.image}
       imageLight={icon}

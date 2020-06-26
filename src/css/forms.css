@@ -220,6 +220,7 @@ form label.required:after {
 
 .button {
   color: var(--accent-highlight);
+  border: 1px solid var(--accent-highlight);
 }
 
 .button:hover {
@@ -228,6 +229,10 @@ form label.required:after {
 
 .postContainer {
   padding: 28px;
+}
+
+.formWrapper option {
+  min-width: fit-content;
 }
 
 @media (max-width: 800px) {

@@ -48,7 +48,6 @@
 }
 
 .root :global(.prism-code) > div { /* CodeBlockLines */
-  overflow: hidden;
   padding: 0 20px;
 }
 
