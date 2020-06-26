@@ -29,7 +29,6 @@ const Sidebar = [
     label: 'Concepts',
     type: 'category',
     items: [
-      'demo',
       'core/libra-protocol',
       'core/life-of-a-transaction',
       'core/the-libra-blockchain-paper',

@@ -28,6 +28,14 @@ const getReference = (theme = 'primary') => {
     items: [
       {
         type,
+        id: 'v2-docs-guide',
+        extra: {
+          icon: 'img/roadmap.png',
+          iconDark: 'img/reference-dark.svg',
+        },
+      },
+      {
+        type,
         id: 'reference/glossary',
         extra: {
           icon: 'img/terminology.svg',
