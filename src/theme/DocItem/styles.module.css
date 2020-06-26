@@ -4,6 +4,7 @@
 
 .docItemContainer {
   margin: 0 auto;
+  overflow: hidden;
   padding: 
     var(--doc-padding-top) 
     var(--doc-padding-right) 

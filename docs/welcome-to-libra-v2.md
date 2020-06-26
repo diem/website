@@ -112,6 +112,8 @@ The Libra payment system is built on a secure, scalable, and reliable blockchain
 
 <div className="margin-vert--lg" />
 
+<WaveBackground />
+
 ## Discover Libra Docs
 
 <MultiStepSnippet
@@ -149,7 +151,7 @@ The Libra payment system is built on a secure, scalable, and reliable blockchain
 <MultiStepTabItem value="my-first-transaction" learnMoreLink="/docs/core/my-first-transaction">
 
 ```bash
-# Create two accounts and transfer LBR between the two. wef wef wef ew wef we fw
+# Create two accounts and transfer LBR between the two.
 # This uses the testnet for experimentation
 
 libra% account create
