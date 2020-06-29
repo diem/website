@@ -10,13 +10,13 @@
   top: -25px;
 }
 
-.root img {
-  height: 330px;
-}
-
 .rectangle {
   background-color: #F3F5F9;
-  margin-top: -8px;
+  margin-top: -9px;
   height: 10000px;
   width: 100%;
+}
+
+html[data-theme='dark'] .rectangle {
+  background-color: #1F263F;
 }

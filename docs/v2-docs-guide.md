@@ -128,7 +128,7 @@ function Example() {
 <MultiStepTabItem value="js">
 
 ```jsx
-import React, { useState } from "react"; wef wef wef wef ewfw fe ew wef ewf we ;
+import React, { useState } from "react";
  
 function Example() {
   const [count, setCount] = useState(0);
