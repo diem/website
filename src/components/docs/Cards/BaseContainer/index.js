@@ -11,7 +11,6 @@ const BaseContainer = ({children, className, hasShadow, hasRoundedCorners, to, .
       [styles.hasRoundedCorners]: hasRoundedCorners,
     })} 
     href={to}
-    target="_blank"
     {...props}
   >
     {children}

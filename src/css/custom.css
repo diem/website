@@ -33,6 +33,10 @@ body a:hover {
   height: var(--snippet-header-height);
 }
 
+.snippet-container > div:last-child {
+  padding-right: 10px;
+}
+
 .single-wrapper {
   height: 100%;
 }
@@ -102,6 +106,10 @@ body a:hover {
 .snippet-container {
   --copy-snippet-url: url('/img/copy.svg');
   --copy-snippet-color: #6B7689;
+}
+
+.token-line {
+  white-space: break-spaces !important;
 }
 
 html[data-theme='dark'] .snippet-container {
