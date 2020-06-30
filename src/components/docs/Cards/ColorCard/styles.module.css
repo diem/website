@@ -166,7 +166,7 @@ large-tablet-breakpoint-query and desktop-breakpoint-max-query {
     padding-right: 10px;
     padding-left: 10px;
   }
-  
+
   .root.snippetTab .image {
     margin-top: calc( 10px + 5% );
   }
@@ -223,6 +223,21 @@ large-tablet-breakpoint-query and desktop-breakpoint-max-query {
     font-size: 15px;
     line-height: 17px;
     margin-bottom: 15px;
+  }
+}
+
+@media large-tablet-breakpoint-query {
+  /* Only show overlay on hover above tablet size */
+  :global(.tab-item--active) .root.snippetTab.withOverlay:not(:hover) {
+    flex-direction: column;
+  }
+
+  :global(.tab-item--active) .root.snippetTab:not(:hover) .overlay {
+    display: none;
+  }
+
+  :global(.tab-item--active) .root.snippetTab:not(:hover) .image {
+    margin-left: 0px;
   }
 }
 

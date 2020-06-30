@@ -22,4 +22,9 @@ If you’re interested in running a full node, subscribe to the developer newsle
 
 ## Reference
 
-<OverviewReferences exclude="node" />
+<CardsWrapper>
+  <CoreReference />
+  <MerchantReference />
+  <WalletReference />
+  <MoveReference />
+</CardsWrapper>

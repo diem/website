@@ -62,8 +62,8 @@ const getReference = (theme = 'primary') => {
         type,
         id: 'reference/security',
         extra: {
-          icon: 'img/compliance.svg',
-          iconDark: 'img/compliance-dark.svg',
+          icon: 'img/security.svg',
+          iconDark: 'img/security-dark.svg',
         }
       }
     ],
