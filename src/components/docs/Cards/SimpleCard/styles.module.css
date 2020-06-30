@@ -18,6 +18,11 @@
   width: var(--image-size);
 }
 
+.image.smaller {
+  --image-size: 30px;
+  margin-right: 12px;
+}
+
 .title {
   font-size: 12px;
   font-weight: 300;
