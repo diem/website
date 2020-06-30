@@ -17,3 +17,12 @@ Merchant services providers who would like to enable Libra payments on their pla
 <p className="margin-top--none">These services can be put in place now to set your business up to facilitate payments on the Libra Payment Network.</p>
 
 Sign up for the developer [newsletter] for upcoming announcements on this and other reference projects.
+
+## Reference
+
+<CardsWrapper>
+  <CoreReference />
+  <WalletReference />
+  <MoveReference />
+  <NodeReference />
+</CardsWrapper>
