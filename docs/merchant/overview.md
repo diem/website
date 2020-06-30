@@ -20,4 +20,9 @@ Sign up for the developer [newsletter] for upcoming announcements on this and ot
 
 ## Reference
 
-<OverviewReferences exclude="merchant" />
+<CardsWrapper>
+  <CoreReference />
+  <WalletReference />
+  <MoveReference />
+  <NodeReference />
+</CardsWrapper>
