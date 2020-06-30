@@ -84,34 +84,6 @@ The Libra payment system is built on a secure, scalable, and reliable blockchain
   />
 </CardsWrapper>
 
-## Explore Github
-
-<CardsWrapper>
-  <TagCard
-    icon="img/github.svg"
-    iconDark="img/github-dark.svg"
-    tags={["Web", "Mobile", "Merchant"]}
-    title="Reference Wallet"
-    to="https://github.com/libra"
-  />
-  <TagCard
-    icon="img/github.svg"
-    iconDark="img/github-dark.svg"
-    tags={["Web", "Mobile", "Merchant"]}
-    title="Reference Merchant"
-    to="https://github.com/libra"
-  />
-  <TagCard
-    icon="img/github.svg"
-    iconDark="img/github-dark.svg"
-    tags={["Web", "Mobile", "Core"]}
-    title="Libra Core"
-    to="https://github.com/libra"
-  />
-</CardsWrapper>
-
-<div className="margin-vert--lg" />
-
 <WaveBackground />
 
 ## Discover Libra Docs
@@ -193,6 +165,34 @@ git clone git@github.com:libra/libra-wallet.git
 
 </MultiStepTabItem>
 </MultiStepSnippet>
+
+## Explore Github
+
+<CardsWrapper>
+  <TagCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    tags={["Web", "Mobile", "Merchant"]}
+    title="Reference Wallet"
+    to="https://github.com/libra"
+  />
+  <TagCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    tags={["Web", "Mobile", "Merchant"]}
+    title="Reference Merchant"
+    to="https://github.com/libra"
+  />
+  <TagCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    tags={["Web", "Mobile", "Core"]}
+    title="Libra Core"
+    to="https://github.com/libra"
+  />
+</CardsWrapper>
+
+<div className="margin-vert--lg" />
 
 Check out the Libra network’s documentation and community sites, and stay up to date by signing up for our newsletter here.
 
