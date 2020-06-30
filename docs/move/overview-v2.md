@@ -35,4 +35,9 @@ Move has all of the syntax and semantics you would expect from a first-class pro
 
 ## Reference
 
-<OverviewReferences exclude="move" />
+<CardsWrapper>
+  <CoreReference />
+  <MerchantReference />
+  <WalletReference />
+  <NodeReference />
+</CardsWrapper>

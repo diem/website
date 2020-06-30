@@ -86,4 +86,9 @@ The Libra Core is a set of functionalities and technologies working together to 
 
 ## Reference
 
-<OverviewReferences exclude="core" />
+<CardsWrapper>
+  <MerchantReference />
+  <WalletReference />
+  <MoveReference />
+  <NodeReference />
+</CardsWrapper>

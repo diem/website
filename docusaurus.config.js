@@ -2,7 +2,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/palenight");
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 
 module.exports = {
-  title: 'Libra Docs',
+  title: 'Libra Documentation',
   tagline: 'The Libra Association’s mission is to enable a simple global payment system and financial infrastructure that empowers billions of people.',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
