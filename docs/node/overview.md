@@ -22,6 +22,9 @@ If you’re interested in running a full node, subscribe to the developer newsle
 
 ## Reference
 
-[Wallet developer overview](wallet-app/overview.md)
-
-[Core contributor overview](core/overview-v2.md)
+<CardsWrapper>
+  <CoreReference />
+  <MerchantReference />
+  <WalletReference />
+  <MoveReference />
+</CardsWrapper>

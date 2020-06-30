@@ -21,8 +21,8 @@ The Libra payment system is built on a secure, scalable, and reliable blockchain
   />
   <OverlayCard 
     description="This section of content will be available soon"
-    icon="img/merchant-solutions.svg" 
-    iconDark="img/merchant-solutions-dark.svg"
+    icon="img/docs/merchant-solutions.svg" 
+    iconDark="img/docs/merchant-solutions-dark.svg"
     title="Contribute to Libra Blockchain" 
     to="#"
   />
@@ -56,15 +56,15 @@ The Libra payment system is built on a secure, scalable, and reliable blockchain
   />
   <OverlayCard
     description="This section of content will be available soon"
-    icon="img/merchant-solutions.svg" 
-    iconDark="img/merchant-solutions-dark.svg" 
+    icon="img/docs/merchant-solutions.svg" 
+    iconDark="img/docs/merchant-solutions-dark.svg" 
     title="Accept Payments"
     to="#"
   />
   <OverlayCard
     description="This section of content will be available soon"
-    icon="img/merchant-solutions.svg" 
-    iconDark="img/merchant-solutions-dark.svg" 
+    icon="img/docs/merchant-solutions.svg" 
+    iconDark="img/docs/merchant-solutions-dark.svg" 
     title="Accept payments and integrate with the network"
     to="#"
   />
@@ -84,33 +84,7 @@ The Libra payment system is built on a secure, scalable, and reliable blockchain
   />
 </CardsWrapper>
 
-## Explore Github
-
-<CardsWrapper>
-  <TagCard
-    icon="img/github.svg"
-    iconDark="img/github-dark.svg"
-    tags={["Web", "Mobile", "Merchant"]}
-    title="Reference Wallet"
-    to="https://github.com/libra"
-  />
-  <TagCard
-    icon="img/github.svg"
-    iconDark="img/github-dark.svg"
-    tags={["Web", "Mobile", "Merchant"]}
-    title="Reference Merchant"
-    to="https://github.com/libra"
-  />
-  <TagCard
-    icon="img/github.svg"
-    iconDark="img/github-dark.svg"
-    tags={["Web", "Mobile", "Core"]}
-    title="Libra Core"
-    to="https://github.com/libra"
-  />
-</CardsWrapper>
-
-<div className="margin-vert--lg" />
+<WaveBackground />
 
 ## Discover Libra Docs
 
@@ -121,7 +95,6 @@ The Libra payment system is built on a secure, scalable, and reliable blockchain
       <ColorCard 
         color="purpleDark"
         icon="img/transaction.svg"
-        iconDark="img/transaction-dark.svg"
         overlay="Send a test transaction to orem ipsum dolor sit amet, ctetur adipiscing elit, sed do"
         title="Send a test transaction"
         type="snippetTab"
@@ -131,7 +104,6 @@ The Libra payment system is built on a secure, scalable, and reliable blockchain
       <ColorCard 
         color="purpleLight"
         icon="img/docs/move-program.svg" 
-        iconDark="img/docs/move-program-dark.svg"
         overlay="Second overlay (no content specified in comps"
         title="Write a move program"
         type="snippetTab"
@@ -141,7 +113,6 @@ The Libra payment system is built on a secure, scalable, and reliable blockchain
       <ColorCard 
         color="aqua"
         icon="img/docs/try-a-wallet.svg" 
-        iconDark="img/docs/try-a-wallet-dark.svg"
         overlay="Third overlay (no content specified in comps"
         title="Try out a wallet"
         type="snippetTab"
@@ -152,7 +123,7 @@ The Libra payment system is built on a secure, scalable, and reliable blockchain
 <MultiStepTabItem value="my-first-transaction" learnMoreLink="/docs/core/my-first-transaction">
 
 ```bash
-# Create two accounts and transfer LBR between the two. wef wef wef ew wef we fw
+# Create two accounts and transfer LBR between the two.
 # This uses the testnet for experimentation
 
 libra% account create
@@ -194,6 +165,34 @@ git clone git@github.com:libra/libra-wallet.git
 
 </MultiStepTabItem>
 </MultiStepSnippet>
+
+## Explore Github
+
+<CardsWrapper>
+  <TagCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    tags={["Web", "Mobile", "Merchant"]}
+    title="Reference Wallet"
+    to="https://github.com/libra"
+  />
+  <TagCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    tags={["Web", "Mobile", "Merchant"]}
+    title="Reference Merchant"
+    to="https://github.com/libra"
+  />
+  <TagCard
+    icon="img/github.svg"
+    iconDark="img/github-dark.svg"
+    tags={["Web", "Mobile", "Core"]}
+    title="Libra Core"
+    to="https://github.com/libra"
+  />
+</CardsWrapper>
+
+<div className="margin-vert--lg" />
 
 Check out the Libra network’s documentation and community sites, and stay up to date by signing up for our newsletter here.
 

@@ -1,11 +1,11 @@
-@value mobile-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
-@value small-tablet-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
-@value small-tablet-breakpoint-max-query from '~libra-docusaurus/src/variables.module.css';
-@value medium-tablet-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
-@value large-tablet-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
-@value large-tablet-breakpoint-max-query from '~libra-docusaurus/src/variables.module.css';
-@value desktop-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
-@value desktop-breakpoint-max-query from '~libra-docusaurus/src/variables.module.css';
+@value mobile-breakpoint-query from '~libra-docusaurus-components/src/variables.module.css';
+@value small-tablet-breakpoint-query from '~libra-docusaurus-components/src/variables.module.css';
+@value small-tablet-breakpoint-max-query from '~libra-docusaurus-components/src/variables.module.css';
+@value medium-tablet-breakpoint-query from '~libra-docusaurus-components/src/variables.module.css';
+@value large-tablet-breakpoint-query from '~libra-docusaurus-components/src/variables.module.css';
+@value large-tablet-breakpoint-max-query from '~libra-docusaurus-components/src/variables.module.css';
+@value desktop-breakpoint-query from '~libra-docusaurus-components/src/variables.module.css';
+@value desktop-breakpoint-max-query from '~libra-docusaurus-components/src/variables.module.css';
 
 .root {
   align-items: center;
@@ -30,16 +30,6 @@
   transform: translate(100%, -50%);
   width: 0;
   height: 0;
-  z-index: 10;
-}
-
-.root .overlay {
-  background-color: var(--background-color);
-  color: white;
-  display: flex;
-  height: 100%;
-  padding: 10px;
-  width: var(--doc-card-size);
   z-index: 10;
 }
 
@@ -82,6 +72,7 @@
   --carot-background-color: var(--background-color);
   overflow: hidden;
   outline: none;
+  padding: 0 3px;
 }
 
 :global(.tab-item--active) .root.snippetTab {
@@ -89,16 +80,22 @@
   border: 0;
 }
 
-.root.snippetTab .overlay {
+.overlay {
+  background-color: var(--background-color);
+  color: white;
   display: flex;
   flex-shrink: 0;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 10px;
+  height: 100%;
+  line-height: 12px;
   margin-left: calc( ( var(--doc-card-size) + var(--snippet-horizontal-padding) ) * -1 );
   margin-right: var(--snippet-horizontal-padding);
+  padding: 3px;
+  width: var(--doc-card-size);
+  z-index: 10;
 }
 
-:global(.tab-item--active) .root.snippetTab .overlay {
+:global(.tab-item--active) .overlay {
   margin-left: calc( var(--snippet-horizontal-padding) * -1 );
 }
 
@@ -116,9 +113,26 @@ large-tablet-breakpoint-query and desktop-breakpoint-max-query {
     height: 100%;
     outline: none;
     overflow: visible;
-    padding: 0 8px;
     position: relative;
     width: 100%;
+  }
+
+  :global(.tab-item--active) .root.snippetTab.withOverlay {
+    flex-direction: row;
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  :global(.tab-item--active) .overlay {
+    display: flex;
+    margin-right: 10px;
+    width: 100%;
+  }
+
+  :global(.tab-item--active) .root.snippetTab.withOverlay .image {
+    margin-left: 30px; /* Somewhat arbitrary. Just clears the image away from the overlay when not shown */
   }
 
   .root.snippetTab .image {
@@ -146,7 +160,7 @@ large-tablet-breakpoint-query and desktop-breakpoint-max-query {
   }
 }
 
-@media small-tablet-breakpoint-max-query,
+@media mobile-breakpoint-query and small-tablet-breakpoint-max-query,
 large-tablet-breakpoint-query and desktop-breakpoint-max-query {
   .root.snippetTab {
     padding-right: 10px;
@@ -161,6 +175,14 @@ large-tablet-breakpoint-query and desktop-breakpoint-max-query {
     font-size: 13px;
     line-height: 15px;
     margin-bottom: 12px;
+  }
+}
+
+@media mobile-breakpoint-query {
+  .overlay {
+    font-size: 12px;
+    line-height: 18px;
+    padding: 10px;
   }
 }
 
@@ -191,22 +213,8 @@ desktop-breakpoint-query {
   }
 }
 
-@media small-tablet-breakpoint-max-query,
+@media mobile-breakpoint-query and small-tablet-breakpoint-max-query,
 large-tablet-breakpoint-query and desktop-breakpoint-max-query {
-  :global(.tab-item--active) .root.snippetTab.withOverlay {
-    flex-direction: row;
-  }
-
-  .root.snippetTab .overlay {
-    display: none;
-  }
-
-  :global(.tab-item--active) .root.snippetTab .overlay {
-    display: flex;
-    margin-right: 50px; /* clear anything to the right. The exact number is somewhat arbitrary */
-    width: 100%;
-  }
-
   .root.snippetTab .image {
     margin-bottom: calc( 5px + 5% );
   }
@@ -215,6 +223,21 @@ large-tablet-breakpoint-query and desktop-breakpoint-max-query {
     font-size: 15px;
     line-height: 17px;
     margin-bottom: 15px;
+  }
+}
+
+@media large-tablet-breakpoint-query {
+  /* Only show overlay on hover above tablet size */
+  :global(.tab-item--active) .root.snippetTab.withOverlay:not(:hover) {
+    flex-direction: column;
+  }
+
+  :global(.tab-item--active) .root.snippetTab:not(:hover) .overlay {
+    display: none;
+  }
+
+  :global(.tab-item--active) .root.snippetTab:not(:hover) .image {
+    margin-left: 0px;
   }
 }
 

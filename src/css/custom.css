@@ -20,6 +20,8 @@ body a:hover {
 
 /* Code Snippet  */
 .snippet-container {
+  --snippet-background: rgb(246, 248, 250);
+  background-color: var(--snippet-background);
   position: relative;
 }
 
@@ -29,6 +31,10 @@ body a:hover {
   border-top-right-radius: var(--ifm-global-radius);
   flex-wrap: wrap;
   height: var(--snippet-header-height);
+}
+
+.snippet-container > div:last-child {
+  padding-right: 10px;
 }
 
 .single-wrapper {
@@ -102,7 +108,12 @@ body a:hover {
   --copy-snippet-color: #6B7689;
 }
 
+.token-line {
+  white-space: break-spaces !important;
+}
+
 html[data-theme='dark'] .snippet-container {
   --copy-snippet-url: url('/img/copy-dark.svg');
   --copy-snippet-color: white;
+  --snippet-background: rgb(41, 45, 62);
 }
