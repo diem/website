@@ -6,7 +6,7 @@
   function testSegment() {
     // Only test for segment (and open the modal) when there's a form on the page
     if (!document.forms.length) {
-      return
+      return;
     }
 
     const request = new XMLHttpRequest();
