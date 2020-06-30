@@ -34,10 +34,15 @@ const getForm = (formId, fields) => {
 
 const FormContainer = ({ children, fields, formId, subtitle, title }) => {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = '/js/forms.js';
-    document.body.appendChild(script);
+    const segmentScript = document.createElement('script');
+    segmentScript.async = true;
+    segmentScript.src = '/js/segmentForm.js';
+    document.body.appendChild(segmentScript);
+
+    const formScript = document.createElement('script');
+    formScript.async = true;
+    formScript.src = '/js/forms.js';
+    document.body.appendChild(formScript);
   }, []);
   const {siteConfig: {baseUrl}} = useDocusaurusContext();
 

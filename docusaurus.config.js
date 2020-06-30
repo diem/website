@@ -25,8 +25,9 @@ module.exports = {
     },
   },
   plugins: [
-    require.resolve('./plugins/alias/src'), 
-    require.resolve('./plugins/react-axe-ada-monitoring'), 
+    require.resolve('./plugins/alias/src'),
+    require.resolve('./plugins/react-axe-ada-monitoring'),
+    require.resolve('libra-docusaurus-components/src/plugin-segment'),
   ],
   presets: [
     [
@@ -50,4 +51,10 @@ module.exports = {
       },
     ],
   ],
+  customFields: {
+    segment: {
+      productionKey: 'Llc3xSsbfceDLVBzwOJKoJSkSHMRoj8V',
+      stagingKey: 'qPd2q0d8dRMVcZFIK6ocHjDX8QMT19UW',
+    },
+  },
 };
