@@ -9,7 +9,7 @@ import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 import {OVERFLOW_CONTAINER_CLASS} from '@theme/Layout';
 
 import Pagination from './Pagination';
-import {RightSidebar} from 'libra-docusaurus';
+import {RightSidebar} from 'libra-docusaurus-components';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';
