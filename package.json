@@ -1,5 +1,5 @@
 {
-  "name": "my-website",
+  "name": "Libra-Documentation",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -14,7 +14,7 @@
     "@docusaurus/preset-classic": "^2.0.0-alpha.53",
     "@svgr/webpack": "^5.4.0",
     "classnames": "^2.2.6",
-    "libra-docusaurus": "^0.5.1",
+    "libra-docusaurus-components": "^0.1.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
