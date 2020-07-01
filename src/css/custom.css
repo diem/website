@@ -7,7 +7,7 @@ body a:hover {
 }
 
 .prism-code > * {
-  /* 
+  /*
    * Prevents code block from overflowing on extremely
    * long words
    */
@@ -18,11 +18,17 @@ body a:hover {
   width: 0;
 }
 
+/* Container for the /papers page */
+.archiveContainer {
+  margin: 2em;
+}
+
 /* Code Snippet  */
 .snippet-container {
-  --snippet-background: rgb(246, 248, 250);
+  --snippet-background: #F7FAFC;
   background-color: var(--snippet-background);
   position: relative;
+  border-radius: 8px;
 }
 
 .snippet-container .tabs, .snippet-header {

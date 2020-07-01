@@ -23,13 +23,13 @@ OPTIONS:
 
 ## Prerequisites
 
-To install all the required dependencies, run the build script as described in [Clone and Build Libra Core](my-first-transaction.md#clone-and-build-libra-core). 
+To install all the required dependencies, run the build script as described in [Clone and Build Libra Core](my-first-transaction.md#clone-and-build-libra-core).
 
 > Ensure your command line is in the root directory of the cloned Libra GitHub repo.
 
 ## Run a local network
 
-<blockquote class="block_note">
+<blockquote className="block_note">
 
 **Note:** The local network of validator nodes will not be connected to the testnet; currently, it is not possible to connect the local validator network to the testnet.
 

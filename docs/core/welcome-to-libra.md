@@ -19,7 +19,7 @@ The goal of the Libra Blockchain is to serve as a foundation for financial servi
   <li>Able to scale to billions of accounts, which requires high transaction throughput, low latency, and an efficient, high-capacity storage system.</li>
   <li>Highly secure to ensure the safety of funds and financial data.</li>
   <li>Flexible, so that it can power future innovation in financial services.</li>
-</ul> 
+</ul>
 — <a href="https://libra.org/whitepaper">Libra White Paper</a>
 </blockquote>
 
@@ -31,7 +31,7 @@ The documentation discusses:
 - How to experiment with the prototype firsthand by [sending transactions](https://developers.libra.org/docs/my-first-transaction) to the testnet.
 - How to be part of the community built around this new payment system.
 
-<blockquote class="block_note">
+<blockquote className="block_note">
 Note: The Libra protocol and APIs are not final. One of the key tasks in evolving the prototype is formalizing the protocol and APIs. We welcome experimentation with the software on the testnet, but developers should expect that protocols and APIs may change. As part of our <a href="https://libra.org/en-US/blog/">regular communication</a>, we will publish our progress towards stable APIs. You can also stay up to date on the latest developments by signing up for our developer newsletter <a href="https://developers.libra.org/newsletter_form">here</a>
 </blockquote>
 
@@ -74,7 +74,7 @@ The Libra project welcomes a wide variety of developers, ranging from people who
 
 The Libra repository contains a command-line interface (CLI) for submitting transactions to the testnet. My First [Transaction](https://developers.libra.org/docs/my-first-transaction) guides you through executing your first transaction on the Libra Blockchain using the Libra CLI client. The CLI allows a participant to construct, sign, and submit transactions to a [validator node](https://developers.libra.org/docs/reference/glossary#validator-node). Similarly, it allows a participant to issue queries to the Libra Blockchain (through the validator node or a full node), request the status of a transaction or account, and verify the response.
 
-<blockquote class="block_note">
+<blockquote className="block_note">
 Note: While all developers are free to use the tesnet, mainnet will follow a phased rollout plan. Initially, the network will only be accessible to <a href="https://libra.org/white-paper/#lexicon">Designated Dealers</a> and <a href="https://libra.org/white-paper/#lexicon">Regulated Virtual Asset Service Providers (VASPs)</a> while the Association continues to develop its certification process for other VASPs and its compliance framework for <a href="https://libra.org/white-paper/#lexicon">Unhosted Wallets</a> based on the feedback received from regulators. The Association intends to make the network accessible to <a href="https://libra.org/white-paper/#lexicon">Certified VASPs</a> and Unhosted Wallets once the relevant compliance frameworks have been finalized. We know that due to our phased rollout plans, not all aspects of the Libra network will be available immediately to some developers, but we are excited to work with the community to drive the evolution of these features. For more details, click <a href="https://libra.org/white-paper/#compliance-and-the-prevention-of-illicit-activity">here</a>.
 </blockquote>
 
