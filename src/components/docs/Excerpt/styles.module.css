@@ -55,6 +55,7 @@
   }
 }
 
-html[data-theme="dark"] .root p {
+html[data-theme="dark"] .root {
   --text-color: var(--doc-primary);
+  background-color: #3C4357;
 }
