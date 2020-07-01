@@ -13,7 +13,9 @@ const Excerpt = ({children, image}) => {
           <img className={styles.image} src={useBaseUrl(image)} />
         </div>
         <div className={styles.text}>
-          {children}
+          <p>
+            {children}
+          </p>
         </div>
       </div>
     </div>

@@ -2,8 +2,9 @@
  * Copyright (c) The Libra Core Contributors
  * SPDX-License-Identifier: Apache-2.0
  */
+import React from 'react';
+import Layout from '@theme/Layout';
 
-const React = require('react');
 const papersLocation = '/docs/assets/papers';
 
 // Metadata on the paper versions. Whenever a new paper is added just add the
@@ -11,21 +12,21 @@ const papersLocation = '/docs/assets/papers';
 // TODO (joshua): Automate the list of papers by looking at the directories.
 const paperMeta = {
   'The Libra Blockchain': {
-    abstractUrl: '/docs/the-libra-blockchain-paper/',
+    abstractUrl: '/docs/core/the-libra-blockchain-paper/',
     paperBase: `${papersLocation}/the-libra-blockchain`,
     dates: ['2020-05-26', '2020-04-09', '2019-09-26', '2019-09-18', '2019-06-25'],
     imgLoc: '/docs/assets/illustrations/libra-blockchain-pdf.png',
     imgAlt: 'The Libra Blockchain PDF Download',
   },
   'Move Programming Language': {
-    abstractUrl: '/docs/move-paper/',
+    abstractUrl: '/docs/core/move-paper/',
     paperBase: `${papersLocation}/libra-move-a-language-with-programmable-resources`,
     dates: ['2020-05-26', '2020-04-09', '2019-09-26', '2019-06-18'],
     imgLoc: '/docs/assets/illustrations/move-language-pdf.png',
     imgAlt: 'Move: A Language With Programmable Resources PDF Download',
   },
   'State Machine Replication': {
-    abstractUrl: '/docs/state-machine-replication-paper/',
+    abstractUrl: '/docs/core/state-machine-replication-paper/',
     paperBase: `${papersLocation}/libra-consensus-state-machine-replication-in-the-libra-blockchain`,
     dates: [
       '2020-05-26',
@@ -78,13 +79,14 @@ function getPapers() {
   return paperSections;
 }
 
-function Papers(props) {
+export default props => {
   return (
-    <div>
-      <h1>Publication Archive</h1>
-      {getPapers()}
-    </div>
+    <Layout>
+      <div className="archiveContainer">
+        <h1>Publication Archive</h1>
+        {getPapers()}
+      </div>
+    </Layout>
   );
 }
 
-module.exports = Papers;

@@ -4,14 +4,14 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames';
 import styles from './styles.module.css';
 
-const BaseContainer = ({children, className, hasShadow, hasRoundedCorners, to, ...props}) => (
-  <a 
+const BaseContainer = ({children, className, hasShadow, hasRoundedCorners, to, target = '_self'}) => (
+  <a
     className={classnames(styles.root, className, {
       [styles.hasShadow]: hasShadow,
       [styles.hasRoundedCorners]: hasRoundedCorners,
-    })} 
+    })}
     href={to}
-    {...props}
+    target={target}
   >
     {children}
   </a>

@@ -9,13 +9,13 @@ import classnames from 'classnames';
 import styles from './styles.module.css';
 
 const ColorCard = ({ color, icon, overlay, title, to, type, ...props }) => (
-  <BaseContainer 
+  <BaseContainer
     className={classnames(styles.root, styles[color], {
       [styles.snippetTab]: type === 'snippetTab',
       [styles.withOverlay]: type === 'snippetTab' && overlay,
-    })} 
+    })}
     hasShadow={false}
-    tabIndex={type === 'snippetTab' && -1}
+    tabIndex={`"${type === 'snippetTab' && -1}"`}
     to={to}
     {...props}
   >
@@ -24,8 +24,8 @@ const ColorCard = ({ color, icon, overlay, title, to, type, ...props }) => (
         <span>{overlay}</span>
       </div>
     )}
-    <div 
-      className={styles.image} 
+    <div
+      className={styles.image}
       style={{ backgroundImage: `url('${useBaseUrl(icon)}')` }}
     />
     <span className={styles.title}>{title}</span>

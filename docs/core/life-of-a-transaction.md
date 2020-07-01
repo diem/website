@@ -44,13 +44,13 @@ In this section, we will describe the lifecycle of transaction T~5~, from being 
 
 Where relevant, and following a numbered step in the lifecycle, we have provided a link to the corresponding inter-component interactions of the validator node. After you are familiar with all the steps in the lifecycle of the transaction, you may want to refer to the information on the corresponding inter-component interactions for each step.
 
-<blockquote class="block_note">
+<blockquote className="block_note">
 
 **Note:** The arrows in all the graphics in this document originate on the component initiating an interaction/action and terminate on the component on which the action is being performed. The arrows **do not represent** data read, written, or returned.
 </blockquote>
 
 ![Figure 1.1 Lifecycle of a Transaction](/img/docs/validator-sequence.svg)
-<small class="figure">Figure 1.1 Lifecycle of a Transaction</small>
+<small className="figure">Figure 1.1 Lifecycle of a Transaction</small>
 
 ### Accepting the Transaction
 
@@ -111,7 +111,7 @@ At the end of each section, we provide the link to the corresponding "README" of
 ## Admission Control (AC)
 
 ![Figure 1.2 Admission Control](/img/docs/admission-control.svg)
-<small class="figure">Figure 1.2 Admission Control</small>
+<small className="figure">Figure 1.2 Admission Control</small>
 
 Admission Control is the _sole external interface_ of the validator. Any request made by a client to the validator goes to AC first.
 
@@ -140,7 +140,7 @@ For implementation details refer to the [Admission Control README](crates/admiss
 ## Virtual Machine (VM)
 
 ![Figure 1.3 Virtual Machine](/img/docs/virtual-machine.svg)
-<small class="figure">Figure 1.3 Virtual Machine</small>
+<small className="figure">Figure 1.3 Virtual Machine</small>
 
 The [Move virtual machine](move-overview.md) (VM) verifies and executes transaction scripts written in Move bytecode.
 
@@ -175,7 +175,7 @@ For implementation details refer to the [Virtual Machine README](crates/vm.md).
 ## Mempool
 
 ![Figure 1.4 Mempool](/img/docs/mempool.svg)
-<small class="figure">Figure 1.4 Mempool</small>
+<small className="figure">Figure 1.4 Mempool</small>
 
 Mempool is a shared buffer that holds the transactions that are “waiting” to be executed. When a new transaction is added to the mempool, the mempool shares this transaction with other validators in the system. To reduce network consumption in the “shared mempool,” each validator is responsible for delivering its own transactions to other validators. When a validator receives a transaction from the mempool of another validator, the transaction is added to the mempool of the recipient validator.
 
@@ -205,7 +205,7 @@ For implementation details refer to the [Mempool README](crates/mempool).
 ## Consensus
 
 ![Figure 1.5 Consensus](/img/docs/consensus.svg)
-<small class="figure">Figure 1.5 Consensus</small>
+<small className="figure">Figure 1.5 Consensus</small>
 
 The consensus component is responsible for ordering blocks of transactions and agreeing on the results of execution by participating in the [consensus protocol](#consensus-protocol) with other validators in the network.
 
@@ -234,7 +234,7 @@ For implementation details refer to the [Consensus README](crates/consensus.md).
 ## Execution
 
 ![Figure 1.6 Execution](/img/docs/execution.svg)
-<small class="figure">Figure 1.6 Execution</small>
+<small className="figure">Figure 1.6 Execution</small>
 
 Execution's job is to coordinate the execution of a block of transactions and maintain a transient state that can be voted upon by consensus.
 
@@ -264,7 +264,7 @@ For implementation details refer to the [Execution README](crates/execution).
 ## Storage
 
 ![Figure 1.7 Storage](/img/docs/storage.svg)
-<small class="figure">Figure 1.7 Storage</small>
+<small className="figure">Figure 1.7 Storage</small>
 
 The storage component persists agreed upon blocks of transactions and their execution results. A block/set of transactions (which includes transaction T~N~) will be saved via storage when:
 

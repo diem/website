@@ -2,7 +2,7 @@
 id: run-move-locally
 title: Run Move Programs Locally
 ---
-<blockquote class="block_note">
+<blockquote className="block_note">
 
 **Note:** Currently, you can run custom Move modules and scripts on a local network only, and not on the Libra testnet.
 </blockquote>
@@ -145,7 +145,7 @@ Upon successful execution of the `dev publish` command, the bytecode for `MyModu
 
 ### Create Transaction Script
 
-<blockquote class="block_note">
+<blockquote className="block_note">
 
 **Note**: You'll find samples of transaction scripts in the [libra/language/stdlib/transaction_scripts](https://github.com/libra/libra/tree/master/language/stdlib/transaction_scripts) directory.
 </blockquote>
@@ -190,7 +190,7 @@ Successfully compiled a program at:
 
 To execute your script, use the [dev execute](reference/libra-cli#dev-d-mdash-operations-related-to-move-transaction-scripts-and-modules) command on the bytecode output from [Compile Transaction Script](#compile-transaction-script) step above.
 
-<blockquote class="block_note">
+<blockquote className="block_note">
 
 **Note:** The exact set of arguments passed to the `dev execute` command will depend on the parameters a particular script expects.
 </blockquote>
