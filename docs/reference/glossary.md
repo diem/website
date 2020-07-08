@@ -27,13 +27,11 @@ sidebar_label: Terminology
 
 - The address of a Libra payment system account is a 16-byte value. Users can claim addresses using digital signatures. The account address is derived from a cryptographic hash of a user’s public verification key concatenated with a signature scheme identifier byte. The Libra payment system supports two signature schemes: Ed25519 (for single-signature transactions) and MultiEd25519 (for multi-signature transactions). To sign a transaction sent from an account address, the user, or the custodial client representing the user, must use the private key that corresponds to that account.
 
-### Admission Control (AC)
+### Client Service (CS)
 
-- In Libra Core, **admission control** is the sole external interface to the validator. Any incoming request (transaction submission or queries) from a client goes through admission control. A client does not have the ability to access the storage, or any other component in the system, without going through AC. This filters requests and protects the system.
+- The Client Service component is the external interface of a Libra node. Any incoming client request, such as submitted transactions or queries, must first go through the Client Service. A client needs to go through the Client Service component to access storage or any other component in the system. This filters requests and protects the system.
+- Whenever a client submits a new transaction, the Client Service passes it to [mempool](#mempool).
 
-- AC is a validator's entry point for all client interactions. It performs basic validity checks on a submitted transaction. After completing validity checks, it passes the transaction to [mempool](#mempool).
-
-- A client will use AC for submitting transactions and performing queries (reads).
 
 ### Authentication Key
 
@@ -77,7 +75,7 @@ sidebar_label: Terminology
 
 A **client** is a piece of software that has the capability to interact with the Libra Blockchain.
 
-- It can allow the user to construct, sign, and submit new transactions to the admission control component of a validator node.
+- It can allow the user to construct, sign, and submit new transactions to the client service component of a validator node.
 - It can issue queries to the Libra Blockchain and request the status of a transaction or account.
 - A client can be run by the end user or on behalf of the end user (for example, for a custodial wallet).
 
@@ -230,8 +228,8 @@ then there is a guarantee that T_N will never be included in the blockchain.
 
 ### Mempool
 
-- **Mempool** is one of the components of the validator node. It holds an in-memory buffer of transactions that have been submitted but not yet agreed upon and executed. Mempool receives transactions from [admission control](#admission-control).
-- Transactions in the mempool of a validator are added from the admission control (AC) of the current validator and from the mempool of other validators.
+- **Mempool** is one of the components of the validator node. It holds an in-memory buffer of transactions that have been submitted but not yet agreed upon and executed. Mempool receives transactions from [client service](#client-service).
+- Transactions in the mempool of a validator are added from the client service of the current node and from the mempool of other validators.
 - When the current validator is the leader, its consensus pulls the transactions from its mempool and proposes the order of the transactions that form a block. The validator quorum then votes on the proposal.
 
 ### Merkle Trees
