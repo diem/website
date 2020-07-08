@@ -1,0 +1,36 @@
+{
+  "name": "Libra-Documentation",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "docusaurus start",
+    "start-with-ada": "TEST_ADA=1 docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^2.0.0-alpha.53",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.53",
+    "@svgr/webpack": "^5.4.0",
+    "classnames": "^2.2.6",
+    "libra-docusaurus-components": "^0.1.4",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "react-axe": "^3.4.1"
+  }
+}

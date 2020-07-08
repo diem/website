@@ -1,0 +1,19 @@
+@value large-tablet-breakpoint-query from '~libra-docusaurus-components/src/variables.module.css';
+
+.root {
+  --horizontal-spacing: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.root > * {
+  margin-right: var(--horizontal-spacing);
+  margin-bottom: 15px;
+}
+
+@media large-tablet-breakpoint-query {
+  .root {
+    /* Account for the margin of the final card on a line */
+    width: calc(100% + calc( var(--horizontal-spacing) * 2 ));
+  }
+}

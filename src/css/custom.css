@@ -1,0 +1,125 @@
+html {
+  --snippet-header-height: 36px;
+}
+
+body a:hover {
+  color: inherit;
+}
+
+.prism-code > * {
+  /*
+   * Prevents code block from overflowing on extremely
+   * long words
+   */
+  word-break: break-all;
+}
+
+.prism-code > div {
+  width: 0;
+}
+
+/* Container for the /papers page */
+.archiveContainer {
+  margin: 2em;
+}
+
+/* Code Snippet  */
+.snippet-container {
+  --snippet-background: #F7FAFC;
+  background-color: var(--snippet-background);
+  position: relative;
+  border-radius: 8px;
+}
+
+.snippet-container .tabs, .snippet-header {
+  background-color: var(--snippet-header-background);
+  border-top-left-radius: var(--ifm-global-radius);
+  border-top-right-radius: var(--ifm-global-radius);
+  flex-wrap: wrap;
+  height: var(--snippet-header-height);
+}
+
+.snippet-container > div:last-child {
+  padding-right: 10px;
+}
+
+.single-wrapper {
+  height: 100%;
+}
+
+.snippet-container .tab-item {
+  border: 0px !important;
+  font-family: NB International Pro Bold;
+  font-size: 12px;
+  outline: none;
+  padding: 8px;
+}
+
+.snippet-container .tab-item:hover,
+.snippet-container .tab-item:focus {
+  background-color: inherit;
+}
+
+.snippet-container .tab-item:first-child {
+  padding-left: 15px;
+}
+
+.snippet-container div {
+  position: initial;
+}
+
+.snippet-container div[role="tabpanel"] {
+  margin: 0 !important;
+}
+
+.snippet-container .prism-code {
+  margin-top: calc( var(--snippet-header-height) * -1 );
+  padding-top: var(--snippet-header-height);
+}
+
+.snippet-container button {
+  background-color: transparent;
+  background-image: var(--copy-snippet-url);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 12px;
+  opacity: 1;
+  padding-right: 20px;
+  visibility: visible;
+}
+
+.snippet-container button,
+.snippet-container .learn-more {
+  color: var(--copy-snippet-color);
+  font-size: 10px;
+  line-height: var(--snippet-header-height);
+  padding-top: 0;
+  padding-bottom: 0;
+  top: 0;
+}
+
+.snippet-container .learn-more {
+  position: absolute;
+  right: 69px;
+  text-decoration: none;
+}
+
+.snippet-container .prism-code {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.snippet-container {
+  --copy-snippet-url: url('/img/copy.svg');
+  --copy-snippet-color: #6B7689;
+}
+
+.token-line {
+  white-space: break-spaces !important;
+}
+
+html[data-theme='dark'] .snippet-container {
+  --copy-snippet-url: url('/img/copy-dark.svg');
+  --copy-snippet-color: white;
+  --snippet-background: rgb(41, 45, 62);
+}
