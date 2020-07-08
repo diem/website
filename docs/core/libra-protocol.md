@@ -89,15 +89,16 @@ Clients of the Libra Blockchain create transactions and submit them to a validat
 
 A validator node contains the following logical components:
 
-**Admission Control (AC)**
+**Client Service**
 
-- Admission Control is the sole external interface of the validator node. Any request made by a client to the validator node goes to AC first.
-- AC performs initial checks on the requests to protect the other parts of the validator node from corrupt or high volume input.
+The Client Service is the external interface of the Libra node. When a client makes a request to the Libra node, it goes to the Client Service first. 
 
 **Mempool**
 
 - Mempool is a buffer that holds the transactions that are “waiting” to be executed.
-- When a new transaction is added to a validator node’s mempool, this validator node’s mempool shares this transaction with the mempools of other validators in the system.
+- Mempool performs initial checks on the requests to protect the other parts of the Libra node from corrupt or high volume input.
+- When a new transaction is added to a Libra node’s mempool, this node shares the transaction with the mempools of other validators in the system.
+
 
 **Consensus**
 
@@ -106,12 +107,12 @@ A validator node contains the following logical components:
 **Execution**
 
 - The execution component utilizes the virtual machine (VM) to execute transactions.
-- Execution’s job is to coordinate the execution of a block of transactions and maintain a transient state that can be voted upon by consensus.
+- This component's job is to coordinate the execution of a block of transactions and maintain a transient state that can be voted upon by consensus.
 - Execution maintains an in-memory representation of the results of execution until consensus commits the block to the distributed database.
 
 **Virtual Machine (VM)**
 
-- AC and Mempool use the VM component to perform validation checks on transactions.
+- Mempool uses the VM component to perform validation checks on transactions.
 - VM is used to run the program included in a transaction and determine the results.
 
 **Storage**
