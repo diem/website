@@ -5,9 +5,9 @@ title: Life of a Transaction
 
 _**Note to readers:** This information was published before the Association released White Paper v2.0, which includes a number of key updates to the Libra payment system. This information has not been modified to incorporate those updates and should be read in that context._
 
-To get a deeper understanding of the lifecycle of a Libra transaction, we will follow a transaction on its journey from being submitted to a Libra validator to being committed to the Libra Blockchain. We will then “zoom-in” on each logical component of a validator and take a look at its interactions with other components.
+To get a deeper understanding of the lifecycle of a Libra transaction, we will follow a transaction on its journey from being submitted to a Libra node to being committed to the Libra Blockchain. We will then “zoom-in” on each logical component of a validator and take a look at its interactions with other components.
 
-## Client Submits a Transaction
+## Client submits a transaction
 
 A Libra **client constructs a raw transaction** (let us call it T~5~raw) to transfer 10 LBR from Alice’s account to Bob’s account. The raw transaction includes the following fields. Each field is linked to its glossary definition.
 
@@ -35,10 +35,10 @@ To describe the lifecycle of transaction T~5~, we will assume that:
 * Alice's account has 110 LBR.
 * The current [sequence number](reference/glossary.md#sequence-number) of Alice's account is 5 (which indicates that 5 transactions have already been sent from Alice's account).
 * There are a total of 100 validators &mdash; V~1~ to V~100~ on the network.
-* The client submits transaction T~5~ to validator V~1~
+* The client submits transaction T~5~ to Libra node LN~1~
 * **Validator V~1~ is a proposer/leader for the current round.**
 
-## Lifecycle of the Transaction
+## Lifecycle of the transaction
 
 In this section, we will describe the lifecycle of transaction T~5~, from being submitted by the client to being committed to the Libra Blockchain.
 
@@ -52,27 +52,28 @@ Where relevant, and following a numbered step in the lifecycle, we have provided
 ![Figure 1.1 Lifecycle of a Transaction](/img/docs/validator-sequence.svg)
 <small className="figure">Figure 1.1 Lifecycle of a Transaction</small>
 
-### Accepting the Transaction
+### Accepting the transaction
 
-**1** &mdash; The client submits transaction T~5~ to validator V~1~ whose admission control (AC) component receives the transaction. (Client → AC [AC.1](#client-ac-ac1))
+**1** &mdash; The client submits transaction T~5~ to Libra node LN1 through the client service (Client → Client service)
 
-**2** &mdash; AC will use the virtual machine (VM) component to perform validation checks, such as signature verification, checking that Alice's account has sufficient balance, checking that transaction T~5~ is not being replayed, etc. (AC → VM [AC.2](#ac-vm-ac2), [VM.1](#ac-vm-vm1))
+**2** &mdash; Client service transmits transaction T5 to LN1's mempool (client service → Mempool CS.2, MP.1)
 
-**3** &mdash; When T~5~ passes the validation checks, AC sends T~5~ to V~1~'s mempool. (AC → Mempool [AC.3](#ac-mempool-ac3), [MP.1](#ac-mempool-mp1))
+**3** &mdash; Mempool will use the virtual machine (VM) component to perform validation checks, such as signature verification, checking that Alice's account has sufficient balance, checking that transaction T5 is not being replayed, and so on. (Mempool → VM)
 
-### Sharing the Transaction With Other Validators
+
+### Sharing the transaction with other nodes
 
 **4** &mdash; The mempool will hold T~5~ in an in-memory buffer. Mempool may already contain multiple transactions sent from Alice's address.
 
 **5** &mdash; Using the shared-mempool protocol, V~1~ will share the transactions (including T~5~) in its mempool with other validators (V~2~ to V~100~) and place transactions received from the other validators into its own mempool. (Mempool → Other Validators [MP.2](#mempool-other-validators-mp2))
 
-### Proposing the Block
+### Proposing the block
 
 **6** &mdash; As validator V~1~ is a proposer/leader, it will pull a block of transactions from its mempool and replicate this block as a proposal to other validators via its consensus component. (Consensus → Mempool [MP.3](#consensus-mempool-mp3), [CO.1](#consensus-mempool-co1))
 
 **7** &mdash; The consensus component of V~1~ is responsible for coordinating agreement among all validators on the order of transactions in the proposed block. (Consensus → Other Validators [CO.2](#consensus-other-validators-co2)). Refer to our technical paper [State Machine Replication in the Libra Blockchain](state-machine-replication-paper.md) for details of our proposed consensus protocol LibraBFT.
 
-### Executing the Block and Reaching Consensus
+### Executing the block and reaching consensus
 
 **8** &mdash; As part of reaching agreement, the block of transactions (containing T~5~) is passed to the execution component. (Consensus → Execution [CO.3](#consensus-execution-consensus-other-validators-co3), [EX.1](#consensus-execution-ex1))
 
@@ -82,13 +83,13 @@ Where relevant, and following a numbered step in the lifecycle, we have provided
 
 **11** &mdash; V~1~ (the consensus leader) attempts to reach consensus on the block's execution result with other validators participating in the consensus. (Consensus → Other Validators [CO.3](#consensus-execution-consensus-other-validators-co3))
 
-### Committing the Block
+### Committing the block
 
 **12** &mdash; If the block's execution result is agreed upon and signed by a set of validators that have the super-majority of votes, validator V~1~'s execution component reads the result of the block execution from the speculative execution cache and commits all the transactions in the block to persistent storage. (Consensus → Execution [CO.4](#consensus-execution-co4), [EX.3](#consensus-execution-ex3)), (Execution → Storage [EX.4](#execution-storage-ex4), [ST.3](#execution-storage-st3))
 
 **13** &mdash; Alice's account will now have 100 LBR, and its sequence number will be 6. If T~5~ is replayed by Bob, it will be rejected as the sequence number of Alice's account (6) is greater than the sequence number of the replayed transaction (5).
 
-## Validator Component Interactions
+## Validator component interactions
 
 In the [previous section](#lifecycle-of-the-transaction), we described the typical lifecycle of a sample transaction from being submitted to being committed to the blockchain's distributed database. Now let's look in more depth at the inter-component interactions of a validator as the validator processes transactions and responds to queries. This information will be most useful to those who:
 
@@ -99,7 +100,7 @@ For our narrative, we will assume that a client submits a  transaction T~N~ to a
 
  Let us look at the core logical components of a validator node:
 
-* [Admission Control](#admission-control-ac)
+* [Client Service](#admission-control-ac)
 * [Mempool](#mempool)
 * [Consensus](#consensus)
 * [Execution](#execution)
@@ -108,28 +109,23 @@ For our narrative, we will assume that a client submits a  transaction T~N~ to a
 
 At the end of each section, we provide the link to the corresponding "README" of [Libra Core](libra-core-overview.md).
 
-## Admission Control (AC)
+## Client Service (AC)
 
 ![Figure 1.2 Admission Control](/img/docs/admission-control.svg)
-<small className="figure">Figure 1.2 Admission Control</small>
+<small className="figure">Figure 1.2 Client Service</small>
 
-Admission Control is the _sole external interface_ of the validator. Any request made by a client to the validator goes to AC first.
+Client Service is the _sole external interface_ of the validator. Any request made by a client to the validator goes to CS first.
 
-### Client → AC (AC.1)
+### Client → CS (CS.1)
 
 A client submits a  transaction to the admission control of a validator V~X~. This is done via:
 `AC::SubmitTransaction()`.
 
-### AC → VM (AC.2)
-
-Admission control accesses the virtual machine (VM) of the validator to perform preliminary checks on the transaction in order to reject malformed transactions early. This is done via:
- [`VM::ValidateTransaction()`](#virtual-machine-b).
-
-### AC → Mempool (AC.3)
+### CS → Mempool (CS.2)
 
 Once `VM::ValidateTransaction()` returns without errors, AC forwards the transaction to validator V~X~'s mempool via `Mempool::AddTransactionWithValidation().` The mempool for validator V~X~ will accept the transaction T~N~ from the AC only if the sequence number of T~N~ is greater than or equal to the current sequence number of the sender's account (note that the transaction will not be passed to consensus until it is the next sequence number).
 
-### AC → Storage (AC.4)
+### CS → Storage (CS.3)
 
 When the client performs a read query on the Libra Blockchain (for example, to get the balance of Alice's account), AC interacts with the storage component directly to obtain the requested information.
 
@@ -144,13 +140,9 @@ For implementation details refer to the [Admission Control README](crates/admiss
 
 The [Move virtual machine](move-overview.md) (VM) verifies and executes transaction scripts written in Move bytecode.
 
-### AC → VM (VM.1)
+### VM → Storage (VM.1)
 
-When admission control of validator V~X~ receives a transaction from a client, it invokes `VM::ValidateTransaction()` on the VM to validate the transaction.
-
-### VM → Storage (VM.2)
-
-When AC or mempool request the VM to validate a transaction via `VM::ValidateTransaction()`, the VM loads the transaction sender's account from storage and performs the following verifications:
+When mempool requests the VM to validate a transaction via `VM::ValidateTransaction()`, the VM loads the transaction sender's account from storage and performs the following verifications:
 
 * Checks that the input signature on the signed transaction is correct (to reject incorrectly signed transactions).
 * Checks that the sender's account authentication key is the same as the hash of the public key (corresponding to the private key used to sign the transaction).
@@ -158,15 +150,15 @@ When AC or mempool request the VM to validate a transaction via `VM::ValidateTra
 * Verifies that the program in the signed transaction is not malformed, as a malformed program cannot be executed by the VM.
 * Verifies that there is sufficient balance in the sender's account to support the max gas amount specified in the transaction, which ensures that the transaction can pay for the resources it uses.
 
-### Execution → VM (VM.3)
+### Execution → VM (VM.2)
 
 The execution component utilizes the VM to execute a transaction via `VM::ExecuteTransaction()`.
 
 It is important to understand that executing a transaction is different from updating the state of the ledger and persisting the results in storage. A transaction T~N~ is first executed as part of an attempt to reach agreement on blocks during consensus. If agreement is reached with the other validators on the ordering of transactions and their execution results, the results are persisted in storage and the state of the ledger is updated.
 
-### Mempool → VM (VM.4)
+### Mempool → VM (VM.3)
 
-When mempool receives a transaction from other validators via shared mempool, mempool invokes [`VM::ValidateTransaction()`](#action-b-1) on the VM to validate the transaction.
+When mempool receives a transaction from other validators via shared mempool or from the CS, mempool invokes [`VM::ValidateTransaction()`](#action-b-1) on the VM to validate the transaction.
 
 ### VM README
 
@@ -179,20 +171,20 @@ For implementation details refer to the [Virtual Machine README](crates/vm.md).
 
 Mempool is a shared buffer that holds the transactions that are “waiting” to be executed. When a new transaction is added to the mempool, the mempool shares this transaction with other validators in the system. To reduce network consumption in the “shared mempool,” each validator is responsible for delivering its own transactions to other validators. When a validator receives a transaction from the mempool of another validator, the transaction is added to the mempool of the recipient validator.
 
-### AC → Mempool (MP.1)
+### CS → Mempool (MP.1)
 
-* After performing initial validation checks, a validator's AC sends the transaction to the validator’s mempool.
-* The mempool for validator V~X~ accepts transaction T~N~ for the sender's account only if the sequence number of T~N~ is greater than or equal to the current sequence number of the sender's account.
+* After receiving a transaction from the client, the CS proxies the transaction to the node’s mempool.
+* The mempool for node N~X~ accepts transaction T~N~ for the sender's account only if the sequence number of T~N~ is greater than or equal to the current sequence number of the sender's account.
 
-### Mempool → Other Validators (MP.2)
+### Mempool → Other nodes (MP.2)
 
-* The mempool of validator V~X~ shares transaction T~N~ with the other validators on the same network.
-* Other validators share the transactions in their mempool with V~X~’s mempool.
+* The mempool of node N~X~ shares transaction T~N~ with the other validators on the same network.
+* Other validators share the transactions in their mempool with N~X~’s mempool.
 
 ### Consensus → Mempool (MP.3)
 
-* When validator V~X~ becomes the leader, its consensus will pull a block of transactions from its mempool and replicate the block to other validators. It does this to arrive at a consensus on the ordering of transactions and the execution results of the transactions in the block.
-* Note that just because a transaction T~N~ was included in a consensus block, it does not guarantee that T~N~ will eventually be persisted in the distributed database of the blockchain.
+* If a given node is a validator, then once it becomes the leader, its consensus will pull a block of transactions from its mempool and replicate the block to other validators. It does this to arrive at a consensus on the ordering of transactions and the execution results of the transactions in the block.
+* Note that just because a transaction T~N~ was included in a consensus block, it does not guarantee that T~N~ will eventually be persisted in the distributed database of the Libra Blockchain.
 
 ### Mempool → VM (MP.4)
 
@@ -290,7 +282,7 @@ When consensus calls `Execution::ExecuteBlock()`, execution reads the current st
 * When the storage is updated, the sequence numbers of all resources modified by each transaction are updated accordingly.
 * Note: The sequence number of an account on the Libra Blockchain increments by one for each committed transaction originating from that account.
 
-### AC → Storage (ST.4)
+### CS → Storage (ST.4)
 
 For client queries that read information from the blockchain, AC directly interacts with storage to read the requested information.
 
