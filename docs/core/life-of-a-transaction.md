@@ -284,7 +284,7 @@ When consensus calls `Execution::ExecuteBlock()`, execution reads the current st
 
 ### CS → Storage (ST.4)
 
-For client queries that read information from the blockchain, AC directly interacts with storage to read the requested information.
+For client queries that read information from the blockchain, CS directly interacts with storage to read the requested information.
 
 ### Storage README
 
