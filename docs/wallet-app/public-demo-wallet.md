@@ -1,7 +1,7 @@
 ---
-id: test-reference-wallet-w
-title: 'Test the Libra Reference Wallet (web)'
-sidebar_label: Test the Wallet (web)
+id: public-demo-wallet
+title: 'Try the Public Demo Wallet (web)'
+sidebar_label: Try the Demo Wallet
 
 
 ---
@@ -10,7 +10,7 @@ sidebar_label: Test the Wallet (web)
 
 ## Overview
 
-The Libra Reference Wallet web UI is a web wallet interface provided as a centralized (custodial) service to consumers. It is meant to run as a public, online demo service. The wallet demos the following use cases:
+The demo wallet has been made available to allow developers to try out a wallet running on the testnet. It is meant to run as a public, online demo service. The wallet demonstrates the following use cases:
 
 * Sending Libra Coins to another Libra wallet address.
 * Receiving Libra Coins from another Libra wallet address.
@@ -19,82 +19,37 @@ The Libra Reference Wallet web UI is a web wallet interface provided as a centra
 * Viewing transaction history.
 * Basic risk management and AML compliance flows.
 
-The main purpose is to demonstrate common use cases when working with Libra currencies and show options for further development. To illustrate key Libra wallet concepts, we’ve simplified the implementation and avoided some of the complexities of real world, production-grade financial software.
+The main purpose is to demonstrate common use cases when working with Libra Coins. To illustrate key Libra wallet concepts, we’ve simplified the implementation and avoided some of the complexities of real world, production-grade financial software.
 
-**Note:** *This code is to be used as a reference only; never use this code in production!* 
-
-### Solutions stack
-
-The Libra Reference Wallet web UI has been developed using the following tools:
-
-|                                 |                        |
-| ------------------------------- | ---------------------- |
-| Programming languages           | TypeScript, HTML, Sass |
-| Package manager                 | Yarn                   |
-| UI framework                    | React                  |
-| Components and layout framework | Bootstrap              |
-| Testing framework               | Jest                   |
-| HTTP client                     | Axios                  |
-
-
-
-### Assumptions
-
-The Libra Reference Wallet implementation makes several assumptions to simplify the system and to help developers engage with Libra development. 
-
-#### Simplified authentication model
-We are using simplified authentication and authorization mechanisms. Users are authenticated using an email and password. When a user logs in successfully, a bearer token is issued for the user by the backend server and stored in the tokens table.
-
-The client is expected to pass the allocated token in the header of each request, as per the Bearer token authorization specification (RFC 6750). Any request presenting the token is fully authorized to access associated resources, without demonstrating any right for the token possession. In addition, it is the client’s responsibility to refresh the token frequently enough, before the token expires (usually refreshed upon page transitions, posting data, and so on).
-
-#### Simulated user email verification
-We’ve simulated the email verification process by returning the verification URL to the client directly upon the completion of the sign-up phase (instead of sending it to the registered email). The client automatically navigates to the address as if the user clicked it in an email verification message.
-
-#### Simplified user data management
-This is a public, online demo service. For this reason, the implementation avoids storing any sensitive data. Any user data provided should be fake. 
-
-**Note:** *Never enter sensitive information into the wallet!*
-
-
-#### Pre-populated forms
-The Libra Reference Wallet also allows automatic form population using fake data. For the user's convenience, clicking the “Fill Sherlock Holmes information” button during registration populates all the fields with the personal information of the fictional detective.
+**Note:** *The wallet uses simulated user information.* 
 
 
 
 ### User flows
 
-The image below details the different user flows for the Reference Wallet.
-![img](https://lh6.googleusercontent.com/8KVWo4NvwSXPsapaSAgW8W3o7sUkAp28ZkQfEcabSHseO9oAtapZDU3vk81eJ-XB5BtZ1nmMLiKfZGtV_3bc09JLXn_1M9pHHzKD3cfg9F-VjALv360FLdyFeGW1HsR5KQPlvJRc)
+The image below details the different user flows for the Demo Wallet.
 
 
 
-### Demo
+### Use the Demo Wallet
 
-Check out the embedded demo of the Web version of the reference wallet hosted at https://demo-wallet.libra.org.
-
-
-
-### Development
-
-You can read further technical documentation in the [Libra Reference Wallet git repository](https://github.com/libra/libra-reference-wallet). All web UI resources can be found [here](https://github.com/libra/libra-reference-wallet/tree/master/frontend). 
+Check out the embedded demo of the Web version of the reference wallet hosted at [https://demo-wallet.libra.org](https://demo-wallet.libra.org). 
 
 
 
+### Create your account and login
 
-
-## Test login and authentication
-
-
+Since this is a demo, login and authentication is simulated using auto generated fake user data. 
 
 ##### Register and sign up
 
-New users who want to use the wallet need to register with the service. The registration process:
+New users who want to use the Public Demo Wallet go through a simulated registration process. The registration process simulates the following steps:
 
 * Protects the user’s personal information.
-* Assesses risks involved in maintaining a business relationship with the user.
-* Complies with KYC guidelines and AML regulations as required by law.
+* Assessment of the risks involved in maintaining a business relationship with the user.
+* Compliance with KYC guidelines and AML regulations as required by law.
 
-During registration, the user is asked to provide information required for proper identity verification and account security. The registration process collects this information in multiple steps:
+During registration, the user of the demo is presented with the screen shots and process flows that simulate a user asked to provide the information that would be required for proper identity verification and account security. The simulated registration process collects this information in multiple steps:
 
 1. Login credentials, including a strong and unique password.
 2. Personal details, including name, date of birth, and phone number.
@@ -102,18 +57,18 @@ During registration, the user is asked to provide information required for prope
 4. Photograph of an officially recognized identification document (e.g., a passport or driver’s license, as defined by the local jurisdiction).
 5. The base currency used for presentation of the conversion rates.
 
-The account verification begins once the user completes registration. The user won’t be able to access the wallet until their account is verified.
+As noted above, all login details for the Libra Reference Wallet Demo will be fake credentials for “Sherlock Holmes”. The account verification begins once the user completes the registration demo. The user won’t be able to access the wallet until they have gone through the simulated account verification process.
 
-   **Note:** *Account verification demos the expected behavior of a hypothetical wallet. For the Libra Reference Wallet, the verification succeeds automatically and the “pending” state is presented briefly to the user for demo purposes only. In addition, the identification document is always accepted and is not analysed or stored by the backend. Real-world user verification and risk management are beyond the scope of the reference wallet and contain many opportunities for further development.* 
+**Note:** *Account verification demos the expected behavior of a hypothetical wallet. For the Libra Reference Wallet, the verification succeeds automatically and the “pending” state is presented briefly to the user for demo purposes only. In addition, the identification document is always accepted and is not analysed or stored by the backend. Real-world user verification and risk management are beyond the scope of the reference wallet and contain many opportunities for further development.* 
 
 Read more about the user verification [in the Risk section](#risk).
 
 ##### Sign in
-The wallet web UI is fully accessible only for authenticated users. When a user accesses the wallet website, the login page is the first page presented to the user. This is where the user is authenticated using their email id and password.
+The Public Demo Wallet is only accessible to authenticated users. When a user accesses the wallet website, the login page is the first page presented to the user. This is where the user is authenticated using the auto generated username and password.
 
 Upon login, if a user is presented with a “Verification Pending” page, it means that the authentication has been successful but the user verification process is still underway.
 
-The password can be reset using the “Forgot Password” link. Alternatively, if the user is not yet registered, they can proceed to register by activating the “Sign up” link on the page. 
+The password can be reset using the “Forgot Password” link. Alternatively, if the user is not yet registered, they can proceed to register by activating the “Sign up” link on the page.
 
 
 ##### Sign out
@@ -156,7 +111,7 @@ The supported payment methods are:
 * Credit cards
 * Bank accounts
 
-In addition, the page shows the email address of the active user. It is not possible to change the user’s email address.![img](https://lh6.googleusercontent.com/4guvmPYuIGV8M7Eux5FwDjn-NIWvFScKQ5zaKwcfF5hVp_M7MEjLH74jgW7iR3RAprBF9e0z9-7dBNUWtTEqaw-gRfGAX_VxE-L2CKj6mnQ5MOP4r8_x5BBANqNdagGTYYLgoHTw) *Note: The payment methods are for demonstration purposes only. The supplied information is not validated, and no real transactions are made using the configured credit cards and bank accounts.* 
+In addition, the page shows the simulated username of the fictional active user. It is not possible to change the user’s username.![img](https://lh6.googleusercontent.com/4guvmPYuIGV8M7Eux5FwDjn-NIWvFScKQ5zaKwcfF5hVp_M7MEjLH74jgW7iR3RAprBF9e0z9-7dBNUWtTEqaw-gRfGAX_VxE-L2CKj6mnQ5MOP4r8_x5BBANqNdagGTYYLgoHTw) *Note: The payment methods are for demonstration purposes only. The supplied information is not validated, and no real transactions are made using the configured credit cards and bank accounts.* 
 
 
 
@@ -166,7 +121,7 @@ To change the wallet UI language, enter the Settings page and choose the desired
 
 #### View transactions list
 
-Choosing a specific Libra currency on the home page shows all the wallet transactions for that currency in descending order. Transactions may be internal, within the wallet’s network (e.g., Libra deposit from a credit card), or external on the Libra Blockchain (e.g., Libra transfer to some external Libra address).
+Choosing a specific Libra Coin currency on the home page shows all the wallet transactions for that currency in descending order. Transactions may be internal (i.e., off-chain), within the wallet’s network (e.g., Libra deposit from a credit card), or external (i.e., on-chain) on the Libra Blockchain (e.g., Libra transfer to some external Libra address).
 
 ![img](https://lh3.googleusercontent.com/w7v61PMguxpmZcjGO97pXo427r7ThfQObt2nWU58JyA9dFCO0WmCM5oj6LCb2MPX4VI1zgRtQLm8yOEneOkrHDhbHdigQfgFMt1iBeCKpRjCQsjW6ShmpL47H89BiVXl-z8Hv32Z)
 
@@ -197,9 +152,9 @@ Each transaction consists of:
 
 #### Deposit and withdraw Libra Coins
 
-Users can deposit and withdraw Libra currencies to and from the Libra Reference Wallet.
+Users can deposit and withdraw Libra Coins to and from the Public Demo Web Wallet. 
 
-When a user deposits a Libra currency amount, the wallet simulates a purchase of Libra Coins using the user's credit card or bank account wire transfer. 
+When a user deposits a Libra Coin currency amount, the Public Demo Web Wallet simulates a purchase of Libra Coins using the user's credit card or bank account wire transfer.
 
 *Note: For your safety and security, never use real credit card or bank account details.* 
 
