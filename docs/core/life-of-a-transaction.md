@@ -9,7 +9,7 @@ To get a deeper understanding of the lifecycle of a Libra transaction, we will f
 
 ## Client submits a transaction
 
-A Libra **client constructs a raw transaction** (let us call it T~5~raw) to transfer 10 LBR from Alice’s account to Bob’s account. The raw transaction includes the following fields. Each field is linked to its glossary definition.
+A Libra **client constructs a raw transaction** (let us call it T~5~raw) to transfer 10 Libra Coins from Alice’s account to Bob’s account. The raw transaction includes the following fields. Each field is linked to its glossary definition.
 
 * Alice's [account address](reference/glossary.md#account-address).
 * A program that indicates the actions to be performed on Alice's behalf. It contains:
@@ -32,9 +32,9 @@ The **client signs transaction** T~5~raw with Alice's private key. The signed tr
 To describe the lifecycle of transaction T~5~, we will assume that:
 
 * Alice and Bob have [accounts](reference/glossary.md#accounts) on the Libra Blockchain.
-* Alice's account has 110 LBR.
+* Alice's account has 110 Libra Coins.
 * The current [sequence number](reference/glossary.md#sequence-number) of Alice's account is 5 (which indicates that 5 transactions have already been sent from Alice's account).
-* There are a total of 100 validators &mdash; V~1~ to V~100~ on the network.
+* There are a total of 100 validator nodes &mdash; V~1~ to V~100~ on the network.
 * The client submits transaction T~5~ to Libra node LN~1~
 * **Validator V~1~ is a proposer/leader for the current round.**
 
@@ -65,7 +65,7 @@ Where relevant, and following a numbered step in the lifecycle, we have provided
 
 **4** &mdash; The mempool will hold T~5~ in an in-memory buffer. Mempool may already contain multiple transactions sent from Alice's address.
 
-**5** &mdash; Using the shared-mempool protocol, V~1~ will share the transactions (including T~5~) in its mempool with other validators (V~2~ to V~100~) and place transactions received from the other validators into its own mempool. (Mempool → Other Validators [MP.2](#mempool-other-validators-mp2))
+**5** &mdash; Using the shared-mempool protocol, V~1~ will share the transactions (including T~5~) in its mempool with other validator nodes (V~2~ to V~100~) and place transactions received from the other validator nodes into its own mempool. (Mempool → Other Validators [MP.2](#mempool-other-validators-mp2))
 
 ### Proposing the block
 
@@ -123,7 +123,7 @@ A client submits a  transaction to the admission control of a validator V~X~. Th
 
 ### CS → Mempool (CS.2)
 
-Once `VM::ValidateTransaction()` returns without errors, AC forwards the transaction to validator V~X~'s mempool via `Mempool::AddTransactionWithValidation().` The mempool for validator V~X~ will accept the transaction T~N~ from the AC only if the sequence number of T~N~ is greater than or equal to the current sequence number of the sender's account (note that the transaction will not be passed to consensus until it is the next sequence number).
+CS forwards the transaction to Libra node LN~X~'s mempool. The mempool will accept the transaction T~N~ only if the sequence number of T~N~ is greater than or equal to the current sequence number of the sender's account (note that the transaction will not be passed to consensus until it is the next sequence number).
 
 ### CS → Storage (CS.3)
 
@@ -174,12 +174,12 @@ Mempool is a shared buffer that holds the transactions that are “waiting” to
 ### CS → Mempool (MP.1)
 
 * After receiving a transaction from the client, the CS proxies the transaction to the node’s mempool.
-* The mempool for node N~X~ accepts transaction T~N~ for the sender's account only if the sequence number of T~N~ is greater than or equal to the current sequence number of the sender's account.
+* The mempool for Libra node LN~X~ accepts transaction T~N~ for the sender's account only if the sequence number of T~N~ is greater than or equal to the current sequence number of the sender's account.
 
 ### Mempool → Other nodes (MP.2)
 
-* The mempool of node N~X~ shares transaction T~N~ with the other validators on the same network.
-* Other validators share the transactions in their mempool with N~X~’s mempool.
+* The mempool of Libra node LN~X~ shares transaction T~N~ with the other validators on the same network.
+* Other validators share the transactions in their mempool with LN~X~’s mempool.
 
 ### Consensus → Mempool (MP.3)
 
