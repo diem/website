@@ -17,7 +17,7 @@ At the heart of the Libra protocol are two fundamental concepts — transactions
 ![Figure 1.1 A Transaction changes state.](/img/docs/transactions.svg)
 <small className="figure">FIGURE 1.1 TRANSACTIONS CHANGE STATE.</small>
 
-Figure 1.1 represents the change of state of the Libra Blockchain that occurs when a transaction is executed. For example, at state S~N-1~, Alice has a balance of 110 LBR, and Bob has a balance of 52 LBR. When a transaction is applied to the blockchain, it generates a new state. To transition from S~N-1~ to S~N~, transaction T~N~ is applied against the state S~N-1~. This causes Alice’s balance to be reduced by 10 LBR and Bob’s balance to be increased by 10 LBR. The new state S~N~ now shows these updated balances. In figure 1.1:
+Figure 1.1 represents the change of state of the Libra Blockchain that occurs when a transaction is executed. For example, at state S~N-1~, Alice has a balance of 110 Libra Coins, and Bob has a balance of 52 Libra Coins. When a transaction is applied to the blockchain, it generates a new state. To transition from S~N-1~ to S~N~, transaction T~N~ is applied against the state S~N-1~. This causes Alice’s balance to be reduced by 10 Libra Coins and Bob’s balance to be increased by 10 Libra Coins. The new state S~N~ now shows these updated balances. In figure 1.1:
 
 - **A** and **B** represent Alice’s and Bob’s accounts in the blockchain.
 - **S~N-1~** represents the (N-1)^th^ state of the blockchain.
