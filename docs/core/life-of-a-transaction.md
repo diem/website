@@ -34,7 +34,7 @@ To describe the lifecycle of transaction T<sub>5</sub>, we will assume that:
 * Alice and Bob have [accounts](reference/glossary.md#accounts) on the Libra Blockchain.
 * Alice's account has 110 Libra Coins.
 * The current [sequence number](reference/glossary.md#sequence-number) of Alice's account is 5 (which indicates that 5 transactions have already been sent from Alice's account).
-* There are a total of 100 validator nodes &mdash; V<sub>1</sub> to V~100~ on the network.
+* There are a total of 100 validator nodes &mdash; V<sub>1</sub> to V<sub>100</sub> on the network.
 * The client submits transaction T5 to Libra node L<sub>N</sub>1. A transaction can be submitted directly to a validator node or a full node. Full nodes forward transactions to validator nodes V<sub>1</sub>. 
 * **Validator V<sub>1</sub> is a proposer/leader for the current round.**
 
@@ -65,7 +65,7 @@ Where relevant, and following a numbered step in the lifecycle, we have provided
 
 **4** &mdash; The mempool will hold T<sub>5</sub> in an in-memory buffer. Mempool may already contain multiple transactions sent from Alice's address.
 
-**5** &mdash; Using the shared-mempool protocol, V<sub>1</sub> will share the transactions (including T<sub>5</sub>) in its mempool with other validator nodes (V~2~ to V~100~) and place transactions received from the other validator nodes into its own mempool. (Mempool → Other Validators [MP.2](#mempool-→-other-validator-nodes-mp2))
+**5** &mdash; Using the shared-mempool protocol, V<sub>1</sub> will share the transactions (including T<sub>5</sub>) in its mempool with other validator nodes (V<sub>2</sub> to V<sub>100</sub>) and place transactions received from the other validator nodes into its own mempool. (Mempool → Other Validators [MP.2](#mempool-→-other-validator-nodes-mp2))
 
 ### Proposing the block
 
