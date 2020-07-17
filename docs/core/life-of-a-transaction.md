@@ -111,7 +111,7 @@ At the end of each section, we provide the link to the corresponding "README" of
 
 ## Client Service (CS)
 
-![Figure 1.2 Admission Control](/img/docs/admission-control.svg)
+![Figure 1.2 Client Service](/img/docs/client-service.svg)
 <small className="figure">Figure 1.2 Client Service</small>
 
 Client Service is the _sole external interface_ of the validator. Any request made by a client to the validator goes to CS first.
