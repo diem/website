@@ -14,7 +14,7 @@ Login and authentication deals with all logic related to a user creating a new a
 The main features of the login and authentication implementation in the Libra Reference Wallet include:
 
 * User registration
-  * During registration, the user will choose a unique username and password, and provide information such as name, DOB, and other [KYC](https://docs.google.com/document/d/1fnvVQCpUk2Xn5fpPC0WLEifYovSz7q4GzzyKVnIVRCo/edit#heading=h.625g7uugayx6) related information.
+  * During registration, the user will choose a unique username and password, and provide information such as name, DOB, and other [KYC](compliance-mod#kyc-know-your-customer) related information.
   * Each user has a unique user ID (integer) and a unique username (string).
 * Sign in and sign out
     * User signs in with the username and password.

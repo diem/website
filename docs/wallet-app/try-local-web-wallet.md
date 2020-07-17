@@ -100,7 +100,7 @@ The account verification begins once the user completes registration. The user w
 
    **Note:** *Account verification demos the expected behavior of a hypothetical wallet. For the Libra Reference Wallet, the verification succeeds automatically and the “pending” state is presented briefly to the user for demo purposes only. In addition, the identification document is always accepted and is not analysed or stored by the backend. Real-world user verification and risk management are beyond the scope of the reference wallet and contain many opportunities for further development.* 
 
-Read more about the user verification [in the Risk section](#risk).
+Read more about the user verification [in the Risk section](risk-mod.md).
 
 ##### Sign in
 The wallet web UI is fully accessible only for authenticated users. When a user accesses the wallet website, the login page is the first page presented to the user. This is where the user is authenticated using their email id and password.
@@ -111,7 +111,7 @@ The password can be reset using the “Forgot Password” link. Alternatively, i
 
 
 ##### Sign out
-A user can sign out of the wallet on the [Settings](#settings) page.
+A user can sign out of the wallet on the [Settings](#modify-settings) page.
 
 ##### Reset password
 It is possible to reset the user password by entering a verified email address on the password reset page. The page is accessible by following the “Forgot Password” link on the login page. Note that the email address provided must be an address previously registered in the system. 
@@ -199,7 +199,7 @@ When a user deposits a Libra currency amount, the wallet simulates a purchase of
 
 To perform a deposit, follow these steps:
 
-1. Make sure you have a payment method defined. Payment methods can be defined [on the Settings page](https://docs.google.com/document/d/1fnvVQCpUk2Xn5fpPC0WLEifYovSz7q4GzzyKVnIVRCo/edit#heading=h.vnf489dipz6j).
+1. Make sure you have a payment method defined. Payment methods can be defined [on the Settings page](#modify-settings).
 2. On the home page click “Transfer.”
 3. Choose “Add.”
 4. The user will be presented with a deposit dialog. You should specify:
