@@ -35,7 +35,7 @@ To describe the lifecycle of transaction T<sub>5</sub>, we will assume that:
 * Alice's account has 110 Libra Coins.
 * The current [sequence number](reference/glossary.md#sequence-number) of Alice's account is 5 (which indicates that 5 transactions have already been sent from Alice's account).
 * There are a total of 100 validator nodes &mdash; V<sub>1</sub> to V<sub>100</sub> on the network.
-* The client submits transaction T<sub>5</sub> to Libra node L<sub>N</sub>1. A transaction can be submitted directly to a validator node or a full node. Full nodes forward transactions to validator nodes V<sub>1</sub>. 
+* The client submits transaction T<sub>5</sub> to Libra node LN<sub>1</sub>. A transaction can be submitted directly to a validator node or a full node. Full nodes forward transactions to validator nodes V<sub>1</sub>. 
 * **Validator V<sub>1</sub> is a proposer/leader for the current round.**
 
 ## Lifecycle of the transaction

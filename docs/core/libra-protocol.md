@@ -21,14 +21,14 @@ At the heart of the Libra protocol are two fundamental concepts — transactions
 ![Figure 1.1 A Transaction changes state.](/img/docs/transactions.svg)
 <small className="figure">FIGURE 1.1 TRANSACTIONS CHANGE STATE.</small>
 
-Figure 1.1 represents the change of state of the Libra Blockchain that occurs when a transaction is executed. For example, at state S~N-1~, Alice has a balance of 110 Libra Coins, and Bob has a balance of 52 Libra Coins. When a transaction is applied to the blockchain, it generates a new state. To transition from S~N-1~ to S~N~, transaction T~N~ is applied against the state S~N-1~. This causes Alice’s balance to be reduced by 10 Libra Coins and Bob’s balance to be increased by 10 Libra Coins. The new state S~N~ now shows these updated balances. In figure 1.1:
+Figure 1.1 represents the change of state of the Libra Blockchain that occurs when a transaction is executed. For example, at state S<sub>N-1</sub>, Alice has a balance of 110 Libra Coins, and Bob has a balance of 52 Libra Coins. When a transaction is applied to the blockchain, it generates a new state. To transition from S<sub>N-1</sub> to S<sub>N</sub>, transaction T<sub>N</sub> is applied against the state S<sub>N-1</sub>. This causes Alice’s balance to be reduced by 10 Libra Coins and Bob’s balance to be increased by 10 Libra Coins. The new state S<sub>N</sub> now shows these updated balances. In figure 1.1:
 
 - **A** and **B** represent Alice’s and Bob’s accounts in the blockchain.
-- **S~N-1~** represents the (N-1)^th^ state of the blockchain.
-- **T~N~** is the n-th transaction executed on the blockchain.
-  - In this example, T~N~ is - “send 10 LBR from person A’s account to person B’s account.”
-- **F** is a deterministic function. F always returns the same final state for a specific initial state and a specific transaction. If the current state of the blockchain is S~N-1~, and transaction T~N~ is executed on state S~N-1~, the new state of the blockchain is always S~N~.
-- **S~N~** is the n-th state of the blockchain. S~N~ is an outcome of applying F to S~N-1~ and T~N~.
+- **S<sub>N-1</sub>** represents the (N-1)<sup>th</sup> state of the blockchain.
+- **T<sub>N</sub>** is the n-th transaction executed on the blockchain.
+  - In this example, T<sub>N</sub> is - “send 10 LBR from person A’s account to person B’s account.”
+- **F** is a deterministic function. F always returns the same final state for a specific initial state and a specific transaction. If the current state of the blockchain is S<sub>N-1</sub>, and transaction T<sub>N</sub> is executed on state S<sub>N-1</sub>, the new state of the blockchain is always S<sub>N</sub>.
+- **S<sub>N</sub>** is the n-th state of the blockchain. S<sub>N</sub> is an outcome of applying F to S<sub>N-1</sub> and T<sub>N</sub>.
 
 The Libra protocol uses the [Move language](move-overview.md) to implement the deterministic execution function F.
 
