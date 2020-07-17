@@ -4,19 +4,19 @@ const Sidebar = [
    backToHome,
   {
     extra: {
-      classNames: ['spacer'],
+      classNames: ['categoryLabel'],
       icon: 'img/core-contributors.svg',
       iconDark: 'img/core-contributors-dark.svg',
       noLink: true,
     },
-    id: 'core/overview-v2',
+    id: 'core/overview',
     type: 'doc',
   },
   {
     extra: {
-      classNames: ['categoryIndex'],
+      classNames: ['categoryIndex'], // make one class
     },
-    href: '/docs/core/overview-v2',
+    href: '/docs/core/overview',
     label: 'Overview',
     type: 'link',
   },
@@ -24,7 +24,7 @@ const Sidebar = [
     extra: {
       icon: 'img/concepts.svg',
       iconDark: 'img/concepts-dark.svg',
-      theme: 'secondary',
+      iconClasses: ['listTitle'],
     },
     label: 'Concepts',
     type: 'category',
@@ -41,7 +41,7 @@ const Sidebar = [
     extra: {
       icon: 'img/tutorials.svg',
       iconDark: 'img/tutorials-dark.svg',
-      theme: 'secondary',
+      iconClasses: ['listTitle'],
     },
     label: 'Tutorials',
     type: 'category',
@@ -54,21 +54,25 @@ const Sidebar = [
   },
   {
     extra: {
-      classNames: [],
       icon: 'img/develop.svg',
       iconDark: 'img/develop-dark.svg',
-      theme: 'secondary',
+      iconClasses: ['listTitle'],
     },
     label: 'Develop',
     type: 'category',
     items: [
+      {
+        type: 'link',
+        href: 'https://github.com/orgs/libra/projects/1',
+        label: 'Roadmap',
+      },
       'core/libra-open-source-paper',
       'core/contributing',
       'core/coding-guidelines',
       'core/libra-cli',
     ]
   },
-  getReference('secondary'),
+  getReference(),
 ];
 
 module.exports = Sidebar;

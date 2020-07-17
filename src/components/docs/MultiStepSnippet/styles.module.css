@@ -15,15 +15,27 @@
   overflow-x: inherit;
 }
 
+.root :global(.snippet-header) {
+  border-top-left-radius: 0;
+  position: sticky;
+  top: 0;
+}
+
 .root div[role="tabpanel"] {
-  margin-top: 0 !important;
   background-color: var(--snippet-background-color); /* matches the color of the snippet theme */
+  margin-top: 0 !important;
+  position: relative;
+}
+
+.root div[role="tabpanel"] > div > div {
+  border: 1px solid var(--snippet-border-color);
 }
 
 .root :global(.tab-item) {
   border: 0;
   flex: 1;
   padding: 0;
+  word-break: inherit;
 }
 
 .root :global(.tab-item) a {
@@ -38,10 +50,15 @@
   min-height: 120px;
   max-height: 300px;
   overflow: auto;
+  position: unset;
+}
+
+.root :global(.snippet-container) {
+  position: unset;
 }
 
 .root :global(.prism-code) {
-  padding: 
+  padding:
     calc( var(--snippet-header-height) + 10px )
     0px
     20px;
@@ -51,11 +68,29 @@
   padding: 0 20px;
 }
 
-@media small-tablet-breakpoint-max-query, 
+.root li[role="tab"]:first-child > * {
+  border-top-left-radius: var(--snippet-border-radius);
+}
+
+@media small-tablet-breakpoint-max-query,
 large-tablet-breakpoint-query and desktop-breakpoint-max-query {
   li[role="tab"]:before {
     content: '';
     padding-top: 100%;
+  }
+
+  .root :global(.snippet-header) {
+    border-top-right-radius: 0;
+  }
+
+  .root div[role="tabpanel"],
+  .root div[role="tabpanel"] > div > div {
+    border-bottom-left-radius: var(--snippet-border-radius);
+    border-bottom-right-radius: var(--snippet-border-radius);
+  }
+
+  .root li[role="tab"]:last-child > * {
+    border-top-right-radius: var(--snippet-border-radius);
   }
 }
 
@@ -63,6 +98,17 @@ large-tablet-breakpoint-query and desktop-breakpoint-max-query {
 desktop-breakpoint-query {
   .root > div {
     display: flex;
+  }
+
+  .root div[role="tabpanel"],
+  .root :global(.snippet-header),
+  .root div[role="tabpanel"] > div > div {
+    border-top-right-radius: var(--snippet-border-radius);
+  }
+
+  .root div[role="tabpanel"],
+  .root div[role="tabpanel"] > div > div {
+    border-bottom-right-radius: var(--snippet-border-radius);
   }
 
   .root ul[role="tablist"] {
@@ -82,7 +128,8 @@ desktop-breakpoint-query {
 
   .root div[role="tabpanel"] > div {
     height: 100%;
-    position: relative;
+    position: absolute;
+    width: 100%;
   }
 
   .root div[role="tabpanel"] > div > div { /* CodeBlock Component */
@@ -91,15 +138,18 @@ desktop-breakpoint-query {
     max-height: 100%;
     overflow: auto;
     padding: 0;
-    position: absolute;
     width: 100%;
   }
 
   .root :global(.prism-code) {
     max-height: initial;
   }
+
+  .root li[role="tab"]:last-child > * {
+    border-bottom-left-radius: var(--snippet-border-radius);
+  }
 }
-@media small-tablet-breakpoint-max-query, 
+@media small-tablet-breakpoint-max-query,
 large-tablet-breakpoint-query and desktop-breakpoint-max-query {
   .root li[role="tab"] {
     background: transparent !important;
