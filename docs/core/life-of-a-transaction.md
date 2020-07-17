@@ -9,7 +9,7 @@ To get a deeper understanding of the lifecycle of a Libra transaction, we will f
 
 ## Client submits a transaction
 
-A Libra **client constructs a raw transaction** (let us call it T~5~raw) to transfer 10 Libra Coins from Alice’s account to Bob’s account. The raw transaction includes the following fields. Each field is linked to its glossary definition.
+A Libra **client constructs a raw transaction** (let us call it T<sub>5</sub>raw) to transfer 10 Libra Coins from Alice’s account to Bob’s account. The raw transaction includes the following fields. Each field is linked to its glossary definition.
 
 * Alice's [account address](reference/glossary.md#account-address).
 * A program that indicates the actions to be performed on Alice's behalf. It contains:
@@ -21,7 +21,7 @@ A Libra **client constructs a raw transaction** (let us call it T~5~raw) to tran
 * [Sequence number](reference/glossary.md#sequence-number) &mdash; 5
     * A transaction with sequence number 5 can only be applied to an account with sequence number 5.
 
-The **client signs transaction** T~5~raw with Alice's private key. The signed transaction T~5~ includes the following:
+The **client signs transaction** T<sub>5</sub>raw with Alice's private key. The signed transaction T<sub>5</sub> includes the following:
 
 * The raw transaction.
 * Alice's public key.
@@ -29,18 +29,18 @@ The **client signs transaction** T~5~raw with Alice's private key. The signed tr
 
 ### Assumptions
 
-To describe the lifecycle of transaction T~5~, we will assume that:
+To describe the lifecycle of transaction T<sub>5</sub>, we will assume that:
 
 * Alice and Bob have [accounts](reference/glossary.md#accounts) on the Libra Blockchain.
 * Alice's account has 110 Libra Coins.
 * The current [sequence number](reference/glossary.md#sequence-number) of Alice's account is 5 (which indicates that 5 transactions have already been sent from Alice's account).
-* There are a total of 100 validator nodes &mdash; V~1~ to V~100~ on the network.
-* The client submits transaction T5 to Libra node L~N~1. A transaction can be submitted directly to a validator node or a full node. Full nodes forward transactions to validator nodes V~1. 
-* **Validator V~1~ is a proposer/leader for the current round.**
+* There are a total of 100 validator nodes &mdash; V<sub>1</sub> to V~100~ on the network.
+* The client submits transaction T5 to Libra node L<sub>N</sub>1. A transaction can be submitted directly to a validator node or a full node. Full nodes forward transactions to validator nodes V<sub>1</sub>. 
+* **Validator V<sub>1</sub> is a proposer/leader for the current round.**
 
 ## Lifecycle of the transaction
 
-In this section, we will describe the lifecycle of transaction T~5~, from being submitted by the client to being committed to the Libra Blockchain.
+In this section, we will describe the lifecycle of transaction T<sub>5</sub>, from being submitted by the client to being committed to the Libra Blockchain.
 
 Where relevant, and following a numbered step in the lifecycle, we have provided a link to the corresponding inter-component interactions of the validator node. After you are familiar with all the steps in the lifecycle of the transaction, you may want to refer to the information on the corresponding inter-component interactions for each step.
 
@@ -54,7 +54,7 @@ Where relevant, and following a numbered step in the lifecycle, we have provided
 
 ### Accepting the transaction
 
-**1** &mdash; The client submits transaction T~5~ to a Libra node through the client service (Client → Client service). This transaction is forwarded to the validator node V1.
+**1** &mdash; The client submits transaction T<sub>5</sub> to a Libra node through the client service (Client → Client service). This transaction is forwarded to the validator node V1.
 
 **2** &mdash; Client service transmits transaction T5 to V1 mempool  (client service → Mempool CS.2, MP.1)
 
@@ -63,31 +63,31 @@ Where relevant, and following a numbered step in the lifecycle, we have provided
 
 ### Sharing the transaction with other nodes
 
-**4** &mdash; The mempool will hold T~5~ in an in-memory buffer. Mempool may already contain multiple transactions sent from Alice's address.
+**4** &mdash; The mempool will hold T<sub>5</sub> in an in-memory buffer. Mempool may already contain multiple transactions sent from Alice's address.
 
-**5** &mdash; Using the shared-mempool protocol, V~1~ will share the transactions (including T~5~) in its mempool with other validator nodes (V~2~ to V~100~) and place transactions received from the other validator nodes into its own mempool. (Mempool → Other Validators [MP.2](#mempool-→-other-validator-nodes-mp2))
+**5** &mdash; Using the shared-mempool protocol, V<sub>1</sub> will share the transactions (including T<sub>5</sub>) in its mempool with other validator nodes (V~2~ to V~100~) and place transactions received from the other validator nodes into its own mempool. (Mempool → Other Validators [MP.2](#mempool-→-other-validator-nodes-mp2))
 
 ### Proposing the block
 
-**6** &mdash; As validator V~1~ is a proposer/leader, it will pull a block of transactions from its mempool and replicate this block as a proposal to other validators via its consensus component. (Consensus → Mempool [MP.3](#consensus-→-mempool-mp3), [CO.1](#consensus-→-mempool-co1))
+**6** &mdash; As validator V<sub>1</sub> is a proposer/leader, it will pull a block of transactions from its mempool and replicate this block as a proposal to other validators via its consensus component. (Consensus → Mempool [MP.3](#consensus-→-mempool-mp3), [CO.1](#consensus-→-mempool-co1))
 
-**7** &mdash; The consensus component of V~1~ is responsible for coordinating agreement among all validators on the order of transactions in the proposed block. (Consensus → Other Validators [CO.2](#consensus-→-other-validators-co2)). Refer to our technical paper [State Machine Replication in the Libra Blockchain](state-machine-replication-paper.md) for details of our proposed consensus protocol LibraBFT.
+**7** &mdash; The consensus component of V<sub>1</sub> is responsible for coordinating agreement among all validators on the order of transactions in the proposed block. (Consensus → Other Validators [CO.2](#consensus-→-other-validators-co2)). Refer to our technical paper [State Machine Replication in the Libra Blockchain](state-machine-replication-paper.md) for details of our proposed consensus protocol LibraBFT.
 
 ### Executing the block and reaching consensus
 
-**8** &mdash; As part of reaching agreement, the block of transactions (containing T~5~) is passed to the execution component. (Consensus → Execution [CO.3](#consensus-→-execution-consensus-→-other-validators-co3), [EX.1](#consensus-→-execution-ex1))
+**8** &mdash; As part of reaching agreement, the block of transactions (containing T<sub>5</sub>) is passed to the execution component. (Consensus → Execution [CO.3](#consensus-→-execution-consensus-→-other-validators-co3), [EX.1](#consensus-→-execution-ex1))
 
 **9** &mdash; The execution component manages the execution of transactions in the virtual machine (VM). Note that this execution happens speculatively before the transactions in the block have been agreed upon. (Execution → VM [EX.2](#execution-→-vm-ex2), [VM.3](#mempool-→-vm-vm3))
 
-**10** &mdash; After executing the transactions in the block, the execution component appends the transactions in the block (including T~5~) to the [Merkle accumulator](/reference/glossary/#merkle-accumulator) (of the ledger history). This is an in-memory/temporary version of the Merkle accumulator. The (proposed/speculative) result of executing these transactions is returned to the consensus component. (Consensus → Execution [CO.3](#consensus-→-execution-consensus-→-other-validators-co3), [EX.1](#consensus-→-execution-ex1)). The arrow from "consensus" to "execution" indicates that the request to execute transactions was made by the consensus component. (For consistent use of arrows across this document, we are not using arrows to represent the flow of data).
+**10** &mdash; After executing the transactions in the block, the execution component appends the transactions in the block (including T<sub>5</sub>) to the [Merkle accumulator](/reference/glossary/#merkle-accumulator) (of the ledger history). This is an in-memory/temporary version of the Merkle accumulator. The (proposed/speculative) result of executing these transactions is returned to the consensus component. (Consensus → Execution [CO.3](#consensus-→-execution-consensus-→-other-validators-co3), [EX.1](#consensus-→-execution-ex1)). The arrow from "consensus" to "execution" indicates that the request to execute transactions was made by the consensus component. (For consistent use of arrows across this document, we are not using arrows to represent the flow of data).
 
-**11** &mdash; V~1~ (the consensus leader) attempts to reach consensus on the block's execution result with other validators participating in the consensus. (Consensus → Other Validators [CO.3](#consensus-→-execution-consensus-→-other-validators-co3))
+**11** &mdash; V<sub>1</sub> (the consensus leader) attempts to reach consensus on the block's execution result with other validators participating in the consensus. (Consensus → Other Validators [CO.3](#consensus-→-execution-consensus-→-other-validators-co3))
 
 ### Committing the block
 
-**12** &mdash; If the block's execution result is agreed upon and signed by a set of validators that have the super-majority of votes, validator V~1~'s execution component reads the result of the block execution from the speculative execution cache and commits all the transactions in the block to persistent storage. (Consensus → Execution [CO.4](#consensus-→-execution-co4), [EX.3](#consensus-→-execution-ex3)), (Execution → Storage [EX.4](#execution-→-storage-ex4), [ST.3](#execution-→-storage-st3))
+**12** &mdash; If the block's execution result is agreed upon and signed by a set of validators that have the super-majority of votes, validator V<sub>1</sub>'s execution component reads the result of the block execution from the speculative execution cache and commits all the transactions in the block to persistent storage. (Consensus → Execution [CO.4](#consensus-→-execution-co4), [EX.3](#consensus-→-execution-ex3)), (Execution → Storage [EX.4](#execution-→-storage-ex4), [ST.3](#execution-→-storage-st3))
 
-**13** &mdash; Alice's account will now have 100 LBR, and its sequence number will be 6. If T~5~ is replayed by Bob, it will be rejected as the sequence number of Alice's account (6) is greater than the sequence number of the replayed transaction (5).
+**13** &mdash; Alice's account will now have 100 Libra Coins, and its sequence number will be 6. If T<sub>5</sub> is replayed by Bob, it will be rejected as the sequence number of Alice's account (6) is greater than the sequence number of the replayed transaction (5).
 
 ## Validator component interactions
 
@@ -96,7 +96,7 @@ In the [previous section](#lifecycle-of-the-transaction), we described the typic
 * Would like to get an overall idea of how the system works under the covers.
 * Are interested in eventually contributing to the Libra Core software.
 
-For our narrative, we will assume that a client submits a  transaction T~N~ to a validator V~X~. For each validator component, we will describe each of its inter-component interactions in subsections under the respective component's section. Note that subsections describing the inter-component interactions are not listed strictly in the order in which they are performed. Most of the interactions are relevant to the processing of a transaction, and a few are relevant to read queries by the client (queries for existing information on the blockchain).
+For our narrative, we will assume that a client submits a  transaction T<sub>N</sub> to a validator V<sub>X</sub>. For each validator component, we will describe each of its inter-component interactions in subsections under the respective component's section. Note that subsections describing the inter-component interactions are not listed strictly in the order in which they are performed. Most of the interactions are relevant to the processing of a transaction, and a few are relevant to read queries by the client (queries for existing information on the blockchain).
 
  Let us look at the core logical components of a validator node:
 
@@ -118,11 +118,11 @@ Client Service is the _sole external interface_ of the validator. Any request ma
 
 ### Client → CS (CS.1)
 
-A client submits a transaction to the client service of a validator node V~X. 
+A client submits a transaction to the client service of a validator node V<sub>X</sub>. 
 
 ### CS → Mempool (CS.2)
 
-CS forwards the transaction to validator node V~X's mempool. The mempool will accept the transaction T~N only if the sequence number of T~N is greater than or equal to the current sequence number of the sender's account (note that the transaction will not be passed to consensus until it is the next sequence number).
+CS forwards the transaction to validator node V<sub>X</sub>'s mempool. The mempool will accept the transaction T<sub>N</sub> only if the sequence number of T<sub>N</sub> is greater than or equal to the current sequence number of the sender's account (note that the transaction will not be passed to consensus until it is the next sequence number).
 
 ### CS → Storage (CS.3)
 
@@ -151,7 +151,7 @@ When mempool requests the VM to validate a transaction via `VM::ValidateTransact
 
 The execution component utilizes the VM to execute a transaction via `VM::ExecuteTransaction()`.
 
-It is important to understand that executing a transaction is different from updating the state of the ledger and persisting the results in storage. A transaction T~N~ is first executed as part of an attempt to reach agreement on blocks during consensus. If agreement is reached with the other validators on the ordering of transactions and their execution results, the results are persisted in storage and the state of the ledger is updated.
+It is important to understand that executing a transaction is different from updating the state of the ledger and persisting the results in storage. A transaction T<sub>N</sub> is first executed as part of an attempt to reach agreement on blocks during consensus. If agreement is reached with the other validators on the ordering of transactions and their execution results, the results are persisted in storage and the state of the ledger is updated.
 
 ### Mempool → VM (VM.3)
 
@@ -171,17 +171,17 @@ Mempool is a shared buffer that holds the transactions that are “waiting” to
 ### CS → Mempool (MP.1)
 
 * After receiving a transaction from the client, the CS proxies the transaction to the validator node’s mempool.
-* The mempool for validator node V~X~ accepts transaction T~N~ for the sender's account only if the sequence number of T~N~ is greater than or equal to the current sequence number of the sender's account.
+* The mempool for validator node V<sub>X</sub> accepts transaction T<sub>N</sub> for the sender's account only if the sequence number of T<sub>N</sub> is greater than or equal to the current sequence number of the sender's account.
 
 ### Mempool → Other validator nodes (MP.2)
 
-* The mempool of the validator node V~X~ shares transaction T~N~ with the other validators on the same network.
-* Other validators share the transactions in their mempool with V~X~’s mempool.
+* The mempool of the validator node V<sub>X</sub> shares transaction T<sub>N</sub> with the other validators on the same network.
+* Other validators share the transactions in their mempool with V<sub>X</sub>’s mempool.
 
 ### Consensus → Mempool (MP.3)
 
 * When the transaction is forwarded to a validator node and once it becomes the leader, its consensus will pull a block of transactions from its mempool and replicate the block to other validators. It does this to arrive at a consensus on the ordering of transactions and the execution results of the transactions in the block.
-* Note that just because a transaction T~N~ was included in a consensus block, it does not guarantee that T~N~ will eventually be persisted in the distributed database of the Libra Blockchain.
+* Note that just because a transaction T<sub>N</sub> was included in a consensus block, it does not guarantee that T<sub>N</sub> will eventually be persisted in the distributed database of the Libra Blockchain.
 
 ### Mempool → VM (MP.4)
 
@@ -200,11 +200,11 @@ The consensus component is responsible for ordering blocks of transactions and a
 
 ### Consensus → Mempool (CO.1)
 
-When validator V~X~ is a leader/proposer, the consensus of V~X~ pulls a block of transactions from its mempool via: `Mempool::GetBlock()`, and forms a proposal.
+When validator V<sub>X</sub> is a leader/proposer, the consensus of V<sub>X</sub> pulls a block of transactions from its mempool via: `Mempool::GetBlock()`, and forms a proposal.
 
 ### Consensus → Other Validators (CO.2)
 
-If V~X~ is a proposer/leader, its consensus replicates the proposed block of transactions to other validators.
+If V<sub>X</sub> is a proposer/leader, its consensus replicates the proposed block of transactions to other validators.
 
 ### Consensus → Execution, Consensus → Other Validators (CO.3)
 
@@ -214,7 +214,7 @@ If V~X~ is a proposer/leader, its consensus replicates the proposed block of tra
 
 ### Consensus → Execution (CO.4)
 
-If enough validators vote for the same execution result, the consensus component of V~X~ informs execution via `Execution::CommitBlock()` that this block is ready to be committed.
+If enough validators vote for the same execution result, the consensus component of V<sub>X</sub> informs execution via `Execution::CommitBlock()` that this block is ready to be committed.
 
 ### Consensus README
 
@@ -232,7 +232,7 @@ Execution's job is to coordinate the execution of a block of transactions and ma
 *  Consensus requests execution to execute a block of transactions via: `Execution::ExecuteBlock()`.
 * Execution maintains a “scratchpad,” which holds in-memory copies of the relevant portions of the [Merkle accumulators](/reference/glossary/#merkle-accumulator). This information is used to calculate the root hash of the current state of the blockchain.
 * The root hash of the current state is combined with the information about the transactions in the block to determine the new root hash of the accumulator. This is done prior to persisting any data, and to ensure that no state or transaction is stored until agreement is reached by a quorum of validators.
-* Execution computes the speculative root hash and then consensus of V~X~ signs this root hash and attempts to reach agreement on this root hash with other validators.
+* Execution computes the speculative root hash and then consensus of V<sub>X</sub> signs this root hash and attempts to reach agreement on this root hash with other validators.
 
 ### Execution → VM (EX.2)
 
@@ -255,7 +255,7 @@ For implementation details refer to the [Execution README](crates/execution).
 ![Figure 1.7 Storage](/img/docs/storage.svg)
 <small className="figure">Figure 1.7 Storage</small>
 
-The storage component persists agreed upon blocks of transactions and their execution results. A block/set of transactions (which includes transaction T~N~) will be saved via storage when:
+The storage component persists agreed upon blocks of transactions and their execution results. A block/set of transactions (which includes transaction T<sub>N</sub>) will be saved via storage when:
 
 * There is agreement between more than 2f+1 of the validators participating in consensus on all of the following:
     * The transactions to include in a block.
