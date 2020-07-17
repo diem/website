@@ -7,7 +7,7 @@ sidebar_label: Set Up
 
 
 
-## Deploy the Libra Reference Wallet
+## Set up and deploy
 
 To set up your environment or deploy the Reference Wallet, please refer to the latest information in the README [here](https://github.com/libra/libra-reference-wallet/tree/master/backend#getting-started).
 

@@ -15,16 +15,16 @@ For the curious reader, the [Move technical paper](move-paper.md) contains much 
 
 In the second part of this guide, we will “look under the hood” and show you how to write your own Move programs in the [Move source language](#move-source-language). Custom Move programs are not supported in the initial testnet release, but these features are available for you to try out locally.
 
-## Key Features of Move
+## Key features of Move
 
-### Move Transaction Scripts Enable Programmable Transactions
+### Move transaction scripts enable programmable transactions
 
 - Each Libra transaction includes a **Move transaction script** that encodes the logic a validator should perform on the client's behalf (for example, to transfer Libra from Alice's account to Bob's account).
 - The transaction script interacts with [Move resources](#move-has-first-class-resources) published in the global storage of the Libra Blockchain by calling the procedures of one or more [Move modules](#move-modules-allow-composable-smart-contracts).
 - A transaction script is not stored in the global state, and it cannot be invoked by other transaction scripts. It is a single-use program.
 - We present several examples of transaction scripts in [Writing Transaction Scripts](#writing-transaction-scripts).
 
-### Move Modules Allow Composable Smart Contracts
+### Move modules allow composable smart contracts
 
 Move modules define the rules for updating the global state of the Libra Blockchain. Modules fill the same niche as smart contracts in other blockchain systems. Modules declare [resource](#move-has-first-class-resources) types that can be published under user accounts. Each account in the Libra Blockchain is a container for an arbitrary number of Move resources and Move modules.
 
@@ -33,20 +33,20 @@ Move modules define the rules for updating the global state of the Libra Blockch
 - Modules are reusable. A struct type declared in one module can use struct types declared in another module, and a procedure declared in one module can invoke public procedures declared in another module. A module can invoke procedures declared in other Move modules. Transaction scripts can invoke any public procedure of a published module.
 - Eventually, we expect that Libra users will be able to publish modules under their own accounts.
 
-### Move Has First Class Resources
+### Move has first class resources
 
 - The key feature of Move is the ability to define custom resource types. Resource types are used to encode safe digital assets with rich programmability.
 - Resources are ordinary values in the language. They can be stored as data structures, passed as arguments to procedures, returned from procedures, and so on.
 - The Move type system provides special safety guarantees for resources. Move resources can never be duplicated, reused, or discarded. A resource type can only be created or destroyed by the module that defines the type. These guarantees are enforced statically by the [Move virtual machine](reference/glossary.md#move-virtual-machine-mvm) via bytecode verification. The Move virtual machine will refuse to run code that has not passed through the bytecode verifier.
 - All Libra currencies are implemented using the generic `Libra` type. For example: the LBR currency is represented as `Libra<LBR>` and a hypothetical USD currency would be represented as `Libra<USD>`. `Libra` has no special status in the language; every Move resource enjoys the same protections.
 
-## Move: Under the Hood
+## Move: Under the hood
 
-### Move Source Language
+### Move source language
 
 This section describes how to write [transaction scripts](#writing-transaction-scripts) and [modules](#writing-modules) in the Move source language. We will proceed by presenting snippets of heavily-commented Move code. We encourage readers to follow along with the examples by compiling, running, and modifying them locally. The README files `libra/language/README.md` and `libra/language/move-lang/README.md` explain how to do this.
 
-### Writing Transaction Scripts
+### Writing transaction scripts
 
 As we explained in [Move Transaction Scripts Enable Programmable Transactions](#move-transaction-scripts-enable-programmable-transactions), users write transaction scripts to request updates to the global storage of the Libra Blockchain. There are two important building blocks that will appear in almost any transaction script: the `LibraAccount` and `Libra` resource types.
 
@@ -118,7 +118,7 @@ script {
 
 This concludes our "tour" of transaction scripts. For more examples, including the transaction scripts supported in the initial testnet, refer to `libra/language/stdlib/transaction_scripts`.
 
-### Writing Modules
+### Writing modules
 
 We will now turn our attention to writing our own Move modules instead of just reusing the existing `LibraAccount` and `Libra` modules. Consider this situation:
 Bob is going to create an account at address _a_ at some point in the future. Alice wants to "earmark" some of her coins for Bob so that he can pull them into his account once it is created. But she also wants to be able to remove the earmark from her coins if, for example, Bob never creates the account.

@@ -117,7 +117,7 @@ Please, input commands:
 libra%
 ```
 
-You can now enter CLI commands to interact with the local network. Refer to the [Libra CLI Guide](reference/libra-cli.md) for command usage information. Refer to [My First Transaction](my-first-transaction.md) for guidance on creating accounts and running transactions on your local blockchain.
+You can now enter CLI commands to interact with the local network. Refer to the [Libra CLI Guide](libra-cli.md) for command usage information. Refer to [My First Transaction](my-first-transaction.md) for guidance on creating accounts and running transactions on your local blockchain.
 
 ## Troubleshooting FAQ
 
@@ -162,5 +162,5 @@ The local validator nodes use a temporary directory to generate the logs and the
 
 ## Reference
 
-* [CLI Guide](reference/libra-cli.md) &mdash; Lists the commands of the Libra CLI client.
+* [CLI Guide](libra-cli.md) &mdash; Lists the commands of the Libra CLI client.
 * [My First Transaction](my-first-transaction.md) &mdash; Provides step-by-step guidance on creating new accounts on the Libra Blockchain and running transactions.
