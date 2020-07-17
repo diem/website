@@ -15,7 +15,7 @@ const Sidebar = [
   },
   {
     extra: {
-      classNames: ['categoryIndex', 'normalWeight'],
+      classNames: ['categoryIndex'],
     },
     href: '/docs/wallet-app/overview',
     label: 'Overview',
