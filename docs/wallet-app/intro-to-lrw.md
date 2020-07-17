@@ -1,5 +1,5 @@
 ---
-id: wallet-intro
+id: intro-to-lrw
 title: 'Introduction to the Libra Reference Wallet'
 sidebar_label: Introduction
 ---

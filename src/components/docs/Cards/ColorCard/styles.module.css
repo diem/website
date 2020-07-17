@@ -12,9 +12,9 @@
   background-color: var(--background-color);
   display: inline-flex;
   flex-direction: column;
-  padding: 
-    calc( var(--border-width) + 29px ) 
-    30px 
+  padding:
+    calc( var(--border-width) + 29px )
+    30px
     calc( var(--border-width) + 38px );
   text-align: center;
 }
@@ -31,10 +31,6 @@
   width: 0;
   height: 0;
   z-index: 10;
-}
-
-.root .overlay span {
-  align-self: center;
 }
 
 .image {
@@ -75,6 +71,10 @@
   padding: 0 3px;
 }
 
+.root * {
+  word-break: inherit;
+}
+
 :global(.tab-item--active) .root.snippetTab {
   box-shadow: none;
   border: 0;
@@ -95,6 +95,10 @@
   z-index: 10;
 }
 
+.overlay span {
+  align-self: center;
+}
+
 :global(.tab-item--active) .overlay {
   margin-left: calc( var(--snippet-horizontal-padding) * -1 );
 }
@@ -107,8 +111,8 @@
   font-weight: normal;
 }
 
-@media small-tablet-breakpoint-max-query, 
-large-tablet-breakpoint-query and desktop-breakpoint-max-query {  
+@media small-tablet-breakpoint-max-query,
+large-tablet-breakpoint-query and desktop-breakpoint-max-query {
   .root.snippetTab {
     height: 100%;
     outline: none;
@@ -122,6 +126,7 @@ large-tablet-breakpoint-query and desktop-breakpoint-max-query {
   }
 
   .overlay {
+    border-radius: var(--snippet-border-radius);
     display: none;
   }
 
@@ -151,9 +156,9 @@ large-tablet-breakpoint-query and desktop-breakpoint-max-query {
   }
 
   :global(.tab-item--active) .root:after {
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-top: 7px solid var(--carot-background-color);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--carot-background-color);
     right: 50%;
     top: calc( 100% + 0px );
     transform: translate(50%);
@@ -239,9 +244,5 @@ large-tablet-breakpoint-query and desktop-breakpoint-max-query {
   :global(.tab-item--active) .root.snippetTab:not(:hover) .image {
     margin-left: 0px;
   }
-}
-
-html[data-theme="dark"] .root.snippetTab {
-  --carot-background-color: var(--accent-highlight);
 }
 /* End SnippetTab */
