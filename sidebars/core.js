@@ -34,7 +34,6 @@ const Sidebar = [
       'core/the-libra-blockchain-paper',
       'core/move-paper',
       'core/state-machine-replication-paper',
-      'core/libra-core-overview',
     ]
   },
   {

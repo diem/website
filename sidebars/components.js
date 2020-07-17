@@ -39,7 +39,7 @@ const getReference = (theme = 'secondary') => {
       },
       {
         type,
-        id: 'reference/compliance',
+        id: 'reference/prospective-vasps',
         extra: {
           classNames: ['iconIndented'],
           icon: 'img/compliance.svg',
