@@ -35,7 +35,7 @@ To describe the lifecycle of transaction T<sub>5</sub>, we will assume that:
 * Alice's account has 110 Libra Coins.
 * The current [sequence number](reference/glossary.md#sequence-number) of Alice's account is 5 (which indicates that 5 transactions have already been sent from Alice's account).
 * There are a total of 100 validator nodes &mdash; V<sub>1</sub> to V<sub>100</sub> on the network.
-* The client submits transaction T5 to Libra node L<sub>N</sub>1. A transaction can be submitted directly to a validator node or a full node. Full nodes forward transactions to validator nodes V<sub>1</sub>. 
+* The client submits transaction T<sub>5</sub> to Libra node L<sub>N</sub>1. A transaction can be submitted directly to a validator node or a full node. Full nodes forward transactions to validator nodes V<sub>1</sub>. 
 * **Validator V<sub>1</sub> is a proposer/leader for the current round.**
 
 ## Lifecycle of the transaction
@@ -54,11 +54,11 @@ Where relevant, and following a numbered step in the lifecycle, we have provided
 
 ### Accepting the transaction
 
-**1** &mdash; The client submits transaction T<sub>5</sub> to a Libra node through the client service (Client → Client service). This transaction is forwarded to the validator node V1.
+**1** &mdash; The client submits transaction T<sub>5</sub> to a Libra node through the client service (Client → Client service). This transaction is forwarded to the validator node V<sub>1</sub>.
 
-**2** &mdash; Client service transmits transaction T5 to V1 mempool  (client service → Mempool CS.2, MP.1)
+**2** &mdash; Client service transmits transaction T<sub>5</sub> to V<sub>1</sub> mempool  (client service → Mempool CS.2, MP.1)
 
-**3** &mdash; Mempool will use the virtual machine (VM) component to perform validation checks, such as signature verification, checking that Alice's account has sufficient balance, checking that transaction T5 is not being replayed, and so on. (Mempool → VM)
+**3** &mdash; Mempool will use the virtual machine (VM) component to perform validation checks, such as signature verification, checking that Alice's account has sufficient balance, checking that transaction T<sub>5</sub> is not being replayed, and so on. (Mempool → VM)
 
 
 ### Sharing the transaction with other nodes
