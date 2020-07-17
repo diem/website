@@ -72,6 +72,7 @@ const Sidebar = [
       'wallet-app/liquidity-mod',
       'wallet-app/admin-mod',
       'wallet-app/localizn',
+      'wallet-app/public-demo-wallet',
       {
         type: 'link',
         href: 'https://demo-wallet.libra.org/api/apidocs',
