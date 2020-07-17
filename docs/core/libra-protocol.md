@@ -91,13 +91,13 @@ A validator node contains the following logical components:
 
 **Client Service**
 
-The Client Service is the external interface of the Libra node. When a client makes a request to the Libra node, it goes to the Client Service first. 
+The Client Service is the external interface of the validator node. When a client makes a request to the Libra node, it goes to the Client Service first. 
 
 **Mempool**
 
 - Mempool is a buffer that holds the transactions that are “waiting” to be executed.
-- Mempool performs initial checks on the requests to protect the other parts of the Libra node from corrupt or high volume input.
-- When a new transaction is added to a Libra node’s mempool, this node shares the transaction with the mempools of other validators in the system.
+- Mempool performs initial checks on the requests to protect the other parts of the validator node from corrupt or high volume input.
+- When a new transaction is added to a validator node’s mempool, this node shares the transaction with the mempools of other validators in the system.
 
 
 **Consensus**
