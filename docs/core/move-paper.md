@@ -1,6 +1,6 @@
 ---
 id: move-paper
-title: Move - A Language With Programmable Resources
+title: Move - Technical Paper
 ---
 
 _**Note to readers:** This report was published before the Association released White Paper v2.0, which includes a number of key updates to the Libra payment system. Outdated links have been removed, but otherwise, this report has not been modified to incorporate the updates and should be read in that context._
@@ -12,7 +12,7 @@ We present _Move_, a safe and flexible programming language for the Libra Blockc
 ### Downloads
 
 <p>
-  <a href="/docs/assets/papers/libra-move-a-language-with-programmable-resources/2020-05-26.pdf">
+  <a href="/docs/assets/papers/assets/papers/libra-move-a-language-with-programmable-resources/2020-05-26.pdf">
     <img src="/docs/assets/illustrations/move-language-pdf.png" alt="Move: A Language With Programmable Resources PDF Download" />
   </a>
 </p>

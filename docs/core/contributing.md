@@ -52,4 +52,4 @@ Please refer to the [Code of Conduct](../policies/code-of-conduct.md), which des
 
 ## Issues
 
-Libra uses [GitHub issues](https://github.com/libra/libra/issues) to track bugs. Please include necessary information and instructions to reproduce your issue. Security-related bugs should be reported using our [security procedures](../policies/security.md).
+Libra uses [GitHub issues](https://github.com/libra/libra/issues) to track bugs. Please include necessary information and instructions to reproduce your issue. Security-related bugs should be reported using our [security procedures](/reference/security.md).

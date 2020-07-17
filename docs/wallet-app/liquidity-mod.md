@@ -9,7 +9,7 @@ sidebar_label: Liquidity Module
 
 ### Liquidity inventory setup
 
-The liquidity inventory setup is part of the backend startup sequence. An inventory user is created. This is an internal user that manages the balance of the internal custody wallet inventory. After its creation, the backend[ “buys” its initial Libra funds from the external liquidity provider.](https://docs.google.com/document/d/1fnvVQCpUk2Xn5fpPC0WLEifYovSz7q4GzzyKVnIVRCo/edit#heading=h.hio6sgpjkay5) Once this trade with the liquidity provider is complete, the liquidity provider sends Libra Coins to the custody wallet Libra address, and the funds are associated with the inventory user using its address.
+The liquidity inventory setup is part of the backend startup sequence. An inventory user is created. This is an internal user that manages the balance of the internal custody wallet inventory. After its creation, the backend[ “buys” its initial Libra funds from the external liquidity provider.](liquidity#inventory-management) Once this trade with the liquidity provider is complete, the liquidity provider sends Libra Coins to the custody wallet Libra address, and the funds are associated with the inventory user using its address.
 
 From this point, the service can issue actual Libra Blockchain transactions between the inventory account and the wallet user accounts to transfer the requested funds, thus affecting the user’s balance in the blockchain.
 

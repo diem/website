@@ -16,7 +16,7 @@ The Wallet module manages the core functionality of a wallet, such as account cr
 
 ## Web app
 
-The Libra Reference Wallet uses Flask as its web framework. The web app provides [a RESTful API](#service-api) that is divided into user, account, CICO, and admin. 
+The Libra Reference Wallet uses Flask as its web framework. The web app provides [a RESTful API](service-api.md) that is divided into user, account, CICO, and admin. 
 
 
 
