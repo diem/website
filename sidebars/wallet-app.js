@@ -72,6 +72,11 @@ const Sidebar = [
       'wallet-app/liquidity-mod',
       'wallet-app/admin-mod',
       'wallet-app/localizn',
+      {
+        type: 'link',
+        href: 'https://demo-wallet.libra.org/api/apidocs',
+        label: 'Backend Swagger API',
+      },
     ]
   },
   getReference('secondary'),
