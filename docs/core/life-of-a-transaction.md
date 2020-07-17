@@ -35,7 +35,7 @@ To describe the lifecycle of transaction T~5~, we will assume that:
 * Alice's account has 110 Libra Coins.
 * The current [sequence number](reference/glossary.md#sequence-number) of Alice's account is 5 (which indicates that 5 transactions have already been sent from Alice's account).
 * There are a total of 100 validator nodes &mdash; V~1~ to V~100~ on the network.
-* The client submits transaction T~5~ to Libra node LN~1~
+* The client submits transaction T5 to Libra node L~N~1. A transaction can be submitted directly to a validator node or a full node. Full nodes forward transactions to validator nodes V~1. 
 * **Validator V~1~ is a proposer/leader for the current round.**
 
 ## Lifecycle of the transaction
@@ -54,9 +54,9 @@ Where relevant, and following a numbered step in the lifecycle, we have provided
 
 ### Accepting the transaction
 
-**1** &mdash; The client submits transaction T~5~ to Libra node LN1 through the client service (Client → Client service)
+**1** &mdash; The client submits transaction T~5~ to a Libra node through the client service (Client → Client service). This transaction is forwarded to the validator node V1.
 
-**2** &mdash; Client service transmits transaction T5 to LN1's mempool (client service → Mempool CS.2, MP.1)
+**2** &mdash; Client service transmits transaction T5 to V1 mempool  (client service → Mempool CS.2, MP.1)
 
 **3** &mdash; Mempool will use the virtual machine (VM) component to perform validation checks, such as signature verification, checking that Alice's account has sufficient balance, checking that transaction T5 is not being replayed, and so on. (Mempool → VM)
 
@@ -118,20 +118,17 @@ Client Service is the _sole external interface_ of the validator. Any request ma
 
 ### Client → CS (CS.1)
 
-A client submits a  transaction to the admission control of a validator V~X~. This is done via:
-`AC::SubmitTransaction()`.
+A client submits a transaction to the client service of a validator node V~X. 
 
 ### CS → Mempool (CS.2)
 
-CS forwards the transaction to Libra node LN~X~'s mempool. The mempool will accept the transaction T~N~ only if the sequence number of T~N~ is greater than or equal to the current sequence number of the sender's account (note that the transaction will not be passed to consensus until it is the next sequence number).
+CS forwards the transaction to validator node V~X's mempool. The mempool will accept the transaction T~N only if the sequence number of T~N is greater than or equal to the current sequence number of the sender's account (note that the transaction will not be passed to consensus until it is the next sequence number).
 
 ### CS → Storage (CS.3)
 
 When the client performs a read query on the Libra Blockchain (for example, to get the balance of Alice's account), AC interacts with the storage component directly to obtain the requested information.
 
-### Admission Control README
 
-For implementation details refer to the [Admission Control README](crates/admission-control.md).
 
 ## Virtual Machine (VM)
 
@@ -169,21 +166,21 @@ For implementation details refer to the [Virtual Machine README](crates/vm.md).
 ![Figure 1.4 Mempool](/img/docs/mempool.svg)
 <small className="figure">Figure 1.4 Mempool</small>
 
-Mempool is a shared buffer that holds the transactions that are “waiting” to be executed. When a new transaction is added to the mempool, the mempool shares this transaction with other validators in the system. To reduce network consumption in the “shared mempool,” each validator is responsible for delivering its own transactions to other validators. When a validator receives a transaction from the mempool of another validator, the transaction is added to the mempool of the recipient validator.
+Mempool is a shared buffer that holds the transactions that are “waiting” to be executed. When a new transaction is added to the mempool, the mempool shares this transaction with other validator nodes in the system. To reduce network consumption in the “shared mempool,” each validator is responsible for delivering its own transactions to other validators. When a validator receives a transaction from the mempool of another validator, the transaction is added to the mempool of the recipient validator.
 
 ### CS → Mempool (MP.1)
 
-* After receiving a transaction from the client, the CS proxies the transaction to the node’s mempool.
-* The mempool for Libra node LN~X~ accepts transaction T~N~ for the sender's account only if the sequence number of T~N~ is greater than or equal to the current sequence number of the sender's account.
+* After receiving a transaction from the client, the CS proxies the transaction to the validator node’s mempool.
+* The mempool for validator node V~X~ accepts transaction T~N~ for the sender's account only if the sequence number of T~N~ is greater than or equal to the current sequence number of the sender's account.
 
-### Mempool → Other nodes (MP.2)
+### Mempool → Other validator nodes (MP.2)
 
-* The mempool of Libra node LN~X~ shares transaction T~N~ with the other validators on the same network.
-* Other validators share the transactions in their mempool with LN~X~’s mempool.
+* The mempool of the validator node V~X~ shares transaction T~N~ with the other validators on the same network.
+* Other validators share the transactions in their mempool with V~X~’s mempool.
 
 ### Consensus → Mempool (MP.3)
 
-* If a given node is a validator, then once it becomes the leader, its consensus will pull a block of transactions from its mempool and replicate the block to other validators. It does this to arrive at a consensus on the ordering of transactions and the execution results of the transactions in the block.
+* When the transaction is forwarded to a validator node and once it becomes the leader, its consensus will pull a block of transactions from its mempool and replicate the block to other validators. It does this to arrive at a consensus on the ordering of transactions and the execution results of the transactions in the block.
 * Note that just because a transaction T~N~ was included in a consensus block, it does not guarantee that T~N~ will eventually be persisted in the distributed database of the Libra Blockchain.
 
 ### Mempool → VM (MP.4)
