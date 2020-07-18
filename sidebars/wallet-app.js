@@ -15,7 +15,7 @@ const Sidebar = [
   },
   {
     extra: {
-      classNames: ['categoryIndex', 'normalWeight'],
+      classNames: ['categoryIndex'],
     },
     href: '/docs/wallet-app/overview',
     label: 'Overview',
@@ -72,6 +72,12 @@ const Sidebar = [
       'wallet-app/liquidity-mod',
       'wallet-app/admin-mod',
       'wallet-app/localizn',
+      'wallet-app/public-demo-wallet',
+      {
+        type: 'link',
+        href: 'https://demo-wallet.libra.org/api/apidocs',
+        label: 'Backend Swagger API',
+      },
     ]
   },
   getReference('secondary'),
