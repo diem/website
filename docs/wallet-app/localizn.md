@@ -5,6 +5,10 @@ sidebar_label: Localization
 
 ---
 
+> 
+> Note: This section will be updated with the next version of this document. 
+>
+
 
 
 The wallet UI is fully translatable using standard React i18n library [react-i18next](https://react.i18next.com/). All texts are mapped in JSON files located at `frontend/src/locales/LANGUAGE`. 
