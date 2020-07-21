@@ -6,4 +6,4 @@ sidebar_label: Backend Swagger API
 ---
 
 
-<iframe src="https://demo-wallet.libra.org/api/apidocs"></iframe>
+<iframe src="//demo-wallet.libra.org/api/apidocs"></iframe>
