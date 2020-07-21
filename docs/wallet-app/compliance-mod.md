@@ -7,8 +7,6 @@ sidebar_label: Compliance Module
 
 
 
-Login and authentication deals with all logic related to a user creating a new account, signing in, logging out, and keeping a session.
-
 ### KYC (Know Your Customer)
 
 When a new user wishes to create a Libra wallet account, an assessment is made of the risks involved with maintaining a business relationship with the user. The nature of the assessment is governed by various AML regulations and KYC guidelines, and differs by jurisdiction. The Libra Reference Wallet demonstrates a KYC procedure by requesting the user to provide personal identification information such as:
@@ -29,7 +27,7 @@ In a real world scenario, the wallet provider should ensure all the required reg
 
 ### Transaction monitoring
 
-All transactions, whether accepting or sending a user’s funds. must have all applicable regulatory checks completed. These checks are meant to prevent money laundering (AML) and terrorist financing (CTF). Depending on the jurisdiction, there may also be additional regulatory requirements for reporting, such as the Travel Rule.
+All transactions, whether accepting or sending a user’s funds. must have all applicable regulatory checks completed. These checks are meant to prevent money laundering (AML) and terrorist financing (CTF). Depending on the jurisdiction, there may also be additional regulatory requirements for reporting.
 
 In order to fulfill all of these requirements, a custodial wallet must have policies for checking and fulfilling them. Some requirements will have to be executed for a specific transaction, and some are performed cumulatively.
 
@@ -49,4 +47,12 @@ As a custodial wallet, all blockchain transactions must use the wallet provider 
 
 In the Libra network, the transactions are done between VASPs and then allocated to the end users. A fraudulent transaction can be reversed if the VASPs recognize it as such. Transfering to a non-custodial wallet on the Libra network will be limited to a certain threshold; this can help prevent sending hacked wallet balances to anonymous wallets.
 
-Another way to exploit a hacked wallet is to pay for goods and services. In the credit card industry, if a user claims that a purchase was fraudulent, the network will handle the dispute and the user will receive funds back, if needed, through the card issuer.
+
+
+## Reference
+
+* [Set Up](set-up-reference-wallet.md) - Learn how to deploy the Libra Reference Wallet.
+* [Test the Local Web Wallet](try-local-web-wallet.md) - Test the local web version of the Libra Reference Wallet.
+* [Test the Local Mobile Wallet](try-local-mobile-wallet.md) - Test the local mobile version of the Libra Reference Wallet
+* [Login and Authentication](login-and-auth.md) - Learn more about how login and authentication has been implemented. 
+* [Inventory Module](inventory-mod.md) - Introduction to inventory setup and settlement flows. 

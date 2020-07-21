@@ -143,6 +143,11 @@ then there is a guarantee that T_N will never be included in the blockchain.
 - The Faucet is a service running along with the testnet. This service only exists to facilitate minting coins for the testnet.
 - You can use the Faucet by sending a request to create coins and transfer them into a given account on your behalf.
 
+
+### Full node
+These can be run by anyone who wants to verify the state of the blockchain and synchronize to it. Full nodes replicate the full state of the blockchain by querying each other or by querying the validators directly, they can also forward transactions to the validators.
+
+
 ## G
 
 ---
@@ -194,9 +199,14 @@ then there is a guarantee that T_N will never be included in the blockchain.
 
 ### Libra Core
 
-- Libra Core is the open-source implementation of the Libra protocol published by the Libra Association.
-- This software is the first implementation of the Libra protocol and the Move language.
-- Libra Core includes both node and client functionalities.
+Libra Core is the open source technology on which the Libra Payment Network runs. Libra Core contains software for 
+
+* the Libra Blockchain itself, which generates and stores the immutable ledger of confirmed transactions and 
+* the validation process, which implements the consensus algorithm to validate transactions and add them to the Libra Blockchain immutable ledger.
+
+
+### Libra node
+This is the general term for any node in the Libra blockchain. There are two types of Libra nodes, [validator nodes](#validator-node) and [full nodes](#full-node)). 
 
 ### Libra Protocol
 
