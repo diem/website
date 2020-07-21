@@ -13,23 +13,31 @@ Service APIs are a set of backend APIs that are organized in terms of high-level
 
 User APIs handle user creation, and information management and updates. 
 
-![]()
+![](/img/docs/service-api-user.svg)
 
 ### Account
 
 Account APIs deal with an account’s address and transactions management. 
 
-![]()
+![](/img/docs/service-api-account.svg)
 
 ### CICO
 
 CICO handles all cash-in and cash-out flows, including getting rates and executing a given quote.
 
-![]()
+![](/img/docs/service-api-cico.svg)
 
 ### Admin
 
 Admin APIs fetch admin user account information and have debt settlement logic. 
 
-![]()
+![](/img/docs/service-api-admin.svg)
 
+
+
+## Reference
+
+* [Test the Local Web Wallet](try-local-web-wallet.md) - Test the local web version of the Libra Reference Wallet.
+* [Test the Local Mobile Wallet](try-local-mobile-wallet.md) - Test the local mobile version of the Libra Reference Wallet
+* [Login and Authentication](login-and-auth.md) - Learn more about how login and authentication has been implemented. 
+* [Wallet Architecture](wallet-arch.md) - Learn more about the different modules part of the wallet architecture.

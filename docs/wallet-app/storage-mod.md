@@ -35,11 +35,19 @@ Token table stores user session tokens for session authentication. When a user c
 
 ### Order
 
-
-
+>
+>Note: This section will be updated with the next version of this document. 
+>
 
 
 ### Execution log
 
 The execution log table is used for debugging and the data is not exposed to the user. Execution logs can easily be added in any function using add_execution_log(). 
 
+## Reference
+
+* [Login and Authentication](login-and-auth.md) - Learn more about how login and authentication has been implemented. 
+* [Service APIs](service-api.md) - Introduction to RESTful APIs that are organized in terms of high-level wallet functionalities
+* [Set Up](set-up-reference-wallet.md) - Learn how to deploy the Libra Reference Wallet.
+* [Test the Local Web Wallet](try-local-web-wallet.md) - Test the local web version of the Libra Reference Wallet.
+* [Test the Local Mobile Wallet](try-local-mobile-wallet.md) - Test the local mobile version of the Libra Reference Wallet

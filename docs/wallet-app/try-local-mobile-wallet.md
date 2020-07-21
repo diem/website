@@ -18,19 +18,17 @@ The Libra Reference Wallet mobile app, similarly to the web UI, demonstrates a c
 
 The mobile UI is practically identical to the web UI except for two differences:
 
-
-
 1. The mobile app supports sending funds by scanning a QR code.
 2. The mobile app does not allow logging in using admin accounts.
 
 
 ### Send Libra coins using QR code scanner
 
-The Libra Reference Wallet mobile app allows sending Libra coins using the built-in QR code scanner. This feature fills in automatically the transaction details without the need to type in and data manually. To feature is activated from the Send screen:
+The Libra Reference Wallet mobile app allows sending Libra Coins using the built-in QR code scanner. This feature fills in automatically the transaction details without the need to type in and data manually. To feature is activated from the Send screen:
 
 
 
-1.  Log in.
+1. Log in.
 2. Press the Send button.
 3. In the Recipient field, press the shutter icon.
 4. Camera screen will open. Notice that you might be requested to grant permission to use the camera.
@@ -39,11 +37,10 @@ The Libra Reference Wallet mobile app allows sending Libra coins using the built
 7. Press Review button.
 8. Press Send.
 
->
-> Pending illustration: Mobile app Send screen 
->
 
+## Reference
 
->
-> Pending illustration: Mobile app Receive screen 
->
+* [Set Up](set-up-reference-wallet.md) - Learn how to deploy the Libra Reference Wallet.
+* [Inventory Module](inventory-mod.md) - Introduction to inventory setup and settlement flows. 
+* [Wallet Architecture](wallet-arch.md) - Learn more about PubSub and how it's implemented.
+* [Test the Local Web Wallet](try-local-web-wallet.md) - Test the local web version of the Libra Reference Wallet

@@ -5,7 +5,7 @@ title: Life of a Transaction
 
 _**Note to readers:** This information was published before the Association released White Paper v2.0, which includes a number of key updates to the Libra payment system. This information has not been modified to incorporate those updates and should be read in that context._
 
-To get a deeper understanding of the lifecycle of a Libra transaction, we will follow a transaction on its journey from being submitted to a Libra node to being committed to the Libra Blockchain. We will then “zoom-in” on each logical component of a validator and take a look at its interactions with other components.
+To get a deeper understanding of the lifecycle of a Libra transaction, we will follow a transaction on its journey from being submitted to a Libra node to being committed to the Libra Blockchain. We will then “zoom-in” on each logical component of a validator node and take a look at its interactions with other components.
 
 ## Client submits a transaction
 
@@ -61,7 +61,7 @@ Where relevant, and following a numbered step in the lifecycle, we have provided
 **3** &mdash; Mempool will use the virtual machine (VM) component to perform validation checks, such as signature verification, checking that Alice's account has sufficient balance, checking that transaction T<sub>5</sub> is not being replayed, and so on. (Mempool → VM)
 
 
-### Sharing the transaction with other nodes
+### Sharing the transaction with other validator nodes
 
 **4** &mdash; The mempool will hold T<sub>5</sub> in an in-memory buffer. Mempool may already contain multiple transactions sent from Alice's address.
 
@@ -107,7 +107,7 @@ For our narrative, we will assume that a client submits a  transaction T<sub>N</
 * [Virtual Machine](#virtual-machine-vm)
 * [Storage](#storage)
 
-At the end of each section, we provide the link to the corresponding "README" of [Libra Core](libra-core-overview.md).
+
 
 ## Client Service (CS)
 
@@ -293,7 +293,6 @@ For implementation details refer to the [Storage README](crates/storage.md).
 * [Libra Protocol: Key Concepts](libra-protocol.md) &mdash; Introduces you to the fundamental concepts of the Libra protocol.
 * [My First Transaction](my-first-transaction.md) &mdash; Guides you through executing your very first transaction on the Libra Blockchain using the Libra CLI client.
 * [Getting Started With Move](move-overview.md) &mdash; Introduces you to a new blockchain programming language called Move.
-* [Libra Core Overview](libra-core-overview.md) &mdash; Provides the concept and implementation details of the Libra Core components through READMEs.
 * [CLI Guide](libra-cli.md) &mdash; Lists the commands (and their usage) of the Libra CLI client.
 * [Libra Glossary](reference/glossary.md) &mdash; Provides a quick reference to Libra terminology.
 * [State Machine Replication in the Libra Blockchain](state-machine-replication-paper.md) &mdash; Provides a detailed look into our consensus protocol **LibraBFT**.

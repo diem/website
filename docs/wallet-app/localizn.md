@@ -5,11 +5,6 @@ sidebar_label: Localization
 
 ---
 
-> 
-> Note: This section will be updated with the next version of this document. 
->
-
-
 
 The wallet UI is fully translatable using standard React i18n library [react-i18next](https://react.i18next.com/). All texts are mapped in JSON files located at `frontend/src/locales/LANGUAGE`. 
 
@@ -25,3 +20,10 @@ To extract translations into a CSV file for manual translations, you can use the
 
 To import manually translated CSV you can use the import flag:
 `./scripts/generate_i18n.py -s en -d es -i ./english_texts.csv`
+
+
+
+## Reference
+
+* [Test the Local Web Wallet](try-local-web-wallet.md) - Test the local web version of the Libra Reference Wallet
+* [Try the Demo Wallet](public-demo-wallet.md) - Check out the demo wallet running on testnet. 

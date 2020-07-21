@@ -28,3 +28,12 @@ External P2P Transfer
 
 Currently the Libra Reference Wallet only implements three types of transactions. However, as the scope increases, other types of transactions, such as merchant pull request flow, could be added to extend the functionality of the Reference Wallet. 
 
+
+
+## Reference
+
+* [Set Up](set-up-reference-wallet.md) - Learn how to deploy the Libra Reference Wallet.
+* [Test the Local Web Wallet](try-local-web-wallet.md) - Test the local web version of the Libra Reference Wallet.
+* [Test the Local Mobile Wallet](try-local-mobile-wallet.md) - Test the local mobile version of the Libra Reference Wallet
+* [Login and Authentication](login-and-auth.md) - Learn more about how login and authentication has been implemented. 
+* [Life of a Transaction](/core/life-of-a-transaction.md)  - Understrand what happens when a transaction is submitted and executed.
