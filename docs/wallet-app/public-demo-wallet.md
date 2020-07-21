@@ -39,8 +39,6 @@ The image below details the different user flows for the Demo Wallet.
 
 Check out the embedded demo of the Web version of the reference wallet hosted at https://developers.libra.org/docs/wallet-app/demo-wallet/. 
 
-
-
 ## Create your account and login
 
 Since this is a demo, login and authentication is simulated using auto generated fake user data. 
