@@ -19,7 +19,7 @@ const paperMeta = {
     imgAlt: 'The Libra Blockchain PDF Download',
   },
   'Move Programming Language': {
-    abstractUrl: '/docs/core/move-paper/',
+    abstractUrl: '/docs/move/move-paper/',
     paperBase: `${papersLocation}/libra-move-a-language-with-programmable-resources`,
     dates: ['2020-05-26', '2020-04-09', '2019-09-26', '2019-06-18'],
     imgLoc: '/docs/assets/illustrations/move-language-pdf.png',
@@ -89,4 +89,3 @@ export default props => {
     </Layout>
   );
 }
-
