@@ -77,18 +77,20 @@ $ cargo run -p libra-swarm -- -s
 Use the following commands:
 
 account | a
-Account operations
+  Account operations
 query | q
-Query operations
+  Query operations
 transfer | transferb | t | tb
-&lt;sender_account_address&gt;|&lt;sender_account_ref_id&gt; &lt;receiver_account_address&gt;|&lt;receiver_account_ref_id&gt; &lt;number_of_coins&gt; &lt;currency_code&gt; [gas_unit_price_in_micro_libras (default=0)] [max_gas_amount_in_micro_libras (default 400_000)] Suffix 'b' is for blocking.
-Transfer coins from one account to another.
+  &lt;sender_account_address&gt;|&lt;sender_account_ref_id&gt; &lt;receiver_account_address&gt;|&lt;receiver_account_ref_id&gt; &lt;number_of_coins&gt; &lt;currency_code&gt; [gas_unit_price_in_micro_libras (default=0)] [max_gas_amount_in_micro_libras (default 400_000)] Suffix 'b' is for blocking.
+  Transfer coins from one account to another.
+info | i
+  Print cli config and client internal information
 dev
-Local Move development
+  Local Move development
 help | h
-Prints this help
+  Prints this help
 quit | q!
-Exit this client
+  Exit this client
 
 
 Please, input commands:
@@ -100,17 +102,21 @@ libra%
 <p>Each Move module and resource type is hosted by a specific account address. For example, the <code>Libra</code> module is hosted by the account at address <code>0x1</code>. To import the <code>Libra</code> module in other modules or transaction scripts, your Move code would specify <code>use 0x1::Libra</code>.</p>
 <p>Before publishing a Move module, you first need to create an account to host it:</p>
 <pre><code class="hljs">libra% account create
-&gt;&gt; Creating/retrieving next account from wallet
-Created/retrieved account #0 address 717da70a461fef6307990847590ad7af
+&gt;&gt; Creating/retrieving next local account from wallet
+Created/retrieved local account #0 address 717da70a461fef6307990847590ad7af
 
 </code></pre>
 <p>In the above output, 0 is the index of the account you just created, and the hex string is the address of that account. The index is just a convenient way to refer to this account locally, and it's also called <code>ref_id</code>. For more information on account creation, refer to <a href="/docs/my-first-transaction">My First Transaction</a>.</p>
 <p>The <code>create</code> command generates a local keypair. To create the account on the local blockchain, you'll need to mint money into the account, as shown below:</p>
 <pre><code class="hljs">libra% account mintb 0 76 LBR
-&gt;&gt; Minting coins
+&gt;&gt; Creating recipient account before minting from faucet
 waiting ....
 transaction executed!
-Finished minting!
+no events emitted
+&gt;&gt; Sending coins from faucet
+waiting ....
+transaction executed!
+Finished sending coins from faucet!
 </code></pre>
 <p>To check whether the account was successfully created on the local blockchain, query the account balance.</p>
 <pre><code class="hljs">libra% query balance 0
@@ -226,6 +232,7 @@ Successfully compiled a program at:
 <pre><code class="hljs">libra% dev execute 0 /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/5fa11d0acf5d53e8d257ab31534b2017/scripts/set_lbr_fee.mv 10000
 waiting .....
 transaction executed!
+no events emitted
 Successfully finished execution
 </code></pre>
 <ul>
@@ -235,13 +242,17 @@ Successfully finished execution
 </ul>
 <p>Next, we can set up another account and use the <code>pay_lbr_with_fee</code> script to send a payment with the added fee:</p>
 <pre><code class="hljs">libra% account create
-&gt;&gt; Creating/retrieving next account from wallet
-Created/retrieved account #1 address aed273e4e7b36276e1442656cc16eb31
+&gt;&gt; Creating/retrieving next local account from wallet
+Created/retrieved local account #1 address aed273e4e7b36276e1442656cc16eb31
 libra% account mintb 1 10 LBR
-&gt;&gt; Minting coins
+&gt;&gt; Creating recipient account before minting from faucet
 waiting ....
 transaction executed!
-Finished minting!
+no events emitted
+&gt;&gt; Sending coins from faucet
+waiting ....
+transaction executed!
+Finished sending coins from faucet!
 libra% dev execute 1 /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/5fa11d0acf5d53e8d257ab31534b2017/scripts/pay_lbr_with_fee.mv 0x717da70a461fef6307990847590ad7af 1000000
 waiting ....
 transaction executed!
@@ -278,7 +289,7 @@ so you need to list the path to your home directory instead.</p>
 <p>If you compile a module using one account (e.g., <code>dev compile</code> 0 ...) and try to publish it to a different account (e.g., <code>dev publish</code> 1 ...), you'll see the following error:</p>
 <pre><code class="hljs">libra% dev publish 1 /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/b8639bd9fe2403874bbfde5643486bde/modules/0_SimpleFee.mv
 
-transaction failed to execute; status: MODULE_ADDRESS_DOES_NOT_MATCH_SENDER!
+transaction failed to execute; status: VerificationError!
 
 </code></pre>
 <p>A compiled module contains the address of the account where the module is to be published, and the <a href="https://developers.libra.org/docs/crates/vm">Move Virtual Machine (VM)</a> only allows a transaction sender to publish a module under the sender’s own account address. If this was not true, another user could publish modules under your account! To fix this error, recompile the module using the desired sender address.</p>
@@ -297,7 +308,7 @@ Unable to find account by account reference id: 2, to see all existing accounts,
 </code></pre>
 <p>The following error indicates that either the arguments to the transaction script are missing or one or more of the arguments are of the wrong type.</p>
 <pre><code class="hljs">libra% dev execute 0 /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/5fa11d0acf5d53e8d257ab31534b2017/scripts/set_lbr_fee.mv
-transaction failed to execute; status: TYPE_MISMATCH!
+transaction failed to execute; status: VerificationError!
 
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
