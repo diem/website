@@ -7,7 +7,7 @@ title: Run Move Programs Locally
 **Note:** Currently, you can run custom Move modules and scripts on a local network only, and not on the Libra testnet.
 </blockquote>
 
-This tutorial guides you through publishing a Move module and executing a Move transaction script on a local blockchain. To perform operations that are not natively supported by the existing Move transaction scripts, you can create and publish Move modules and write scripts to use these modules. For basic information on Move, refer to [Getting Started with Move](move-overview.md). For deeper technical understanding of Move, refer to the [technical paper](move-paper.md). For guidance on running a local network of nodes, refer to [Run a Local Network](run-local-network.md). The Libra CLI client provides the `dev` command to compile, publish, and execute Move programs locally. Refer to the [CLI Guide - dev command](libra-cli#dev--d--operations-related-to-move-transaction-scripts-and-modules) for command usage. To see the list of subcommands,  enter `dev` on the CLI.
+This tutorial guides you through publishing a Move module and executing a Move transaction script on a local blockchain. To perform operations that are not natively supported by the existing Move transaction scripts, you can create and publish Move modules and write scripts to use these modules. For basic information on Move, refer to [Getting Started with Move](move-getting-started.md). For deeper technical understanding of Move, refer to the [technical paper](move-paper.md). For guidance on running a local network of nodes, refer to [Run a Local Network](/core/run-local-network.md). The Libra CLI client provides the `dev` command to compile, publish, and execute Move programs locally. Refer to the [CLI Guide - dev command](/core/libra-cli#dev--d--operations-related-to-move-transaction-scripts-and-modules) for command usage. To see the list of subcommands,  enter `dev` on the CLI.
 
 To create, compile, and publish Move modules to an account on the local blockchain, follow the instructions in [compile and publish Move modules](#compile-and-publish-move-modules). To compile and execute a Move transaction script, follow the instructions in [compile and execute transaction scripts](#compile-and-execute-transaction-scripts).
 
@@ -55,7 +55,7 @@ Please, input commands:
 libra%
 ```
 
-For detailed instructions on working with a local cluster of validator nodes, refer to [Run a Local Network](run-local-network.md).
+For detailed instructions on working with a local cluster of validator nodes, refer to [Run a Local Network](/core/run-local-network.md).
 
 ### Create an account
 
@@ -70,7 +70,7 @@ Created/retrieved account #0 address 717da70a461fef6307990847590ad7af
 
 ```
 
-In the above output, 0 is the index of the account you just created, and the hex string is the address of that account. The index is just a convenient way to refer to this account locally, and it's also called `ref_id`. For more information on account creation, refer to [My First Transaction](my-first-transaction.md).
+In the above output, 0 is the index of the account you just created, and the hex string is the address of that account. The index is just a convenient way to refer to this account locally, and it's also called `ref_id`. For more information on account creation, refer to [My First Transaction](/core/my-first-transaction.md).
 
 The `create` command generates a local keypair. To create the account on the local blockchain, you'll need to mint money into the account, as shown below:
 
@@ -125,7 +125,7 @@ module SimpleFee {
 
 ### Compile Move module
 
-To compile `SimpleFee.move`, use the [dev compile](reference/libra-cli#dev-d-mdash-operations-related-to-move-transaction-scripts-and-modules) command.
+To compile `SimpleFee.move`, use the [dev compile](/core/libra-cli#dev--d--operations-related-to-move-transaction-scripts-and-modules) command.
 
 ```
 libra% dev compile 0 <path to SimpleFee.move> <path to language/stdlib/modules>
@@ -144,7 +144,7 @@ Successfully compiled a program at:
 
 ### Publish compiled module
 
-To publish the module bytecode on your local blockchain, run the [dev publish](libra-cli#dev--d--operations-related-to-move-transaction-scripts-and-modules) command and use the path to the compiled module bytecode file as shown below:
+To publish the module bytecode on your local blockchain, run the [dev publish](/core/libra-cli#dev--d--operations-related-to-move-transaction-scripts-and-modules) command and use the path to the compiled module bytecode file as shown below:
 
 ```
 libra% dev publish 0 /var/folders/tq/8gxrrmhx16376zxd5r4h9hhn_x1zq3/T/b8639bd9fe2403874bbfde5643486bde/modules/0_SimpleFee.mv
@@ -203,7 +203,8 @@ fun pay_lbr_with_fee(payer: &signer, payee: address, amount: u64) {
 
 ### Compile transaction scripts
 
-To compile your transaction scripts, use the [dev compile](reference/libra-cli#dev-d-mdash-operations-related-to-move-transaction-scripts-and-modules) command.
+To compile your transaction scripts, use the [dev compile](/core/libra-cli#dev--d--operations-related-to-move-transaction-scripts-and-modules) command.
+
 
 ```
 libra% dev compile 0 <path to set_lbr_fee.move> <path to SimpleFee.move> <path to language/stdlib/modules>
@@ -227,7 +228,7 @@ Successfully compiled a program at:
 
 ### Execute transaction scripts
 
-To execute a custom script, use the [dev execute](reference/libra-cli#dev-d-mdash-operations-related-to-move-transaction-scripts-and-modules) command on the bytecode output from [Compile Transaction Script](#compile-transaction-script) step above. First let's use the `set_lbr_fee` script to specify a fee amount:
+To execute a custom script, use the [dev execute](/core/libra-cli#dev--d--operations-related-to-move-transaction-scripts-and-modules) command on the bytecode output from [Compile Transaction Scripts](#compile-transaction-scripts) step above. First let's use the `set_lbr_fee` script to specify a fee amount:
 
 <blockquote className="block_note">
 
@@ -295,7 +296,7 @@ compilation failed
 This may happen because the client does not currently perform tilde expansion,
 so you need to list the path to your home directory instead.
 
-If you see the following error, refer to the usage of the [dev compile](libra-cli#dev--d--operations-related-to-move-transaction-scripts-and-modules) command, specify all the required arguments and try compiling again.
+If you see the following error, refer to the usage of the [dev compile](/core/libra-cli#dev--d--operations-related-to-move-transaction-scripts-and-modules) command, specify all the required arguments and try compiling again.
 
 ```
 Invalid number of arguments for compilation
@@ -312,7 +313,7 @@ transaction failed to execute; status: MODULE_ADDRESS_DOES_NOT_MATCH_SENDER!
 
 ```
 
-A compiled module contains the address of the account where the module is to be published, and the [Move Virtual Machine (VM)](https://developers.libra.org/docs/crates/vm) only allows a transaction sender to publish a module under the sender’s own account address. If this was not true, another user could publish modules under your account! To fix this error, recompile the module using the desired sender address.
+A compiled module contains the address of the account where the module is to be published, and the [Move Virtual Machine (VM)](https://github.com/libra/libra/tree/master/language/vm) only allows a transaction sender to publish a module under the sender’s own account address. If this was not true, another user could publish modules under your account! To fix this error, recompile the module using the desired sender address.
 
 If you do not provide the correct path to your compiled module, you'll see this error:
 
@@ -346,13 +347,13 @@ transaction failed to execute; status: TYPE_MISMATCH!
 
 ## Reference
 
-* [Run a Local Network](run-local-network.md) &mdash; Provides information on running a local network.
-* [Getting Started with Move](move-overview.md) &mdash; Introduces you to Move, a new blockchain programming language.
+* [Run a Local Network](/core/run-local-network.md) &mdash; Provides information on running a local network.
+* [Getting Started with Move](move-getting-started.md) &mdash; Introduces you to Move, a new blockchain programming language.
 * [Move Technical Paper](move-paper.md).
 * Move READMEs:
-    * [Move Language](https://developers.libra.org/docs/crates/move-language).
-    * [Move IR Compiler](https://developers.libra.org/docs/crates/ir-to-bytecode).
-    * [Bytecode Verifier](https://l.facebook.com/l.php?u=https%3A%2F%2Fdevelopers.libra.org%2Fdocs%2Fcrates%2Fbytecode-verifier&h=AT22hXPt7Fjx80GBMVQ5NOZaVAvQRzD-W4QLZK3j44-Jk11H7EzR7RpTqJpaWX0FMSWFcMdhlvfSTw7TVYk15xAC2fd520s8erlICkc4F_AMTOWrMowCqqG5Qv8RLXROLXZ1MTxGMGq4L1J7czZSas5l).
+    * [Move Language](https://github.com/libra/libra/tree/master/language).
+    * [Move IR Compiler](https://github.com/libra/libra/tree/master/language/compiler).
+    * [Bytecode Verifier](https://github.com/libra/libra/tree/master/language/bytecode-verifier).
     * [Virtual Machine](https://developers.libra.org/docs/crates/vm).
-* [CLI Guide](libra-cli.md) — Lists the commands of the Libra CLI client.
-* [My First Transaction](my-first-transaction.md) &mdash; Guides you through executing your very first transaction on the Libra Blockchain using the Libra CLI client.
+* [CLI Guide](/core/libra-cli.md) — Lists the commands of the Libra CLI client.
+* [My First Transaction](/core/my-first-transaction.md) &mdash; Guides you through executing your very first transaction on the Libra Blockchain using the Libra CLI client.

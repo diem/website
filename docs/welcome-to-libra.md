@@ -117,7 +117,7 @@ libra% query balance 1
 ```
 
 </MultiStepTabItem>
-<MultiStepTabItem value="run-move" learnMoreLink="/docs/core/run-move-locally">
+<MultiStepTabItem value="run-move" learnMoreLink="/docs/move/run-move-locally">
 
 ```bash
 script {
