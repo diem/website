@@ -1,5 +1,5 @@
 ---
-id: move-overview
+id: move-getting-started
 title: Getting Started With Move
 ---
 

@@ -199,14 +199,14 @@ These can be run by anyone who wants to verify the state of the blockchain and s
 
 ### Libra Core
 
-Libra Core is the open source technology on which the Libra Payment Network runs. Libra Core contains software for 
+Libra Core is the open source technology on which the Libra Payment Network runs. Libra Core contains software for
 
-* the Libra Blockchain itself, which generates and stores the immutable ledger of confirmed transactions and 
+* the Libra Blockchain itself, which generates and stores the immutable ledger of confirmed transactions and
 * the validation process, which implements the consensus algorithm to validate transactions and add them to the Libra Blockchain immutable ledger.
 
 
 ### Libra node
-This is the general term for any node in the Libra blockchain. There are two types of Libra nodes, [validator nodes](#validator-node) and [full nodes](#full-node)). 
+This is the general term for any node in the Libra blockchain. There are two types of Libra nodes, [validator nodes](#validator-node) and [full nodes](#full-node)).
 
 ### Libra Protocol
 
@@ -260,7 +260,7 @@ This is the general term for any node in the Libra blockchain. There are two typ
 
 - **Move** is a new programming language that implements all the transactions on the Libra Blockchain.
 - It has two different kinds of code &mdash; [transaction scripts](#transaction-script) and [Move modules](#move-module).
-- For further information on Move, refer to the [Move technical paper](../move-paper.md)
+- For further information on Move, refer to the [Move technical paper](/move/move-paper.md)
 
 ### Move Bytecode
 

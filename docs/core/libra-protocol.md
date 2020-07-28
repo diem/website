@@ -30,7 +30,7 @@ Figure 1.1 represents the change of state of the Libra Blockchain that occurs wh
 - **F** is a deterministic function. F always returns the same final state for a specific initial state and a specific transaction. If the current state of the blockchain is S<sub>N-1</sub>, and transaction T<sub>N</sub> is executed on state S<sub>N-1</sub>, the new state of the blockchain is always S<sub>N</sub>.
 - **S<sub>N</sub>** is the n-th state of the blockchain. S<sub>N</sub> is an outcome of applying F to S<sub>N-1</sub> and T<sub>N</sub>.
 
-The Libra protocol uses the [Move language](move-overview.md) to implement the deterministic execution function F.
+The Libra protocol uses the [Move language](/move/move-getting-started.md) to implement the deterministic execution function F.
 
 ### Transactions
 
@@ -67,8 +67,8 @@ The versioned database allows validators to:
 
 A Libra account is a container for Move modules and Move resources. It is identified by an [account address](reference/glossary.md#account-address). This essentially means that the state of each account is comprised of both code and data:
 
-- **[Move modules](move-overview.md#move-modules-allow-composable-smart-contracts)** contain code (type and procedure declarations), but they do not contain data. The procedures of a module encode the rules for updating the global state of the blockchain.
-- **[Move resources](move-overview.md#move-has-first-class-resources)** contain data but no code. Every resource value has a type that is declared in a module published in the distributed database of the blockchain.
+- **[Move modules](/move/move-getting-started.md#move-modules-allow-composable-smart-contracts)** contain code (type and procedure declarations), but they do not contain data. The procedures of a module encode the rules for updating the global state of the blockchain.
+- **[Move resources](/move/move-getting-started.md#move-has-first-class-resources)** contain data but no code. Every resource value has a type that is declared in a module published in the distributed database of the blockchain.
 
 An account may contain an arbitrary number of Move resources and Move modules.
 
@@ -95,7 +95,7 @@ A validator node contains the following logical components:
 
 **Client Service**
 
-The Client Service is the external interface of the validator node. When a client makes a request to the Libra node, it goes to the Client Service first. 
+The Client Service is the external interface of the validator node. When a client makes a request to the Libra node, it goes to the Client Service first.
 
 **Mempool**
 
@@ -138,7 +138,7 @@ In addition to validator nodes, the Libra network will have full nodes that veri
 
 - [Welcome Page](welcome-to-libra.md).
 - [My First Transaction](my-first-transaction.md) — Guides you through executing your very first transaction on the Libra Blockchain using the Libra CLI client.
-- [Getting Started with Move](move-overview.md) — Introduces you to a new blockchain programming language called Move.
+- [Getting Started with Move](/move/move-getting-started.md) — Introduces you to a new blockchain programming language called Move.
 - [Life of a Transaction](life-of-a-transaction.md) — Provides a look at what happens “under the hood” when a transaction is submitted and executed.
 - [CLI Guide](libra-cli.md) — Lists the commands (and their usage) of the Libra CLI client.
 - [Libra Glossary](reference/glossary.md) — Provides a quick reference to Libra terminology.

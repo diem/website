@@ -35,7 +35,7 @@ To describe the lifecycle of transaction T<sub>5</sub>, we will assume that:
 * Alice's account has 110 Libra Coins.
 * The current [sequence number](reference/glossary.md#sequence-number) of Alice's account is 5 (which indicates that 5 transactions have already been sent from Alice's account).
 * There are a total of 100 validator nodes &mdash; V<sub>1</sub> to V<sub>100</sub> on the network.
-* The client submits transaction T<sub>5</sub> to Libra node LN<sub>1</sub>. A transaction can be submitted directly to a validator node or a full node. Full nodes forward transactions to validator nodes V<sub>1</sub>. 
+* The client submits transaction T<sub>5</sub> to Libra node LN<sub>1</sub>. A transaction can be submitted directly to a validator node or a full node. Full nodes forward transactions to validator nodes V<sub>1</sub>.
 * **Validator V<sub>1</sub> is a proposer/leader for the current round.**
 
 ## Lifecycle of the transaction
@@ -118,7 +118,7 @@ Client Service is the _sole external interface_ of the validator. Any request ma
 
 ### Client → CS (CS.1)
 
-A client submits a transaction to the client service of a validator node V<sub>X</sub>. 
+A client submits a transaction to the client service of a validator node V<sub>X</sub>.
 
 ### CS → Mempool (CS.2)
 
@@ -135,7 +135,7 @@ When the client performs a read query on the Libra Blockchain (for example, to g
 ![Figure 1.3 Virtual Machine](/img/docs/virtual-machine.svg)
 <small className="figure">Figure 1.3 Virtual Machine</small>
 
-The [Move virtual machine](move-overview.md) (VM) verifies and executes transaction scripts written in Move bytecode.
+The [Move virtual machine](/move/move-getting-started.md) (VM) verifies and executes transaction scripts written in Move bytecode.
 
 ### VM → Storage (VM.1)
 
@@ -292,7 +292,7 @@ For implementation details refer to the [Storage README](crates/storage.md).
 * [Welcome page](welcome-to-libra.md).
 * [Libra Protocol: Key Concepts](libra-protocol.md) &mdash; Introduces you to the fundamental concepts of the Libra protocol.
 * [My First Transaction](my-first-transaction.md) &mdash; Guides you through executing your very first transaction on the Libra Blockchain using the Libra CLI client.
-* [Getting Started With Move](move-overview.md) &mdash; Introduces you to a new blockchain programming language called Move.
+* [Getting Started With Move](/move/move-getting-started.md) &mdash; Introduces you to a new blockchain programming language called Move.
 * [CLI Guide](libra-cli.md) &mdash; Lists the commands (and their usage) of the Libra CLI client.
 * [Libra Glossary](reference/glossary.md) &mdash; Provides a quick reference to Libra terminology.
 * [State Machine Replication in the Libra Blockchain](state-machine-replication-paper.md) &mdash; Provides a detailed look into our consensus protocol **LibraBFT**.

@@ -32,7 +32,6 @@ const Sidebar = [
       'core/libra-protocol',
       'core/life-of-a-transaction',
       'core/the-libra-blockchain-paper',
-      'core/move-paper',
       'core/state-machine-replication-paper',
     ]
   },
@@ -46,9 +45,7 @@ const Sidebar = [
     type: 'category',
     items: [
       'core/my-first-transaction',
-      'core/move-overview',
       'core/run-local-network',
-      'core/run-move-locally',
     ]
   },
   {
