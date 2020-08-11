@@ -9,6 +9,8 @@ sidebar_label: Service APIs
 
 Service APIs are a set of backend APIs that are organized in terms of high-level wallet functionalities. They are defined in the webapp layer, and the frontend uses these APIs to communicate with the backend. The service APIs are RESTful APIs that are divided into user, account, CICO, and admin. 
 
+Docs can be generated locally using SwaggerUI. Instructions for how to get that set up can be found in the backend README under “Getting Started”, linked [here](https://github.com/libra/libra-reference-wallet/tree/master/backend#getting-started). 
+
 ### User
 
 User APIs handle user creation, and information management and updates. 

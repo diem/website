@@ -24,7 +24,7 @@ The mobile UI is practically identical to the web UI except for two differences:
 
 ### Send Libra coins using QR code scanner
 
-The Libra Reference Wallet mobile app allows sending Libra Coins using the built-in QR code scanner. This feature fills in automatically the transaction details without the need to type in and data manually. To feature is activated from the Send screen:
+The Libra Reference Wallet mobile app allows sending Libra Coins using the built-in QR code scanner. This feature fills in automatically the transaction details without the need to type in and data manually. The feature is activated from the Send screen:
 
 
 
@@ -36,6 +36,12 @@ The Libra Reference Wallet mobile app allows sending Libra Coins using the built
 6. All the fields will be field automatically with values.
 7. Press Review button.
 8. Press Send.
+
+
+
+![](/img/docs/mobile-w-send.svg)
+
+![](/img/docs/mobile-w-receive.svg)
 
 
 ## Reference

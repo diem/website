@@ -11,7 +11,7 @@ sidebar_label: Inventory Module
 
 The liquidity inventory setup is part of the backend startup sequence. At start, an internal inventory user is created. This internal user manages the balance of the internal custody wallet inventory. After its creation, the backend[ “buys” its initial Libra funds from the external liquidity provider.](libra-c-source#inventory-management) The custodial wallet provider directs the liquidity provider to send purchased Libra Coins to the custody wallet’s Libra blockchain address.
 
-From this point, the custodial wallet service can engage in Libra Blockchain transfers between its inventory account and the wallet user accounts to transfer the requested funds.
+From this point, the custodial wallet service can engage in transfers between its inventory account and the wallet user accounts to transfer the requested funds.
 
 ## Add, withdraw, or convert flows
 
@@ -29,9 +29,9 @@ This transfer type is when a user wants to add funds to their wallet balance.
 
 For example, if a user wants to add 100LBRUSD and clicks “Add”. 
 
-* The frontend will ask the backend for conversion rates, which will then be presented to the user. For this example, 100 LBRUSD will be added in exchange for 100 USD. 
+* The frontend will ask the backend for conversion rates, which will then be presented to the user. For this example, *100LBRUSD will be added in exchange for 100 USD*. 
 * When the user is ready to proceed, the frontend will ask for a final quote from the backend and will present the final terms to the user.
-* Once the user approves, the frontend will send an execute quote request to the backend. 
+* Once the user approves, the frontend will send an execute quote request to the backend.  
 * The backend API will create an order with the order details and will then execute the process order workflow. The order will be dispatched and the correct workflow handler will be triggered. 
 * The add/withdraw funds workflow will try to charge/refund the user payment method according to the order details. 
 * If that succeeds, an internal network transaction is initiated to transfer the Libra Coins from the user account to the custody wallet inventory account or vice versa.
@@ -45,10 +45,10 @@ The cover process in the Libra Reference Wallet is executed back-to-back with th
 
 #### Example cover process
 
-* The wallet is committing to the liquidity provider to pay 100 USD in exchange for 100 LBRUSD.
-* The wallet then asks the liquidity provider to withdraw the Libra balance into the customer wallet as part of the trade execution.
-  * The trade with the liquidity provider represents the commitment and execution bonded together. 
-* After the wallet asks the liquidity provider for and executes a quote to buy 100 LBRUSD/LBR, the liquidity provider will log on its side the wallet depth in fiat for -100USD and will transfer 100LBRUSD back to the wallet inventory account, which will now be balanced.
+The wallet uses the cover process to balance its inventory after transactions with user accounts. In this example, the wallet exchanges 100 USD for 100 LBRUSD from the liquidity provider to balance its inventory. 
+
+* The wallet requests the liquidity provider to transfer 100LBRUSD to the wallet inventory account as part of the trade **execution**. In the same step, the wallet also **commits** to sending the liquidity provider 100 USD in exchange. 
+* Once the wallet executes the quote to buy 100 LBRUSD from the liquidity provider, the provider logs an outstanding debt of 100 USD for the wallet and posts a Libra Blockchain transaction sending 100 LBRUSD to the wallet inventory. The wallet will then have to settle this outstanding debt with the liquidity provider. In the Libra Reference Wallet, you can simulate settling outstanding debts using the admin dashboard. 
 
 
 #### Withdraw funds
@@ -58,10 +58,10 @@ In the withdrawal process, things work the other way around. The user payment me
 
 #### Convert funds 
 
-For the purpose of simplifying this Libra Reference Wallet, the conversion between Libra Coins of different currencies is represented by transactions between the custodial wallet and the user and reflected by internal transfers (off-chain) between the user account and the inventory account.
+For the purpose of simplifying this Libra Reference Wallet, the conversion between Libra Coins of different currencies is represented by transactions between the custodial wallet and the user and reflected by internal transfers (off-chain) between the user account and the inventory account. 
 
 
-### Settlement flow
+### Fiat settlement flow
 
 Settlement flow is not implemented at this point. This is the process where the liquidity provider and custody wallet settle the fiat balances owed to each other by passing a reference for fiat wire transfers between the custody wallet bank account and the liquidity provider bank account and vice versa to settle the debt. The settlement interface and internal structures are demonstrated in the liquidity provider-client implementation. 
 

@@ -17,12 +17,12 @@ The admin UI allows admin users to perform several administrative tasks:
 *   Add new admin users.
 *   Settle Liquidity Provider debt.
 
-To access the admin UI, log in using admin credentials. Upon login the user will be presented with UI different from the regular user.
+To access the admin UI, log in using the admin credentials `admin@lrw.com`. Upon login, the user will be presented with a UI different from the regular user.
 
 >
 >Note: 
 >    
->            - There always exists an admin user named admin@lrw
+>           - There always exists an admin user named admin@lrw
 >           - The admin UI is not accessible in the mobile app.  
 > 
 
@@ -30,7 +30,7 @@ To access the admin UI, log in using admin credentials. Upon login the user will
 
 ## Main page
 
-The main page of the admin UI shows the total number of registered users and the total wallet balances for each Libra currency. From the main page user can browse to three secondary pages:
+The main page of the admin UI shows the total number of registered users and the total wallet balances for each Libra Coin currency. From the main page user can browse to three secondary pages:
 
 
 
@@ -38,7 +38,7 @@ The main page of the admin UI shows the total number of registered users and the
 *   Administrators management
 *   Liquidity management
 
-
+![](/img/docs/admin-dash.svg)
 
 
 ## User and admin management pages
@@ -50,7 +50,7 @@ On the administrators management page “Add administrator” button allows addi
 
 ## Liquidity management page
 
-This page simulates management of the wallet debt for its liquidity provider. The wallet continuously sells and buys funds from the liquidity provider. While the Libra funds are immediately transferred, the corresponding fiat amount is accumulated and settled manually. In real-world scenarios the settlement usually involves some kind of wire transfer. Here, for demonstration purposes, clicking “Settle” marks the debt as settled immediately.
+This page simulates management of the wallet debt for its liquidity provider. The wallet continuously sells and buys funds from the liquidity provider. While the test Libra Coins are immediately transferred, the corresponding fiat amount is accumulated and settled manually. In real-world scenarios the settlement usually involves some kind of wire transfer. Here, for demonstration purposes, clicking “Settle” marks the debt as settled immediately.
 
 ## Reference
 

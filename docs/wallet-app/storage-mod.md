@@ -11,11 +11,11 @@ The Libra Reference Wallet uses SQL as its data store, and SQLAlchemy as the Pyt
 
 ### User
 
-User table stores all information related to the user’s identity, registration, and KYC information. On user registration, username and password information are stored. KYC information such as full name, dob, address, and phone number are also stored during the registration process. 
+User table stores all information related to the user’s identity, registration, and KYC information. On user registration, username, and password information are stored. KYC information such as full name, dob, address, and phone number are also stored during the registration process. 
 
 ### Account
 
-While the user table deals with a user’s identification and login information, the account table purely deals with the user’s transactions. Each user has an account, in which all transactions and balances are stored. There is a special case for the admin user, who does not have any corresponding account. Currently each user has a single account, but the wallet could be extended for a user to hold multiple accounts. Another special case is the inventory account, which doesn’t have any corresponding user. 
+While the user table deals with a user’s identification and login information, the account table purely deals with the user’s transactions. Each user has an account, in which all transactions and balances are stored. There is a special case for the admin user, who does not have any corresponding account. Currently each user has a single account, but the wallet could be extended for a user to hold multiple accounts. Another special case is the inventory account, which doesn’t have any corresponding user.  
 
 ### Transaction
 

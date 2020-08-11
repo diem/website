@@ -10,7 +10,7 @@ sidebar_label: Try the Demo Wallet
 
 ## Overview
 
-The demo wallet has been made available to allow the public to try out a wallet running on the testnet. It is meant to run as a public, online demo service. While demo wallet users may transfer Libra Coins on the testnet, transfer of fiat currency, or other funds are simulated. The wallet demonstrates the following use cases:
+The Public Demo Wallet has been made available to allow the public to try out a wallet running on the testnet. It is meant to run as a public, online demo service. While Public Demo Wallet users may transfer test Libra Coins on the testnet, transfer of fiat currency, actually minted Libra Coins, or other funds are simulated. The Public Demo Wallet demonstrates the following use cases:
 
 * Sending Libra Coins to another Libra wallet address.
 * Receiving Libra Coins from another Libra wallet address.
@@ -29,7 +29,7 @@ The main purpose is to demonstrate common use cases for Libra Coin custodial wal
 
 ### User flows
 
-The image below details the different user flows for the Demo Wallet.
+The image below details the different user flows for the Public Demo Wallet.
 
 ![](/img/docs/userflows-demo-wallet.svg)
 
@@ -37,7 +37,7 @@ The image below details the different user flows for the Demo Wallet.
 
 ### Use the Demo Wallet
 
-Check out the embedded demo of the Web version of the reference wallet hosted at https://developers.libra.org/docs/wallet-app/demo-wallet/. 
+Check out the embedded demo (Public Demo Wallet) of the Web version of the reference wallet hosted at https://developers.libra.org/docs/wallet-app/demo-wallet/. 
 
 ## Create your account and login
 
@@ -45,13 +45,15 @@ Since this is a demo, login and authentication is simulated using auto generated
 
 ### Register and sign up
 
-New users who want to use the Public Demo Wallet go through a simulated registration process. The registration process simulates the following steps:
+New users who want to use the Public Demo Wallet go through a simulated registration process. Users should enter a dummy username and password at signup and choose from a dummy identity during the sign up process. 
+
+The registration process simulates the following steps:
 
 * Protects the user’s personal information.
 * Assessment of the risks involved in maintaining a business relationship with the user.
-* Compliance with KYC guidelines and AML regulations as required by law.
+* Compliance with KYC guidelines and AML regulations.
 
-During registration, the user of the demo is presented with the screen shots and process flows that simulate a user asked to provide the information that would be required for proper identity verification and account security. The simulated registration process collects this information in multiple steps:
+During registration, the user of the Public Demo Wallet is presented with the screen shots and process flows that simulate a user asked to provide the information that would be required for proper identity verification and account security. The simulated registration process collects this information in multiple steps:
 
 1. Login credentials, including a strong and unique password.
 2. Personal details, including name, date of birth, and phone number.
@@ -60,10 +62,10 @@ During registration, the user of the demo is presented with the screen shots and
 5.  Photograph of an officially recognized identification document (e.g., a passport or driver’s license, as defined by the local jurisdiction).
 6.  The base currency used for presentation of the conversion rates.
 
-As noted above, all login details for the Libra Reference Wallet Demo will be fake credentials for “Sherlock Holmes”. The account verification begins once the user completes the registration demo. The user won’t be able to access the wallet until they have gone through the simulated account verification process.
+All login details for the Public Demo Wallet will be fake, auto-generated credentials for dummy identities. The account verification begins once the user completes the registration demo. The user won’t be able to access the Public Demo Wallet until they have gone through the simulated account verification process.
 
 >
->Note: Account verification demos the expected behavior of a hypothetical wallet. For the Libra Reference Wallet, the verification succeeds automatically and the “pending” state is presented briefly to the user for demo purposes only. In addition, the identification document is always accepted and is not analysed or stored by the backend. Real-world user verification and risk management are beyond the scope of the reference wallet and contain many opportunities for further development.
+>Note: Account verification demos the expected behavior of a hypothetical wallet. For the Public Demo Wallet, the verification succeeds automatically and the “pending” state is presented briefly to the user for demo purposes only. In addition, the identification document is always accepted and is not analysed or stored by the backend. Real-world user verification and risk management are beyond the scope of the reference wallet and contain many opportunities for further development.
 >
 
 Read more about the user verification [in the Risk section](risk-mod.md).
@@ -73,17 +75,17 @@ The Public Demo Wallet is only accessible to authenticated users. When a user ac
 
 Upon login, if a user is presented with a “Verification Pending” page, it means that the authentication has been successful but the user verification process is still underway.
 
-The password can be reset using the “Forgot Password” link. Alternatively, if the user is not yet registered, they can proceed to register by activating the “Sign up” link on the page.
+If the user is not yet registered, they can proceed to register by activating the “Sign up” link on the page. 
 
 
 ### Sign out
 A user can sign out of the wallet on the [Settings](#modify-settings) page.
 
 ### Reset password
-It is possible to reset the user password by entering a verified email address on the password reset page. The page is accessible by following the “Forgot Password” link on the login page. Note that the email address provided must be an address previously registered in the system. 
+It is possible to reset the user password by entering a username on the password reset page. The page is accessible by following the “Forgot Password” link on the login page. The password reset flow is simulated where the user has to enter the fake username and is redirected to a page where they have to enter their new dummy password. 
 
 >
->Note: For the reference wallet, entering a known email address redirects the user immediately to the password change page, without sending the reset message.
+>Note: For the reference wallet, entering an existing username redirects the user immediately to the password change page, without sending the reset message.
 >
 
 
@@ -99,7 +101,7 @@ User actions available on the home page include:
 * Receive Libra Coins.
 * Add Libra Coins to the wallet; activated by clicking “Transfer” and then “Add.”
 * Withdraw Libra Coins from the wallet; activated by clicking “Transfer” and then “Withdraw.”
-* Convert between Libra currencies
+* Convert between Libra Coin currencies
 
 ![](/img/docs/wallet-home.svg)
 
@@ -125,7 +127,7 @@ In addition, the page shows the simulated username of the fictional active user.
 ![](/img/docs/modify-settings.svg)
 
 >
->Note: The payment methods are for demonstration purposes only. The supplied information is not validated, and no real transactions are made using the configured credit cards and bank accounts.Users of the Public Demo Wallet will not be permitted to enter real credit card or bank account information. 
+>Note: The payment methods are for demonstration purposes only. The supplied information is not validated, and no real transactions are made using the configured credit cards and bank accounts. Users of the Public Demo Wallet will not be permitted to enter real credit card or bank account information.
 >
 
 

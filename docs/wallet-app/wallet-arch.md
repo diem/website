@@ -10,7 +10,7 @@ The Libra Reference Wallet is structured into three main modules:
 
 ## Wallet
 
-The Wallet module manages the core functionality of a wallet, such as account creation and management, balance updates, as well as the business and compliance logic of sending and receiving transactions. This module has been developed so that the Libra Reference Wallet is custodial. Although you may use this information to develop wallets that are not custodial, these types of wallets will not be available at launch of mainnet. 
+The Wallet module manages the core functionality of a wallet, such as account creation and management, balance updates, as well as the business and compliance logic of sending and receiving transactions. This module has been developed so that the Libra Reference Wallet is custodial.
 
 
 

@@ -232,6 +232,10 @@ The Libra withdrawal process is performed by clicking “Transfer” and then �
 
 ### Convert between Libra currencies
 
+>
+>Note: In a production application, this action will need to be supported by a regulated VASP.
+>
+
 To convert from one Libra Coin currency to another:
 
 1. On the home page click 'Transfer'.

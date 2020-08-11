@@ -30,7 +30,7 @@ For the sake of this demonstration, the Libra Reference Wallet implements **the 
 
 ## Price Quotation Displays
 
-Libra Coin prices are displayed in the Transfer section (Add, Withdraw, and Convert functions) of the wallet. Libra Coin price quotes from a custodial wallet to its customer aren’t expected to be changed very often. But as wallet customers will expect their transactions to be executed at the quoted rate as displayed, the wallet provider should try to limit the range of rates at which the transactions occur. While the front-end service is running, it polls for rates every few seconds. The price calculation used when a user wants to buy Libra Coins is based on these recently received rates. This way the price should not fluctuate too much while filling the order or updating the amounts displayed on the screen. Additionally, when a user confirms the simulated sale to convert Libra Coins to fiat or vice versa, the client validates that the price does not exceed boundaries (the boundary check is performed by the backend system), and then requests for execution.
+Libra Coin prices are displayed in the Transfer section (Add, Withdraw, and Convert functions) of the Libra Reference Wallet. Libra Coin price quotes from a custodial wallet to its customer aren’t expected to be changed very often. But as wallet customers will expect their transactions to be executed at the quoted rate as displayed, the wallet provider should try to limit the prices or spreads at which the transactions occur. While the front-end service is running, it polls for rates every few seconds. The price calculation used when a user wants to buy Libra Coins is based on these recently received rates. This way the price should not fluctuate too much while filling the order or updating the amounts displayed on the screen. Additionally, when a user confirms the simulated sale to convert Libra Coins to fiat or vice versa, the client validates that the price does not exceed boundaries (the boundary check is performed by the backend system), and then requests for execution.
 
 Because quotes may last for a short time, customers may find it helpful for the wallet to display a benchmark rate for each currency. Such a rate would not be intended to bind the wallet or the third-party liquidity provider that provides the benchmark price, but instead gives an indication of the exchange rate in real time. 
 
@@ -38,7 +38,7 @@ Because quotes may last for a short time, customers may find it helpful for the 
 
 ## Architecture
 
-The use cases handled by the custodial walletservice are:
+The use cases handled by the Libra Reference Wallet service are:
 
 * Add funds: This simulates the purchase of Libra Coins in exchange for a fiat currency.
 * Withdraw funds: This simulates the withdrawal of fiat currency in exchange for the simulated sale of Libra Coins.
