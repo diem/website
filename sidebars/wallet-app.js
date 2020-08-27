@@ -68,7 +68,6 @@ const Sidebar = [
       'wallet-app/service-api',
       'wallet-app/pubsub',
       'wallet-app/inventory-mod',
-      'wallet-app/admin-mod',
       'wallet-app/localizn',
       'wallet-app/demo-wallet',
       // 'wallet-app/demo-wallet-swagger-api',
