@@ -36,3 +36,19 @@ The main features of the login and authentication implementation in the Libra Re
 
 ### GitHub repository
 https://github.com/libra/libra-wallet/blob/master/src/wallet/account.py
+
+
+
+## Reference
+
+* [Set Up](set-up-reference-wallet.md) - Learn how to deploy the Libra Reference Wallet.
+
+* [Test the Local Web Wallet](try-local-web-wallet.md) - Test the local web version of the Libra Reference Wallet.
+
+* [Test the Local Mobile Wallet](try-local-mobile-wallet.md) - Test the local mobile version of the Libra Reference Wallet
+
+* [Compliance Module](compliance-mod.md) - Introduction to the compliance module.
+
+* [Transaction Workflows](wallet-arch.md) - Learn more about the types of transactions and how they are implemented. 
+
+  

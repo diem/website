@@ -31,7 +31,7 @@ const Sidebar = [
     items: [
       'wallet-app/intro-to-lrw',
       'wallet-app/wallet-arch',
-      'wallet-app/liquidity',
+      'wallet-app/libra-c-source',
     ]
   },
   {
@@ -67,8 +67,7 @@ const Sidebar = [
       'wallet-app/storage-mod',
       'wallet-app/service-api',
       'wallet-app/pubsub',
-      'wallet-app/liquidity-mod',
-      'wallet-app/admin-mod',
+      'wallet-app/inventory-mod',
       'wallet-app/localizn',
       'wallet-app/demo-wallet',
       // 'wallet-app/demo-wallet-swagger-api',

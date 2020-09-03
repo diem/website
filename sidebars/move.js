@@ -21,6 +21,31 @@ const Sidebar = [
     label: 'Overview',
     type: 'link',
   },
+  {
+    extra: {
+      icon: 'img/concepts.svg',
+      iconDark: 'img/concepts-dark.svg',
+      iconClasses: ['listTitle'],
+    },
+    label: 'Concepts',
+    type: 'category',
+    items: [
+      'move/move-paper',
+    ]
+  },
+  {
+    extra: {
+      icon: 'img/tutorials.svg',
+      iconDark: 'img/tutorials-dark.svg',
+      iconClasses: ['listTitle'],
+    },
+    label: 'Tutorials',
+    type: 'category',
+    items: [
+      'move/move-getting-started',
+      'move/run-move-locally',
+    ]
+  },
 ];
 
 module.exports = Sidebar;

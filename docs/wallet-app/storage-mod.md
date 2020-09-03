@@ -11,11 +11,11 @@ The Libra Reference Wallet uses SQL as its data store, and SQLAlchemy as the Pyt
 
 ### User
 
-User table stores all information related to the user’s identity, registration, and KYC information. On user registration, username and password information are stored. KYC information such as full name, dob, address, and phone number are also stored during the registration process. 
+User table stores all information related to the user’s identity, registration, and KYC information. On user registration, username, and password information are stored. KYC information such as full name, dob, address, and phone number are also stored during the registration process. 
 
 ### Account
 
-While the user table deals with a user’s identification and login information, the account table purely deals with the user’s transactions. Each user has an account, in which all transactions and balances are stored. There is a special case for the admin user, who does not have any corresponding account. Currently each user has a single account, but the wallet could be extended for a user to hold multiple accounts. Another special case is the inventory account, which doesn’t have any corresponding user. 
+While the user table deals with a user’s identification and login information, the account table purely deals with the user’s transactions. Each user has an account, in which all transactions and balances are stored. There is a special case for the admin user, who does not have any corresponding account. Currently each user has a single account, but the wallet could be extended for a user to hold multiple accounts. Another special case is the inventory account, which doesn’t have any corresponding user.  
 
 ### Transaction
 
@@ -35,11 +35,19 @@ Token table stores user session tokens for session authentication. When a user c
 
 ### Order
 
-
-
+>
+>Note: This section will be updated with the next version of this document. 
+>
 
 
 ### Execution log
 
 The execution log table is used for debugging and the data is not exposed to the user. Execution logs can easily be added in any function using add_execution_log(). 
 
+## Reference
+
+* [Login and Authentication](login-and-auth.md) - Learn more about how login and authentication has been implemented. 
+* [Service APIs](service-api.md) - Introduction to RESTful APIs that are organized in terms of high-level wallet functionalities
+* [Set Up](set-up-reference-wallet.md) - Learn how to deploy the Libra Reference Wallet.
+* [Test the Local Web Wallet](try-local-web-wallet.md) - Test the local web version of the Libra Reference Wallet.
+* [Test the Local Mobile Wallet](try-local-mobile-wallet.md) - Test the local mobile version of the Libra Reference Wallet
