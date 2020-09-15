@@ -4,7 +4,7 @@ const lightCodeTheme = require("prism-react-renderer/themes/github");
 module.exports = {
   title: 'Libra Documentation',
   tagline: 'The Libra Association’s mission is to enable a simple global payment system and financial infrastructure that empowers billions of people.',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://developers.libra.org/docs/',
   baseUrl: '/',
   favicon: 'img/shared/favicon.ico',
   organizationName: 'Libra',
@@ -43,7 +43,7 @@ module.exports = {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://github.com/libra/website/edit/master/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
